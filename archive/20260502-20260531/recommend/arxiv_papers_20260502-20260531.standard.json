@@ -1,0 +1,279 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-05-31T14:28:25.592772+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 5,
+    "deep_cap": 6,
+    "deep_selected": 5,
+    "quick_candidates": 2,
+    "quick_skim_target": 11,
+    "quick_selected": 2
+  },
+  "deep_dive": [
+    {
+      "id": "2605.24139v1",
+      "source": "arxiv",
+      "title": "MAPLE: Multi-State Aggregated Policy Evaluation for AlphaZero in Imperfect-Information Games",
+      "abstract": "Imperfect-information games (IIGs) are challenging, as players must make decisions without fully observing the true game state. While AlphaZero has achieved remarkable success in perfect-information games, extending it to IIGs remains difficult. Existing search-based approaches, such as Perfect Information Monte Carlo (PIMC), suffer from strategy fusion, while Information Set Monte Carlo Tree Search (IS-MCTS) incurs high computational cost when combined with neural networks. In this paper, we propose Multi-State Aggregated PoLicy Evaluation (MAPLE), a tree search method that aggregates policy and value evaluations from multiple sampled world states within a single search tree, combining the advantages of PIMC and IS-MCTS while maintaining a controllable computational cost. We further incorporate a Siamese-based sampling strategy to select informative world states from the information set. Experiments on Phantom Go and Dark Hex show that MAPLE significantly outperforms the PIMC-based AlphaZero baseline, achieving Elo improvements of 291 and 136, respectively. These results demonstrate that MAPLE is an effective approach for AlphaZero-style learning in imperfect-information games.",
+      "authors": [
+        "Qian-Rong Li",
+        "Hung Guei",
+        "I-Chen Wu",
+        "Ti-Rong Wu"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-05-22T18:59:01+00:00",
+      "link": "https://arxiv.org/pdf/2605.24139v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "AlphaZero extension to imperfect-information games via MAPLE",
+      "llm_evidence_cn": "通过MAPLE将AlphaZero扩展到不完全信息游戏",
+      "llm_evidence": "通过MAPLE将AlphaZero扩展到不完全信息游戏",
+      "canonical_evidence": "通过MAPLE将AlphaZero扩展到不完全信息游戏",
+      "llm_tldr_en": "MAPLE extends AlphaZero to imperfect-information games by aggregating policy and value evaluations from multiple sampled world states within a single search tree.",
+      "llm_tldr_cn": "将AlphaZero扩展到不完全信息游戏面临挑战。本文提出MAPLE方法，在单棵搜索树内聚合多个采样世界状态的策略和价值评估，结合了PIMC和IS-MCTS的优点，避免了策略融合问题并降低了计算成本。实验表明MAPLE在不完全信息游戏中取得了优越性能。",
+      "llm_tldr": "将AlphaZero扩展到不完全信息游戏面临挑战。本文提出MAPLE方法，在单棵搜索树内聚合多个采样世界状态的策略和价值评估，结合了PIMC和IS-MCTS的优点，避免了策略融合问题并降低了计算成本。实验表明MAPLE在不完全信息游戏中取得了优越性能。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "variants and extensions of the AlphaZero architecture for different games",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.28863v1",
+      "source": "arxiv",
+      "title": "Self-Play Reinforcement Learning under Imperfect Information in Big 2",
+      "abstract": "Imperfect-information multiplayer games test whether agents can act under hidden information, sparse rewards, and non-stationary opponents. We study these challenges in Big 2, a four-player imperfect-information card game. We develop a self-play RL framework for Big 2 that enables controlled comparisons between policy-gradient and value-approximating agents. Under a common environment, input representation, training budget, and evaluation protocol, PPO outperforms Monte Carlo Q approximation, SARSA, and Q-learning against random, greedy, and heuristic Big 2 opponents. We further find that moderate entropy regularization improves PPO by preventing the policy from becoming overly deterministic, and that current-policy self-play provides a stronger finite-budget curriculum than checkpoint self-play or fixed-opponent training. Together, these results show that Big 2 is a useful controlled setting for studying deep RL under imperfect information, multiplayer interaction, delayed rewards, and variable action sets.",
+      "authors": [
+        "Aalok Patwa"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-05-21T21:56:09+00:00",
+      "link": "https://arxiv.org/pdf/2605.28863v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "directly studies self-play reinforcement learning under imperfect information in card game Big 2",
+      "llm_evidence_cn": "直接研究不完美信息纸牌游戏Big 2中的自我对弈强化学习",
+      "llm_evidence": "直接研究不完美信息纸牌游戏Big 2中的自我对弈强化学习",
+      "canonical_evidence": "直接研究不完美信息纸牌游戏Big 2中的自我对弈强化学习",
+      "llm_tldr_en": "Develops a self-play RL framework for imperfect-information game Big 2, comparing PPO, SARSA, Q-learning, and Monte Carlo methods, finding PPO with entropy regularization best.",
+      "llm_tldr_cn": "本文在不完美信息多人纸牌游戏Big 2中开发了自我对弈强化学习框架。比较了策略梯度（PPO）与蒙特卡洛Q近似、SARSA、Q-learning等算法。在统一环境和评估协议下，PPO配合适度熵正则化表现最佳，并且当前策略自我对弈能提供更强的对抗训练信号。该工作为自对弈在不完美信息游戏中的应用提供了实证见解。",
+      "llm_tldr": "本文在不完美信息多人纸牌游戏Big 2中开发了自我对弈强化学习框架。比较了策略梯度（PPO）与蒙特卡洛Q近似、SARSA、Q-learning等算法。在统一环境和评估协议下，PPO配合适度熵正则化表现最佳，并且当前策略自我对弈能提供更强的对抗训练信号。该工作为自对弈在不完美信息游戏中的应用提供了实证见解。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "how does AlphaZero use self play reinforcement learning",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.09150v1",
+      "source": "arxiv",
+      "title": "AlphaExploitem: Going Beyond the Nash Equilibrium in Poker by Learning to Exploit Suboptimal Play",
+      "abstract": "Poker is an imperfect information game that has served as a long-standing benchmark for decision-making under uncertainty. To maximize utility beyond the Nash equilibrium, an agent can deviate from Nash-equilibrium policies to exploit suboptimal play. We introduce AlphaExploitem, which extends the competitive RL poker agent AlphaHoldem by using a hierarchical transformer encoder that enables reasoning over previously played hands and modifying the training procedure with the inclusion of a diverse pool of exploitable opponents to facilitate learning to exploit. We train and evaluate AlphaExploitem on two standard benchmarks for imperfect-information games. Empirically, AlphaExploitem successfully exploits weak play by both in- and out-of-distribution opponents, without losing performance against NE opponents.",
+      "authors": [
+        "Vlad Murgoci",
+        "Matthijs Spaan",
+        "Yaniv Oren"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-05-09T20:26:35+00:00",
+      "link": "https://arxiv.org/pdf/2605.09150v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "extends AlphaHoldem poker agent with hierarchical transformer; learns to exploit suboptimal opponents",
+      "llm_evidence_cn": "扩展了AlphaHoldem扑克代理，引入层次化Transformer；学习利用对手弱点",
+      "llm_evidence": "扩展了AlphaHoldem扑克代理，引入层次化Transformer；学习利用对手弱点",
+      "canonical_evidence": "扩展了AlphaHoldem扑克代理，引入层次化Transformer；学习利用对手弱点",
+      "llm_tldr_en": "AlphaExploitem extends the competitive RL poker agent AlphaHoldem by adding hierarchical transformer reasoning over past hands and training against diverse exploitable opponents, enabling the agent to go beyond Nash equilibrium and exploit suboptimal play.",
+      "llm_tldr_cn": "在不完美信息博弈扑克中，超越纳什均衡以利用对手的次优策略可提升收益。本文提出AlphaExploitem，在AlphaHoldem基础上引入层次化Transformer编码器，利用历史手牌信息进行推理，并通过与多样化可被利用对手共同训练来学习剥削性策略。实验表明，该方法成功利用弱手策略，超越了均衡策略的性能。这项工作展示了AlphaZero架构在棋类之外游戏（如扑克）中的扩展潜力。",
+      "llm_tldr": "在不完美信息博弈扑克中，超越纳什均衡以利用对手的次优策略可提升收益。本文提出AlphaExploitem，在AlphaHoldem基础上引入层次化Transformer编码器，利用历史手牌信息进行推理，并通过与多样化可被利用对手共同训练来学习剥削性策略。实验表明，该方法成功利用弱手策略，超越了均衡策略的性能。这项工作展示了AlphaZero架构在棋类之外游戏（如扑克）中的扩展潜力。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "variants and extensions of the AlphaZero architecture for different games",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.17162v1",
+      "source": "arxiv",
+      "title": "From Imitation to Interaction: Mastering Game of Schnapsen with Shallow Reinforcement Learning",
+      "abstract": "This paper investigates whether shallow neural network agents can master the card game Schnapsen and challenge a strong search-based baseline, RdeepBot, which uses Monte Carlo sampling and lookahead search. Guided by a progressively more complex experimental design, we first evaluate a supervised learning agent (MLPBot) trained on replay data and then a reinforcement learning agent (RLBot) with the same shallow architecture trained through asynchronous Monte Carlo updates and experience replay. The results show that supervised imitation does not generalize well enough to defeat strong RdeepBot opponents, whereas reinforcement learning produces substantially stronger agents. In the setting that focuses on the depth parameter of RdeepBot, the best performance is achieved when the learned value function is combined with deeper lookahead during gameplay, allowing RLBot to achieve statistically significant higher winning rates against the strongest evaluated RdeepBot baseline. In the sample-based setting, the gains are more conditional: the strongest performance appears at a relatively lower training num_samples parameter rather than increasing uniformly with stronger sampling.",
+      "authors": [
+        "Ján Klačan",
+        "Sizhong Zhang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-05-16T21:22:46+00:00",
+      "link": "https://arxiv.org/pdf/2605.17162v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "studies shallow RL for card game Schnapsen, related to AlphaZero variants for games",
+      "llm_evidence_cn": "研究浅层强化学习在纸牌游戏Schnapsen中的应用，属于AlphaZero游戏变体",
+      "llm_evidence": "研究浅层强化学习在纸牌游戏Schnapsen中的应用，属于AlphaZero游戏变体",
+      "canonical_evidence": "研究浅层强化学习在纸牌游戏Schnapsen中的应用，属于AlphaZero游戏变体",
+      "llm_tldr_en": "Shows that shallow RL agents can master card game Schnapsen, outperforming search-based baselines via asynchronous Monte Carlo updates and experience replay.",
+      "llm_tldr_cn": "本文探究浅层神经网络能否掌握纸牌游戏Schnapsen。通过受监督学习和强化学习两种方式训练智能体。结果表明监督学习无法战胜强搜索基线，而强化学习（异步蒙特卡洛更新和经历回放）训练的智能体显著更强，证实了交互式强化学习在复杂游戏中的有效性，为AlphaZero类方法在扩展游戏中的应用提供支持。",
+      "llm_tldr": "本文探究浅层神经网络能否掌握纸牌游戏Schnapsen。通过受监督学习和强化学习两种方式训练智能体。结果表明监督学习无法战胜强搜索基线，而强化学习（异步蒙特卡洛更新和经历回放）训练的智能体显著更强，证实了交互式强化学习在复杂游戏中的有效性，为AlphaZero类方法在扩展游戏中的应用提供支持。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "variants and extensions of the AlphaZero architecture for different games",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.20577v1",
+      "source": "arxiv",
+      "title": "Mahjax: A GPU-Accelerated Mahjong Simulator for Reinforcement Learning in JAX",
+      "abstract": "Riichi Mahjong is a multi-player, imperfect-information game characterized by stochasticity and high-dimensional state spaces. These attributes present a unique combination of challenges that mirror complex real-world decision-making problems in reinforcement learning. While prior research has heavily relied on supervised learning from human play logs to pre-train the policy, algorithms capable of learning \\textit{tabula rasa} (from scratch) offer greater potential for general applicability, as evidenced by the AlphaZero lineage. To facilitate such research, we introduce \\textbf{Mahjax}, a fully vectorized Riichi Mahjong environment implemented in JAX to enable large-scale rollout parallelization on Graphics Processing Units (GPUs). We also provide a high-quality visualization tool to streamline debugging and interaction with trained agents. Experimental results demonstrate that Mahjax achieves throughputs of up to \\textbf{2 million} and \\textbf{1 million steps per second} on eight NVIDIA A100 GPUs under the no-red and red rules, respectively. Furthermore, we validate the environment's utility for reinforcement learning by showing that agents can be trained effectively to improve their rank against baseline policies.",
+      "authors": [
+        "Soichiro Nishimori",
+        "Shinri Okano",
+        "Keigo Habara",
+        "Sotetsu Koyamada",
+        "Eason Yu",
+        "Masashi Sugiyama"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-05-20T00:33:28+00:00",
+      "link": "https://arxiv.org/pdf/2605.20577v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "GPU-accelerated Mahjong simulator enabling AlphaZero-like tabula rasa learning",
+      "llm_evidence_cn": "GPU加速的麻将模拟器支持类似AlphaZero的从零学习",
+      "llm_evidence": "GPU加速的麻将模拟器支持类似AlphaZero的从零学习",
+      "canonical_evidence": "GPU加速的麻将模拟器支持类似AlphaZero的从零学习",
+      "llm_tldr_en": "Mahjax provides a fully vectorized Riichi Mahjong environment in JAX for GPU-accelerated reinforcement learning, facilitating AlphaZero-style tabula rasa algorithms.",
+      "llm_tldr_cn": "麻雀麻将作为多玩家不完全信息游戏，为强化学习提供了挑战。Mahjax是一个基于JAX的全矢量化麻将环境，支持GPU大规模并行推演，专为类似AlphaZero的从零学习算法设计，使研究者无需依赖人类对局数据即可训练智能体。",
+      "llm_tldr": "麻雀麻将作为多玩家不完全信息游戏，为强化学习提供了挑战。Mahjax是一个基于JAX的全矢量化麻将环境，支持GPU大规模并行推演，专为类似AlphaZero的从零学习算法设计，使研究者无需依赖人类对局数据即可训练智能体。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "implementation of AlphaZero algorithm",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2605.19235v1",
+      "source": "arxiv",
+      "title": "GAE Falls Short in Imperfect-Information Self-Play Reinforcement Learning",
+      "abstract": "Competitive multi-agent reinforcement learning in imperfect-information games requires agents to act under partial observability and against adversarial opponents, necessitating stochastic policies. While self-play reinforcement learning with Proximal Policy Optimization (PPO) has achieved strong empirical success, its standard advantage estimator, generalized advantage estimation, suffers from additional variance due to the sampling of stochastic future actions. This variance is amplified in equilibrium self-play because of the stochastic nature of the equilibrium policy and persists even when the critic is exact. We address this bottleneck by introducing $Q$-boosting, a variance-reduced advantage estimator based on a centralized action-value critic, and propose Variance-Reduced Policy Optimization (VRPO), incorporating this new estimator. The algorithm replaces sampled multi-step backups with a multi-step Expected SARSA$(λ)$ trace, computing policy expectations at each step to average out action-sampling noise, while retaining PPO's clipped objective and on-policy actor updates. Empirically, VRPO consistently achieves strong performance from mid-sized to large-scale games including Dou Dizhu and Heads-Up No-Limit Texas Hold'em.",
+      "authors": [
+        "Zhiyuan Fan",
+        "Gabriele Farina"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.GT"
+      ],
+      "published": "2026-05-19T01:07:39+00:00",
+      "link": "https://arxiv.org/pdf/2605.19235v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "self-play reinforcement learning in imperfect-information games; proposes variance-reduced advantage estimator Q-boosting",
+      "llm_evidence_cn": "不完美信息博弈中的自我对弈强化学习；提出方差缩减的优势估计器Q-boosting",
+      "llm_evidence": "不完美信息博弈中的自我对弈强化学习；提出方差缩减的优势估计器Q-boosting",
+      "canonical_evidence": "不完美信息博弈中的自我对弈强化学习；提出方差缩减的优势估计器Q-boosting",
+      "llm_tldr_en": "Identifies variance issues in generalized advantage estimation for self-play RL in imperfect-information games, and proposes Q-boosting, a variance-reduced advantage estimator that improves training stability and performance.",
+      "llm_tldr_cn": "在不完美信息博弈的自我对弈强化学习中，标准广义优势估计因采样随机未来动作引入额外方差，在均衡策略下尤为严重。本文提出Q-boosting，一种基于集中式动作价值批评的方差缩减优势估计器，有效降低了估计方差，提升了自我对弈训练的稳定性和最终策略性能。该工作为AlphaZero类自我对弈算法的改进提供了新思路。",
+      "llm_tldr": "在不完美信息博弈的自我对弈强化学习中，标准广义优势估计因采样随机未来动作引入额外方差，在均衡策略下尤为严重。本文提出Q-boosting，一种基于集中式动作价值批评的方差缩减优势估计器，有效降低了估计方差，提升了自我对弈训练的稳定性和最终策略性能。该工作为AlphaZero类自我对弈算法的改进提供了新思路。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "Research papers on AlphaZero algorithm improvements",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2605.24375v1",
+      "source": "arxiv",
+      "title": "Distilling Game Code World Model Generation into Lightweight Large Language Models",
+      "abstract": "Large Language Models (LLMs) have shown great ability in generating executable code from natural language, opening the possibility of automatically constructing environments for AI agents. Recent work on Code World Models (CWMs) demonstrates that LLMs can translate game rules into Python implementations compatible with solvers like Monte Carlo Tree Search. We study this problem in game settings, where generated environments must implement rules, legal actions, state transitions, observations, and rewards. We refer to these game-specific executable models as Game Code World Models (GameCWMs). However, current approaches to generating code world models rely on frontier models and inference-time refinement loops, limiting accessibility and scalability. This work investigates whether GameCWM generation capabilities can be distilled into smaller models through post-training. We introduce: (1) a curated dataset of 30 games spanning perfect and imperfect information games, (2) a verification framework that evaluates generated code against structural and semantic game properties, and (3) a post-training pipeline combining Supervised Fine-Tuning (SFT) with Reinforcement Learning with Verifiable Rewards (RLVR). We experiment with Qwen2.5-3B-Instruct and find that SFT can increase syntactic correctness, while RLVR can improve execution-level adherence to game rules, thereby improving Qwen's ability to generate valid GameCWMs in both perfect and imperfect information games. Overall, our pipeline makes Qwen2.5-3B-Instruct more capable of generating valid GameCWMs, thereby offering a scalable path toward automatic environment generation from natural language.",
+      "authors": [
+        "Tyrone Serapio",
+        "Arjun Prakash",
+        "Haoyang Xu",
+        "Kevin Wang",
+        "Amy Greenwald"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-05-23T03:30:36+00:00",
+      "link": "https://arxiv.org/pdf/2605.24375v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "generates game code world models enabling MCTS, relevant to AlphaZero environment creation",
+      "llm_evidence_cn": "生成游戏代码世界模型，支持蒙特卡洛树搜索，与AlphaZero环境创建相关",
+      "llm_evidence": "生成游戏代码世界模型，支持蒙特卡洛树搜索，与AlphaZero环境创建相关",
+      "canonical_evidence": "生成游戏代码世界模型，支持蒙特卡洛树搜索，与AlphaZero环境创建相关",
+      "llm_tldr_en": "Distills LLMs to generate executable game code compatible with MCTS solvers, potentially aiding AlphaZero-like agent deployment.",
+      "llm_tldr_cn": "该论文研究从自然语言规则生成可执行游戏代码，使轻量级大模型也能创建游戏环境，并兼容蒙特卡洛树搜索等求解器。当前方法依赖前沿模型和迭代优化，限制了可访问性。本文通过知识蒸馏降低模型需求，使更多开发者能快速构建游戏环境，辅助类似AlphaZero的智能体训练。",
+      "llm_tldr": "该论文研究从自然语言规则生成可执行游戏代码，使轻量级大模型也能创建游戏环境，并兼容蒙特卡洛树搜索等求解器。当前方法依赖前沿模型和迭代优化，限制了可访问性。本文通过知识蒸馏降低模型需求，使更多开发者能快速构建游戏环境，辅助类似AlphaZero的智能体训练。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "variants and extensions of the AlphaZero architecture for different games",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}
