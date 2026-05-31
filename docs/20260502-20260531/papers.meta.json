@@ -1,0 +1,39 @@
+{
+  "label": "2026-05-02 ~ 2026-05-31",
+  "date": "2026-05-02 ~ 2026-05-31",
+  "generated_at": "2026-05-31T14:14:42",
+  "count": 2,
+  "papers": [
+    {
+      "paper_id": "20260502-20260531/2605.24139v1-maple-multi-state-aggregated-policy-evaluation-for-alphazero-in-imperfect-information-games",
+      "section": "quick",
+      "title_en": "MAPLE: Multi-State Aggregated Policy Evaluation for AlphaZero in Imperfect-Information Games",
+      "authors": "Qian-Rong Li, Hung Guei, I-Chen Wu, Ti-Rong Wu",
+      "date": "2026-05-22",
+      "pdf": "https://arxiv.org/pdf/2605.24139v1",
+      "score": "9.0",
+      "evidence": "将AlphaZero扩展到不完美信息游戏",
+      "tldr": "不完全信息游戏中玩家无法观察全局状态，现有方法PIMC存在策略融合问题，IS-MCTS计算成本高。本文提出MAPLE，在单一搜索树中聚合多个世界状态的策略与价值评估，结合两者优势并控制成本，通过Siamese采样选择关键世界状态。在Phantom Go和Dark Hex上，MAPLE相对PIMC基线分别提升291和136 Elo。该方法为AlphaZero在不完全信息游戏中的应用提供了有效方案。",
+      "tags": "query:alphazero",
+      "abstract_en": "Imperfect-information games (IIGs) are challenging, as players must make decisions without fully observing the true game state. While AlphaZero has achieved remarkable success in perfect-information games, extending it to IIGs remains difficult. Existing search-based approaches, such as Perfect Information Monte Carlo (PIMC), suffer from strategy fusion, while Information Set Monte Carlo Tree Search (IS-MCTS) incurs high computational cost when combined with neural networks. In this paper, we propose Multi-State Aggregated PoLicy Evaluation (MAPLE), a tree search method that aggregates policy and value evaluations from multiple sampled world states within a single search tree, combining the advantages of PIMC and IS-MCTS while maintaining a controllable computational cost. We further incorporate a Siamese-based sampling strategy to select informative world states from the information set. Experiments on Phantom Go and Dark Hex show that MAPLE significantly outperforms the PIMC-based AlphaZero baseline, achieving Elo improvements of 291 and 136, respectively. These results demonstrate that MAPLE is an effective approach for AlphaZero-style learning in imperfect-information games.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "20260502-20260531/2605.20577v1-mahjax-a-gpu-accelerated-mahjong-simulator-for-reinforcement-learning-in-jax",
+      "section": "quick",
+      "title_en": "Mahjax: A GPU-Accelerated Mahjong Simulator for Reinforcement Learning in JAX",
+      "authors": "Soichiro Nishimori, Shinri Okano, Keigo Habara, Sotetsu Koyamada, Eason Yu, Masashi Sugiyama",
+      "date": "2026-05-20",
+      "pdf": "https://arxiv.org/pdf/2605.20577v1",
+      "score": "8.0",
+      "evidence": "开发受AlphaZero启发的麻将模拟器，支持从零学习",
+      "tldr": "麻将是多人不完美信息游戏，具有随机性和高维状态空间，对强化学习提出挑战。本文提出Mahjax，一个基于JAX的完全向量化麻将环境，可在GPU上大规模并行化，实现百万级步数/秒的吞吐量。实验表明，在8块A100 GPU上，无红牌规则下达到200万步/秒，有红牌规则下达到100万步/秒。该环境支持从零开始的强化学习训练，为复杂决策问题研究提供高效平台。",
+      "tags": "query:alphazero",
+      "abstract_en": "Riichi Mahjong is a multi-player, imperfect-information game characterized by stochasticity and high-dimensional state spaces. These attributes present a unique combination of challenges that mirror complex real-world decision-making problems in reinforcement learning. While prior research has heavily relied on supervised learning from human play logs to pre-train the policy, algorithms capable of learning \\textit{tabula rasa} (from scratch) offer greater potential for general applicability, as evidenced by the AlphaZero lineage. To facilitate such research, we introduce \\textbf{Mahjax}, a fully vectorized Riichi Mahjong environment implemented in JAX to enable large-scale rollout parallelization on Graphics Processing Units (GPUs). We also provide a high-quality visualization tool to streamline debugging and interaction with trained agents. Experimental results demonstrate that Mahjax achieves throughputs of up to \\textbf{2 million} and \\textbf{1 million steps per second} on eight NVIDIA A100 GPUs under the no-red and red rules, respectively. Furthermore, we validate the environment's utility for reinforcement learning by showing that agents can be trained effectively to improve their rank against baseline policies.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}

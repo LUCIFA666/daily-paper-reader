@@ -1,0 +1,96 @@
+{
+  "mode": "skims",
+  "generated_at": "2026-05-31T14:14:02.684165+00:00",
+  "stats": {
+    "mode": "skims",
+    "forced_all_quick": true,
+    "min_score": 8.0,
+    "deep_divecandidates": 2,
+    "deep_cap": null,
+    "deep_selected": 0,
+    "quick_candidates": 2,
+    "quick_skim_target": null,
+    "quick_selected": 2
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2605.24139v1",
+      "source": "arxiv",
+      "title": "MAPLE: Multi-State Aggregated Policy Evaluation for AlphaZero in Imperfect-Information Games",
+      "abstract": "Imperfect-information games (IIGs) are challenging, as players must make decisions without fully observing the true game state. While AlphaZero has achieved remarkable success in perfect-information games, extending it to IIGs remains difficult. Existing search-based approaches, such as Perfect Information Monte Carlo (PIMC), suffer from strategy fusion, while Information Set Monte Carlo Tree Search (IS-MCTS) incurs high computational cost when combined with neural networks. In this paper, we propose Multi-State Aggregated PoLicy Evaluation (MAPLE), a tree search method that aggregates policy and value evaluations from multiple sampled world states within a single search tree, combining the advantages of PIMC and IS-MCTS while maintaining a controllable computational cost. We further incorporate a Siamese-based sampling strategy to select informative world states from the information set. Experiments on Phantom Go and Dark Hex show that MAPLE significantly outperforms the PIMC-based AlphaZero baseline, achieving Elo improvements of 291 and 136, respectively. These results demonstrate that MAPLE is an effective approach for AlphaZero-style learning in imperfect-information games.",
+      "authors": [
+        "Qian-Rong Li",
+        "Hung Guei",
+        "I-Chen Wu",
+        "Ti-Rong Wu"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-05-22T18:59:01+00:00",
+      "link": "https://arxiv.org/pdf/2605.24139v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "extends AlphaZero to imperfect-information games",
+      "llm_evidence_cn": "将AlphaZero扩展到不完美信息游戏",
+      "llm_evidence": "将AlphaZero扩展到不完美信息游戏",
+      "canonical_evidence": "将AlphaZero扩展到不完美信息游戏",
+      "llm_tldr_en": "Proposes MAPLE, a tree search method that aggregates policy and value evaluations from multiple sampled world states, extending AlphaZero to imperfect-information games while maintaining computational efficiency.",
+      "llm_tldr_cn": "针对AlphaZero在不完美信息游戏中的扩展难题，本文提出MAPLE方法，通过从多个采样世界状态中聚合策略和值评估，结合了完美信息蒙特卡洛和信息集蒙特卡洛树搜索的优势，在保持计算效率的同时避免了策略融合问题。实验表明MAPLE在多个不完美信息游戏中表现优异，为AlphaZero的广泛应用提供了新途径。",
+      "llm_tldr": "针对AlphaZero在不完美信息游戏中的扩展难题，本文提出MAPLE方法，通过从多个采样世界状态中聚合策略和值评估，结合了完美信息蒙特卡洛和信息集蒙特卡洛树搜索的优势，在保持计算效率的同时避免了策略融合问题。实验表明MAPLE在多个不完美信息游戏中表现优异，为AlphaZero的广泛应用提供了新途径。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "variants and extensions of the AlphaZero architecture for different games",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.20577v1",
+      "source": "arxiv",
+      "title": "Mahjax: A GPU-Accelerated Mahjong Simulator for Reinforcement Learning in JAX",
+      "abstract": "Riichi Mahjong is a multi-player, imperfect-information game characterized by stochasticity and high-dimensional state spaces. These attributes present a unique combination of challenges that mirror complex real-world decision-making problems in reinforcement learning. While prior research has heavily relied on supervised learning from human play logs to pre-train the policy, algorithms capable of learning \\textit{tabula rasa} (from scratch) offer greater potential for general applicability, as evidenced by the AlphaZero lineage. To facilitate such research, we introduce \\textbf{Mahjax}, a fully vectorized Riichi Mahjong environment implemented in JAX to enable large-scale rollout parallelization on Graphics Processing Units (GPUs). We also provide a high-quality visualization tool to streamline debugging and interaction with trained agents. Experimental results demonstrate that Mahjax achieves throughputs of up to \\textbf{2 million} and \\textbf{1 million steps per second} on eight NVIDIA A100 GPUs under the no-red and red rules, respectively. Furthermore, we validate the environment's utility for reinforcement learning by showing that agents can be trained effectively to improve their rank against baseline policies.",
+      "authors": [
+        "Soichiro Nishimori",
+        "Shinri Okano",
+        "Keigo Habara",
+        "Sotetsu Koyamada",
+        "Eason Yu",
+        "Masashi Sugiyama"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-05-20T00:33:28+00:00",
+      "link": "https://arxiv.org/pdf/2605.20577v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "develops a Mahjong simulator inspired by AlphaZero lineage for tabula rasa RL",
+      "llm_evidence_cn": "开发受AlphaZero启发的麻将模拟器，支持从零学习",
+      "llm_evidence": "开发受AlphaZero启发的麻将模拟器，支持从零学习",
+      "canonical_evidence": "开发受AlphaZero启发的麻将模拟器，支持从零学习",
+      "llm_tldr_en": "Mahjax is a GPU-accelerated Riichi Mahjong simulator in JAX, enabling large-scale self-play and tabula rasa learning as in AlphaZero.",
+      "llm_tldr_cn": "该论文针对多玩家不完美信息麻将游戏，构建了基于JAX的全向量化模拟器Mahjax，利用GPU并行加速大规模自我对弈。其设计受AlphaZero线的启发，旨在支持从零开始的强化学习，无需人类数据。Mahjax提供了高效的分布式训练基础设施，为将AlphaZero类算法扩展到复杂博弈环境奠定基础。",
+      "llm_tldr": "该论文针对多玩家不完美信息麻将游戏，构建了基于JAX的全向量化模拟器Mahjax，利用GPU并行加速大规模自我对弈。其设计受AlphaZero线的启发，旨在支持从零开始的强化学习，无需人类数据。Mahjax提供了高效的分布式训练基础设施，为将AlphaZero类算法扩展到复杂博弈环境奠定基础。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "variants and extensions of the AlphaZero architecture for different games",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    }
+  ]
+}
