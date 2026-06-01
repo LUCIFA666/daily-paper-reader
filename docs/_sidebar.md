@@ -1,6 +1,9 @@
 * <a class="dpr-sidebar-root-link" href="#/">首页</a>
 * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="javascript:void(0)" data-dpr-hash="#/tutorial/README">使用教程</a>
 * Daily Papers
+  * 2026-06-01 <!--dpr-date:20260601-->
+    * 精读区
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202606/01/2605.27767v1-unimaia-steering-chess-policies-with-language-for-human-like-play" data-sidebar-item="{&quot;title&quot;: &quot;UniMaia: Steering Chess Policies with Language for Human-like Play&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2605.27767v1-unimaia-steering-chess-policies-with-language-for-human-like-play&quot;, &quot;score&quot;: &quot;9.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;改编自AlphaZero的Lc0国际象棋策略，结合语言条件控制&quot;}">UniMaia: Steering Chess Policies with Language for Human-like Play</a>
   * 2026-05-02 ~ 2026-05-31 <!--dpr-date:20260502-20260531-->
     * 精读区
       * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/20260502-20260531/2605.24139v1-maple-multi-state-aggregated-policy-evaluation-for-alphazero-in-imperfect-information-games" data-sidebar-item="{&quot;title&quot;: &quot;MAPLE: Multi-State Aggregated Policy Evaluation for AlphaZero in Imperfect-Information Games&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2605.24139v1-maple-multi-state-aggregated-policy-evaluation-for-alphazero-in-imperfect-information-games&quot;, &quot;score&quot;: &quot;9.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;通过MAPLE将AlphaZero扩展到不完全信息游戏&quot;}">MAPLE: Multi-State Aggregated Policy Evaluation for AlphaZero in Imperfect-Information Games</a>
