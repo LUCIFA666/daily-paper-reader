@@ -1,0 +1,24 @@
+{
+  "label": "2026-06-03",
+  "date": "2026-06-03",
+  "generated_at": "2026-06-03T22:26:20",
+  "count": 1,
+  "papers": [
+    {
+      "paper_id": "202606/03/biorxiv-10-64898-2026-05-16-725663-v2-automated-assembly-of-protein-complexes-from-cryo-em-maps-with-structure-informed-monte-carlo-tree-search",
+      "section": "quick",
+      "title_en": "Automated assembly of protein complexes from cryo-EM maps with structure-informed Monte Carlo Tree Search",
+      "authors": "Dilip, R., Qu, S. J., Chen, Z., Van Valen, D. A.",
+      "date": "2026-05-29",
+      "pdf": "https://www.biorxiv.org/content/10.64898/2026.05.16.725663v2.full.pdf",
+      "score": "6.0",
+      "evidence": "使用蒙特卡洛树搜索进行蛋白质复合体组装，这是AlphaZero的算法组件",
+      "tldr": "结构细胞生物学致力于在细胞原生环境中可视化功能分子，但原位大分子复合物通常仅解析到中等分辨率，蛋白质组规模的巨大组合空间使识别和建模异常困难。Cryosearch框架采用蒙特卡洛树搜索，以基于密度图相关性的函数为奖励，自动从单体库中挑选能最佳解释图谱的蛋白质域组合，进行从头组装。借助GPU并行加速，该方法能从中等分辨率图谱高效构建复合物模型，在多种测试案例中成功重建结构。该工作填补了中等分辨率下自动化复合物组装的空白，为原位结构生物学解析提供了强大新工具。",
+      "tags": "query:alphazero",
+      "abstract_en": "Structural cell biology aims to visualize functional molecules as they carry out their biological roles in their native cellular context. However, macromolecular complexes in situ have thus far been resolved predominantly at intermediate resolutions, complicating protein identification and structural modeling due to the vast combinatorial space of possible components within a proteome. Here, we developed Cryosearch, a GPU-accelerated framework for automated assembly of macromolecular complexes from proteome-scale monomer libraries. Cryosearch implements Monte Carlo tree search with correlation-based rewards to identify combinations of protein domains that collectively best explain density maps. This approach enables autonomous de novo assembly of molecular complexes from intermediate-resolution maps.",
+      "source": "biorxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}

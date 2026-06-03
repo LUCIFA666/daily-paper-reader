@@ -1,6 +1,9 @@
 * <a class="dpr-sidebar-root-link" href="#/">首页</a>
 * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="javascript:void(0)" data-dpr-hash="#/tutorial/README">使用教程</a>
 * Daily Papers
+  * 2026-06-03 <!--dpr-date:20260603-->
+    * 速读区
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202606/03/biorxiv-10-64898-2026-05-16-725663-v2-automated-assembly-of-protein-complexes-from-cryo-em-maps-with-structure-informed-monte-carlo-tree-search" data-sidebar-item="{&quot;title&quot;: &quot;Automated assembly of protein complexes from cryo-EM maps with structure-informed Monte Carlo Tree Search&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/biorxiv-10-64898-2026-05-16-725663-v2-automated-assembly-of-protein-complexes-from-cryo-em-maps-with-structure-informed-monte-carlo-tree-search&quot;, &quot;score&quot;: &quot;6.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;使用蒙特卡洛树搜索进行蛋白质复合体组装，这是AlphaZero的算法组件&quot;}">Automated assembly of protein complexes from cryo-EM maps with structure-informed Monte Carlo Tree Search</a>
   * 2026-06-01 <!--dpr-date:20260601-->
     * 精读区
       * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202606/01/2605.27767v1-unimaia-steering-chess-policies-with-language-for-human-like-play" data-sidebar-item="{&quot;title&quot;: &quot;UniMaia: Steering Chess Policies with Language for Human-like Play&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2605.27767v1-unimaia-steering-chess-policies-with-language-for-human-like-play&quot;, &quot;score&quot;: &quot;9.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;改编自AlphaZero的Lc0国际象棋策略，结合语言条件控制&quot;}">UniMaia: Steering Chess Policies with Language for Human-like Play</a>

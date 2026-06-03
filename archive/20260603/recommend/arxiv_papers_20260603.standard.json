@@ -1,0 +1,55 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-03T22:25:50.699006+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "biorxiv-10-64898-2026-05-16-725663-v2",
+      "source": "biorxiv",
+      "title": "Automated assembly of protein complexes from cryo-EM maps with structure-informed Monte Carlo Tree Search",
+      "abstract": "Structural cell biology aims to visualize functional molecules as they carry out their biological roles in their native cellular context. However, macromolecular complexes in situ have thus far been resolved predominantly at intermediate resolutions, complicating protein identification and structural modeling due to the vast combinatorial space of possible components within a proteome. Here, we developed Cryosearch, a GPU-accelerated framework for automated assembly of macromolecular complexes from proteome-scale monomer libraries. Cryosearch implements Monte Carlo tree search with correlation-based rewards to identify combinations of protein domains that collectively best explain density maps. This approach enables autonomous de novo assembly of molecular complexes from intermediate-resolution maps.",
+      "authors": [
+        "Dilip, R.",
+        "Qu, S. J.",
+        "Chen, Z.",
+        "Van Valen, D. A."
+      ],
+      "primary_category": "bioinformatics",
+      "categories": [
+        "bioinformatics"
+      ],
+      "published": "2026-05-29T00:00:00+00:00",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.05.16.725663v2.full.pdf",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "uses Monte Carlo tree search for protein complex assembly, an algorithmic component of AlphaZero",
+      "llm_evidence_cn": "使用蒙特卡洛树搜索进行蛋白质复合体组装，这是AlphaZero的算法组件",
+      "llm_evidence": "使用蒙特卡洛树搜索进行蛋白质复合体组装，这是AlphaZero的算法组件",
+      "canonical_evidence": "使用蒙特卡洛树搜索进行蛋白质复合体组装，这是AlphaZero的算法组件",
+      "llm_tldr_en": "Cryosearch applies Monte Carlo Tree Search with correlation-based rewards to automatically assemble macromolecular complexes from cryo-EM maps, demonstrating MCTS's utility beyond games.",
+      "llm_tldr_cn": "结构生物学中，从冷冻电镜图谱自动组装蛋白质复合体面临巨大搜索空间。本文提出Cryosearch，采用蒙特卡洛树搜索（MCTS）结合相关性奖励，从蛋白质组规模单体库中高效组合结构域，以最佳解释密度图。该方法将MCTS这一AlphaZero核心算法成功应用于结构生物学，展示了其在非博弈领域的潜力。实验表明，Cryosearch能够准确组装复合体，为高通量原位结构解析提供了新工具。",
+      "llm_tldr": "结构生物学中，从冷冻电镜图谱自动组装蛋白质复合体面临巨大搜索空间。本文提出Cryosearch，采用蒙特卡洛树搜索（MCTS）结合相关性奖励，从蛋白质组规模单体库中高效组合结构域，以最佳解释密度图。该方法将MCTS这一AlphaZero核心算法成功应用于结构生物学，展示了其在非博弈领域的潜力。实验表明，Cryosearch能够准确组装复合体，为高通量原位结构解析提供了新工具。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "AlphaZero applications beyond board games",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}
