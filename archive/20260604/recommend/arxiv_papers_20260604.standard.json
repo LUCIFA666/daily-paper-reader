@@ -1,0 +1,132 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-04T21:37:45.865504+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 3,
+    "quick_skim_target": 11,
+    "quick_selected": 3
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2605.28273v1",
+      "source": "arxiv",
+      "title": "Global Policy-Space Response Oracles for Two-Player Zero-Sum Games",
+      "abstract": "The Policy-Space Response Oracles (PSRO) framework scales equilibrium computation to large zero-sum games by iteratively expanding a restricted strategy set using deep reinforcement learning (DRL). A central challenge is to construct, under limited computational budgets, a small strategy population whose induced game well approximates the full game. Existing PSRO variants typically expand the population using best responses to meta-strategies computed from restricted-game payoffs, which can lead to inefficient expansions that provide limited global improvement. We propose to guide population expansion by directly evaluating the post-expansion population quality. Specifically, we adopt Population Exploitability (PE) to measure how well a restricted strategy set represents the full game, and introduce a two-phase exploration--selection framework that explicitly minimizes PE during expansion. We instantiate this framework as Global PSRO, a practical DRL-based algorithm that efficiently generates candidate responses and estimates PE via parameter-sharing conditional neural networks. Experiments across multiple two-player zero-sum games show that Global PSRO achieves lower exploitability and approximates Nash equilibria with significantly fewer policy iterations than prior PSRO methods.",
+      "authors": [
+        "Junyu Zhang",
+        "Feihong Yang",
+        "Jian Wang",
+        "Chao Wang",
+        "Xudong Zhang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-05-27T10:18:33+00:00",
+      "link": "https://arxiv.org/pdf/2605.28273v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "improves PSRO for two-player zero-sum games, relevant to AlphaZero's game-solving methods",
+      "llm_evidence_cn": "改进了针对两人零和博弈的PSRO方法，与AlphaZero的博弈求解技术相关",
+      "llm_evidence": "改进了针对两人零和博弈的PSRO方法，与AlphaZero的博弈求解技术相关",
+      "canonical_evidence": "改进了针对两人零和博弈的PSRO方法，与AlphaZero的博弈求解技术相关",
+      "llm_tldr_en": "Global PSRO proposes population exploitability to guide strategy pool expansion in zero-sum games, achieving better equilibria with smaller populations than existing PSRO variants.",
+      "llm_tldr_cn": "策略空间响应或acles（PSRO）框架通过迭代扩展策略集求解零和博弈。现有方法扩展效率低。本文提出群体可利用性指标直接评估扩展后的群体质量，引导更高效的策略扩展。在多个博弈上实验表明，该方法能以更小策略群体获得更优近似均衡。",
+      "llm_tldr": "策略空间响应或acles（PSRO）框架通过迭代扩展策略集求解零和博弈。现有方法扩展效率低。本文提出群体可利用性指标直接评估扩展后的群体质量，引导更高效的策略扩展。在多个博弈上实验表明，该方法能以更小策略群体获得更优近似均衡。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "Research papers on AlphaZero algorithm improvements",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2605.29032v1",
+      "source": "arxiv",
+      "title": "Theoretical Foundations and Effective Algorithms for Policy-Aware Simulator Learning",
+      "abstract": "Model-based reinforcement learning (MBRL) agents typically learn world models by minimizing predictive loss. However, powerful RL optimizers inevitably exploit minor model inaccuracies, leading to simulator exploitation and a reality gap where policies succeed in simulation but fail in the real world. We propose that the objective for learning simulators should be strategic robustness rather than predictive accuracy, and formulate this as a zero-sum minimax game between a model player and an adversarial policy player. We provide a comprehensive theoretical analysis: (1) an online learning guarantee showing the game is learnable with sublinear regret bounds; (2) a tractable critic-based simplification bounding the global policy-value gap by the local critic's loss; and (3) an Error-MDP duality, proving that finding the worst-case policy is formally dual to a standard RL problem where the reward is the one-step critic error. This duality yields a provably convergent active data selection algorithm. Experiments on continuous control tasks demonstrate that our approach reduces prediction error in strategically important regions by $1.5$-$2.2\\times$ and enables policies trained purely in simulation to match near-optimal real-world performance.",
+      "authors": [
+        "Christoph Dann",
+        "Yishay Mansour",
+        "Mehryar Mohri"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "stat.ML"
+      ],
+      "published": "2026-05-27T19:31:37+00:00",
+      "link": "https://arxiv.org/pdf/2605.29032v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "addresses simulator exploitation in MBRL, relevant to improving RL algorithms like AlphaZero",
+      "llm_evidence_cn": "解决模型强化学习中的模拟器利用问题，与改进AlphaZero等RL算法相关",
+      "llm_evidence": "解决模型强化学习中的模拟器利用问题，与改进AlphaZero等RL算法相关",
+      "canonical_evidence": "解决模型强化学习中的模拟器利用问题，与改进AlphaZero等RL算法相关",
+      "llm_tldr_en": "Proposes policy-aware simulator learning via a minimax game to improve robustness, applicable to enhancing AlphaZero-like RL training.",
+      "llm_tldr_cn": "该论文针对模型强化学习中模拟器利用导致的现实差距问题，提出将模拟器学习建模为模型玩家与对抗策略玩家的零和博弈，从战略鲁棒性而非预测准确性的角度优化模拟器。理论证明了次线性遗憾界和策略价值边界，并提供基于批评者的简化版本。该工作可直接应用于改进AlphaZero等算法中世界模型的学习，提高策略迁移的真实性。",
+      "llm_tldr": "该论文针对模型强化学习中模拟器利用导致的现实差距问题，提出将模拟器学习建模为模型玩家与对抗策略玩家的零和博弈，从战略鲁棒性而非预测准确性的角度优化模拟器。理论证明了次线性遗憾界和策略价值边界，并提供基于批评者的简化版本。该工作可直接应用于改进AlphaZero等算法中世界模型的学习，提高策略迁移的真实性。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "Research papers on AlphaZero algorithm improvements",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2605.29042v1",
+      "source": "arxiv",
+      "title": "Differentiable Belief-based Opponent Shaping",
+      "abstract": "Human coordination often relies on the ability to influence the beliefs of others through strategic action. In multi-agent reinforcement learning, opponent shaping attempts to replicate this influence, though existing methods typically operate within an opponent's parameter, policy, or value space. Meanwhile, belief-manipulation techniques in hidden-role games often rely on hard-coded objectives, such as deception or belief saturation. We propose Differentiable Belief-based Opponent Shaping (D-BOS), a first-order method that treats each observer's belief as the shaped opponent state and differentiates through $k$-step softmax-Bayes belief dynamics. Rather than explicitly rewarding deceptive or cooperative behavior, our method treats the belief state as the target for shaping. This allows the optimal strategy to emerge naturally from the environment's reward structure. This belief-space formulation provides an opponent-shaping signal by differentiating through opponent belief updates, and naturally extends to multiple observers by aggregating gradients over their individual inferred belief trajectories. Empirically, D-BOS outperforms PPO and BBM in hidden-role games, with the largest gains in mixed-motive settings.",
+      "authors": [
+        "Aarav G Sane",
+        "Karthik Sivachandran",
+        "Rohan Paleja"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-05-27T19:44:32+00:00",
+      "link": "https://arxiv.org/pdf/2605.29042v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "opponent shaping in multi-agent RL relates to self-play in AlphaZero",
+      "llm_evidence_cn": "多智能体强化学习中的对手塑造与AlphaZero自我对弈相关",
+      "llm_evidence": "多智能体强化学习中的对手塑造与AlphaZero自我对弈相关",
+      "canonical_evidence": "多智能体强化学习中的对手塑造与AlphaZero自我对弈相关",
+      "llm_tldr_en": "Proposes D-BOS, a differentiable method for opponent belief shaping in multi-agent RL, relevant to self-play mechanisms used in AlphaZero.",
+      "llm_tldr_cn": "该论文提出了一种可微分的基于信念的对手塑造方法（D-BOS），通过k步软最大贝叶斯信念动态和端到端可微优化，在隐藏角色游戏等场景中实现策略性信念操控。该方法与AlphaZero自我对弈中对手建模和策略优化的思想有技术关联，可为扩展AlphaZero至多智能体博弈提供方法论参考。实验表明，D-BOS能有效引导对手信念走向期望状态，提升协调或欺骗效果。",
+      "llm_tldr": "该论文提出了一种可微分的基于信念的对手塑造方法（D-BOS），通过k步软最大贝叶斯信念动态和端到端可微优化，在隐藏角色游戏等场景中实现策略性信念操控。该方法与AlphaZero自我对弈中对手建模和策略优化的思想有技术关联，可为扩展AlphaZero至多智能体博弈提供方法论参考。实验表明，D-BOS能有效引导对手信念走向期望状态，提升协调或欺骗效果。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "how does AlphaZero use self play reinforcement learning",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

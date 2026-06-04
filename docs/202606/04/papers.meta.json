@@ -1,0 +1,54 @@
+{
+  "label": "2026-06-04",
+  "date": "2026-06-04",
+  "generated_at": "2026-06-04T21:41:07",
+  "count": 3,
+  "papers": [
+    {
+      "paper_id": "202606/04/2605.28273v1-global-policy-space-response-oracles-for-two-player-zero-sum-games",
+      "section": "quick",
+      "title_en": "Global Policy-Space Response Oracles for Two-Player Zero-Sum Games",
+      "authors": "Junyu Zhang, Feihong Yang, Jian Wang, Chao Wang, Xudong Zhang",
+      "date": "2026-05-27",
+      "pdf": "https://arxiv.org/pdf/2605.28273v1",
+      "score": "6.0",
+      "evidence": "改进了针对两人零和博弈的PSRO方法，与AlphaZero的博弈求解技术相关",
+      "tldr": "针对双人零和博弈中PSRO框架因基于局部元策略扩展种群导致全局改进有限的问题，提出全局PSRO算法，引入种群可开发性（PE）直接度量策略集质量，并设计两阶段探索-选择框架显式最小化PE。通过参数共享条件神经网络高效估计PE，在多个博弈中以更少策略迭代实现更低可开发性，逼近纳什均衡。",
+      "tags": "query:alphazero",
+      "abstract_en": "The Policy-Space Response Oracles (PSRO) framework scales equilibrium computation to large zero-sum games by iteratively expanding a restricted strategy set using deep reinforcement learning (DRL). A central challenge is to construct, under limited computational budgets, a small strategy population whose induced game well approximates the full game. Existing PSRO variants typically expand the population using best responses to meta-strategies computed from restricted-game payoffs, which can lead to inefficient expansions that provide limited global improvement. We propose to guide population expansion by directly evaluating the post-expansion population quality. Specifically, we adopt Population Exploitability (PE) to measure how well a restricted strategy set represents the full game, and introduce a two-phase exploration--selection framework that explicitly minimizes PE during expansion. We instantiate this framework as Global PSRO, a practical DRL-based algorithm that efficiently generates candidate responses and estimates PE via parameter-sharing conditional neural networks. Experiments across multiple two-player zero-sum games show that Global PSRO achieves lower exploitability and approximates Nash equilibria with significantly fewer policy iterations than prior PSRO methods.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202606/04/2605.29032v1-theoretical-foundations-and-effective-algorithms-for-policy-aware-simulator-learning",
+      "section": "quick",
+      "title_en": "Theoretical Foundations and Effective Algorithms for Policy-Aware Simulator Learning",
+      "authors": "Christoph Dann, Yishay Mansour, Mehryar Mohri",
+      "date": "2026-05-27",
+      "pdf": "https://arxiv.org/pdf/2605.29032v1",
+      "score": "6.0",
+      "evidence": "解决模型强化学习中的模拟器利用问题，与改进AlphaZero等RL算法相关",
+      "tldr": "模型强化学习通常最小化预测损失，但易被优化器利用导致模拟与现实差距。本文将模拟器学习形式化为零和博弈，追求战略鲁棒性而非准确预测。理论提供在线学习保证、批评家简化及误差-MDP对偶性，导出主动数据选择算法。实验表明，战略重要区域误差降低1.5-2.2倍，纯模拟训练策略匹配真实世界最优性能，弥合鸿沟。",
+      "tags": "query:alphazero",
+      "abstract_en": "Model-based reinforcement learning (MBRL) agents typically learn world models by minimizing predictive loss. However, powerful RL optimizers inevitably exploit minor model inaccuracies, leading to simulator exploitation and a reality gap where policies succeed in simulation but fail in the real world. We propose that the objective for learning simulators should be strategic robustness rather than predictive accuracy, and formulate this as a zero-sum minimax game between a model player and an adversarial policy player. We provide a comprehensive theoretical analysis: (1) an online learning guarantee showing the game is learnable with sublinear regret bounds; (2) a tractable critic-based simplification bounding the global policy-value gap by the local critic's loss; and (3) an Error-MDP duality, proving that finding the worst-case policy is formally dual to a standard RL problem where the reward is the one-step critic error. This duality yields a provably convergent active data selection algorithm. Experiments on continuous control tasks demonstrate that our approach reduces prediction error in strategically important regions by $1.5$-$2.2\\times$ and enables policies trained purely in simulation to match near-optimal real-world performance.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202606/04/2605.29042v1-differentiable-belief-based-opponent-shaping",
+      "section": "quick",
+      "title_en": "Differentiable Belief-based Opponent Shaping",
+      "authors": "Aarav G Sane, Karthik Sivachandran, Rohan Paleja",
+      "date": "2026-05-27",
+      "pdf": "https://arxiv.org/pdf/2605.29042v1",
+      "score": "6.0",
+      "evidence": "多智能体强化学习中的对手塑造与AlphaZero自我对弈相关",
+      "tldr": "针对现有对手塑造方法局限于参数或策略空间、信念操纵依赖硬编码目标的问题，提出可微分的信念级对手塑造方法(D-BOS)。该方法将观察者信念作为塑造状态，通过k步softmax-Bayes信念更新微分获得梯度信号，并聚合多观察者轨迹。在隐藏角色游戏中，D-BOS优于PPO和BBM，尤其在混合动机设置中提升显著。这表明信念级塑造能从环境奖励自然涌现最优策略，无需显式欺骗目标。",
+      "tags": "query:alphazero",
+      "abstract_en": "Human coordination often relies on the ability to influence the beliefs of others through strategic action. In multi-agent reinforcement learning, opponent shaping attempts to replicate this influence, though existing methods typically operate within an opponent's parameter, policy, or value space. Meanwhile, belief-manipulation techniques in hidden-role games often rely on hard-coded objectives, such as deception or belief saturation. We propose Differentiable Belief-based Opponent Shaping (D-BOS), a first-order method that treats each observer's belief as the shaped opponent state and differentiates through $k$-step softmax-Bayes belief dynamics. Rather than explicitly rewarding deceptive or cooperative behavior, our method treats the belief state as the target for shaping. This allows the optimal strategy to emerge naturally from the environment's reward structure. This belief-space formulation provides an opponent-shaping signal by differentiating through opponent belief updates, and naturally extends to multiple observers by aggregating gradients over their individual inferred belief trajectories. Empirically, D-BOS outperforms PPO and BBM in hidden-role games, with the largest gains in mixed-motive settings.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}

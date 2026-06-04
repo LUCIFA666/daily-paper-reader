@@ -6,26 +6,30 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-06-03
-- 运行时间：2026-06-03 22:26:15 UTC
+- 最新运行日期：2026-06-04
+- 运行时间：2026-06-04 21:41:01 UTC
 - 运行状态：成功
-- 本次总论文数：1
+- 本次总论文数：3
 - 精读区：0
-- 速读区：1
+- 速读区：3
 
 ### 今日简报（AI）
-1) 今日速读1篇论文，聚焦冷冻电镜图谱中蛋白质复合物的自动化组装。  
-2) 值得关注的是将结构信息融入蒙特卡洛树搜索的方法，有望提升组装准确度。  
-3) 对计算结构生物学感兴趣者可留意该框架，后续可关注其在不同复合物上的泛化性。
-- 详情：[/202606/03/README](/202606/03/README)
+今日速读三篇博弈论相关论文，聚焦策略空间响应、策略感知仿真器学习与可微信念对手塑形。最值得关注的是《Global Policy-Space Response Oracles》与《Differentiable Belief-based Opponent Shaping》中关于策略优化与对手建模的新方法。建议先读这两篇，深入理解博弈中响应机制与信念学习的结合。
+- 详情：[/202606/04/README](/202606/04/README)
 
 ### 精读区论文标签
 - 本次无精读推荐。
 
 ### 速读区论文标签
-1. [Automated assembly of protein complexes from cryo-EM maps with structure-informed Monte Carlo Tree Search](/202606/03/biorxiv-10-64898-2026-05-16-725663-v2-automated-assembly-of-protein-complexes-from-cryo-em-maps-with-structure-informed-monte-carlo-tree-search)  
+1. [Global Policy-Space Response Oracles for Two-Player Zero-Sum Games](/202606/04/2605.28273v1-global-policy-space-response-oracles-for-two-player-zero-sum-games)  
    标签：评分：6.0/10、query:alphazero
-   evidence：使用蒙特卡洛树搜索进行蛋白质复合体组装，这是AlphaZero的算法组件
+   evidence：改进了针对两人零和博弈的PSRO方法，与AlphaZero的博弈求解技术相关
+2. [Theoretical Foundations and Effective Algorithms for Policy-Aware Simulator Learning](/202606/04/2605.29032v1-theoretical-foundations-and-effective-algorithms-for-policy-aware-simulator-learning)  
+   标签：评分：6.0/10、query:alphazero
+   evidence：解决模型强化学习中的模拟器利用问题，与改进AlphaZero等RL算法相关
+3. [Differentiable Belief-based Opponent Shaping](/202606/04/2605.29042v1-differentiable-belief-based-opponent-shaping)  
+   标签：评分：6.0/10、query:alphazero
+   evidence：多智能体强化学习中的对手塑造与AlphaZero自我对弈相关
 
 
 <div class="dpr-home-promo-card">
