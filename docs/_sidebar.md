@@ -1,6 +1,9 @@
 * <a class="dpr-sidebar-root-link" href="#/">首页</a>
 * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="javascript:void(0)" data-dpr-hash="#/tutorial/README">使用教程</a>
 * Daily Papers
+  * 2026-06-07 <!--dpr-date:20260607-->
+    * 速读区
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202606/07/2606.01561v1-s-sppo-semantic-calibrated-self-play-preference-optimization" data-sidebar-item="{&quot;title&quot;: &quot;S-SPPO: Semantic-Calibrated Self-Play Preference Optimization&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2606.01561v1-s-sppo-semantic-calibrated-self-play-preference-optimization&quot;, &quot;score&quot;: &quot;7.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;类似AlphaZero自我对弈训练的自我对弈偏好优化方法&quot;}">S-SPPO: Semantic-Calibrated Self-Play Preference Optimization</a>
   * 2026-06-04 <!--dpr-date:20260604-->
     * 速读区
       * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202606/04/2605.28273v1-global-policy-space-response-oracles-for-two-player-zero-sum-games" data-sidebar-item="{&quot;title&quot;: &quot;Global Policy-Space Response Oracles for Two-Player Zero-Sum Games&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2605.28273v1-global-policy-space-response-oracles-for-two-player-zero-sum-games&quot;, &quot;score&quot;: &quot;6.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;改进了针对两人零和博弈的PSRO方法，与AlphaZero的博弈求解技术相关&quot;}">Global Policy-Space Response Oracles for Two-Player Zero-Sum Games</a>

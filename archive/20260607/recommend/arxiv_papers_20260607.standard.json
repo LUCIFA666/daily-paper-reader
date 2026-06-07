@@ -1,0 +1,68 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-07T20:01:15.785618+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2606.01561v1",
+      "source": "arxiv",
+      "title": "S-SPPO: Semantic-Calibrated Self-Play Preference Optimization",
+      "abstract": "Aligning Large Language Models (LLMs) with human preferences is often formulated via Direct Preference Optimization (DPO). However, the standard Bradley-Terry instantiation of DPO is limited in modeling common departures from transitivity in human preferences. To address this, recent work has introduced Self-Play Preference Optimization (SPPO), which iteratively refines the policy by training on self-generated win-lose pairs. Our investigation, however, reveals a critical instability in SPPO: the optimization is prone to policy degeneration when the preference oracle assigns overly confident wins to semantically indistinguishable responses. To mitigate this, we propose S-SPPO, a dual-space semantic calibration framework comprising: i) Supervision Calibration via semantic gating, which anneals win rate targets toward the maximum-entropy baseline as semantic overlap increases; and ii) Representation Calibration via latent repulsion to enforce geometric diversity to prevent manifold collapse and maintain latent diversity between chosen and rejected samples. Theoretically, we show that the calibration preserves the constant-sum game structure, facilitating convergence to a Nash Equilibrium. Empirically, S-SPPO avoids the performance degradation seen in prior methods, achieving 52.19% win rate and 47.46% length-controlled win rate on AlpacaEval 2.0 with Llama-3-8B, without using additional human-annotated preferences during training. The code will be available at https://github.com/xiwenc1/s-sppo.",
+      "authors": [
+        "Xiwen Chen",
+        "Wenhui Zhu",
+        "Jingjing Wang",
+        "Peijie Qiu",
+        "Zhipeng Wang",
+        "Huayu Li",
+        "ZhengXiao He",
+        "Xuanzhao Dong",
+        "Prayag Tiwari",
+        "Mingkun Xu",
+        "Yujian Xiong",
+        "Feng Luo",
+        "Abolfazl Razi",
+        "Brendan Hogan Rappazzo",
+        "Anderson Schneider",
+        "Yuriy Nevmyvaka"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-06-01T02:06:58+00:00",
+      "link": "https://arxiv.org/pdf/2606.01561v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Self-play preference optimization method similar to AlphaZero's self-play training",
+      "llm_evidence_cn": "类似AlphaZero自我对弈训练的自我对弈偏好优化方法",
+      "llm_evidence": "类似AlphaZero自我对弈训练的自我对弈偏好优化方法",
+      "canonical_evidence": "类似AlphaZero自我对弈训练的自我对弈偏好优化方法",
+      "llm_tldr_en": "S-SPPO proposes a semantic-calibrated self-play preference optimization to stabilize training for LLMs, extending the self-play RL paradigm also used in AlphaZero.",
+      "llm_tldr_cn": "该论文针对自对弈偏好优化（SPPO）中的策略退化问题，提出了S-SPPO，一种双空间语义校准框架。通过监督校准和语义一致性约束，稳定了偏好学习过程。实验表明S-SPPO能有效缓解策略退化，提升对齐表现。该方法与AlphaZero中自我对弈强化学习的核心思想一脉相承，为RL自对弈技术的推广提供了新思路。",
+      "llm_tldr": "该论文针对自对弈偏好优化（SPPO）中的策略退化问题，提出了S-SPPO，一种双空间语义校准框架。通过监督校准和语义一致性约束，稳定了偏好学习过程。实验表明S-SPPO能有效缓解策略退化，提升对齐表现。该方法与AlphaZero中自我对弈强化学习的核心思想一脉相承，为RL自对弈技术的推广提供了新思路。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "how does AlphaZero use self play reinforcement learning",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}

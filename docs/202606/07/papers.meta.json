@@ -1,0 +1,24 @@
+{
+  "label": "2026-06-07",
+  "date": "2026-06-07",
+  "generated_at": "2026-06-07T20:02:27",
+  "count": 1,
+  "papers": [
+    {
+      "paper_id": "202606/07/2606.01561v1-s-sppo-semantic-calibrated-self-play-preference-optimization",
+      "section": "quick",
+      "title_en": "S-SPPO: Semantic-Calibrated Self-Play Preference Optimization",
+      "authors": "Xiwen Chen, Wenhui Zhu, Jingjing Wang, Peijie Qiu, Zhipeng Wang, Huayu Li, ZhengXiao He, Xuanzhao Dong, Prayag Tiwari, Mingkun Xu, Yujian Xiong, Feng Luo, Abolfazl Razi, Brendan Hogan Rappazzo, Anderson Schneider, Yuriy Nevmyvaka",
+      "date": "2026-06-01",
+      "pdf": "https://arxiv.org/pdf/2606.01561v1",
+      "score": "7.0",
+      "evidence": "类似AlphaZero自我对弈训练的自我对弈偏好优化方法",
+      "tldr": "直接偏好优化(DPO)的Bradley-Terry模型难以处理人类偏好的非传递性，自我对弈偏好优化(SPPO)通过迭代训练自生成胜负对改进，但存在策略退化问题，因为偏好预言机对语义不可区分的响应分配了过度自信的胜率。为此提出S-SPPO，一个双空间语义校准框架：监督校准通过语义门控在语义重叠增加时退火胜率目标至最大熵基线，表示校准通过潜在排斥防止流形塌陷并保持选择与拒绝样本间的潜在多样性。理论证明校准保持常数和博弈结构，促进收敛到纳什均衡。在AlpacaEval 2.0上使用Llama-3-8B达到52.19%胜率和47.46%长度控制胜率，无需额外人工偏好标注。",
+      "tags": "query:alphazero",
+      "abstract_en": "Aligning Large Language Models (LLMs) with human preferences is often formulated via Direct Preference Optimization (DPO). However, the standard Bradley-Terry instantiation of DPO is limited in modeling common departures from transitivity in human preferences. To address this, recent work has introduced Self-Play Preference Optimization (SPPO), which iteratively refines the policy by training on self-generated win-lose pairs. Our investigation, however, reveals a critical instability in SPPO: the optimization is prone to policy degeneration when the preference oracle assigns overly confident wins to semantically indistinguishable responses. To mitigate this, we propose S-SPPO, a dual-space semantic calibration framework comprising: i) Supervision Calibration via semantic gating, which anneals win rate targets toward the maximum-entropy baseline as semantic overlap increases; and ii) Representation Calibration via latent repulsion to enforce geometric diversity to prevent manifold collapse and maintain latent diversity between chosen and rejected samples. Theoretically, we show that the calibration preserves the constant-sum game structure, facilitating convergence to a Nash Equilibrium. Empirically, S-SPPO avoids the performance degradation seen in prior methods, achieving 52.19% win rate and 47.46% length-controlled win rate on AlpacaEval 2.0 with Llama-3-8B, without using additional human-annotated preferences during training. The code will be available at https://github.com/xiwenc1/s-sppo.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}
