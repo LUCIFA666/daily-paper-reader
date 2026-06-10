@@ -1,0 +1,39 @@
+{
+  "label": "2026-06-10",
+  "date": "2026-06-10",
+  "generated_at": "2026-06-10T22:18:49",
+  "count": 2,
+  "papers": [
+    {
+      "paper_id": "202606/10/2606.10389v1-beyond-static-evaluation-co-evolutionary-mechanisms-for-llm-driven-strategy-evolution-in-adversarial-games",
+      "section": "deep",
+      "title_en": "Beyond Static Evaluation: Co-Evolutionary Mechanisms for LLM-Driven Strategy Evolution in Adversarial Games",
+      "authors": "Haoran Li, Zengle Ge, Ziyang Zhang, Xiaomin Yuan, Yui Lo, Qianhui Liu, Bocheng An, Dongke Rong, Jiaqun Liu, Annan Li, Jianmin Wu, Dawei Yin, Dou Shen",
+      "date": "2026-06-09",
+      "pdf": "https://arxiv.org/pdf/2606.10389v1",
+      "score": "8.0",
+      "evidence": "对抗游戏中策略演化的共进化机制",
+      "tldr": "LLM驱动代码进化在对抗游戏中因评估景观动态变化而停滞。提出评估器协同进化、分层深度评估和弱点压力三种机制，在FAMOU框架中实现。在MCTF 2026 3v3任务上，FAMOU综合得分0.526，泛化胜率61.7%，超越基线。消融证实各机制贡献，且进化产生全新战术结构，验证了代码级进化的算法创新与实体转移能力。",
+      "tags": "query:alphazero",
+      "abstract_en": "Recent advances in LLM-driven code evolution have enabled automated discovery by iteratively generating and improving programs. However, applying these methods to adversarial multi-agent games introduces a fundamental challenge: the evaluation landscape shifts as strategies improve, causing fixed evaluators to become unreliable and evolution to stagnate. We propose three mechanisms to address this challenge: evaluator co-evolution, which incorporates discovered champions into the opponent pool; hierarchical deep evaluation, which replaces noisy few-game scores with statistically reliable assessments; and weakness pressure, which dynamically up-weights the most difficult opponents to break through plateaus. We implement these mechanisms within FAMOU, a framework built upon the same foundation-model code-evolution paradigm as OpenEvolve and ShinkaEvolve. On the MCTF 2026 3v3 maritime capture-the-flag task, FAMOU consistently outperforms both baselines under two backbone LLMs, achieving the highest combined score (0.526) and the best generalization to unseen opponents (61.7% win rate), while ablations confirm that each mechanism contributes to performance. Notably, the LLM mutation process generates tactical structures entirely absent from the seed strategies -- including lookahead search and adaptive interception -- demonstrating that code-level evolution can produce nontrivial algorithmic innovations in adversarial settings. The FAMOU-evolved strategy further achieved 1st place in the hardware round-robin and 3rd in simulation at the AAMAS 2026 MCTF Competition, validating its real-world transferability. The optimized implementation and corresponding evaluation codes developed through our evolutionary process are available at: https://github.com/1xiangliu1/FAMOU-CoEvo",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202606/10/2606.10228v1-shapo-sharpness-aware-policy-optimization-for-safe-exploration",
+      "section": "quick",
+      "title_en": "SHAPO: Sharpness-Aware Policy Optimization for Safe Exploration",
+      "authors": "Kaustubh Mani, Yann Pequignot, Vincent Mai, Liam Paull",
+      "date": "2026-06-08",
+      "pdf": "https://arxiv.org/pdf/2606.10228v1",
+      "score": "6.0",
+      "evidence": "锐度感知策略优化用于安全强化学习，可改进AlphaZero",
+      "tldr": "强化学习在安全关键领域部署的前提是安全探索。针对此问题，本文从认知不确定性视角出发，提出锐度感知策略优化（SHAPO），在扰动参数处计算梯度，使策略更新对高不确定性区域保持悲观。该方法隐式重加权策略梯度，放大罕见不安全动作的影响，减少已安全区域的贡献。在多个连续控制任务中，SHAPO在安全性和任务性能上均超越基线，显著拓展了帕累托前沿。该工作为安全探索提供了创新思路。",
+      "tags": "query:alphazero",
+      "abstract_en": "Safe exploration is a prerequisite for deploying reinforcement learning (RL) agents in safety-critical domains. In this paper, we approach safe exploration through the lens of epistemic uncertainty, where the actor's sensitivity to parameter perturbations serves as a practical proxy for regions of high uncertainty. We propose Sharpness-Aware Policy Optimization (SHAPO), a sharpness-aware policy update rule that evaluates gradients at perturbed parameters, making policy updates pessimistic with respect to the actor's epistemic uncertainty. Analytically we show that this adjustment implicitly reweighs policy gradients, amplifying the influence of rare unsafe actions while tempering contributions from already safe ones, thereby biasing learning toward conservative behavior in under-explored regions. Across several continuous-control tasks, our method consistently improves both safety and task performance over existing baselines, significantly expanding their Pareto frontiers.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}
