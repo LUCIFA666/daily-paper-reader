@@ -1,0 +1,24 @@
+{
+  "label": "2026-06-12",
+  "date": "2026-06-12",
+  "generated_at": "2026-06-12T20:53:07",
+  "count": 1,
+  "papers": [
+    {
+      "paper_id": "202606/12/2606.06473v1-mlevolve-a-self-evolving-framework-for-automated-machine-learning-algorithm-discovery",
+      "section": "quick",
+      "title_en": "MLEvolve: A Self-Evolving Framework for Automated Machine Learning Algorithm Discovery",
+      "authors": "Shangheng Du, Xiangchao Yan, Jinxin Shi, Zongsheng Cao, Shiyang Feng, Zichen Liang, Boyuan Sun, Tianshuo Peng, Yifan Zhou, Xin Li, Jie Zhou, Liang He, Bo Zhang, Lei Bai",
+      "date": "2026-06-04",
+      "pdf": "https://arxiv.org/pdf/2606.06473v1",
+      "score": "6.0",
+      "evidence": "使用树搜索和熵引导的自我进化框架用于算法发现，类似AlphaZero的MCTS",
+      "tldr": "现有机器学习工程智能体在长周期任务中存在分支信息隔离、无记忆搜索和缺乏分层控制问题。本文提出MLEvolve，一种基于LLM的自我进化多智能体框架，通过Progressive MCGS实现图边信息流和熵驱动渐进调度，利用回顾记忆结合冷启动知识库与动态全局记忆，并解耦战略规划与代码生成。在MLE-Bench上12小时预算下取得平均奖牌率和有效提交率SOTA，且在数学算法优化任务上超越AlphaEvolve，展示了强跨域泛化能力。",
+      "tags": "query:alphazero",
+      "abstract_en": "Large language model (LLM) agents are increasingly applied to long-horizon tasks such as scientific discovery and machine learning engineering (MLE), where sustained self-evolution becomes a key capability. However, existing MLE agents suffer from inter-branch information isolation, memoryless search, and lack of hierarchical control, which together hinder long-horizon optimization. We present MLEvolve, an LLM-based self-evolving multi-agent framework for end-to-end machine learning algorithm discovery. By extending tree search to Progressive MCGS, MLEvolve enables cross-branch information flow through graph-based reference edges and gradually shifts the search from broad exploration to focused exploitation with an entropy-inspired progressive schedule. To allow the agent to evolve with accumulated experience, we introduce Retrospective Memory, which combines a cold-start domain knowledge base with a dynamic global memory for task-specific experience retrieval and reuse. For stable long-horizon iteration, we further decouple strategic planning from code generation with adaptive coding modes. Evaluation on MLE-Bench shows that MLEvolve achieves state-of-the-art performance across multiple dimensions including average medal rate and valid submission rate under a 12-hour budget (half the standard runtime). Moreover, MLEvolve also outperforms specialized algorithm discovery methods including AlphaEvolve on mathematical algorithm optimization tasks, demonstrating strong cross-domain generalization. Our code is available at https://github.com/InternScience/MLEvolve.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}

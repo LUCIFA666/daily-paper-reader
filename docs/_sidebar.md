@@ -1,6 +1,9 @@
 * <a class="dpr-sidebar-root-link" href="#/">首页</a>
 * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="javascript:void(0)" data-dpr-hash="#/tutorial/README">使用教程</a>
 * Daily Papers
+  * 2026-06-12 <!--dpr-date:20260612-->
+    * 速读区
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202606/12/2606.06473v1-mlevolve-a-self-evolving-framework-for-automated-machine-learning-algorithm-discovery" data-sidebar-item="{&quot;title&quot;: &quot;MLEvolve: A Self-Evolving Framework for Automated Machine Learning Algorithm Discovery&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2606.06473v1-mlevolve-a-self-evolving-framework-for-automated-machine-learning-algorithm-discovery&quot;, &quot;score&quot;: &quot;6.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;使用树搜索和熵引导的自我进化框架用于算法发现，类似AlphaZero的MCTS&quot;}">MLEvolve: A Self-Evolving Framework for Automated Machine Learning Algorithm Discovery</a>
   * 2026-06-10 <!--dpr-date:20260610-->
     * 精读区
       * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202606/10/2606.10389v1-beyond-static-evaluation-co-evolutionary-mechanisms-for-llm-driven-strategy-evolution-in-adversarial-games" data-sidebar-item="{&quot;title&quot;: &quot;Beyond Static Evaluation: Co-Evolutionary Mechanisms for LLM-Driven Strategy Evolution in Adversarial Games&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2606.10389v1-beyond-static-evaluation-co-evolutionary-mechanisms-for-llm-driven-strategy-evolution-in-adversarial-games&quot;, &quot;score&quot;: &quot;8.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;对抗游戏中策略演化的共进化机制&quot;}">Beyond Static Evaluation: Co-Evolutionary Mechanisms for LLM-Driven Strategy Evolution in Adversarial Games</a>
