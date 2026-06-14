@@ -1,0 +1,99 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-14T21:15:21.017474+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 2,
+    "quick_skim_target": 11,
+    "quick_selected": 2
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2606.09961v1",
+      "source": "arxiv",
+      "title": "3SPO: State-Score-Supervised Policy Optimization for LLM Agents",
+      "abstract": "Training large language models (LLMs) as autonomous agents via reinforcement learning (RL) has enabled frontier models to achieve superhuman performance in long-horizon tasks. However, existing RL algorithms operate at the trajectory level, performing policy optimization only after collecting complete episode rollouts. This coarse-grained approach faces fundamental challenges in multi-turn agent settings where rewards are sparse, delayed, and credit assignment across individual steps is critical. In this work, we propose \\textbf{State-Score-Supervised Policy Optimization (3SPO)}, a novel RL algorithm that performs post-step policy optimization with dynamic state score supervision. At each step, 3SPO computes the state score based on historical success rates, supervising step-wise credit assignment, adaptive rollout and post-step policy optimization without requiring value function estimation or additional auxiliary models. Theoretically, under a per-state bandit abstraction, we show that the proposed score-supervised allocation mechanism achieves logarithmic allocation regret and provide sample-complexity guarantees for action identification, score distinguishability, and filtering stability. Experiments on ALFWorld and WebShop with Qwen2.5-1.5B/7B-Instruct show that 3SPO consistently outperforms GRPO by $+22.6\\%$ on ALFWorld and $+15.6$ points on WebShop, while using comparable resources to achieve $2.4\\times$ more state exploration and $1.8\\times$ faster convergence. Code is available at https://github.com/genalyu/3SPO.",
+      "authors": [
+        "Yu Han",
+        "Kailing Li",
+        "Yang Jiao",
+        "Yulin Dai",
+        "Yuqian Fu",
+        "Linhai Zhuo",
+        "Tianwen Qian"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-06-08T14:26:05+00:00",
+      "link": "https://arxiv.org/pdf/2606.09961v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "proposes a new RL policy optimization algorithm that could be considered an improvement over standard methods",
+      "llm_evidence_cn": "提出新的强化学习策略优化算法，可视为对现有RL方法的改进",
+      "llm_evidence": "提出新的强化学习策略优化算法，可视为对现有RL方法的改进",
+      "canonical_evidence": "提出新的强化学习策略优化算法，可视为对现有RL方法的改进",
+      "llm_tldr_en": "3SPO is a novel RL algorithm for LLM agents performing step-level optimization; methodologically related to AlphaZero's policy improvement",
+      "llm_tldr_cn": "针对多轮对话环境中奖励稀疏和信用分配难题，该论文提出状态分数监督的策略优化算法3SPO，在每一步进行细粒度优化。虽然应用于语言模型代理，但其策略优化思想可迁移至AlphaZero等自我对弈强化学习框架，属于方法论层面的关联。",
+      "llm_tldr": "针对多轮对话环境中奖励稀疏和信用分配难题，该论文提出状态分数监督的策略优化算法3SPO，在每一步进行细粒度优化。虽然应用于语言模型代理，但其策略优化思想可迁移至AlphaZero等自我对弈强化学习框架，属于方法论层面的关联。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "Research papers on AlphaZero algorithm improvements",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2606.11284v1",
+      "source": "arxiv",
+      "title": "Phi-Actor-Critic: Steering General-Sum Games to Pareto-Efficient Correlated Equilibria",
+      "abstract": "Real-world multi-agent systems, from traffic coordination to resource allocation, are often modeled as general-sum games where individual incentives conflict with collective welfare. In these settings, the central challenge is not merely finding an equilibrium, but selecting socially desirable outcomes among many suboptimal Nash equilibria. Standard deep multi-agent reinforcement learning (MARL) methods struggle with this problem, as value-decomposition approaches are constrained by monotonicity assumptions and policy-gradient methods often converge to stable but socially inefficient equilibria. To address this limitation, we propose $Φ$-Actor-Critic ($Φ$-AC), a framework that leverages swap regret minimization to steer learning toward high-welfare correlated equilibria (CE). To make counterfactual regret estimation tractable in deep MARL, $Φ$-AC employs a centralized attention critic that predicts vector-valued regrets in a single forward pass, avoiding computationally expensive counterfactual simulations. We further introduce a Lagrangian-based equilibrium selection mechanism that optimizes social welfare while enforcing stability through regret constraints. Experiments on matrix games, Multi-Agent Particle Environments (MPE), and the Melting Pot Harvest scenario demonstrate that $Φ$-AC learns efficient and stable coordination strategies across diverse mixed-motive settings while maintaining high collective return and competitive fairness.",
+      "authors": [
+        "Wongyu Lee",
+        "Francesco Lelli",
+        "Omran Ayoub",
+        "Massimo Tornatore"
+      ],
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA",
+        "cs.GT",
+        "cs.LG"
+      ],
+      "published": "2026-06-09T16:40:26+00:00",
+      "link": "https://arxiv.org/pdf/2606.11284v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "addresses multi-agent game scenarios and equilibrium selection, conceptually related to AlphaZero's game-playing architecture",
+      "llm_evidence_cn": "研究多智能体博弈场景下的均衡选择，与AlphaZero的游戏架构概念相关",
+      "llm_evidence": "研究多智能体博弈场景下的均衡选择，与AlphaZero的游戏架构概念相关",
+      "canonical_evidence": "研究多智能体博弈场景下的均衡选择，与AlphaZero的游戏架构概念相关",
+      "llm_tldr_en": "Phi-Actor-Critic steers multi-agent general-sum games to efficient equilibria; shares game-theoretic foundations with AlphaZero",
+      "llm_tldr_cn": "在多智能体一般和博弈中，标准方法常收敛于低效纳什均衡。该论文提出Phi-Actor-Critic框架，通过交换遗憾最小化引导学习走向帕累托高效的相关均衡。尽管面向多智能体设定，其博弈论和强化学习基础与AlphaZero解决棋盘游戏问题的方法论存在交叉，可视为AlphaZero架构在多智能体场景的扩展思路。",
+      "llm_tldr": "在多智能体一般和博弈中，标准方法常收敛于低效纳什均衡。该论文提出Phi-Actor-Critic框架，通过交换遗憾最小化引导学习走向帕累托高效的相关均衡。尽管面向多智能体设定，其博弈论和强化学习基础与AlphaZero解决棋盘游戏问题的方法论存在交叉，可视为AlphaZero架构在多智能体场景的扩展思路。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "variants and extensions of the AlphaZero architecture for different games",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}
