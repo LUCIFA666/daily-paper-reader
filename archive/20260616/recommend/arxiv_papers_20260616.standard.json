@@ -1,0 +1,97 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-16T22:28:28.107487+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 1,
+    "deep_cap": 6,
+    "deep_selected": 1,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [
+    {
+      "id": "2606.15301v1",
+      "source": "arxiv",
+      "title": "Discovering Lattice Reduction Strategies via Self-Play",
+      "abstract": "The Lenstra-Lenstra-Lovász (LLL) algorithm is a seminal contribution to computer science used for lattice basis reduction, yet its polynomial-time outputs produce bases that are far from optimal as the dimension grows. We show that deep reinforcement learning can discover strictly superior, generalizable reduction strategies by interacting with the primitive action space of LLL. We formulate lattice reduction as a single-player Markov Decision Process (MDP) and train a deep residual network using an AlphaZero-style self-play pipeline augmented with adaptive-horizon MCTS (Monte Carlo Tree Search), which couples multi-step network predictions with an entropy-gated expansion mechanism. The resulting policy, DeltaStar, is trained exclusively on small $8$-dimensional $q$-ary lattices and requires fewer primitive row operations than LLL. Crucially, it generalizes zero-shot to unseen moduli and higher dimensions up to $n=32$ without retraining.",
+      "authors": [
+        "Mohamed Malhou",
+        "Kristin Lauter",
+        "Ludovic Perret"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-06-13T13:48:05+00:00",
+      "link": "https://arxiv.org/pdf/2606.15301v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "AlphaZero-style self-play for lattice reduction",
+      "llm_evidence_cn": "将AlphaZero风格自我对弈用于格基约简",
+      "llm_evidence": "将AlphaZero风格自我对弈用于格基约简",
+      "canonical_evidence": "将AlphaZero风格自我对弈用于格基约简",
+      "llm_tldr_en": "This paper applies an AlphaZero-style self-play framework with Monte Carlo Tree Search to discover superior lattice reduction strategies, demonstrating that deep RL can generalize beyond board games to mathematical optimization problems.",
+      "llm_tldr_cn": "针对LLL算法在高维时输出次优基的问题，论文将格基约简形式化为单智能体马尔可夫决策过程，采用AlphaZero式的自我对弈流水线，结合自适应视野的蒙特卡洛树搜索，训练深度残差网络。实验表明该策略在8维q-ary格上显著优于LLL，并具有良好的可泛化性，展示了深度强化学习在数学优化领域的潜力。",
+      "llm_tldr": "针对LLL算法在高维时输出次优基的问题，论文将格基约简形式化为单智能体马尔可夫决策过程，采用AlphaZero式的自我对弈流水线，结合自适应视野的蒙特卡洛树搜索，训练深度残差网络。实验表明该策略在8维q-ary格上显著优于LLL，并具有良好的可泛化性，展示了深度强化学习在数学优化领域的潜力。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "AlphaZero applications beyond board games",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2606.12563v1",
+      "source": "arxiv",
+      "title": "Arbor: Tree Search as a Cognition Layer for Autonomous Agents",
+      "abstract": "Arbor is a multi-agent framework that introduces structured tree search as a cognition layer for autonomous agents operating in large, stateful action spaces. Prior autonomous optimization systems operate on isolated targets with stateless evaluation. Arbor instead maintains an explicit search tree of scored hypotheses that serves as the shared working memory across agents, evolving with every measurement, treating failures as diagnostic signal that reshapes subsequent exploration, and expanding as prior successes shift the bottleneck distribution.   We validate Arbor on full-stack LLM inference optimization, a domain where achieving peak performance has historically required coordinated effort from engineering teams across the application, framework, compiler, kernel, and hardware stack. Arbor pairs an Orchestrator agent, which drives optimization by delegating to Domain Specialists across the inference stack, with a Critic agent that safeguards stability through root-cause analysis, introspection, and measurement validation -- a checks-and-balances architecture where neither agent can unilaterally drive the system. Agent capabilities are decomposed into hard skills (domain expertise) and soft skills (coordination protocols that determine how contributions compose), enabling fully autonomous multi-day campaigns. Arbor achieves up to 193% inference throughput-latency Pareto improvement over vendor-optimized baselines, while a single agent without the harness plateaus at +33% throughput improvement and crashes irrecoverably within hours. Arbor generalizes to multiple generations of hardware platform, and run-to-run variance is within 2 percentage points demonstrating that the method is hardware-agnostic and reproducible.",
+      "authors": [
+        "Neha Prakriya",
+        "Chaojun Hou",
+        "Zheng Gong",
+        "Huasha Zhao",
+        "Xi Zhao",
+        "Mou Li",
+        "Zhenyu Gu",
+        "Emad Barsoum"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-06-10T18:14:56+00:00",
+      "link": "https://arxiv.org/pdf/2606.12563v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "Tree search framework conceptually similar to MCTS in AlphaZero",
+      "llm_evidence_cn": "树搜索框架与AlphaZero中的蒙特卡洛树搜索概念相似",
+      "llm_evidence": "树搜索框架与AlphaZero中的蒙特卡洛树搜索概念相似",
+      "canonical_evidence": "树搜索框架与AlphaZero中的蒙特卡洛树搜索概念相似",
+      "llm_tldr_en": "Arbor introduces structured tree search as a cognition layer for autonomous agents, sharing core ideas with AlphaZero's MCTS approach for sequential decision-making.",
+      "llm_tldr_cn": "自主代理在复杂状态空间中面临决策挑战，现有系统对失败信号利用不足。本文提出Arbor框架，将结构化树搜索作为认知层，维护显式搜索树作为智能体共享工作记忆，利用失败信号引导后续探索。在LLM推理优化任务上验证了有效性。该工作与AlphaZero的蒙特卡洛树搜索思想高度相通，为AlphaZero架构的变体和扩展提供了可迁移的方法论参考。",
+      "llm_tldr": "自主代理在复杂状态空间中面临决策挑战，现有系统对失败信号利用不足。本文提出Arbor框架，将结构化树搜索作为认知层，维护显式搜索树作为智能体共享工作记忆，利用失败信号引导后续探索。在LLM推理优化任务上验证了有效性。该工作与AlphaZero的蒙特卡洛树搜索思想高度相通，为AlphaZero架构的变体和扩展提供了可迁移的方法论参考。",
+      "llm_tags": [
+        "query:alphazero:composite"
+      ],
+      "matched_query_tag": "query:alphazero:composite",
+      "matched_query_text": "Papers central to 阿尔法零：一种通过自我对弈和强化学习掌握棋类游戏的人工智能程序；alphazero衍生, especially work that connects or combines: AlphaZero artificial intelligence program; variants and extensions of the AlphaZero architecture for different games; how does AlphaZero use self play reinforcement learning; implementation of AlphaZero algorithm; Research papers on AlphaZero algorithm improvements; AlphaZero applications beyond board games.",
+      "matched_requirement_id": "req-composite-alphazero",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

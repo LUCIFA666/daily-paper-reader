@@ -1,6 +1,11 @@
 * <a class="dpr-sidebar-root-link" href="#/">首页</a>
 * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="javascript:void(0)" data-dpr-hash="#/tutorial/README">使用教程</a>
 * Daily Papers
+  * 2026-06-16 <!--dpr-date:20260616-->
+    * 精读区
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202606/16/2606.15301v1-discovering-lattice-reduction-strategies-via-self-play" data-sidebar-item="{&quot;title&quot;: &quot;Discovering Lattice Reduction Strategies via Self-Play&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2606.15301v1-discovering-lattice-reduction-strategies-via-self-play&quot;, &quot;score&quot;: &quot;9.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;将AlphaZero风格自我对弈用于格基约简&quot;}">Discovering Lattice Reduction Strategies via Self-Play</a>
+    * 速读区
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202606/16/2606.12563v1-arbor-tree-search-as-a-cognition-layer-for-autonomous-agents" data-sidebar-item="{&quot;title&quot;: &quot;Arbor: Tree Search as a Cognition Layer for Autonomous Agents&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2606.12563v1-arbor-tree-search-as-a-cognition-layer-for-autonomous-agents&quot;, &quot;score&quot;: &quot;6.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;树搜索框架与AlphaZero中的蒙特卡洛树搜索概念相似&quot;}">Arbor: Tree Search as a Cognition Layer for Autonomous Agents</a>
   * 2026-06-14 <!--dpr-date:20260614-->
     * 速读区
       * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202606/14/2606.09961v1-3spo-state-score-supervised-policy-optimization-for-llm-agents" data-sidebar-item="{&quot;title&quot;: &quot;3SPO: State-Score-Supervised Policy Optimization for LLM Agents&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2606.09961v1-3spo-state-score-supervised-policy-optimization-for-llm-agents&quot;, &quot;score&quot;: &quot;6.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;提出新的强化学习策略优化算法，可视为对现有RL方法的改进&quot;}">3SPO: State-Score-Supervised Policy Optimization for LLM Agents</a>

@@ -1,0 +1,39 @@
+{
+  "label": "2026-06-16",
+  "date": "2026-06-16",
+  "generated_at": "2026-06-16T22:30:46",
+  "count": 2,
+  "papers": [
+    {
+      "paper_id": "202606/16/2606.15301v1-discovering-lattice-reduction-strategies-via-self-play",
+      "section": "deep",
+      "title_en": "Discovering Lattice Reduction Strategies via Self-Play",
+      "authors": "Mohamed Malhou, Kristin Lauter, Ludovic Perret",
+      "date": "2026-06-13",
+      "pdf": "https://arxiv.org/pdf/2606.15301v1",
+      "score": "9.0",
+      "evidence": "将AlphaZero风格自我对弈用于格基约简",
+      "tldr": "LLL算法在高维格约简中解质量差，本文用AlphaZero风格的自我对弈在LLL原始动作空间中训练深度残差网络，发现更优策略DeltaStar。仅在小维格上训练，DeltaStar用更少操作获得更好基，零样本泛化至32维。该工作展示了强化学习自动发现格约简策略的潜力。",
+      "tags": "query:alphazero",
+      "abstract_en": "The Lenstra-Lenstra-Lovász (LLL) algorithm is a seminal contribution to computer science used for lattice basis reduction, yet its polynomial-time outputs produce bases that are far from optimal as the dimension grows. We show that deep reinforcement learning can discover strictly superior, generalizable reduction strategies by interacting with the primitive action space of LLL. We formulate lattice reduction as a single-player Markov Decision Process (MDP) and train a deep residual network using an AlphaZero-style self-play pipeline augmented with adaptive-horizon MCTS (Monte Carlo Tree Search), which couples multi-step network predictions with an entropy-gated expansion mechanism. The resulting policy, DeltaStar, is trained exclusively on small $8$-dimensional $q$-ary lattices and requires fewer primitive row operations than LLL. Crucially, it generalizes zero-shot to unseen moduli and higher dimensions up to $n=32$ without retraining.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202606/16/2606.12563v1-arbor-tree-search-as-a-cognition-layer-for-autonomous-agents",
+      "section": "quick",
+      "title_en": "Arbor: Tree Search as a Cognition Layer for Autonomous Agents",
+      "authors": "Neha Prakriya, Chaojun Hou, Zheng Gong, Huasha Zhao, Xi Zhao, Mou Li, Zhenyu Gu, Emad Barsoum",
+      "date": "2026-06-10",
+      "pdf": "https://arxiv.org/pdf/2606.12563v1",
+      "score": "6.0",
+      "evidence": "树搜索框架与AlphaZero中的蒙特卡洛树搜索概念相似",
+      "tldr": "现有自主优化系统在孤立目标上操作，缺乏状态记忆和协作，导致性能瓶颈和崩溃。Arbor提出多智能体框架，引入结构化树搜索作为认知层，维护一个显式搜索树作为共享工作记忆，由Orchestrator和Critic智能体分工协作。在LLM推理优化上，实现高达193%的吞吐量-延迟帕累托改进，而单智能体仅+33%且崩溃。方法硬件无关、可重现，支持多天自主优化。",
+      "tags": "query:alphazero",
+      "abstract_en": "Arbor is a multi-agent framework that introduces structured tree search as a cognition layer for autonomous agents operating in large, stateful action spaces. Prior autonomous optimization systems operate on isolated targets with stateless evaluation. Arbor instead maintains an explicit search tree of scored hypotheses that serves as the shared working memory across agents, evolving with every measurement, treating failures as diagnostic signal that reshapes subsequent exploration, and expanding as prior successes shift the bottleneck distribution.   We validate Arbor on full-stack LLM inference optimization, a domain where achieving peak performance has historically required coordinated effort from engineering teams across the application, framework, compiler, kernel, and hardware stack. Arbor pairs an Orchestrator agent, which drives optimization by delegating to Domain Specialists across the inference stack, with a Critic agent that safeguards stability through root-cause analysis, introspection, and measurement validation -- a checks-and-balances architecture where neither agent can unilaterally drive the system. Agent capabilities are decomposed into hard skills (domain expertise) and soft skills (coordination protocols that determine how contributions compose), enabling fully autonomous multi-day campaigns. Arbor achieves up to 193% inference throughput-latency Pareto improvement over vendor-optimized baselines, while a single agent without the harness plateaus at +33% throughput improvement and crashes irrecoverably within hours. Arbor generalizes to multiple generations of hardware platform, and run-to-run variance is within 2 percentage points demonstrating that the method is hardware-agnostic and reproducible.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}
