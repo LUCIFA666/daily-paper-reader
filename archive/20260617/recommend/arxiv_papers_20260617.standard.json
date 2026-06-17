@@ -1,0 +1,65 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-17T20:55:20.149494+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "biorxiv-10-64898-2026-06-07-730716-v1",
+      "source": "biorxiv",
+      "title": "Combinatorial docking and molecular generation to navigate over 100-billion molecules for prospective ligand discovery",
+      "abstract": "Commercially available make-on-demand libraries now exceed 100 billion compounds, requiring over 50 years to screen on 2,000 CPU cores using conventional docking. We present two complementary approaches to address this challenge. CombiDOCK, a combinatorial docking framework, enables exhaustive screening at the 100-billion scale within 40 days. MINT-Dock, a generative framework, accelerates navigation of this space by integrating CombiDOCK with Monte Carlo Tree Search. Benchmarked on 46 diverse targets, CombiDOCK matched full-molecule docking accuracy, and MINT-Dock achieved a 4,800-fold enrichment over random selection. Compared with prior billion-scale brute-force campaigns against {sigma}2, VMAT2, and VAChT, prospective CombiDOCK screens of the 100-billion-molecule library yielded higher hit rates and more potent ligands, while MINT-Dock achieved comparable outcomes across single- and multi-target objectives with >20-fold computational cost reductions. Docking-predicted poses of the best VAChT-binding compounds were confirmed by cryo-EM structures. These methods provide exhaustive and generative paths for navigating the trillion-molecule frontier of drug discovery.",
+      "authors": [
+        "Zhang, J.",
+        "Yang, C.",
+        "Zhang, Y.",
+        "Chen, X.",
+        "Lam, B.",
+        "Bryant, C.",
+        "Pidathala, S.",
+        "Wang, Y.",
+        "Moroz, Y.",
+        "Radchenko, D.",
+        "Alon, A.",
+        "Lee, C.-H.",
+        "Zhang, Z.",
+        "Lyu, J."
+      ],
+      "primary_category": "bioinformatics",
+      "categories": [
+        "bioinformatics"
+      ],
+      "published": "2026-06-11T00:00:00+00:00",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.06.07.730716v1.full.pdf",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "Monte Carlo Tree Search for molecular generation in drug discovery",
+      "llm_evidence_cn": "蒙特卡洛树搜索在药物发现分子生成中的应用",
+      "llm_evidence": "蒙特卡洛树搜索在药物发现分子生成中的应用",
+      "canonical_evidence": "蒙特卡洛树搜索在药物发现分子生成中的应用",
+      "llm_tldr_en": "This paper combines combinatorial docking with Monte Carlo Tree Search to navigate a 100-billion molecule library for ligand discovery, demonstrating the transferability of a core AlphaZero technique beyond games.",
+      "llm_tldr_cn": "药物发现领域面临百亿级化合物库的筛选挑战。本文提出组合对接框架CombiDOCK和生成式框架MINT-Dock，其中MINT-Dock将蒙特卡洛树搜索与对接结合，实现了4800倍于随机选择的富集效率。该工作展示了作为AlphaZero核心算法的蒙特卡洛树搜索在药物发现中的迁移应用潜力。",
+      "llm_tldr": "药物发现领域面临百亿级化合物库的筛选挑战。本文提出组合对接框架CombiDOCK和生成式框架MINT-Dock，其中MINT-Dock将蒙特卡洛树搜索与对接结合，实现了4800倍于随机选择的富集效率。该工作展示了作为AlphaZero核心算法的蒙特卡洛树搜索在药物发现中的迁移应用潜力。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "AlphaZero applications beyond board games",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

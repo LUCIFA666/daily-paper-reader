@@ -1,6 +1,9 @@
 * <a class="dpr-sidebar-root-link" href="#/">首页</a>
 * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="javascript:void(0)" data-dpr-hash="#/tutorial/README">使用教程</a>
 * Daily Papers
+  * 2026-06-17 <!--dpr-date:20260617-->
+    * 速读区
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202606/17/biorxiv-10-64898-2026-06-07-730716-v1-combinatorial-docking-and-molecular-generation-to-navigate-over-100-billion-molecules-for-prospective-ligand-discovery" data-sidebar-item="{&quot;title&quot;: &quot;Combinatorial docking and molecular generation to navigate over 100-billion molecules for prospective ligand discovery&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/biorxiv-10-64898-2026-06-07-730716-v1-combinatorial-docking-and-molecular-generation-to-navigate-over-100-billion-molecules-for-prospective-ligand-discovery&quot;, &quot;score&quot;: &quot;6.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;蒙特卡洛树搜索在药物发现分子生成中的应用&quot;}">Combinatorial docking and molecular generation to navigate over 100-billion molecules for prospective ligand discovery</a>
   * 2026-06-16 <!--dpr-date:20260616-->
     * 精读区
       * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202606/16/2606.15301v1-discovering-lattice-reduction-strategies-via-self-play" data-sidebar-item="{&quot;title&quot;: &quot;Discovering Lattice Reduction Strategies via Self-Play&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2606.15301v1-discovering-lattice-reduction-strategies-via-self-play&quot;, &quot;score&quot;: &quot;9.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;将AlphaZero风格自我对弈用于格基约简&quot;}">Discovering Lattice Reduction Strategies via Self-Play</a>
