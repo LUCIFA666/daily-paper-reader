@@ -1,0 +1,24 @@
+{
+  "label": "2026-06-18",
+  "date": "2026-06-18",
+  "generated_at": "2026-06-18T22:19:59",
+  "count": 1,
+  "papers": [
+    {
+      "paper_id": "202606/18/2606.12563v1-arbor-tree-search-as-a-cognition-layer-for-autonomous-agents",
+      "section": "quick",
+      "title_en": "Arbor: Tree Search as a Cognition Layer for Autonomous Agents",
+      "authors": "Neha Prakriya, Chaojun Hou, Zheng Gong, Huasha Zhao, Xi Zhao, Mou Li, Zhenyu Gu, Emad Barsoum",
+      "date": "2026-06-10",
+      "pdf": "https://arxiv.org/pdf/2606.12563v1",
+      "score": "7.0",
+      "evidence": "树搜索作为认知层，与AlphaZero的蒙特卡洛树搜索方法一致",
+      "tldr": "现有自主优化系统针对孤立目标且无状态评估，难以应对大状态空间。Arbor提出结构化树搜索作为认知层，通过显式搜索树共享工作记忆，多智能体分工协作（Orchestrator与Critic制衡），分解硬技能与软技能。在全栈LLM推理优化中，取得最高193%的吞吐量-延迟帕累托改进，而单智能体仅+33%且崩溃。该框架硬件无关、可复现，为自主优化提供了鲁棒可扩展的范式。",
+      "tags": "query:alphazero",
+      "abstract_en": "Arbor is a multi-agent framework that introduces structured tree search as a cognition layer for autonomous agents operating in large, stateful action spaces. Prior autonomous optimization systems operate on isolated targets with stateless evaluation. Arbor instead maintains an explicit search tree of scored hypotheses that serves as the shared working memory across agents, evolving with every measurement, treating failures as diagnostic signal that reshapes subsequent exploration, and expanding as prior successes shift the bottleneck distribution.   We validate Arbor on full-stack LLM inference optimization, a domain where achieving peak performance has historically required coordinated effort from engineering teams across the application, framework, compiler, kernel, and hardware stack. Arbor pairs an Orchestrator agent, which drives optimization by delegating to Domain Specialists across the inference stack, with a Critic agent that safeguards stability through root-cause analysis, introspection, and measurement validation -- a checks-and-balances architecture where neither agent can unilaterally drive the system. Agent capabilities are decomposed into hard skills (domain expertise) and soft skills (coordination protocols that determine how contributions compose), enabling fully autonomous multi-day campaigns. Arbor achieves up to 193% inference throughput-latency Pareto improvement over vendor-optimized baselines, while a single agent without the harness plateaus at +33% throughput improvement and crashes irrecoverably within hours. Arbor generalizes to multiple generations of hardware platform, and run-to-run variance is within 2 percentage points demonstrating that the method is hardware-agnostic and reproducible.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}

@@ -6,26 +6,28 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-06-17
-- 运行时间：2026-06-17 20:55:46 UTC
+- 最新运行日期：2026-06-18
+- 运行时间：2026-06-18 22:19:53 UTC
 - 运行状态：成功
 - 本次总论文数：1
 - 精读区：0
 - 速读区：1
 
 ### 今日简报（AI）
-1) 今日速读一篇关于组合对接与分子生成的开源研究，覆盖超千亿分子空间以加速新配体发现。  
-2) 亮点在于结合计算筛选与生成模型，可大幅缩小候选分子范围，适合药物先导物发现方向。  
-3) 建议关注该方法的在线工具或代码，尝试在已知靶点上复现小规模验证，体验效率提升。
-- 详情：[/202606/17/README](/202606/17/README)
+今日速读一篇论文，聚焦树搜索作为自主智能体的认知层。
+
+值得关注方向：将树搜索融入智能体决策框架，可能显著提升其推理与规划能力。
+
+建议后续可深入比较该方法与传统强化学习或规划算法的结合效果。
+- 详情：[/202606/18/README](/202606/18/README)
 
 ### 精读区论文标签
 - 本次无精读推荐。
 
 ### 速读区论文标签
-1. [Combinatorial docking and molecular generation to navigate over 100-billion molecules for prospective ligand discovery](/202606/17/biorxiv-10-64898-2026-06-07-730716-v1-combinatorial-docking-and-molecular-generation-to-navigate-over-100-billion-molecules-for-prospective-ligand-discovery)  
-   标签：评分：6.0/10、query:alphazero
-   evidence：蒙特卡洛树搜索在药物发现分子生成中的应用
+1. [Arbor: Tree Search as a Cognition Layer for Autonomous Agents](/202606/18/2606.12563v1-arbor-tree-search-as-a-cognition-layer-for-autonomous-agents)  
+   标签：评分：7.0/10、query:alphazero
+   evidence：树搜索作为认知层，与AlphaZero的蒙特卡洛树搜索方法一致
 
 
 <div class="dpr-home-promo-card">

@@ -1,0 +1,59 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-18T22:19:41.795681+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2606.12563v1",
+      "source": "arxiv",
+      "title": "Arbor: Tree Search as a Cognition Layer for Autonomous Agents",
+      "abstract": "Arbor is a multi-agent framework that introduces structured tree search as a cognition layer for autonomous agents operating in large, stateful action spaces. Prior autonomous optimization systems operate on isolated targets with stateless evaluation. Arbor instead maintains an explicit search tree of scored hypotheses that serves as the shared working memory across agents, evolving with every measurement, treating failures as diagnostic signal that reshapes subsequent exploration, and expanding as prior successes shift the bottleneck distribution.   We validate Arbor on full-stack LLM inference optimization, a domain where achieving peak performance has historically required coordinated effort from engineering teams across the application, framework, compiler, kernel, and hardware stack. Arbor pairs an Orchestrator agent, which drives optimization by delegating to Domain Specialists across the inference stack, with a Critic agent that safeguards stability through root-cause analysis, introspection, and measurement validation -- a checks-and-balances architecture where neither agent can unilaterally drive the system. Agent capabilities are decomposed into hard skills (domain expertise) and soft skills (coordination protocols that determine how contributions compose), enabling fully autonomous multi-day campaigns. Arbor achieves up to 193% inference throughput-latency Pareto improvement over vendor-optimized baselines, while a single agent without the harness plateaus at +33% throughput improvement and crashes irrecoverably within hours. Arbor generalizes to multiple generations of hardware platform, and run-to-run variance is within 2 percentage points demonstrating that the method is hardware-agnostic and reproducible.",
+      "authors": [
+        "Neha Prakriya",
+        "Chaojun Hou",
+        "Zheng Gong",
+        "Huasha Zhao",
+        "Xi Zhao",
+        "Mou Li",
+        "Zhenyu Gu",
+        "Emad Barsoum"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-06-10T18:14:56+00:00",
+      "link": "https://arxiv.org/pdf/2606.12563v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "tree search as cognition layer aligns with AlphaZero's MCTS",
+      "llm_evidence_cn": "树搜索作为认知层，与AlphaZero的蒙特卡洛树搜索方法一致",
+      "llm_evidence": "树搜索作为认知层，与AlphaZero的蒙特卡洛树搜索方法一致",
+      "canonical_evidence": "树搜索作为认知层，与AlphaZero的蒙特卡洛树搜索方法一致",
+      "llm_tldr_en": "Arbor introduces structured tree search as a cognition layer for autonomous agents, similar to AlphaZero's Monte Carlo Tree Search, enabling coordinated exploration in large action spaces and validated on LLM inference optimization.",
+      "llm_tldr_cn": "现有自主优化系统在孤立目标上进行无状态评估，难以应对复杂状态空间。Arbor提出将结构化树搜索作为多智能体共享认知层，维护一个由评分假设构成的显式搜索树，随测量结果不断演化。该方法在全栈LLM推理优化任务上验证有效，能自动协调探索并提升性能。Arbor展示了树搜索作为通用认知层的潜力，可迁移至类似AlphaZero的决策问题。",
+      "llm_tldr": "现有自主优化系统在孤立目标上进行无状态评估，难以应对复杂状态空间。Arbor提出将结构化树搜索作为多智能体共享认知层，维护一个由评分假设构成的显式搜索树，随测量结果不断演化。该方法在全栈LLM推理优化任务上验证有效，能自动协调探索并提升性能。Arbor展示了树搜索作为通用认知层的潜力，可迁移至类似AlphaZero的决策问题。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "variants and extensions of the AlphaZero architecture for different games",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}

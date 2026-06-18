@@ -1,6 +1,9 @@
 * <a class="dpr-sidebar-root-link" href="#/">首页</a>
 * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="javascript:void(0)" data-dpr-hash="#/tutorial/README">使用教程</a>
 * Daily Papers
+  * 2026-06-18 <!--dpr-date:20260618-->
+    * 速读区
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202606/18/2606.12563v1-arbor-tree-search-as-a-cognition-layer-for-autonomous-agents" data-sidebar-item="{&quot;title&quot;: &quot;Arbor: Tree Search as a Cognition Layer for Autonomous Agents&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2606.12563v1-arbor-tree-search-as-a-cognition-layer-for-autonomous-agents&quot;, &quot;score&quot;: &quot;7.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;树搜索作为认知层，与AlphaZero的蒙特卡洛树搜索方法一致&quot;}">Arbor: Tree Search as a Cognition Layer for Autonomous Agents</a>
   * 2026-06-17 <!--dpr-date:20260617-->
     * 速读区
       * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202606/17/biorxiv-10-64898-2026-06-07-730716-v1-combinatorial-docking-and-molecular-generation-to-navigate-over-100-billion-molecules-for-prospective-ligand-discovery" data-sidebar-item="{&quot;title&quot;: &quot;Combinatorial docking and molecular generation to navigate over 100-billion molecules for prospective ligand discovery&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/biorxiv-10-64898-2026-06-07-730716-v1-combinatorial-docking-and-molecular-generation-to-navigate-over-100-billion-molecules-for-prospective-ligand-discovery&quot;, &quot;score&quot;: &quot;6.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;蒙特卡洛树搜索在药物发现分子生成中的应用&quot;}">Combinatorial docking and molecular generation to navigate over 100-billion molecules for prospective ligand discovery</a>
