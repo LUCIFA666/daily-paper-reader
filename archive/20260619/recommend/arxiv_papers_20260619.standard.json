@@ -1,0 +1,57 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-19T20:42:32.988821+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2606.19308v1",
+      "source": "arxiv",
+      "title": "Enhancing Decision-Making with Large Language Models through Multi-Agent Fictitious Play",
+      "abstract": "Large language model (LLM)-based multi-agent systems (MAS) have demonstrated great potential in solving tasks with execution complexity, by distributing subtasks across cooperative agents. However, this divide-and-conquer paradigm falls short on decision-making tasks that are also prevalent in the real world. These tasks require simultaneous reasoning from the stances of all involved stakeholders whose decisions are mutually dependent and thus cannot be solved in isolation. We characterize this challenge as stance entanglement, a form of decision complexity distinct from execution complexity. To address it, we propose Multi-Agent Fictitious Play (MAFP), a novel MAS paradigm that represents stakeholder stances as agents and formulates decision-making as an equilibrium-seeking process. Built on the game-theoretic principle of fictitious play, MAFP iteratively updates each agent's decision by best responding to the empirical mixture of other agents' past decisions. This enables agents to expose and address one another's weaknesses, progressively improving decision quality and robustness. We evaluate MAFP on challenging decision-making tasks that test the capability of deciding strategies for competitive scenarios prior to acting. MAFP outperforms both single-round and multi-round baselines on two complementary metrics, tournament strength and robustness, demonstrating its effectiveness in addressing stance entanglement.",
+      "authors": [
+        "Leyang Shen",
+        "Yang Zhang",
+        "Xiaoyan Zhao",
+        "Chun Kai Ling",
+        "Tat-Seng Chua"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.MA"
+      ],
+      "published": "2026-06-17T17:31:06+00:00",
+      "link": "https://arxiv.org/pdf/2606.19308v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "Multi-agent fictitious play as a self-play method for decision-making",
+      "llm_evidence_cn": "多智能体虚构自对弈作为决策中的自我对弈方法",
+      "llm_evidence": "多智能体虚构自对弈作为决策中的自我对弈方法",
+      "canonical_evidence": "多智能体虚构自对弈作为决策中的自我对弈方法",
+      "llm_tldr_en": "Proposes Multi-Agent Fictitious Play (MAFP) to address stance entanglement in LLM-based multi-agent decision-making, using iterative self-play to optimize interdependent strategies.",
+      "llm_tldr_cn": "现有LLM多智能体系统在决策任务中面临立场纠缠问题，即各利益相关者的决策相互依赖，无法通过简单的分工解决。本文提出多智能体虚构自对弈（MAFP）范式，将不同立场表示为智能体，并通过迭代自我博弈优化策略。实验表明，MAFP在复杂决策任务上优于传统方法，有效解决了决策复杂度中的立场纠缠，扩展了LLM多智能体系统的应用场景。",
+      "llm_tldr": "现有LLM多智能体系统在决策任务中面临立场纠缠问题，即各利益相关者的决策相互依赖，无法通过简单的分工解决。本文提出多智能体虚构自对弈（MAFP）范式，将不同立场表示为智能体，并通过迭代自我博弈优化策略。实验表明，MAFP在复杂决策任务上优于传统方法，有效解决了决策复杂度中的立场纠缠，扩展了LLM多智能体系统的应用场景。",
+      "llm_tags": [
+        "query:alphazero:composite"
+      ],
+      "matched_query_tag": "query:alphazero:composite",
+      "matched_query_text": "Papers central to 阿尔法零：一种通过自我对弈和强化学习掌握棋类游戏的人工智能程序；alphazero衍生, especially work that connects or combines: AlphaZero artificial intelligence program; variants and extensions of the AlphaZero architecture for different games; how does AlphaZero use self play reinforcement learning; implementation of AlphaZero algorithm; Research papers on AlphaZero algorithm improvements; AlphaZero applications beyond board games.",
+      "matched_requirement_id": "req-composite-alphazero",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

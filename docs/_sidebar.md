@@ -1,6 +1,9 @@
 * <a class="dpr-sidebar-root-link" href="#/">首页</a>
 * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="javascript:void(0)" data-dpr-hash="#/tutorial/README">使用教程</a>
 * Daily Papers
+  * 2026-06-19 <!--dpr-date:20260619-->
+    * 速读区
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202606/19/2606.19308v1-enhancing-decision-making-with-large-language-models-through-multi-agent-fictitious-play" data-sidebar-item="{&quot;title&quot;: &quot;Enhancing Decision-Making with Large Language Models through Multi-Agent Fictitious Play&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2606.19308v1-enhancing-decision-making-with-large-language-models-through-multi-agent-fictitious-play&quot;, &quot;score&quot;: &quot;6.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;多智能体虚构自对弈作为决策中的自我对弈方法&quot;}">Enhancing Decision-Making with Large Language Models through Multi-Agent Fictitious Play</a>
   * 2026-06-18 <!--dpr-date:20260618-->
     * 速读区
       * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202606/18/2606.12563v1-arbor-tree-search-as-a-cognition-layer-for-autonomous-agents" data-sidebar-item="{&quot;title&quot;: &quot;Arbor: Tree Search as a Cognition Layer for Autonomous Agents&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2606.12563v1-arbor-tree-search-as-a-cognition-layer-for-autonomous-agents&quot;, &quot;score&quot;: &quot;7.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;树搜索作为认知层，与AlphaZero的蒙特卡洛树搜索方法一致&quot;}">Arbor: Tree Search as a Cognition Layer for Autonomous Agents</a>

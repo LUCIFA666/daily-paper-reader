@@ -6,28 +6,28 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-06-18
-- 运行时间：2026-06-18 22:19:53 UTC
+- 最新运行日期：2026-06-19
+- 运行时间：2026-06-19 20:43:20 UTC
 - 运行状态：成功
 - 本次总论文数：1
 - 精读区：0
 - 速读区：1
 
 ### 今日简报（AI）
-今日速读一篇论文，聚焦树搜索作为自主智能体的认知层。
+今日共速读1篇论文，关注多智能体虚构博弈对大语言模型决策能力的增强。
 
-值得关注方向：将树搜索融入智能体决策框架，可能显著提升其推理与规划能力。
+值得关注的是，该研究通过多智能体交互模拟，探索了提升LLM在复杂决策场景中表现的方法。
 
-建议后续可深入比较该方法与传统强化学习或规划算法的结合效果。
-- 详情：[/202606/18/README](/202606/18/README)
+建议感兴趣者可进一步了解虚构博弈框架如何结合角色分工与迭代策略，以优化模型的协作与推理能力。
+- 详情：[/202606/19/README](/202606/19/README)
 
 ### 精读区论文标签
 - 本次无精读推荐。
 
 ### 速读区论文标签
-1. [Arbor: Tree Search as a Cognition Layer for Autonomous Agents](/202606/18/2606.12563v1-arbor-tree-search-as-a-cognition-layer-for-autonomous-agents)  
-   标签：评分：7.0/10、query:alphazero
-   evidence：树搜索作为认知层，与AlphaZero的蒙特卡洛树搜索方法一致
+1. [Enhancing Decision-Making with Large Language Models through Multi-Agent Fictitious Play](/202606/19/2606.19308v1-enhancing-decision-making-with-large-language-models-through-multi-agent-fictitious-play)  
+   标签：评分：6.0/10、query:alphazero
+   evidence：多智能体虚构自对弈作为决策中的自我对弈方法
 
 
 <div class="dpr-home-promo-card">

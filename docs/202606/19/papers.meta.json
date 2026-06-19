@@ -1,0 +1,24 @@
+{
+  "label": "2026-06-19",
+  "date": "2026-06-19",
+  "generated_at": "2026-06-19T20:43:25",
+  "count": 1,
+  "papers": [
+    {
+      "paper_id": "202606/19/2606.19308v1-enhancing-decision-making-with-large-language-models-through-multi-agent-fictitious-play",
+      "section": "quick",
+      "title_en": "Enhancing Decision-Making with Large Language Models through Multi-Agent Fictitious Play",
+      "authors": "Leyang Shen, Yang Zhang, Xiaoyan Zhao, Chun Kai Ling, Tat-Seng Chua",
+      "date": "2026-06-17",
+      "pdf": "https://arxiv.org/pdf/2606.19308v1",
+      "score": "6.0",
+      "evidence": "多智能体虚构自对弈作为决策中的自我对弈方法",
+      "tldr": "大语言模型多智能体系统在决策任务中面临立场纠缠挑战，即各利益相关者决策相互依赖。本文提出多智能体虚构博弈（MAFP），将立场建模为智能体，基于博弈论迭代更新决策以逼近均衡。在竞争性决策任务中，MAFP在锦标赛强度和鲁棒性上均优于单轮与多轮基线。该方法有效解决立场纠缠，提升决策质量与鲁棒性。",
+      "tags": "query:alphazero",
+      "abstract_en": "Large language model (LLM)-based multi-agent systems (MAS) have demonstrated great potential in solving tasks with execution complexity, by distributing subtasks across cooperative agents. However, this divide-and-conquer paradigm falls short on decision-making tasks that are also prevalent in the real world. These tasks require simultaneous reasoning from the stances of all involved stakeholders whose decisions are mutually dependent and thus cannot be solved in isolation. We characterize this challenge as stance entanglement, a form of decision complexity distinct from execution complexity. To address it, we propose Multi-Agent Fictitious Play (MAFP), a novel MAS paradigm that represents stakeholder stances as agents and formulates decision-making as an equilibrium-seeking process. Built on the game-theoretic principle of fictitious play, MAFP iteratively updates each agent's decision by best responding to the empirical mixture of other agents' past decisions. This enables agents to expose and address one another's weaknesses, progressively improving decision quality and robustness. We evaluate MAFP on challenging decision-making tasks that test the capability of deciding strategies for competitive scenarios prior to acting. MAFP outperforms both single-round and multi-round baselines on two complementary metrics, tournament strength and robustness, demonstrating its effectiveness in addressing stance entanglement.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}
