@@ -6,28 +6,22 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-06-19
-- 运行时间：2026-06-19 20:43:20 UTC
+- 最新运行日期：2026-06-20
+- 运行时间：2026-06-20 21:21:37 UTC
 - 运行状态：成功
-- 本次总论文数：1
+- 本次总论文数：0
 - 精读区：0
-- 速读区：1
+- 速读区：0
 
 ### 今日简报（AI）
-今日共速读1篇论文，关注多智能体虚构博弈对大语言模型决策能力的增强。
-
-值得关注的是，该研究通过多智能体交互模拟，探索了提升LLM在复杂决策场景中表现的方法。
-
-建议感兴趣者可进一步了解虚构博弈框架如何结合角色分工与迭代策略，以优化模型的协作与推理能力。
-- 详情：[/202606/19/README](/202606/19/README)
+> 今日无新推荐，系统未产出可展示论文。
+- 详情：[/202606/20/README](/202606/20/README)
 
 ### 精读区论文标签
 - 本次无精读推荐。
 
 ### 速读区论文标签
-1. [Enhancing Decision-Making with Large Language Models through Multi-Agent Fictitious Play](/202606/19/2606.19308v1-enhancing-decision-making-with-large-language-models-through-multi-agent-fictitious-play)  
-   标签：评分：6.0/10、query:alphazero
-   evidence：多智能体虚构自对弈作为决策中的自我对弈方法
+- 本次无速读推荐。
 
 
 <div class="dpr-home-promo-card">
