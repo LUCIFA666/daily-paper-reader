@@ -1,0 +1,69 @@
+{
+  "label": "2026-06-23",
+  "date": "2026-06-23",
+  "generated_at": "2026-06-23T20:59:48",
+  "count": 4,
+  "papers": [
+    {
+      "paper_id": "202606/23/2606.23348v1-superhuman-ai-for-generalsio-using-self-play-reinforcement-learning",
+      "section": "deep",
+      "title_en": "Superhuman AI for Generals.io Using Self-Play Reinforcement Learning",
+      "authors": "Matej Straka, Viliam Lisý, Martin Schmid",
+      "date": "2026-06-22",
+      "pdf": "https://arxiv.org/pdf/2606.23348v1",
+      "score": "9.0",
+      "evidence": "使用自我对弈强化学习训练实时策略游戏AI",
+      "tldr": "针对Generals.io实时策略游戏，使用JAX原生模拟器实现单GPU千万帧/秒、提速万倍，结合自对弈策略梯度训练视觉Transformer，并采用优势样本过滤和指数移动平均参数更新。四天训练后成为5000+玩家排行榜第一，对战顶尖人类取得199胜70负。表明快速模拟器消除数据瓶颈后，简洁方法即可实现超人类性能。",
+      "tags": "query:alphazero",
+      "abstract_en": "We present a superhuman AI agent for Generals.io, a real-time strategy game that requires both long-horizon planning and short-term tactics under strong imperfect information. Trained for four days on 4x NVIDIA H200 GPUs, our agent reaches #1 on the public 1v1 leaderboard of over 5,000 human players, leading the second-ranked player by the same margin that separates second place from 25th, and beats the two top-ranked humans head-to-head with a combined 199-70 record across 269 ladder matches. A key enabler is a JAX-native simulator that reaches tens of millions of frames per second on a single GPU, roughly a 10,000x speedup over the prior simulator. On top of this, we train a vision transformer policy end-to-end by self-play with a policy-gradient loop and sparse win/loss reward, using top-advantage sample filtering and an exponential moving average of the policy parameters. Taken together, our findings highlight what matters, and what does not, once a fast simulator removes the data bottleneck.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202606/23/2606.22688v1-garip-a-running-average-moving-reference-for-last-iterate-self-play-in-two-player-zero-sum-games",
+      "section": "deep",
+      "title_en": "GARIP: A Running-Average Moving Reference for Last-Iterate Self-Play in Two-Player Zero-Sum Games",
+      "authors": "Can Savcı",
+      "date": "2026-06-21",
+      "pdf": "https://arxiv.org/pdf/2606.22688v1",
+      "score": "8.0",
+      "evidence": "零和博弈自我对弈收敛性，与AlphaZero自我对弈训练相关",
+      "tldr": "在双人零和博弈的自对弈中，朴素梯度上升导致最后迭代围绕纳什均衡振荡。现代方法通过对参考策略进行正则化来恢复收敛，其中GARIP采用运行平均作为动态参考。理论分析表明，运行平均通过最小化峰值滞后（其峰值等于均值）而优于快照参考（峰值等于2倍均值），从而在恒定锚定强度下实现局部最后迭代收敛。实验验证了GARIP在矩阵博弈、硬币游戏及棋盘游戏中的鲁棒性，与R-NaD性能相当且超参数更稳定，而预期负权重参考在特定场景下表现更优。",
+      "tags": "query:alphazero",
+      "abstract_en": "Self-play with naive gradient ascent cycles in two-player zero-sum games: the last iterate orbits the equilibrium. Modern methods restore last-iterate convergence by regularizing toward a reference policy -- MMD a fixed one (reaching only the regularized equilibrium), R-NaD a periodic snapshot (the engine of DeepNash). We study GARIP, which anchors to the running average, and isolate what the choice of reference controls. Our central result is a mechanism: collapse tracks the peak lag of the reference, and among causal convex averages of a fixed mean lag the running average (flat profile, peak $=$ mean) uniquely minimizes that peak, while a snapshot's sawtooth has peak $= 2\\times$ mean (a one-line theorem). Two consequences follow. Convergence: we prove local last-iterate convergence at constant anchor strength -- the anchor scales the base map's rotation by $1-β$, crossing the stability boundary and turning a recurrent base into a contraction (global convergence is conjectured at small $β$; we characterize a large-$β$ consensus failure). Robustness: GARIP matches R-NaD's peak performance -- on matrix games, the Coin Game, and the board games Connect Four/Othello, both moving references are far more robust than fixed-magnet and magnet-free baselines -- but is the better hyperparameter default; we report it both ways: over the full grid collapse rates are statistically indistinguishable, yet at conventional parameterizations a matched-mean-lag setting collapses in 0/40 vs 10/40 seeds (a snapshot matches it only by knowing to shorten $K$). The boundaries: an anticipatory (negative-weight) reference does better still on the stale side, and the advantage appears only where naive self-play cycles (five deep self-play loops). All experiments are pure JAX and reproducible.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202606/23/2606.20210v1-augmenting-game-ai-with-deep-reinforcement-learning",
+      "section": "quick",
+      "title_en": "Augmenting Game AI with Deep Reinforcement Learning",
+      "authors": "Alessandro Sestini, Joakim Bergdahl, Amir Baghi, Jean-Philippe Barrette-LaPierre, Florian Fuchs, Linus Gisslén",
+      "date": "2026-06-18",
+      "pdf": "https://arxiv.org/pdf/2606.20210v1",
+      "score": "7.0",
+      "evidence": "使用深度强化学习改进游戏AI，与AlphaZero方法类似",
+      "tldr": "游戏AI的复杂行为难以手工编码，影响玩家沉浸感。本文提出用深度强化学习增强游戏AI，设计了一个面向游戏AI和开发的训练框架，通过实例展示其部署实践。识别了当前瓶颈和未来研究方向，以推动机器学习在游戏行业的应用。",
+      "tags": "query:alphazero",
+      "abstract_en": "Immersion in video games depends not only on graphics, audio, and game mechanics, but also on the quality of in-game characters. Producing believable characters, or game AI, remains a significant challenge as behavioral complexity is hard to capture with hand-coded systems. Game AI is a source of immersion and engagement; however, the limitations stemming from the challenges of creating game AI often lead to frustration and the breaking of the illusion of realism within the game. The introduction of machine learning models opens the door to creating more believable, authentic, and relatable characters in games. The promise is that they either learn from interacting with the game, or from player data, to develop true human-like behavior. In this paper, we envision more applications of reinforcement learning for game AI in the future. For this to materialize, current research limitations are prohibitive to broad deployment across game genres. Therefore, we propose a framework for training reinforcement learning models with a set of requirements in mind that are suited towards game AI and game development. We present examples of games with reinforcement learning-augmented game AI and describe the practicalities of deploying player-facing machine learning agents in modern games. Furthermore, we identify bottlenecks and hard problems in these areas, which we believe offer promising research directions to accelerate the adoption of machine learning in game AI for the video game industry.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202606/23/2606.21975v1-irumai-reinforcement-learning-for-indian-rummy",
+      "section": "quick",
+      "title_en": "IRumAI: Reinforcement Learning for Indian Rummy",
+      "authors": "Vignesh Mohan",
+      "date": "2026-06-20",
+      "pdf": "https://arxiv.org/pdf/2606.21975v1",
+      "score": "7.0",
+      "evidence": "针对印度拉米纸牌游戏的强化学习智能体，类似AlphaZero将强化学习应用于游戏",
+      "tldr": "印度Rummy具有复杂隐藏信息，但缺乏强化学习研究，现有组合搜索方法推理慢。IRumAI是首个RL代理，采用PPO、meld感知编码、死木奖励和双分支卷积架构，通过行为克隆热启动后仅与弱启发式对抗训练。它击败所有基线，对最强搜索对手胜率53.9%，动作时间0.33ms，比启发式快7000倍。该工作验证了RL在印度Rummy的有效性，且网络能隐式建模对手手牌，为不完美信息游戏提供高效方案。",
+      "tags": "query:alphazero",
+      "abstract_en": "Despite its massive player base and complex hidden-information dynamics, Indian Rummy has received no reinforcement learning attention. Existing agents rely on combinatorial search, which is tactically strong but slow at inference. We present IRumAI, the first RL agent for the domain. IRumAI integrates Proximal Policy Optimization (PPO), meld-aware observation encoding, deadwood-driven reward shaping, and a dual-branch convolutional architecture. IRumAI is RL-trained solely against weak heuristics, after a one-time behaviour-cloning warm-start on stronger demonstration data. It generalises to defeat the entire baseline hierarchy, including a 53.9% win rate against the strongest search-based opponent unseen during RL training. Bypassing explicit search, IRumAI requires just 0.33 ms per action, which is over 7,000x faster than the state-of-the-art heuristic. Ablations validate our architectural choices, and linear probing reveals that the network implicitly models the opponent's hidden hand from public interactions.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}
