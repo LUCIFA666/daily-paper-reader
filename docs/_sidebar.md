@@ -1,6 +1,9 @@
 * <a class="dpr-sidebar-root-link" href="#/">首页</a>
 * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="javascript:void(0)" data-dpr-hash="#/tutorial/README">使用教程</a>
 * Daily Papers
+  * 2026-06-24 <!--dpr-date:20260624-->
+    * 精读区
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202606/24/2606.23995v1-emagnet-parameter-space-ema-regularization-for-policy-gradient-self-play-in-large-games" data-sidebar-item="{&quot;title&quot;: &quot;EMAgnet: Parameter-Space EMA Regularization for Policy Gradient Self-Play in Large Games&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2606.23995v1-emagnet-parameter-space-ema-regularization-for-policy-gradient-self-play-in-large-games&quot;, &quot;score&quot;: &quot;9.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;博弈中基于策略梯度正则化的自我对弈强化学习&quot;}">EMAgnet: Parameter-Space EMA Regularization for Policy Gradient Self-Play in Large Games</a>
   * 2026-06-23 <!--dpr-date:20260623-->
     * 精读区
       * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202606/23/2606.23348v1-superhuman-ai-for-generalsio-using-self-play-reinforcement-learning" data-sidebar-item="{&quot;title&quot;: &quot;Superhuman AI for Generals.io Using Self-Play Reinforcement Learning&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2606.23348v1-superhuman-ai-for-generalsio-using-self-play-reinforcement-learning&quot;, &quot;score&quot;: &quot;9.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;使用自我对弈强化学习训练实时策略游戏AI&quot;}">Superhuman AI for Generals.io Using Self-Play Reinforcement Learning</a>

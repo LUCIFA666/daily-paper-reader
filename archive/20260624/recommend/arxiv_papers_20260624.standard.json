@@ -1,0 +1,61 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-24T21:38:49.810795+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 1,
+    "deep_cap": 6,
+    "deep_selected": 1,
+    "quick_candidates": 0,
+    "quick_skim_target": 11,
+    "quick_selected": 0
+  },
+  "deep_dive": [
+    {
+      "id": "2606.23995v1",
+      "source": "arxiv",
+      "title": "EMAgnet: Parameter-Space EMA Regularization for Policy Gradient Self-Play in Large Games",
+      "abstract": "Recent work has established that regularized policy gradient methods such as PPO, when used in self-play, can match or exceed specialized game-theoretic algorithms for solving two-player zero-sum imperfect-information games. The uniform distribution has emerged as a strong policy regularization target for this purpose, but it regularizes equally toward all actions regardless of their viability. We introduce EMAgnet, which instead regularizes toward an exponential moving average (EMA) of the last-iterate policy's parameters, providing an adaptive regularization target that evolves with the agent's improving strategy. We evaluate EMAgnet on both standard two-player zero-sum benchmarks and modified benchmarks with exploration challenges and large numbers of strictly dominated strategies. Relative to PPO self-play with uniform-magnet regularization under both linear and power-law annealing schedules, EMAgnet achieves lower exploitability in the majority of tested environments, with consistent performance gains across games containing strictly dominated strategies.",
+      "authors": [
+        "Tristan Maidment",
+        "JB Lanier",
+        "Chase McDonald",
+        "Nathan Tsang",
+        "Eugene Vinitsky",
+        "Roy Fox",
+        "Albert Wang",
+        "Wesley N. Kerr"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.GT",
+        "cs.MA"
+      ],
+      "published": "2026-06-22T23:05:01+00:00",
+      "link": "https://arxiv.org/pdf/2606.23995v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "self-play reinforcement learning with policy gradient regularization in games",
+      "llm_evidence_cn": "博弈中基于策略梯度正则化的自我对弈强化学习",
+      "llm_evidence": "博弈中基于策略梯度正则化的自我对弈强化学习",
+      "canonical_evidence": "博弈中基于策略梯度正则化的自我对弈强化学习",
+      "llm_tldr_en": "EMAgnet introduces parameter-space exponential moving average regularization for policy gradient self-play, outperforming uniform regularization in two-player zero-sum games, relevant to AlphaZero's self-play training.",
+      "llm_tldr_cn": "本文针对大规模博弈中的自我对弈强化学习问题，提出EMAgnet方法，采用参数空间指数移动平均（EMA）正则化替代均匀分布正则化，使策略梯度方法在两人零和不完美信息博弈中表现更好。实验表明EMAgnet在标准基准和含探索挑战的变体上均优于现有方法。该工作与AlphaZero的自我对弈训练范式高度相关，为提升强化学习算法在复杂博弈中的性能提供了新思路。",
+      "llm_tldr": "本文针对大规模博弈中的自我对弈强化学习问题，提出EMAgnet方法，采用参数空间指数移动平均（EMA）正则化替代均匀分布正则化，使策略梯度方法在两人零和不完美信息博弈中表现更好。实验表明EMAgnet在标准基准和含探索挑战的变体上均优于现有方法。该工作与AlphaZero的自我对弈训练范式高度相关，为提升强化学习算法在复杂博弈中的性能提供了新思路。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "how does AlphaZero use self play reinforcement learning",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": []
+}
