@@ -1,0 +1,55 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-06-27T20:38:01.290671+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2606.26327v1",
+      "source": "arxiv",
+      "title": "EVOM: Agentic Meta-Evolution of Actor-Critic Architectures for Reinforcement Learning",
+      "abstract": "In actor-critic reinforcement learning, network architectures are typically manually designed. Automating this design is challenging because each candidate must be trained before evaluation, and the design space is open-ended. To address these challenges, we introduce EVOM, an agentic meta-evolution framework for discovering high-performance actor-critic architectures. We frame architecture search as a bi-level optimization: an inner loop trains weights via the low-fidelity proximal policy optimization (PPO), while an outer loop drives meta-evolution by iteratively refining architecture programs. Crucially, this outer loop is powered by an LLM-based design agent that operates purely as an architecture designer, completely decoupled from policy execution and environment control. Experiments reveal that EVOM outperforms the manually designed baseline, an LLM-guided random search, and the state-of-the-art LLM-guided programmatic policy search method MLES, delivering superior performance on Ant-v4 and HalfCheetah-v4. Ablation studies validate that both the meta-evolution loop and the LLM Design Agent are indispensable for final performance.",
+      "authors": [
+        "Boyun Zhang",
+        "Chao Wang",
+        "Kai Wu"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-06-24T19:13:32+00:00",
+      "link": "https://arxiv.org/pdf/2606.26327v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "method for automated architecture search in actor-critic RL, could improve AlphaZero",
+      "llm_evidence_cn": "用于Actor-Critic架构自动搜索的方法，可能改进AlphaZero",
+      "llm_evidence": "用于Actor-Critic架构自动搜索的方法，可能改进AlphaZero",
+      "canonical_evidence": "用于Actor-Critic架构自动搜索的方法，可能改进AlphaZero",
+      "llm_tldr_en": "EVOM proposes an LLM-driven meta-evolution framework to automatically discover high-performance actor-critic architectures, which could be applied to improve AlphaZero-like agents.",
+      "llm_tldr_cn": "针对Actor-Critic强化学习中网络架构手动设计耗时且难以优化的问题，本文提出EVOM框架，利用大语言模型作为设计代理，通过双层优化自动搜索高性能架构。内层使用PPO训练权重，外层迭代改进架构程序。该方法可迁移至AlphaZero的神经网络架构优化中，提升其学习效率与性能。",
+      "llm_tldr": "针对Actor-Critic强化学习中网络架构手动设计耗时且难以优化的问题，本文提出EVOM框架，利用大语言模型作为设计代理，通过双层优化自动搜索高性能架构。内层使用PPO训练权重，外层迭代改进架构程序。该方法可迁移至AlphaZero的神经网络架构优化中，提升其学习效率与性能。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "Research papers on AlphaZero algorithm improvements",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}
