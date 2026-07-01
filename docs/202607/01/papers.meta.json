@@ -1,0 +1,24 @@
+{
+  "label": "2026-07-01",
+  "date": "2026-07-01",
+  "generated_at": "2026-07-01T21:53:10",
+  "count": 1,
+  "papers": [
+    {
+      "paper_id": "202607/01/2606.29169v1-projected-exploitability-descent-for-nash-equilibrium-computation-in-multiplayer-imperfect-information-games",
+      "section": "quick",
+      "title_en": "Projected Exploitability Descent for Nash Equilibrium Computation in Multiplayer Imperfect-Information Games",
+      "authors": "Sam Ganzfried",
+      "date": "2026-06-28",
+      "pdf": "https://arxiv.org/pdf/2606.29169v1",
+      "score": "7.0",
+      "evidence": "多人不完美信息博弈的纳什均衡计算方法",
+      "tldr": "多玩家不完美信息博弈的纳什均衡计算面临可扩展性差和性能不佳的挑战。本文提出投影可利用性下降（PED）算法，通过投影次梯度下降最小化广义可利用性函数来逼近均衡。在三人Kuhn扑克上，PED在整个运行过程中一致单调改进，但初始迭代时不如虚拟博弈（FP）和反事实遗憾最小化（CFR）。据此提出混合算法FP-PED，先运行FP预热再切换到PED实现稳定细化。",
+      "tags": "query:alphazero",
+      "abstract_en": "Many important games have more than two players and imperfect information. Existing approaches for computing Nash equilibrium, the central game-theoretic solution concept, in such games either lack scalability or obtain poor performance. In this paper we introduce a new algorithm called projected exploitability descent (PED) for approximating Nash equilibria in multiplayer games of imperfect information. The algorithm works by running projected subgradient descent minimizing a proxy for the multiplayer generalized exploitability function. The objective is nonconvex and nonsmooth, but can be represented as the sum of the maxima of linear functions, for which a subgradient can easily be computed and projected to the polytope of feasible sequence-form strategies. We explore performance of PED on a generalized version of the well-studied benchmark game three-player Kuhn poker. No prior exact algorithms scale to the version of the game with deck size larger than 4, and we compare performance to the popular algorithms of fictitious play (FP) and counterfactual regret minimization (CFR). We find that PED obtains a consistent near-monotonic improvement throughout all runs, though both FP and CFR perform significantly better in the initial iterations. This inspires a hybrid algorithm FP-PED that runs FP for an initial burn-in period before switching to PED for stable long-run refinement. We can alternatively view this as a multi-step algorithm that runs FP as a pre-processing step to obtain a strong initialization for PED.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}

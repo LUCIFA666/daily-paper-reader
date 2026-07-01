@@ -1,0 +1,54 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-01T21:52:23.111747+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2606.29169v1",
+      "source": "arxiv",
+      "title": "Projected Exploitability Descent for Nash Equilibrium Computation in Multiplayer Imperfect-Information Games",
+      "abstract": "Many important games have more than two players and imperfect information. Existing approaches for computing Nash equilibrium, the central game-theoretic solution concept, in such games either lack scalability or obtain poor performance. In this paper we introduce a new algorithm called projected exploitability descent (PED) for approximating Nash equilibria in multiplayer games of imperfect information. The algorithm works by running projected subgradient descent minimizing a proxy for the multiplayer generalized exploitability function. The objective is nonconvex and nonsmooth, but can be represented as the sum of the maxima of linear functions, for which a subgradient can easily be computed and projected to the polytope of feasible sequence-form strategies. We explore performance of PED on a generalized version of the well-studied benchmark game three-player Kuhn poker. No prior exact algorithms scale to the version of the game with deck size larger than 4, and we compare performance to the popular algorithms of fictitious play (FP) and counterfactual regret minimization (CFR). We find that PED obtains a consistent near-monotonic improvement throughout all runs, though both FP and CFR perform significantly better in the initial iterations. This inspires a hybrid algorithm FP-PED that runs FP for an initial burn-in period before switching to PED for stable long-run refinement. We can alternatively view this as a multi-step algorithm that runs FP as a pre-processing step to obtain a strong initialization for PED.",
+      "authors": [
+        "Sam Ganzfried"
+      ],
+      "primary_category": "cs.GT",
+      "categories": [
+        "cs.GT",
+        "cs.AI",
+        "cs.MA"
+      ],
+      "published": "2026-06-28T03:25:15+00:00",
+      "link": "https://arxiv.org/pdf/2606.29169v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "algorithm for computing Nash equilibria in multiplayer imperfect-information games",
+      "llm_evidence_cn": "多人不完美信息博弈的纳什均衡计算方法",
+      "llm_evidence": "多人不完美信息博弈的纳什均衡计算方法",
+      "canonical_evidence": "多人不完美信息博弈的纳什均衡计算方法",
+      "llm_tldr_en": "Projected Exploitability Descent (PED) approximates Nash equilibria in multiplayer imperfect-information games via projected subgradient descent on a generalized exploitability function, achieving superior scalability and performance.",
+      "llm_tldr_cn": "现有方法在多人不完美信息博弈中计算纳什均衡时缺乏可扩展性或性能不佳。本文提出投影可利用性下降（PED）算法，通过最小化多人广义可利用性函数的代理项，采用投影次梯度下降法。该算法在多人博弈中取得了优于现有方法的可扩展性和近似精度，为博弈求解提供了新途径。",
+      "llm_tldr": "现有方法在多人不完美信息博弈中计算纳什均衡时缺乏可扩展性或性能不佳。本文提出投影可利用性下降（PED）算法，通过最小化多人广义可利用性函数的代理项，采用投影次梯度下降法。该算法在多人博弈中取得了优于现有方法的可扩展性和近似精度，为博弈求解提供了新途径。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "variants and extensions of the AlphaZero architecture for different games",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}

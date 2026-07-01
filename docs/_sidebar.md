@@ -1,6 +1,9 @@
 * <a class="dpr-sidebar-root-link" href="#/">首页</a>
 * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="javascript:void(0)" data-dpr-hash="#/tutorial/README">使用教程</a>
 * Daily Papers
+  * 2026-07-01 <!--dpr-date:20260701-->
+    * 速读区
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202607/01/2606.29169v1-projected-exploitability-descent-for-nash-equilibrium-computation-in-multiplayer-imperfect-information-games" data-sidebar-item="{&quot;title&quot;: &quot;Projected Exploitability Descent for Nash Equilibrium Computation in Multiplayer Imperfect-Information Games&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2606.29169v1-projected-exploitability-descent-for-nash-equilibrium-computation-in-multiplayer-imperfect-information-games&quot;, &quot;score&quot;: &quot;7.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;多人不完美信息博弈的纳什均衡计算方法&quot;}">Projected Exploitability Descent for Nash Equilibrium Computation in Multiplayer Imperfect-Information Games</a>
   * 2026-06-27 <!--dpr-date:20260627-->
     * 速读区
       * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202606/27/2606.26327v1-evom-agentic-meta-evolution-of-actor-critic-architectures-for-reinforcement-learning" data-sidebar-item="{&quot;title&quot;: &quot;EVOM: Agentic Meta-Evolution of Actor-Critic Architectures for Reinforcement Learning&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2606.26327v1-evom-agentic-meta-evolution-of-actor-critic-architectures-for-reinforcement-learning&quot;, &quot;score&quot;: &quot;6.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;用于Actor-Critic架构自动搜索的方法，可能改进AlphaZero&quot;}">EVOM: Agentic Meta-Evolution of Actor-Critic Architectures for Reinforcement Learning</a>
