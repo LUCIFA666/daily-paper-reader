@@ -1,0 +1,54 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-02T20:48:53.571124+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2606.29999v1",
+      "source": "arxiv",
+      "title": "AlgoSkill: Learning to Design Algorithms by Scheduling Human-Like Skills",
+      "abstract": "Designing an algorithm from a natural-language problem statement requires identifying the problem structure, reading constraints, choosing a suitable paradigm, checking correctness, and refining complexity. Existing large language model (LLM) methods often rely on direct generation or generic self-refinement, leaving these steps implicit. We propose AlgoSkill, which models algorithm design as sequential decision-making over a typed library of algorithmic skills, including abstraction, constraint analysis, state design, data-structure selection, proof checking, counterexample construction, and complexity refinement. A learned scheduler proposes skills from the current design state, while a Monte Carlo Tree Search (MCTS) controller explores skill sequences using verification feedback from compilation, testing, stress testing, and complexity analysis. Experiments on competitive programming and combinatorial optimization benchmarks show that AlgoSkill improves over direct LLM generation, chain-of-thought prompting, self-refinement, and MCTS without typed skills. Ablations show that typed skills, verification-based repair, and search-based scheduling each contribute to performance. These results support treating automatic algorithm design as verification-guided skill scheduling rather than one-shot code generation.",
+      "authors": [
+        "Xinyuan Song",
+        "Zekun Cai",
+        "Liang Zhao"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-06-29T09:09:16+00:00",
+      "link": "https://arxiv.org/pdf/2606.29999v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Uses MCTS for sequential decision-making, similar to AlphaZero's search",
+      "llm_evidence_cn": "使用类似AlphaZero的蒙特卡洛树搜索进行序列决策",
+      "llm_evidence": "使用类似AlphaZero的蒙特卡洛树搜索进行序列决策",
+      "canonical_evidence": "使用类似AlphaZero的蒙特卡洛树搜索进行序列决策",
+      "llm_tldr_en": "AlgoSkill applies MCTS-based scheduling of algorithmic skills to learn algorithm design, mirroring AlphaZero's tree search approach for game playing.",
+      "llm_tldr_cn": "现有LLM方法在算法设计时隐含了多个步骤，导致效果受限。本文提出AlgoSkill框架，将算法设计建模为序列决策过程，通过一个学习到的调度器从技能库中选择技能，并结合蒙特卡洛树搜索（MCTS）进行探索。实验证明AlgoSkill在算法设计任务上优于直接生成和自优化基线。该工作展示了将AlphaZero的MCTS思想迁移到算法设计领域的可行性。",
+      "llm_tldr": "现有LLM方法在算法设计时隐含了多个步骤，导致效果受限。本文提出AlgoSkill框架，将算法设计建模为序列决策过程，通过一个学习到的调度器从技能库中选择技能，并结合蒙特卡洛树搜索（MCTS）进行探索。实验证明AlgoSkill在算法设计任务上优于直接生成和自优化基线。该工作展示了将AlphaZero的MCTS思想迁移到算法设计领域的可行性。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "variants and extensions of the AlphaZero architecture for different games",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}

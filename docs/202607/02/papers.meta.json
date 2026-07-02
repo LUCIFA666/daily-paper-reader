@@ -1,0 +1,24 @@
+{
+  "label": "2026-07-02",
+  "date": "2026-07-02",
+  "generated_at": "2026-07-02T20:49:48",
+  "count": 1,
+  "papers": [
+    {
+      "paper_id": "202607/02/2606.29999v1-algoskill-learning-to-design-algorithms-by-scheduling-human-like-skills",
+      "section": "quick",
+      "title_en": "AlgoSkill: Learning to Design Algorithms by Scheduling Human-Like Skills",
+      "authors": "Xinyuan Song, Zekun Cai, Liang Zhao",
+      "date": "2026-06-29",
+      "pdf": "https://arxiv.org/pdf/2606.29999v1",
+      "score": "7.0",
+      "evidence": "使用类似AlphaZero的蒙特卡洛树搜索进行序列决策",
+      "tldr": "现有LLM在算法设计中隐式处理问题结构、约束和正确性验证，导致效果受限。AlgoSkill将算法设计建模为基于类型化技能库的序列决策，通过调度抽象、约束分析、状态设计等技能逐步构建算法。采用MCTS控制器结合编译、测试、压力测试和复杂度分析等验证反馈搜索技能序列。在竞赛和组合优化基准上，AlgoSkill优于直接生成、思维链、自优化和无类型技能的MCTS，验证了基于验证引导技能调度的有效性。",
+      "tags": "query:alphazero",
+      "abstract_en": "Designing an algorithm from a natural-language problem statement requires identifying the problem structure, reading constraints, choosing a suitable paradigm, checking correctness, and refining complexity. Existing large language model (LLM) methods often rely on direct generation or generic self-refinement, leaving these steps implicit. We propose AlgoSkill, which models algorithm design as sequential decision-making over a typed library of algorithmic skills, including abstraction, constraint analysis, state design, data-structure selection, proof checking, counterexample construction, and complexity refinement. A learned scheduler proposes skills from the current design state, while a Monte Carlo Tree Search (MCTS) controller explores skill sequences using verification feedback from compilation, testing, stress testing, and complexity analysis. Experiments on competitive programming and combinatorial optimization benchmarks show that AlgoSkill improves over direct LLM generation, chain-of-thought prompting, self-refinement, and MCTS without typed skills. Ablations show that typed skills, verification-based repair, and search-based scheduling each contribute to performance. These results support treating automatic algorithm design as verification-guided skill scheduling rather than one-shot code generation.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}
