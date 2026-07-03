@@ -6,26 +6,26 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-07-02
-- 运行时间：2026-07-02 20:49:41 UTC
+- 最新运行日期：2026-07-03
+- 运行时间：2026-07-03 21:26:06 UTC
 - 运行状态：成功
 - 本次总论文数：1
 - 精读区：0
 - 速读区：1
 
 ### 今日简报（AI）
-今日聚焦一篇算法设计新框架论文，速读评分7.0/10。  
-核心方向是提出通过调度类人技能来学习设计算法，而非传统手工设计。  
-建议关注其如何将人类思维步骤模块化，可能为自动算法设计提供新思路。
-- 详情：[/202607/02/README](/202607/02/README)
+今日速读1篇关于可教练型智能体的论文，探索互动游戏中AI向玩家学习的方法。  
+最值得关注的是智能体如何在游戏过程中接受实时指导并改进策略，适合对AI交互设计感兴趣的人。  
+建议未来关注更多将人类反馈融入AI训练的实际案例，以理解其落地效果。
+- 详情：[/202607/03/README](/202607/03/README)
 
 ### 精读区论文标签
 - 本次无精读推荐。
 
 ### 速读区论文标签
-1. [AlgoSkill: Learning to Design Algorithms by Scheduling Human-Like Skills](/202607/02/2606.29999v1-algoskill-learning-to-design-algorithms-by-scheduling-human-like-skills)  
-   标签：评分：7.0/10、query:alphazero
-   evidence：使用类似AlphaZero的蒙特卡洛树搜索进行序列决策
+1. [Coachable agents for interactive gameplay](/202607/03/2607.00642v1-coachable-agents-for-interactive-gameplay)  
+   标签：评分：6.0/10、query:alphazero
+   evidence：使用强化学习训练可指导的智能体，风格适应与AlphaZero类似
 
 
 <div class="dpr-home-promo-card">
