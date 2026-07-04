@@ -1,0 +1,24 @@
+{
+  "label": "2026-07-04",
+  "date": "2026-07-04",
+  "generated_at": "2026-07-04T21:06:57",
+  "count": 1,
+  "papers": [
+    {
+      "paper_id": "202607/04/2606.30092v1-hierarchical-reinforcement-learning-in-starcraft-micromanagement-with-influence-maps-and-cluster-based-scripts",
+      "section": "quick",
+      "title_en": "Hierarchical Reinforcement Learning in StarCraft Micromanagement with Influence Maps and Cluster-based Scripts",
+      "authors": "Chunhui Bai, Changhe Li, Dequan Li, Xinye Cai, Shengxiang Yang",
+      "date": "2026-06-29",
+      "pdf": "https://arxiv.org/pdf/2606.30092v1",
+      "score": "7.0",
+      "evidence": "星际争霸微操作中的层次强化学习，是游戏AI的扩展",
+      "tldr": "实时策略游戏中多单元微操面临状态空间爆炸与稀疏奖励难题。本文提出HRL-IM/CBS分层强化学习框架，以影响力图哈希压缩全局战场信息，结合聚类脚本实现自适应局部协调，通过分层多Q表架构分解决策。在六个不对称场景中达到与深度RL基线可比的性能，且在样本效率和可解释性方面具有优势。该工作提升了微操决策的透明度，为可解释强化学习提供了新思路。",
+      "tags": "query:alphazero",
+      "abstract_en": "Real-time strategy (RTS) games present significant AI challenges, characterized by expansive state-action spaces arising from multi-unit coordination in continuous battlefields, and sparse delayed rewards stemming from final win/lose signals. Existing approaches face a trade-off between managing the dimensionality explosion of joint actions and maintaining the interpretability of complex state representations. This complexity is further intensified by the limitation of traditional hierarchical structures in adaptively decomposing tasks into effective tactical modules. Such difficulties are compounded by the black-box nature of deep learning models and their reliance on sparse rewards, which together result in limited sample efficiency and a lack of decision-making transparency. To address these limitations, this paper proposes HRL-IM/CBS, a hierarchical reinforcement learning framework with influence map hashing and cluster-based scripts for StarCraft micromanagement. Influence map hashing encodes global battlefield situations into compact hexadecimal codes, capturing spatial control and relative advantage. Cluster-based scripts enable dynamic local coordination through adaptive unit partitioning. The hierarchical multi-Q-table architecture decomposes decision-making into upper-level clustering strategy selection and lower-level tactical execution, with reward allocation providing dense learning signals. Experiments across six asymmetric scenarios demonstrate competitive performance against deep RL baselines while offering advantages in sample efficiency and interpretability through transparent Q-table representations.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}

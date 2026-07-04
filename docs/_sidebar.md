@@ -1,6 +1,9 @@
 * <a class="dpr-sidebar-root-link" href="#/">首页</a>
 * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="javascript:void(0)" data-dpr-hash="#/tutorial/README">使用教程</a>
 * Daily Papers
+  * 2026-07-04 <!--dpr-date:20260704-->
+    * 速读区
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202607/04/2606.30092v1-hierarchical-reinforcement-learning-in-starcraft-micromanagement-with-influence-maps-and-cluster-based-scripts" data-sidebar-item="{&quot;title&quot;: &quot;Hierarchical Reinforcement Learning in StarCraft Micromanagement with Influence Maps and Cluster-based Scripts&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2606.30092v1-hierarchical-reinforcement-learning-in-starcraft-micromanagement-with-influence-maps-and-cluster-based-scripts&quot;, &quot;score&quot;: &quot;7.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;星际争霸微操作中的层次强化学习，是游戏AI的扩展&quot;}">Hierarchical Reinforcement Learning in StarCraft Micromanagement with Influence Maps and Cluster-based Scripts</a>
   * 2026-07-03 <!--dpr-date:20260703-->
     * 速读区
       * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202607/03/2607.00642v1-coachable-agents-for-interactive-gameplay" data-sidebar-item="{&quot;title&quot;: &quot;Coachable agents for interactive gameplay&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2607.00642v1-coachable-agents-for-interactive-gameplay&quot;, &quot;score&quot;: &quot;6.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;使用强化学习训练可指导的智能体，风格适应与AlphaZero类似&quot;}">Coachable agents for interactive gameplay</a>

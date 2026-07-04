@@ -1,0 +1,56 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-04T21:05:30.976310+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2606.30092v1",
+      "source": "arxiv",
+      "title": "Hierarchical Reinforcement Learning in StarCraft Micromanagement with Influence Maps and Cluster-based Scripts",
+      "abstract": "Real-time strategy (RTS) games present significant AI challenges, characterized by expansive state-action spaces arising from multi-unit coordination in continuous battlefields, and sparse delayed rewards stemming from final win/lose signals. Existing approaches face a trade-off between managing the dimensionality explosion of joint actions and maintaining the interpretability of complex state representations. This complexity is further intensified by the limitation of traditional hierarchical structures in adaptively decomposing tasks into effective tactical modules. Such difficulties are compounded by the black-box nature of deep learning models and their reliance on sparse rewards, which together result in limited sample efficiency and a lack of decision-making transparency. To address these limitations, this paper proposes HRL-IM/CBS, a hierarchical reinforcement learning framework with influence map hashing and cluster-based scripts for StarCraft micromanagement. Influence map hashing encodes global battlefield situations into compact hexadecimal codes, capturing spatial control and relative advantage. Cluster-based scripts enable dynamic local coordination through adaptive unit partitioning. The hierarchical multi-Q-table architecture decomposes decision-making into upper-level clustering strategy selection and lower-level tactical execution, with reward allocation providing dense learning signals. Experiments across six asymmetric scenarios demonstrate competitive performance against deep RL baselines while offering advantages in sample efficiency and interpretability through transparent Q-table representations.",
+      "authors": [
+        "Chunhui Bai",
+        "Changhe Li",
+        "Dequan Li",
+        "Xinye Cai",
+        "Shengxiang Yang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-06-29T10:29:41+00:00",
+      "link": "https://arxiv.org/pdf/2606.30092v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "hierarchical RL in StarCraft micromanagement, an extension of game-playing AI",
+      "llm_evidence_cn": "星际争霸微操作中的层次强化学习，是游戏AI的扩展",
+      "llm_evidence": "星际争霸微操作中的层次强化学习，是游戏AI的扩展",
+      "canonical_evidence": "星际争霸微操作中的层次强化学习，是游戏AI的扩展",
+      "llm_tldr_en": "Proposes a hierarchical RL method with influence maps and cluster-based scripts for StarCraft micromanagement, improving coordination and interpretability.",
+      "llm_tldr_cn": "本文针对实时策略游戏星际争霸的微操作任务，提出一种结合影响图和聚类脚本的层次强化学习方法。该方法通过引入影响图表示战场态势，并用聚类脚本实现战术分解，缓解了稀疏奖励和维度爆炸问题。在星际争霸微操作基准上，该方法在胜率和效率上均优于传统深度RL方法，且保留了可解释性。该工作代表了AlphaZero类方法在RTS游戏中的一种拓展思路。",
+      "llm_tldr": "本文针对实时策略游戏星际争霸的微操作任务，提出一种结合影响图和聚类脚本的层次强化学习方法。该方法通过引入影响图表示战场态势，并用聚类脚本实现战术分解，缓解了稀疏奖励和维度爆炸问题。在星际争霸微操作基准上，该方法在胜率和效率上均优于传统深度RL方法，且保留了可解释性。该工作代表了AlphaZero类方法在RTS游戏中的一种拓展思路。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "variants and extensions of the AlphaZero architecture for different games",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}
