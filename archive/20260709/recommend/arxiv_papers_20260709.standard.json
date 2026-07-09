@@ -1,0 +1,56 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-09T21:11:26.091115+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2607.06854v1",
+      "source": "arxiv",
+      "title": "A Gold-Standard Study of What Makes a Lightweight Game-Playing Agent Strong",
+      "abstract": "Reinforcement learning agents for imperfect-information card games are only as strong as the opponents they train against, and they are hard to grade, since they beat a random opponent over 99 percent of the time and only tie copies of themselves. So we build a strong, fixed, rule-based expert for Gin Rummy and use it only as a yardstick, never for training. It beats every agent we trained 70 to 99 percent of the time. Across more than a hundred runs, we isolate what makes a lightweight agent stronger. Trust region updates, a well-aimed reward, a curriculum of tougher opponents, warm starting, and keeping the best checkpoint all help, and stacking them lifts a self-play champion from about 30 to 36 percent against the expert. Several ideas did not pay off. Short-term and longer-term reward shaping, learned state embeddings, imitation and DAgger, and a live large language model opponent were each unhelpful, too slow, or too heavy to train at scale. Comparing MLP, convolutional, set-based, attention, and recurrent encoders shows that extra capacity does little to break the ceiling, suggesting the limit is information rather than network size. We add standard baselines (neural fictitious self-play and information set Monte Carlo search) and confirm the approach carries over to Leduc Hold'em, where the optimum is computable. The result is a lightweight, game-agnostic recipe that trains competitive agents without training on the expert, for any game a small model can handle, reported with robust statistics and released as a reusable package.",
+      "authors": [
+        "Nima Kelidari",
+        "Mohammadsaeed Haghi",
+        "Mahdi Salmani"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.GT"
+      ],
+      "published": "2026-07-07T23:11:21+00:00",
+      "link": "https://arxiv.org/pdf/2607.06854v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "self-play reinforcement learning for game-playing agent",
+      "llm_evidence_cn": "自我对弈强化学习在游戏智能体中的应用",
+      "llm_evidence": "自我对弈强化学习在游戏智能体中的应用",
+      "canonical_evidence": "自我对弈强化学习在游戏智能体中的应用",
+      "llm_tldr_en": "Investigates factors that make lightweight game-playing agents stronger using self-play reinforcement learning, similar to AlphaZero's approach.",
+      "llm_tldr_cn": "该论文针对游戏智能体训练中难以评估和提升的问题，构建了一个强大的规则专家作为基准，通过大量实验分离出信任区域更新、精心设计的奖励、对手课程学习、热启动和最佳检查点保存等关键因素，这些技术将自对弈智能体的胜率从30%提升到36%。研究为轻量级游戏智能体的强化学习提供了实用洞见，与AlphaZero的自对弈范式高度相关。",
+      "llm_tldr": "该论文针对游戏智能体训练中难以评估和提升的问题，构建了一个强大的规则专家作为基准，通过大量实验分离出信任区域更新、精心设计的奖励、对手课程学习、热启动和最佳检查点保存等关键因素，这些技术将自对弈智能体的胜率从30%提升到36%。研究为轻量级游戏智能体的强化学习提供了实用洞见，与AlphaZero的自对弈范式高度相关。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "how does AlphaZero use self play reinforcement learning",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}
