@@ -1,6 +1,9 @@
 * <a class="dpr-sidebar-root-link" href="#/">首页</a>
 * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="javascript:void(0)" data-dpr-hash="#/tutorial/README">使用教程</a>
 * Daily Papers
+  * 2026-07-10 <!--dpr-date:20260710-->
+    * 速读区
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202607/10/2607.01498v1-towards-learning-representations-of-policies-in-two-player-zero-sum-imperfect-information-games" data-sidebar-item="{&quot;title&quot;: &quot;Towards Learning Representations of Policies in Two-Player Zero-Sum Imperfect-Information Games&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2607.01498v1-towards-learning-representations-of-policies-in-two-player-zero-sum-imperfect-information-games&quot;, &quot;score&quot;: &quot;6.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;研究二人零和不完美信息博弈中的策略表示学习，可视为AlphaZero架构在不同游戏中的拓展&quot;}">Towards Learning Representations of Policies in Two-Player Zero-Sum Imperfect-Information Games</a>
   * 2026-07-09 <!--dpr-date:20260709-->
     * 速读区
       * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202607/09/2607.06854v1-a-gold-standard-study-of-what-makes-a-lightweight-game-playing-agent-strong" data-sidebar-item="{&quot;title&quot;: &quot;A Gold-Standard Study of What Makes a Lightweight Game-Playing Agent Strong&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2607.06854v1-a-gold-standard-study-of-what-makes-a-lightweight-game-playing-agent-strong&quot;, &quot;score&quot;: &quot;7.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;自我对弈强化学习在游戏智能体中的应用&quot;}">A Gold-Standard Study of What Makes a Lightweight Game-Playing Agent Strong</a>
