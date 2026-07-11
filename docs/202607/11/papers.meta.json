@@ -1,0 +1,24 @@
+{
+  "label": "2026-07-11",
+  "date": "2026-07-11",
+  "generated_at": "2026-07-11T19:54:26",
+  "count": 1,
+  "papers": [
+    {
+      "paper_id": "202607/11/2607.06514v1-footsiesgym-a-fighting-game-benchmark-for-two-player-zero-sum-imperfect-information-games",
+      "section": "quick",
+      "title_en": "FootsiesGym: A Fighting Game Benchmark for Two-Player Zero-Sum Imperfect-Information Games",
+      "authors": "Chase McDonald, Nathan Tsang, Wesley N. Kerr",
+      "date": "2026-07-07",
+      "pdf": "https://arxiv.org/pdf/2607.06514v1",
+      "score": "7.0",
+      "evidence": "面向两人零和格斗游戏的强化学习基准，与AlphaZero的自我对弈强化学习类似",
+      "tldr": "双人零和不完美信息博弈中，格斗游戏的循环非传递策略交互难以高效研究。本文基于简约格斗游戏Footsies构建了FootsiesGym环境，专门隔离中立博弈中的关键策略动态。提供向量化模拟器支持在标准硬件上高吞吐训练，并基准测试了DQN、PPO等强化学习算法。该环境降低了研究门槛，为非传递性博弈与多智能体强化学习提供了可复现的基准平台。",
+      "tags": "query:alphazero",
+      "abstract_en": "We present FootsiesGym, an open-source environment for learning in a non-trivial two-player, zero-sum, imperfect-information game. Built on HiFight's minimalist 2D fighting game Footsies, it isolates the cyclic, non-transitive strategic interactions of fighting game neutral play while remaining simple enough for efficient analysis. We provide a vectorized simulator that enables high-throughput training on standard hardware, making the environment accessible and reproducible. We describe the design of the environment, benchmark several reinforcement learning algorithms, and discuss open research directions it enables. The code is available at https://github.com/como-research/FootsiesGym.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}

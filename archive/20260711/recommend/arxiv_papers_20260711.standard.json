@@ -1,0 +1,55 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-11T19:53:34.971793+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2607.06514v1",
+      "source": "arxiv",
+      "title": "FootsiesGym: A Fighting Game Benchmark for Two-Player Zero-Sum Imperfect-Information Games",
+      "abstract": "We present FootsiesGym, an open-source environment for learning in a non-trivial two-player, zero-sum, imperfect-information game. Built on HiFight's minimalist 2D fighting game Footsies, it isolates the cyclic, non-transitive strategic interactions of fighting game neutral play while remaining simple enough for efficient analysis. We provide a vectorized simulator that enables high-throughput training on standard hardware, making the environment accessible and reproducible. We describe the design of the environment, benchmark several reinforcement learning algorithms, and discuss open research directions it enables. The code is available at https://github.com/como-research/FootsiesGym.",
+      "authors": [
+        "Chase McDonald",
+        "Nathan Tsang",
+        "Wesley N. Kerr"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.GT"
+      ],
+      "published": "2026-07-07T17:18:44+00:00",
+      "link": "https://arxiv.org/pdf/2607.06514v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "fighting game benchmark for two-player zero-sum games, similar to AlphaZero's self-play RL",
+      "llm_evidence_cn": "面向两人零和格斗游戏的强化学习基准，与AlphaZero的自我对弈强化学习类似",
+      "llm_evidence": "面向两人零和格斗游戏的强化学习基准，与AlphaZero的自我对弈强化学习类似",
+      "canonical_evidence": "面向两人零和格斗游戏的强化学习基准，与AlphaZero的自我对弈强化学习类似",
+      "llm_tldr_en": "FootsiesGym provides a vectorized fighting game environment for benchmarking RL algorithms on zero-sum imperfect-information games, enabling high-throughput training and reproducible research.",
+      "llm_tldr_cn": "现有强化学习基准多集中于完全信息博弈，缺乏对非完美信息零和博弈的深入研究。本文提出FootsiesGym，一个基于格斗游戏Footsies的开放环境，通过向量化模拟器实现高效训练，并基准测试了多种强化学习算法。该环境隔离了非传递性战略交互，为研究非完美信息博弈的自我对弈方法提供了重要工具，可视为AlphaZero架构在不同游戏类型上的扩展探索。",
+      "llm_tldr": "现有强化学习基准多集中于完全信息博弈，缺乏对非完美信息零和博弈的深入研究。本文提出FootsiesGym，一个基于格斗游戏Footsies的开放环境，通过向量化模拟器实现高效训练，并基准测试了多种强化学习算法。该环境隔离了非传递性战略交互，为研究非完美信息博弈的自我对弈方法提供了重要工具，可视为AlphaZero架构在不同游戏类型上的扩展探索。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "variants and extensions of the AlphaZero architecture for different games",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}

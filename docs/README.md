@@ -6,24 +6,28 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-07-10
-- 运行时间：2026-07-10 21:36:23 UTC
+- 最新运行日期：2026-07-11
+- 运行时间：2026-07-11 19:54:19 UTC
 - 运行状态：成功
 - 本次总论文数：1
 - 精读区：0
 - 速读区：1
 
 ### 今日简报（AI）
-今日精读零篇，速读一篇关于双人零和不完美信息博弈策略表征学习的论文。该工作尝试学习博弈策略的向量表示，可能有助于策略泛化或迁移，但评分仅6.0/10。建议对该方向感兴趣的读者可快速浏览摘要与实验部分，判断是否值得深度阅读。
-- 详情：[/202607/10/README](/202607/10/README)
+今日速读了一篇格斗游戏基准测试论文《FootsiesGym》。
+
+该研究针对双人零和不完美信息游戏，评分7.0，值得关注其博弈建模与基准设计。
+
+建议进一步了解该基准在强化学习或博弈论领域的应用。
+- 详情：[/202607/11/README](/202607/11/README)
 
 ### 精读区论文标签
 - 本次无精读推荐。
 
 ### 速读区论文标签
-1. [Towards Learning Representations of Policies in Two-Player Zero-Sum Imperfect-Information Games](/202607/10/2607.01498v1-towards-learning-representations-of-policies-in-two-player-zero-sum-imperfect-information-games)  
-   标签：评分：6.0/10、query:alphazero
-   evidence：研究二人零和不完美信息博弈中的策略表示学习，可视为AlphaZero架构在不同游戏中的拓展
+1. [FootsiesGym: A Fighting Game Benchmark for Two-Player Zero-Sum Imperfect-Information Games](/202607/11/2607.06514v1-footsiesgym-a-fighting-game-benchmark-for-two-player-zero-sum-imperfect-information-games)  
+   标签：评分：7.0/10、query:alphazero
+   evidence：面向两人零和格斗游戏的强化学习基准，与AlphaZero的自我对弈强化学习类似
 
 
 <div class="dpr-home-promo-card">
