@@ -1,0 +1,60 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-14T20:50:30.097701+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2607.06223v1",
+      "source": "arxiv",
+      "title": "Information Gain-based Rollout Policy Optimization: An Adaptive Tree-Structured Rollout Approach for Multi-Turn LLM Agents",
+      "abstract": "Reinforcement learning has become a promising paradigm for improving large language model (LLM) agents on long-horizon search tasks, where the agent must make a sequence of intermediate decisions before receiving a final outcome. However, existing methods still face a key limitation: the rollout budget is often allocated without explicitly assessing the utility of intermediate states. As a result, substantial computation may be spent on low-value states, even though different branches can vary drastically in their informativeness. In this paper, we propose Information Gain-based Rollout Policy Optimization (IGRPO), a policy optimization framework that treats intermediate-state informativeness as the organizing principle of rollout collection. Specifically, IGRPO performs budget-aware tree-structured rollouts by allocating expansion budget according to node-level informativeness, so that more informative branches are expanded more frequently while unpromising branches are progressively suppressed. We further demonstrate that the information gain-based rollout induces an explicit limiting teacher distribution over trajectories, which naturally yields a clear policy optimization target, thereby unifying adaptive tree-structured exploration with principled policy learning under a single framework. Experiments on seven challenging search-augmented QA benchmarks demonstrate that IGRPO consistently outperforms strong baselines under the same rollout budget constraints, validating the effectiveness of leveraging the induced teacher distribution to guide policy optimization for long-horizon search agents.",
+      "authors": [
+        "Yijun Zhang",
+        "Fan Xu",
+        "Jiaxin Ding",
+        "Yule Xie",
+        "Shiqing Gao",
+        "Xin Ding",
+        "Haoxiang Zhang",
+        "Luoyi Fu",
+        "Xinbing Wang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-07T12:47:23+00:00",
+      "link": "https://arxiv.org/pdf/2607.06223v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "reinforcement learning with rollout policy and tree search, similar to AlphaZero's self-play and MCTS",
+      "llm_evidence_cn": "强化学习与rollout策略及树搜索，类似于AlphaZero的自我对弈和MCTS",
+      "llm_evidence": "强化学习与rollout策略及树搜索，类似于AlphaZero的自我对弈和MCTS",
+      "canonical_evidence": "强化学习与rollout策略及树搜索，类似于AlphaZero的自我对弈和MCTS",
+      "llm_tldr_en": "Proposes IGRPO, a policy optimization framework that uses information gain to allocate rollout budget in tree-structured search, sharing methodology with AlphaZero's MCTS and self-play reinforcement learning.",
+      "llm_tldr_cn": "本文针对多轮大语言模型智能体在长视界搜索任务中rollout预算分配低效的问题，提出基于信息增益的rollout策略优化（IGRPO）框架。该方法通过评估中间状态的信息量来指导树结构rollout，与AlphaZero中蒙特卡洛树搜索和自我对弈强化学习的思想高度契合。实验表明，IGRPO能更有效地利用计算资源，提升搜索性能。该工作为强化学习与树搜索的结合提供了新的视角，可视为AlphaZero方法的一种泛化扩展。",
+      "llm_tldr": "本文针对多轮大语言模型智能体在长视界搜索任务中rollout预算分配低效的问题，提出基于信息增益的rollout策略优化（IGRPO）框架。该方法通过评估中间状态的信息量来指导树结构rollout，与AlphaZero中蒙特卡洛树搜索和自我对弈强化学习的思想高度契合。实验表明，IGRPO能更有效地利用计算资源，提升搜索性能。该工作为强化学习与树搜索的结合提供了新的视角，可视为AlphaZero方法的一种泛化扩展。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "how does AlphaZero use self play reinforcement learning",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

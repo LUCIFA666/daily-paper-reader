@@ -1,6 +1,9 @@
 * <a class="dpr-sidebar-root-link" href="#/">首页</a>
 * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="javascript:void(0)" data-dpr-hash="#/tutorial/README">使用教程</a>
 * Daily Papers
+  * 2026-07-14 <!--dpr-date:20260714-->
+    * 速读区
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202607/14/2607.06223v1-information-gain-based-rollout-policy-optimization-an-adaptive-tree-structured-rollout-approach-for-multi-turn-llm-agents" data-sidebar-item="{&quot;title&quot;: &quot;Information Gain-based Rollout Policy Optimization: An Adaptive Tree-Structured Rollout Approach for Multi-Turn LLM Agents&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2607.06223v1-information-gain-based-rollout-policy-optimization-an-adaptive-tree-structured-rollout-approach-for-multi-turn-llm-agents&quot;, &quot;score&quot;: &quot;6.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;强化学习与rollout策略及树搜索，类似于AlphaZero的自我对弈和MCTS&quot;}">Information Gain-based Rollout Policy Optimization: An Adaptive Tree-Structured Rollout Approach for Multi-Turn LLM Agents</a>
   * 2026-07-13 <!--dpr-date:20260713-->
     * 精读区
       * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202607/13/2607.08984v1-alphazero-in-sparsely-rewarded-games-limits-and-auxiliary-supervision" data-sidebar-item="{&quot;title&quot;: &quot;AlphaZero in Sparsely Rewarded Games: Limits and Auxiliary Supervision&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2607.08984v1-alphazero-in-sparsely-rewarded-games-limits-and-auxiliary-supervision&quot;, &quot;score&quot;: &quot;10.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;直接研究AlphaZero及其辅助监督变体&quot;}">AlphaZero in Sparsely Rewarded Games: Limits and Auxiliary Supervision</a>

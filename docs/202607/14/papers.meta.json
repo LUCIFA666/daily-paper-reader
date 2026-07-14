@@ -1,0 +1,24 @@
+{
+  "label": "2026-07-14",
+  "date": "2026-07-14",
+  "generated_at": "2026-07-14T20:51:34",
+  "count": 1,
+  "papers": [
+    {
+      "paper_id": "202607/14/2607.06223v1-information-gain-based-rollout-policy-optimization-an-adaptive-tree-structured-rollout-approach-for-multi-turn-llm-agents",
+      "section": "quick",
+      "title_en": "Information Gain-based Rollout Policy Optimization: An Adaptive Tree-Structured Rollout Approach for Multi-Turn LLM Agents",
+      "authors": "Yijun Zhang, Fan Xu, Jiaxin Ding, Yule Xie, Shiqing Gao, Xin Ding, Haoxiang Zhang, Luoyi Fu, Xinbing Wang",
+      "date": "2026-07-07",
+      "pdf": "https://arxiv.org/pdf/2607.06223v1",
+      "score": "6.0",
+      "evidence": "强化学习与rollout策略及树搜索，类似于AlphaZero的自我对弈和MCTS",
+      "tldr": "现有强化学习方法在多轮对话长程搜索任务中，rollout预算分配未考虑中间状态效用，导致低价值分支浪费计算。本文提出IGRPO，以信息增益为原则进行树结构rollout，优先扩展高信息量节点并抑制低价值分支，同时通过该过程生成显式教师分布，实现自适应探索与策略学习的统一。在7个搜索增强QA基准上，IGRPO在相同预算下显著优于基线，验证了利用信息增益引导教师分布可高效优化长程搜索LLM agent。",
+      "tags": "query:alphazero",
+      "abstract_en": "Reinforcement learning has become a promising paradigm for improving large language model (LLM) agents on long-horizon search tasks, where the agent must make a sequence of intermediate decisions before receiving a final outcome. However, existing methods still face a key limitation: the rollout budget is often allocated without explicitly assessing the utility of intermediate states. As a result, substantial computation may be spent on low-value states, even though different branches can vary drastically in their informativeness. In this paper, we propose Information Gain-based Rollout Policy Optimization (IGRPO), a policy optimization framework that treats intermediate-state informativeness as the organizing principle of rollout collection. Specifically, IGRPO performs budget-aware tree-structured rollouts by allocating expansion budget according to node-level informativeness, so that more informative branches are expanded more frequently while unpromising branches are progressively suppressed. We further demonstrate that the information gain-based rollout induces an explicit limiting teacher distribution over trajectories, which naturally yields a clear policy optimization target, thereby unifying adaptive tree-structured exploration with principled policy learning under a single framework. Experiments on seven challenging search-augmented QA benchmarks demonstrate that IGRPO consistently outperforms strong baselines under the same rollout budget constraints, validating the effectiveness of leveraging the induced teacher distribution to guide policy optimization for long-horizon search agents.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}
