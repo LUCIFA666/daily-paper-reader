@@ -1,0 +1,24 @@
+{
+  "label": "2026-07-16",
+  "date": "2026-07-16",
+  "generated_at": "2026-07-16T20:59:37",
+  "count": 1,
+  "papers": [
+    {
+      "paper_id": "202607/16/2607.13007v1-dynamic-resource-allocation-for-ensemble-determinization-mcts",
+      "section": "deep",
+      "title_en": "Dynamic Resource Allocation for Ensemble Determinization MCTS",
+      "authors": "Jakub Kowalski, Adam Ciężkowski, Artur Krzyżyński, Mark H. M. Winands",
+      "date": "2026-07-14",
+      "pdf": "https://arxiv.org/pdf/2607.13007v1",
+      "score": "8.0",
+      "evidence": "面向对抗性棋盘游戏的MCTS增强",
+      "tldr": "高不确定性博弈如桌游中，MCTS变体被广泛使用。本文针对Ensemble Determinization MCTS提出两种动态资源分配增强：动态调整确定化树数量和非均匀分配模拟预算。在Jaipur、Lost Cities和Splendor三个桌游上的测试表明，特定配置下算法强度获得统计显著提升，为自适应搜索提供了新思路。",
+      "tags": "query:alphazero",
+      "abstract_en": "Simulation-based algorithms are especially suited for high-uncertainty environments such as adversarial board games with significant elements of randomness and hidden information. In particular, several Monte Carlo Tree Search (MCTS) variants are commonly used in such domains. In this paper, we propose a series of enhancements for Ensemble Determinization MCTS, introducing two axes for dynamic resource allocation. First, Dynamic Number of Determinizations, increases or decreases the number of currently used determinization trees depending on the behavior of so-far search. Second, Dynamic Simulation Allocation, splits the simulation budget nonuniformly across the determinization trees, using simulation-to-simulation decisions to choose the tree with potentially the best knowledge gain. As benchmark domains, we used three popular tabletop games: Jaipur, Lost Cities, and Splendor. Testing our proposed enhancements in iteration- and time-based settings showed that particular configurations yield a statistically significant increase in the algorithm's strength.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}

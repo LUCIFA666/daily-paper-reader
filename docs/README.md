@@ -6,26 +6,24 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-07-15
-- 运行时间：2026-07-15 21:17:05 UTC
+- 最新运行日期：2026-07-16
+- 运行时间：2026-07-16 20:59:31 UTC
 - 运行状态：成功
 - 本次总论文数：1
-- 精读区：0
-- 速读区：1
+- 精读区：1
+- 速读区：0
 
 ### 今日简报（AI）
-今日速读多轮计算机使用代理的在线强化学习论文《EvoCUA-1.5》，评分6.0。  
-该研究探索通过在线强化学习提升多轮人机交互中的决策能力，是自动代理方向的有益尝试。  
-若关注AI长程任务，可进一步查阅其训练框架或尝试复现实验。
-- 详情：[/202607/15/README](/202607/15/README)
+今日精读1篇高分论文《Dynamic Resource Allocation for Ensemble Determinization MCTS》（8.0分），聚焦动态资源分配与决策优化。该文提出集成确定性化方法改进蒙特卡洛树搜索，在资源分配效率上取得显著突破。建议对AI决策感兴趣的读者重点关注这篇论文，了解其如何通过动态资源管理提升树搜索性能。
+- 详情：[/202607/16/README](/202607/16/README)
 
 ### 精读区论文标签
-- 本次无精读推荐。
+1. [Dynamic Resource Allocation for Ensemble Determinization MCTS](/202607/16/2607.13007v1-dynamic-resource-allocation-for-ensemble-determinization-mcts)  
+   标签：评分：8.0/10、query:alphazero
+   evidence：面向对抗性棋盘游戏的MCTS增强
 
 ### 速读区论文标签
-1. [EvoCUA-1.5: Online Reinforcement Learning for Multi-turn Computer-Use Agents](/202607/15/2607.09773v1-evocua-15-online-reinforcement-learning-for-multi-turn-computer-use-agents)  
-   标签：评分：6.0/10、query:alphazero
-   evidence：将在线强化学习与自我进化代理应用于计算机使用任务，类似于AlphaZero在非棋盘游戏领域的自我对弈学习。
+- 本次无速读推荐。
 
 
 <div class="dpr-home-promo-card">

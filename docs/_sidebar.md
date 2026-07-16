@@ -1,6 +1,9 @@
 * <a class="dpr-sidebar-root-link" href="#/">首页</a>
 * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="javascript:void(0)" data-dpr-hash="#/tutorial/README">使用教程</a>
 * Daily Papers
+  * 2026-07-16 <!--dpr-date:20260716-->
+    * 精读区
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202607/16/2607.13007v1-dynamic-resource-allocation-for-ensemble-determinization-mcts" data-sidebar-item="{&quot;title&quot;: &quot;Dynamic Resource Allocation for Ensemble Determinization MCTS&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2607.13007v1-dynamic-resource-allocation-for-ensemble-determinization-mcts&quot;, &quot;score&quot;: &quot;8.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;面向对抗性棋盘游戏的MCTS增强&quot;}">Dynamic Resource Allocation for Ensemble Determinization MCTS</a>
   * 2026-07-15 <!--dpr-date:20260715-->
     * 速读区
       * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202607/15/2607.09773v1-evocua-15-online-reinforcement-learning-for-multi-turn-computer-use-agents" data-sidebar-item="{&quot;title&quot;: &quot;EvoCUA-1.5: Online Reinforcement Learning for Multi-turn Computer-Use Agents&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2607.09773v1-evocua-15-online-reinforcement-learning-for-multi-turn-computer-use-agents&quot;, &quot;score&quot;: &quot;6.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;将在线强化学习与自我进化代理应用于计算机使用任务，类似于AlphaZero在非棋盘游戏领域的自我对弈学习。&quot;}">EvoCUA-1.5: Online Reinforcement Learning for Multi-turn Computer-Use Agents</a>
