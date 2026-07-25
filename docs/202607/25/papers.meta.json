@@ -1,0 +1,39 @@
+{
+  "label": "2026-07-25",
+  "date": "2026-07-25",
+  "generated_at": "2026-07-25T21:03:03",
+  "count": 2,
+  "papers": [
+    {
+      "paper_id": "202607/25/2607.19555v1-chmas-a-coupled-hierarchical-framework-for-multi-agent-reinforcement-learning",
+      "section": "quick",
+      "title_en": "CHMAS: A Coupled Hierarchical Framework for Multi-Agent Reinforcement Learning",
+      "authors": "Dongming Wang, Jie Xu, Yanyu Zhang, Wei Ren",
+      "date": "2026-07-21",
+      "pdf": "https://arxiv.org/pdf/2607.19555v1",
+      "score": "7.0",
+      "evidence": "提出了一种层次化多智能体RL框架，可将AlphaZero扩展到多智能体游戏场景",
+      "tldr": "多智能体强化学习面临全局协调与局部执行在时间尺度上的平衡难题。本文提出耦合分层多智能体系统（CHMAS），将决策分解为中心化战略规划与分布式战术执行，并引入双向信息流和反馈机制。通过异步更新协议和耦合系数λ，解决了分层学习的非平稳性。理论证明战略层收敛速率为O(log K/√K)，在多智能体觅食任务中验证了空间分区探索策略的稳定学习。",
+      "tags": "query:alphazero",
+      "abstract_en": "Multi-agent reinforcement learning (MARL) systems face fundamental   challenges in balancing global coordination with local execution   across different temporal scales. This paper introduces the Coupled   Hierarchical Multi-Agent System (CHMAS), a novel framework that   decomposes multi-agent decision-making into centralized strategic   planning and distributed tactical execution with bidirectional   information flow. The strategic layer integrates all agents' states   with an exclusive global environmental state to generate guidance   actions every $T$ timesteps, while tactical agents execute   distributed policies augmented by strategic guidance and local   neighborhood observations. Unlike existing hierarchical approaches   with unidirectional control, CHMAS establishes a feedback mechanism   where accumulated tactical rewards influence strategic objectives   through a coupling coefficient $λ$, ensuring strategic plans   remain grounded in tactical feasibility. To address the   non-stationarity inherent in hierarchical learning, we propose an   asynchronous update protocol where strategic parameters update every   $N_f$ tactical episodes, allowing tactical policies to converge to   quasi-stationary points between strategic changes. We present both a   general bi-level formulation capturing full system dynamics and a   tractable additive approximation enabling rigorous analysis.   Theoretical analysis proves that this asynchronous scheme achieves   $\\mathcal{O}(\\log K/\\sqrt{K})$ convergence for the strategic layer   after $K$ strategic updates under standard assumptions. Experimental   validation in a multi-agent foraging domain demonstrates successful   learning of spatially partitioned exploration strategies, with both   layers converging stably despite hierarchical coupling.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202607/25/2607.21120v1-relative-value-learning",
+      "section": "quick",
+      "title_en": "Relative Value Learning",
+      "authors": "Marc Höftmann, Jan Robine, Stefan Harmeling",
+      "date": "2026-07-23",
+      "pdf": "https://arxiv.org/pdf/2607.21120v1",
+      "score": "7.0",
+      "evidence": "提出了一种新的强化学习价值学习框架，可改进AlphaZero的价值网络",
+      "tldr": "标准强化学习中的评论家估计绝对状态价值，但控制仅依赖于价值差异。本文提出相对价值学习（RV），直接通过反对称函数学习状态对之间的价值差异，并设计成对贝尔曼算子及其收敛性。RV与PPO结合在Atari基准上表现与标准PPO相当，表明相对价值估计可作为绝对评论家的有效替代。该工作提供了新的理论视角和实践方法。",
+      "tags": "query:alphazero",
+      "abstract_en": "In reinforcement learning, critics typically estimate absolute state values $V(s)$, estimating how good a particular situation is in isolation. However, it turns out that only differences in value are relevant for control. Motivated by this, we propose Relative Value Learning (RV), a framework that learns value differences directly via an antisymmetric function $Δ(s_i, s_j) = V(s_i) - V(s_j)$. We introduce a pairwise Bellman operator and prove it is a $γ$-contraction with a unique fixed point equal to the true value differences, derive well-posed $1$-step, $n$-step and $λ$-return targets and reconstruct generalized advantage estimation from pairwise differences to obtain an unbiased policy-gradient estimator (R-GAE). Beyond theoretical results, we integrate RV with PPO and achieve competitive performance on the Atari benchmark (49 ALE games) compared to standard PPO, indicating that relative value estimation is an effective alternative to absolute critics.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}

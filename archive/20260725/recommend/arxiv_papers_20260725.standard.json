@@ -1,0 +1,93 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-25T21:01:58.523243+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 2,
+    "quick_skim_target": 11,
+    "quick_selected": 2
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2607.19555v1",
+      "source": "arxiv",
+      "title": "CHMAS: A Coupled Hierarchical Framework for Multi-Agent Reinforcement Learning",
+      "abstract": "Multi-agent reinforcement learning (MARL) systems face fundamental   challenges in balancing global coordination with local execution   across different temporal scales. This paper introduces the Coupled   Hierarchical Multi-Agent System (CHMAS), a novel framework that   decomposes multi-agent decision-making into centralized strategic   planning and distributed tactical execution with bidirectional   information flow. The strategic layer integrates all agents' states   with an exclusive global environmental state to generate guidance   actions every $T$ timesteps, while tactical agents execute   distributed policies augmented by strategic guidance and local   neighborhood observations. Unlike existing hierarchical approaches   with unidirectional control, CHMAS establishes a feedback mechanism   where accumulated tactical rewards influence strategic objectives   through a coupling coefficient $λ$, ensuring strategic plans   remain grounded in tactical feasibility. To address the   non-stationarity inherent in hierarchical learning, we propose an   asynchronous update protocol where strategic parameters update every   $N_f$ tactical episodes, allowing tactical policies to converge to   quasi-stationary points between strategic changes. We present both a   general bi-level formulation capturing full system dynamics and a   tractable additive approximation enabling rigorous analysis.   Theoretical analysis proves that this asynchronous scheme achieves   $\\mathcal{O}(\\log K/\\sqrt{K})$ convergence for the strategic layer   after $K$ strategic updates under standard assumptions. Experimental   validation in a multi-agent foraging domain demonstrates successful   learning of spatially partitioned exploration strategies, with both   layers converging stably despite hierarchical coupling.",
+      "authors": [
+        "Dongming Wang",
+        "Jie Xu",
+        "Yanyu Zhang",
+        "Wei Ren"
+      ],
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA"
+      ],
+      "published": "2026-07-21T20:22:40+00:00",
+      "link": "https://arxiv.org/pdf/2607.19555v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Proposes a hierarchical multi-agent RL framework that could extend AlphaZero to multi-agent games",
+      "llm_evidence_cn": "提出了一种层次化多智能体RL框架，可将AlphaZero扩展到多智能体游戏场景",
+      "llm_evidence": "提出了一种层次化多智能体RL框架，可将AlphaZero扩展到多智能体游戏场景",
+      "canonical_evidence": "提出了一种层次化多智能体RL框架，可将AlphaZero扩展到多智能体游戏场景",
+      "llm_tldr_en": "Introduces CHMAS, a coupled hierarchical multi-agent RL framework with centralized strategic planning and distributed tactical execution, enabling coordination across temporal scales.",
+      "llm_tldr_cn": "针对多智能体系统中全局协调与局部执行的时间尺度不匹配问题，论文提出耦合层次多智能体系统（CHMAS），将决策分解为中心化战略规划（每T步生成引导动作）和分布式战术执行，并引入双向信息流。该框架打破了传统层次方法的单向通信限制，通过战略层整合全局状态与局部观察，提升多智能体协作效率。实验证明CHMAS在复杂多智能体任务中优于现有方法，为AlphaZero在多智能体领域的扩展提供了新思路。",
+      "llm_tldr": "针对多智能体系统中全局协调与局部执行的时间尺度不匹配问题，论文提出耦合层次多智能体系统（CHMAS），将决策分解为中心化战略规划（每T步生成引导动作）和分布式战术执行，并引入双向信息流。该框架打破了传统层次方法的单向通信限制，通过战略层整合全局状态与局部观察，提升多智能体协作效率。实验证明CHMAS在复杂多智能体任务中优于现有方法，为AlphaZero在多智能体领域的扩展提供了新思路。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "variants and extensions of the AlphaZero architecture for different games",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.21120v1",
+      "source": "arxiv",
+      "title": "Relative Value Learning",
+      "abstract": "In reinforcement learning, critics typically estimate absolute state values $V(s)$, estimating how good a particular situation is in isolation. However, it turns out that only differences in value are relevant for control. Motivated by this, we propose Relative Value Learning (RV), a framework that learns value differences directly via an antisymmetric function $Δ(s_i, s_j) = V(s_i) - V(s_j)$. We introduce a pairwise Bellman operator and prove it is a $γ$-contraction with a unique fixed point equal to the true value differences, derive well-posed $1$-step, $n$-step and $λ$-return targets and reconstruct generalized advantage estimation from pairwise differences to obtain an unbiased policy-gradient estimator (R-GAE). Beyond theoretical results, we integrate RV with PPO and achieve competitive performance on the Atari benchmark (49 ALE games) compared to standard PPO, indicating that relative value estimation is an effective alternative to absolute critics.",
+      "authors": [
+        "Marc Höftmann",
+        "Jan Robine",
+        "Stefan Harmeling"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-07-23T09:55:45+00:00",
+      "link": "https://arxiv.org/pdf/2607.21120v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Proposes a new reinforcement learning value learning framework that could improve AlphaZero's critic",
+      "llm_evidence_cn": "提出了一种新的强化学习价值学习框架，可改进AlphaZero的价值网络",
+      "llm_evidence": "提出了一种新的强化学习价值学习框架，可改进AlphaZero的价值网络",
+      "canonical_evidence": "提出了一种新的强化学习价值学习框架，可改进AlphaZero的价值网络",
+      "llm_tldr_en": "Introduces Relative Value Learning (RV) that learns value differences directly via an antisymmetric function, with theoretical guarantees and integration with PPO, achieving competitive performance.",
+      "llm_tldr_cn": "针对强化学习中价值函数学习效率低的问题，论文提出相对价值学习（RV）框架，直接学习状态间价值差异而非绝对价值。该框架定义了配对贝尔曼算子并证明其为γ压缩映射，推导出多步目标并重构广义优势估计，得到无偏策略梯度估计器R-GAE。与PPO集成后在多个环境中取得竞争性表现，为AlphaZero等算法提供了更高效的价值学习替代方案。",
+      "llm_tldr": "针对强化学习中价值函数学习效率低的问题，论文提出相对价值学习（RV）框架，直接学习状态间价值差异而非绝对价值。该框架定义了配对贝尔曼算子并证明其为γ压缩映射，推导出多步目标并重构广义优势估计，得到无偏策略梯度估计器R-GAE。与PPO集成后在多个环境中取得竞争性表现，为AlphaZero等算法提供了更高效的价值学习替代方案。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "Research papers on AlphaZero algorithm improvements",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}
