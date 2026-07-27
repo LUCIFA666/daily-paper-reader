@@ -1,0 +1,99 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-27T21:24:30.455704+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 2,
+    "quick_skim_target": 11,
+    "quick_selected": 2
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2607.22529v1",
+      "source": "arxiv",
+      "title": "Skill Self-Play: Pushing the Frontier of LLM Capability with Co-Evolving Skills",
+      "abstract": "LLM training is shifting from manual design and annotation to interaction-driven self-evolution. However, existing self-evolutionary methods face a fundamental dilemma between task diversity and verification reliability: environment-bound methods obtain precise feedback but confine learning to narrow domains, while open-ended self-generation broadens the task space but lacks reliable verification, allowing misleading rewards to pollute the training loop. We identify agent skills as a powerful middle ground to reconcile this tension: each skill ensures deep, verifiable execution in a specific scenario, while dynamic routing across skills maintains open-ended task variety. Leveraging this insight, we introduce Skill Self-Play (Skill-SP), a co-evolutionary framework comprising a proposer, a solver, and a dynamic skill controller. Orchestrated via a reinforcement learning loop, these components co-evolve in a continuous self-play loop: the proposer generates challenging tasks conditioned on dynamically sampled skills; the solver explores candidate solutions to push its capability boundaries; and the skill controller collects execution feedback to update and expand the skill library. This interactive co-evolution effectively bridges the gap between structured verification and open-ended exploration. Empirical evaluations on tool-use and reasoning benchmarks demonstrate that Skill-SP, serving as a robust evolution engine, consistently pushes the performance ceiling of competent backbones while catalyzing striking turnarounds for initially misaligned models. Our code is available at https://github.com/Qwen-Applications/skill-self-play.",
+      "authors": [
+        "Siyuan Huang",
+        "Pengyu Cheng",
+        "Haotian Liu",
+        "Tao Chen",
+        "Yihao Liu",
+        "Jingwei Ni",
+        "Shijie Zhou",
+        "Ziyi Yang",
+        "Gangwei Jiang",
+        "Mengyu Zhou",
+        "Yu Cheng",
+        "Xiaoxi Jiang",
+        "Guanjun Jiang"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-07-24T17:59:22+00:00",
+      "link": "https://arxiv.org/pdf/2607.22529v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "self-play reinforcement learning for LLM training using co-evolving skills",
+      "llm_evidence_cn": "使用协同进化技能进行大语言模型训练的自对弈强化学习",
+      "llm_evidence": "使用协同进化技能进行大语言模型训练的自对弈强化学习",
+      "canonical_evidence": "使用协同进化技能进行大语言模型训练的自对弈强化学习",
+      "llm_tldr_en": "Skill Self-Play introduces a co-evolution framework for LLMs that uses self-play to generate diverse agent skills with verifiable rewards, addressing the dilemma between task diversity and verification reliability, and improves performance across code-agent and tool-use tasks.",
+      "llm_tldr_cn": "大型语言模型的自进化训练面临任务多样性与验证可靠性的困境。本文提出技能自对弈（Skill-SP）框架，将每个技能视为可验证的执行单元，通过动态路由和自对弈机制协同进化，在保持任务开放性的同时确保奖励信号的可靠性。实验表明，该方法在代码智能体、办公智能体等任务上显著提升了性能，为LLM的自强化学习提供了新的范式。",
+      "llm_tldr": "大型语言模型的自进化训练面临任务多样性与验证可靠性的困境。本文提出技能自对弈（Skill-SP）框架，将每个技能视为可验证的执行单元，通过动态路由和自对弈机制协同进化，在保持任务开放性的同时确保奖励信号的可靠性。实验表明，该方法在代码智能体、办公智能体等任务上显著提升了性能，为LLM的自强化学习提供了新的范式。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "how does AlphaZero use self play reinforcement learning",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.17560v1",
+      "source": "arxiv",
+      "title": "Reinforcement Learning: From Algorithms To Foundation Models",
+      "abstract": "Reinforcement learning (RL) provides a framework for sequential decision making under explicit objectives. In its classical form, RL studies how an agent should act to maximise long-term reward in a dynamic environment. In richer settings, the problem extends beyond a single agent and fixed environment: intelligent behavior may require strategic interaction, adaptation to uncertainty, and reasoning over high-dimensional worlds. This thesis studies RL from two perspectives: algorithms in games and RL in the era of foundation models.   The first part focuses on multi-agent RL in games. It examines how incentives, policies, and equilibrium concepts interact in competitive and general-sum environments, spanning two-player zero-sum games, large-scale video games, and multi-player settings with general structure. These works investigate learning in multi-agent systems and the behavior of RL methods in interactive environments. The second part studies RL with generative and foundation models, motivated by the idea that prior knowledge can enrich sequential decision making. Pretrained generative models and learned world models serve as representation tools and structured priors for planning, control, and policy optimization. The thesis develops diffusion-based world models, investigates RL for efficient video generation, explores generative models as policy classes, and studies interactive video world models in which actions shape future observations. It also addresses long-horizon modeling through architectures with memory. Together, these contributions present a unified view of RL as objective-driven adaptation in complex sequential domains. From strategic games to generative world models, the thesis highlights how RL connects decision making, environment modeling, and emerging foundation-model capabilities, offering a broader perspective on the principles underlying intelligent behavior.",
+      "authors": [
+        "Zihan Ding"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-20T05:09:36+00:00",
+      "link": "https://arxiv.org/pdf/2607.17560v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "covers RL in games including AlphaZero-like methods",
+      "llm_evidence_cn": "涵盖包括AlphaZero类方法的游戏强化学习",
+      "llm_evidence": "涵盖包括AlphaZero类方法的游戏强化学习",
+      "canonical_evidence": "涵盖包括AlphaZero类方法的游戏强化学习",
+      "llm_tldr_en": "This thesis surveys reinforcement learning from algorithms in games to foundation models, covering multi-agent RL in zero-sum games and large-scale video games, relevant to AlphaZero's game-playing paradigm.",
+      "llm_tldr_cn": "该论文综述了从游戏算法到基础模型的强化学习发展，涵盖了两人零和游戏和大规模视频游戏中的多智能体强化学习，与AlphaZero的游戏玩法范式相关。论文第一部分重点研究竞争和一般和环境中激励、策略和均衡概念的交互，为理解AlphaZero的自我对弈机制提供了理论背景。",
+      "llm_tldr": "该论文综述了从游戏算法到基础模型的强化学习发展，涵盖了两人零和游戏和大规模视频游戏中的多智能体强化学习，与AlphaZero的游戏玩法范式相关。论文第一部分重点研究竞争和一般和环境中激励、策略和均衡概念的交互，为理解AlphaZero的自我对弈机制提供了理论背景。",
+      "llm_tags": [
+        "query:alphazero:composite"
+      ],
+      "matched_query_tag": "query:alphazero:composite",
+      "matched_query_text": "Papers central to 阿尔法零：一种通过自我对弈和强化学习掌握棋类游戏的人工智能程序；alphazero衍生, especially work that connects or combines: AlphaZero artificial intelligence program; variants and extensions of the AlphaZero architecture for different games; how does AlphaZero use self play reinforcement learning; implementation of AlphaZero algorithm; Research papers on AlphaZero algorithm improvements; AlphaZero applications beyond board games.",
+      "matched_requirement_id": "req-composite-alphazero",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}
