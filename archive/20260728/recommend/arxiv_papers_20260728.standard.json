@@ -1,0 +1,56 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-28T21:14:31.739745+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2607.21195v1",
+      "source": "arxiv",
+      "title": "Chess\\_db: A framework for working with large chess game datasets",
+      "abstract": "Chess is a two player strategic game that is embedded in classical AI  culture as it was once the frontier for intelligent behaviour.  There was the silent assumption that the advent of computer engines that  play better than the best humans will extinguish interest in the game. However, the opposite has come to pass, with a growing following for the game. A lot of the computational resources are now centered around training of players, where the engine output is just one aspect. Access to  past games is also an essential part, both in knowing what games a specific player has played previously, and also which continuations at a certain position have led to victory more often for each of the two colour players. We present Chess_db a suite of logic programming tools that can effectively manipulate games both in memory and via creating back end databases.  In particular, we provide versatile code that creates databases from PGN (portable game notation) game files and explore the suitability of open source key-value databases for  storing position tables that provide near-instant access to  information pertaining to substantially large number of games.",
+      "authors": [
+        "Nicos Angelopoulos",
+        "Jan Wielemaker"
+      ],
+      "primary_category": "cs.LO",
+      "categories": [
+        "cs.LO",
+        "cs.AI",
+        "cs.DB",
+        "cs.SC"
+      ],
+      "published": "2026-07-23T11:17:41+00:00",
+      "link": "https://arxiv.org/pdf/2607.21195v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "chess dataset framework, supporting AlphaZero-style chess AI research",
+      "llm_evidence_cn": "国际象棋数据集框架，支持AlphaZero风格的象棋AI研究",
+      "llm_evidence": "国际象棋数据集框架，支持AlphaZero风格的象棋AI研究",
+      "canonical_evidence": "国际象棋数据集框架，支持AlphaZero风格的象棋AI研究",
+      "llm_tldr_en": "Presents Chess_db, a logic programming framework for managing and querying large chess game datasets, enabling efficient processing of game records for training chess AI like AlphaZero.",
+      "llm_tldr_cn": "该论文介绍了Chess_db，一个用于管理大型国际象棋游戏数据的逻辑编程框架。该框架提供对大量对局的高效查询和处理能力，便于提取棋局特征、统计胜率等。对于需要大量历史对局数据来训练或评估AlphaZero等象棋人工智能系统的研究者而言，是一个实用的工具。",
+      "llm_tldr": "该论文介绍了Chess_db，一个用于管理大型国际象棋游戏数据的逻辑编程框架。该框架提供对大量对局的高效查询和处理能力，便于提取棋局特征、统计胜率等。对于需要大量历史对局数据来训练或评估AlphaZero等象棋人工智能系统的研究者而言，是一个实用的工具。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "variants and extensions of the AlphaZero architecture for different games",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

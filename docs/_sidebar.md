@@ -1,6 +1,9 @@
 * <a class="dpr-sidebar-root-link" href="#/">首页</a>
 * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="javascript:void(0)" data-dpr-hash="#/tutorial/README">使用教程</a>
 * Daily Papers
+  * 2026-07-28 <!--dpr-date:20260728-->
+    * 速读区
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202607/28/2607.21195v1-chessdb-a-framework-for-working-with-large-chess-game-datasets" data-sidebar-item="{&quot;title&quot;: &quot;Chess\\_db: A framework for working with large chess game datasets&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2607.21195v1-chessdb-a-framework-for-working-with-large-chess-game-datasets&quot;, &quot;score&quot;: &quot;6.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;国际象棋数据集框架，支持AlphaZero风格的象棋AI研究&quot;}">Chess\_db: A framework for working with large chess game datasets</a>
   * 2026-07-27 <!--dpr-date:20260727-->
     * 速读区
       * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202607/27/2607.22529v1-skill-self-play-pushing-the-frontier-of-llm-capability-with-co-evolving-skills" data-sidebar-item="{&quot;title&quot;: &quot;Skill Self-Play: Pushing the Frontier of LLM Capability with Co-Evolving Skills&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2607.22529v1-skill-self-play-pushing-the-frontier-of-llm-capability-with-co-evolving-skills&quot;, &quot;score&quot;: &quot;7.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;使用协同进化技能进行大语言模型训练的自对弈强化学习&quot;}">Skill Self-Play: Pushing the Frontier of LLM Capability with Co-Evolving Skills</a>
