@@ -1,6 +1,11 @@
 * <a class="dpr-sidebar-root-link" href="#/">首页</a>
 * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="javascript:void(0)" data-dpr-hash="#/tutorial/README">使用教程</a>
 * Daily Papers
+  * 2026-07-30 <!--dpr-date:20260730-->
+    * 精读区
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202607/30/2607.26946v1-belief-guided-decision-making-with-uncertainty-gating-in-the-game-of-go" data-sidebar-item="{&quot;title&quot;: &quot;Belief-Guided Decision Making with Uncertainty Gating in the Game of Go&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2607.26946v1-belief-guided-decision-making-with-uncertainty-gating-in-the-game-of-go&quot;, &quot;score&quot;: &quot;9.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;提出信念引导架构，扩展AlphaZero，加入不确定性门控用于围棋&quot;}">Belief-Guided Decision Making with Uncertainty Gating in the Game of Go</a>
+    * 速读区
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202607/30/2607.25308v1-cast-game-solvers-as-turn-level-teachers-for-llm-agents" data-sidebar-item="{&quot;title&quot;: &quot;CAST: Game Solvers as Turn-Level Teachers for LLM Agents&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2607.25308v1-cast-game-solvers-as-turn-level-teachers-for-llm-agents&quot;, &quot;score&quot;: &quot;6.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;将游戏求解器价值用于大语言模型强化学习，将AlphaZero方法扩展到新领域&quot;}">CAST: Game Solvers as Turn-Level Teachers for LLM Agents</a>
   * 2026-07-28 <!--dpr-date:20260728-->
     * 速读区
       * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202607/28/2607.21195v1-chessdb-a-framework-for-working-with-large-chess-game-datasets" data-sidebar-item="{&quot;title&quot;: &quot;Chess\\_db: A framework for working with large chess game datasets&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2607.21195v1-chessdb-a-framework-for-working-with-large-chess-game-datasets&quot;, &quot;score&quot;: &quot;6.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;国际象棋数据集框架，支持AlphaZero风格的象棋AI研究&quot;}">Chess\_db: A framework for working with large chess game datasets</a>

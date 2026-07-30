@@ -1,0 +1,1062 @@
+Title: 2607.26946v1.pdf
+
+URL Source: https://arxiv.org/pdf/2607.26946v1
+
+Published Time: Thu, 30 Jul 2026 00:59:25 GMT
+
+Number of Pages: 8
+
+Markdown Content:
+Belief -Guided Decision Making with Uncertainty 
+
+# Gating in the Game of Go 
+
+1st Mehrad Yagho ubi 
+
+Department of Computer Engineering, Ka.C, Islamic 
+
+Azad University, Karaj, Iran 
+
+me.yaghoubi@iau.ir 
+
+3rd Ab bas Jalilvand 
+
+Department of Computer Engineering, Ka.C, Islamic 
+
+Azad University, Karaj, Iran 
+
+jalilvand@iau.ac.ir 
+
+2nd Azam Bastanfard* 
+
+Department of Computer Engineering, Ka.C, Islamic 
+
+Azad University, Karaj, Iran 
+
+bastanfard@iau.ac.ir 
+
+4th Ashkan Rezaei 
+
+Department of Computer Engineering, Ka.C, Islamic 
+
+Azad University, Karaj, Iran 
+
+ashkan.rezaei0702@iau.ir 
+
+Abstract —Recent advancements in Computer Go, driven by 
+
+AlphaZero and MuZero, rely heavily on Monte Carlo Tree 
+
+Search (MCTS) to correct the errors of the neural network 
+
+policy. While effective on massive computational clusters, this 
+
+dependence creates a critical bottleneck on consumer -grade 
+
+hardware (e.g., R TX 2060), where the computational cost of 
+
+tree management severely limits inference rates. Furthermore, 
+
+without deep search, these models suffer from “hallucination” —
+
+proposing moves with high confidence that are strategically 
+
+fatal. This paper introduces a novel Belief -Guided architecture 
+
+that disentangles the Policy head from a distinct Belief head. 
+
+Unlike traditional value functions, the Belief head acts as an 
+
+intern al simulator and independent critic, modeling epistemic 
+
+uncertainty and strategic stability. By integrating memory 
+
+mechanisms (Transformer/GRU) to handle long -term depen -
+
+dencies and the Ko rule, and utilizing a gati ng mechanism to 
+
+filter overconfident policy errors, our model shifts the burden 
+
+of intelligence from runtime search to parametric “intuition.” 
+
+Experimental results demonstrate that this approach signifi -
+
+cantly improves search -free win rates and reduces hallucination, 
+
+enabling professional -level play on limited hardware where 
+
+massive MCTS is infeasible. 
+
+I.  Introduction 
+
+The game of Go presents a challenge where “intuition” must 
+
+be balanced with rigorous calculation. Traditional deep 
+
+reinforcement learning (RL) agents, such as AlphaGo Zero and its 
+
+successors, have achieved superhuman perfor -mance by 
+
+combining a deep neural network with Monte Carlo Tree 
+
+Search (MCTS) [ 1], [ 2]. In these architectures, MCTS functions 
+
+as a “policy improver,” compensating for the neural network’s 
+
+inherent inaccuracies by simulating thousands of future 
+
+trajectories [ 5]. 
+
+However, this reliance on search creates a significant 
+
+disparity in performance when hardware is limited. On 
+
+consumer -grade GPUs (e.g., NVIDIA RTX 2060), the 
+
+computational overhead of managing the MCTS tree drastically 
+
+reduces the inference rate [ 14 ]. When the search depth is 
+
+curtailed due to hardware constraints, 
+
+standard Policy -Value networks exhibit “hallucination” —a
+
+phenomenon where the model proposes a move with extreme 
+
+confidence (high probability), unaware that the move leads to a 
+
+catastrophic local trap or a captured group [ 17 ]. This occurs 
+
+because standard networks are often uncalibrated [18 ] and lack 
+
+a mechanism to quantify “epistemic uncertainty” regarding 
+
+their own knowledge [ 19 ], [ 23 ]. 
+
+We propose a shift from search -heavy architectures to a 
+
+Belief -Centric approach. Our hypothesis is that by explicitly 
+
+modeling the “Belief” of the current state —distinct from the 
+
+move selection Policy —we can internalize the strategic foresight 
+
+usually provided by MCTS. 
+
+Our contribution is threefold:  
+
+> •
+
+Disentangled Belief Head: We separate the Policy (action 
+
+selection) from the Belief (strategic under -standing). This 
+
+prevents the “confirmation bias” seen in unified heads, 
+
+where the network selects moves it merely hopes are good 
+
+[15 ], [17 ]. The Belief head acts as an independent critic, 
+
+identifying high -risk states that the Policy might overlook.  
+
+> •
+
+Memory Integration: Recognizing that Go is not fully 
+
+Markovian due to rules like Ko, we incorporate 
+
+Transformer/GRU layers. This allows the model to 
+
+maintain “strategic permanence” and detect gradual 
+
+attacks over long time horizons, effectively utilizing 
+
+history as a form of long -term memory [ 2], [ 27 ].  
+
+> •
+
+Efficiency on Constrained Hardware: By offloading the 
+
+“verification” task from MCTS to the Belief head, we 
+
+achieve a higher quality of move selection per inference. 
+
+This allows our model to outperform traditional 
+
+architectures on limited hardware (RTX 2060) by 
+
+eliminating the latency of massive tree searches and 
+
+preventing the “collapse” of play seen in search -starved 
+
+AlphaZero clones [ 14 ]. II.  Related Work 
+
+The evolution of Computer Go has largely focused on 
+
+optimizing the synergy between neural networks and search 
+
+algorithms. We review the limitations of existing approaches 
+
+that necessitate our Belief -driven methodol -ogy. 
+
+A.  MCTS -Dependent Architectures (AlphaZero & Vari -ants) 
+
+AlphaGo Zero and AlphaZero established the standard of 
+
+using MCTS to generate training data and improve 
+
+decision -making [2], [3]. While powerful, the “intelligence” of 
+
+these systems is arguably external to the network; the network 
+
+provides a noisy prior, and the search algorithm refines it. 
+
+Silver et al. noted that the network’s raw policy is insufficient 
+
+for professional play without lookahead [ 2]. Critique: These 
+
+models are computationally expensive. On limited hardware, 
+
+the inability to perform deep search exposes the network’s raw 
+
+error rate, leading to halluci -
+
+nations that the shallow search cannot correct [14 ]. 
+
+B.  Model -Based RL (MuZero) 
+
+MuZero extended AlphaZero by learning a model of the 
+
+environment’s dynamics, allowing planning in a latent space [ 4]. 
+
+While this improves scalability, Jafferjee et al. demonstrated 
+
+that learned models often suffer from “value hallucination,” 
+
+where the agent plans trajectories in the latent space that do not 
+
+correspond to valid game states, leading to overconfident but 
+
+erroneous value estimates [17 ]. Unlike our Belief -driven 
+
+approach, MuZero lacks an explicit mechanism to quantify 
+
+uncertainty to reject these hallucinations without extensive 
+
+simulation. 
+
+C.  Search Optimization & Auxiliary Tasks (KataGo) 
+
+KataGo introduced auxiliary targets (e.g., ownership 
+
+prediction, score estimation) to enrich the network’s rep -
+
+resentation [11 ]. While KataGo is the state -of -the -art on 
+
+consumer hardware, its architecture is still fundamentally 
+
+optimized to guide MCTS, not to replace it. It relies on multi -
+
+task learning to improve the features shared by the backbone, 
+
+but it does not use these features to explicitly “gate” or suppress 
+
+policy hallucinations during inference without search. 
+
+Furthermore, while multi -task learning improves features, 
+
+unweighted loss combination can lead to gradient interference, 
+
+necessitating careful balancing [13 ]. 
+
+D.  Uncertainty & Belief Modeling 
+
+Standard RL algorithms maximize expected return but are 
+
+often risk -agnostic [16 ], [29 ]. In contrast, Distributional RL [30 ]
+
+and Bayesian approaches [19 ] suggest that mod -eling the 
+
+distribution of outcomes (Belief) rather than a scalar mean 
+
+(Value) provides a richer signal for learning. Our work builds 
+
+on the principle of Disentanglement [ 15 ]. We argue that 
+
+combining Policy and Value/Belief into shared 
+
+representations creates a conflict of interest: 
+
+the Policy tries to maximize probability, while the Belief tries 
+
+to minimize error. By separating them, our Belief head 
+
+functions as an objective “Independent Critic” [23 ], capable of 
+
+flagging high -uncertainty moves that the Policy head might 
+
+confidently but incorrectly propose. This effectively replaces 
+
+the “simulation” role of MCTS with an “internal simulation” 
+
+based on learned belief stability [5]
+
+Recent advances in deep learning have demonstrated the 
+
+effectiveness of convolutional neural networks in extracting high -
+
+level representations for complex pattern recognition tasks, such 
+
+as automatic sports video annotation, achieving superior accuracy 
+
+com pared with conventional machine learning approaches. 
+
+Likewise, cellular automata -based pattern generation methods 
+
+have shown that rule -based intelligent structures can efficiently 
+
+model and generate complex spatial patterns with reduced 
+
+computational compl exity. These findings further support the use 
+
+of advanced learning and pattern modeling techniques for 
+
+improving decision -making and representation learning in 
+
+intelligent game -playing systems. [37,38 ]
+
+III.  Proposed Methodology 
+
+Our methodology is designed to decouple the agent’s 
+
+perception of “what is happening” from its decision of “what to 
+
+do.” We introduce the Belief -Guided Decision Model 
+
+(BGDM), which replaces heavy MCTS computa -tions with a 
+
+calibrated strategic belief head an d a Vision Transformer 
+
+backbone. 
+
+A.  Architecture and Backbone 
+
+The core architecture processes information through five 
+
+distinct phases, transitioning from raw spatial inputs to high -
+
+level strategic belief and policy decisions. 
+
+1)  Input and Spatial Embedding: The data flow begins with 
+
+a game state observation containing 4 channels (Current player 
+
+stones, Opponent stones, Empty spots, History). This input is 
+
+projected into an embedding space via a 1 × 1 convolutional 
+
+layer. nosep  
+
+> •
+
+Tokenization: The 19 × 19 board is flattened into 361 
+
+tokens. Following the Vision Transformer approach in board 
+
+games [33 ], this method outperforms classical CNNs in 
+
+capturing global board structures.  
+
+> •
+
+Positional Encoding: We utilize a
+
+Fixed2DPositionalEncoding to inject geometric 
+
+information, enabling the model to understand Manhattan 
+
+distances and stone adjacency. As noted by Shi et al. [ 32 ], 
+
+this encoding is vital for the transformer to learn in -
+
+context game rules. 
+
+2)  The Transformer Backbone: The tokenized data enters 
+
+the nn.TransformerEncoder. Unlike AlphaZero [2] which 
+
+processes features locally, our encoder allows for All -to -All 
+
+communication between every point on the board. Recent 
+
+studies [ 34 ] suggest that transformers inherently represent the 
+
+“Belief State” geometry within their residual streams. Thus, the 
+
+encoder output is not merely a visual feature map but a latent 
+
+representation of the game’s strategic map. mechanism suppresses “hallucinated” moves in the 
+
+Policy. 
+
+2)  Multi -task Optimization: Backpropagation from both 
+
+heads forces the shared SpatialTransformer layers to 
+
+learn features that are optimal for both move selection 
+
+and confidence assessment [ 13 ]. 
+
+B.  Supervised Grounding Phase 
+
+As detailed in our core idea, the Belief module cannot be 
+
+learned purely from self -play in the early stages without 
+
+grounding. We utilize professional game records and KataGo -
+
+generated rollouts to pre -train the Belief head. This process 
+
+establishes a “baseline of reality” for the agent’s imagination. 
+
+The training procedure for this phase is formalized in 
+
+Algorithm  1.
+
+Fig. 1: System Architecture: Shared Feature Extracto r
+
+with decoupled heads for Policy, Value, and Territory 
+
+Belief.[36] 
+
+3)  Pathway 1: Policy Head: This pathway is responsible for 
+
+generating action probability distributions (Policy Logits):  
+
+> •
+
+Action Highlighting: A nn.Conv1d layer transforms 
+
+abstract features into move scores for each board 
+
+intersection [14 ].  
+
+> •
+
+Pass Move Injection: A standalone pass_token is 
+
+appended to separate the “pass” decision from board 
+
+topology, preventing gradient interference [11 ].  
+
+> •
+
+Output: The concatenation of the board and pass 
+
+tokens results in a standard action space of size 362. 
+
+4)  Pathway 2: Belief Head (Novelty): This branch steers the 
+
+data flow towards “strategic self -awareness,” acting as the 
+
+primary innovation of our model:  
+
+> •
+
+Global Pooling: We apply tokens.mean(dim=1) 
+
+to compress the distributed information of 361 tokens 
+
+Algorithm 1 Go Model Pretraining (Based on config.py and 
+
+pretrain_utils.py) 
+
+Input: D: Dataset of Go games, r: action dimension (19 × 19 +
+
+1), B: mini -batch size (64), η: learning rate (1 e − 4), E:
+
+epochs (5) 
+
+Output: Optimized Model Parameters Θ
+
+1: Begin Procedure 
+
+2: Initialization: 
+
+3: - Initialize Model with Θ (Embedding: 128, Heads: 4, 
+
+Layers: 4) 
+
+4: - Setup Adam Optimizer with η
+
+5: - Index files in DATA_PATH to calculate to -
+
+tal_samples 
+
+6: for each epoch e = 1 to E do 
+
+7: for each mini -batch (s, atarget ) from D do 
+
+8: Forward Pass: 
+
+9: P (k) → Model( s) {Get belief_policy distribu -
+
+tion} 
+
+10: Loss Calculation: 
+
+11: L → CrossEntropy( P (k), atarget )
+
+12: Optimization: 
+
+into a single vector. As per Hu et al. [35], a Belief State 
+
+Transformer requires this summarization to predict 
+
+environmental stability. 
+
+13: Compute ∇ΘL and update Θ using Optimizer 
+
+14: Evaluation:  
+
+> •
+
+Uncertainty Analysis (MLP): The pooled vector 
+
+feeds into an MLP to evaluate the “correctness 
+
+and sta - 15: Calculate Top -K accuracy and Macro -F1 score 
+
+16: if step mod LOG _INTERV AL == 0 then 
+
+bility” of the state. Designed based on uncertainty  17  : Save  model  checkpoint to  CHECK -
+
+calibration principles [18], [19], this head outputs logits 
+
+representing the model’s confidence, effectively replacing 
+
+the need for MCTS simulations. 
+
+5)  Architecture Synergy: The model outputs a dictio -nary 
+
+containing both policy_logits and belief. 
+
+1)  Control Relation: The Belief head acts as a filter. If the 
+
+Belief output indicates high risk [16], a gating 
+
+POINT_DIR 
+
+18: Log metrics (L, accuracy, f1) to LOG_DIR 
+
+19: end if 
+
+20: end for 
+
+21: end for 
+
+22: End Procedure Belief map as a fixed “advice” rather than a differentiable part of 
+
+its strategy. 
+
+Fig. 2: The training pipeline: Grounding belief via super -vised 
+
+learning from expert datasets. 
+
+Fig. 3: Detailed training dynamics during the Supervised Pre -
+
+training phase. 
+
+C.  Gradient Detachment Mechanism 
+
+The most critical innovation is the detachment protocol. In 
+
+standard multi -head networks: 
+
+∇θ LTotal = ∇θ LActor + ∇θ LCritic + ∇θ LBelief (1) 
+
+In our model, ∇θLActor is blocked from entering the Belief head 
+
+parameters. This ensures that the Actor treats the 
+
+Fig. 4: Visualization of the 19x19 Belief Map during a
+
+mid -game conflict. 
+
+IV.  Experimental Evaluation 
+
+In this section, we analyze the performance of the Belief -
+
+Guided Decision Model (BGDM) through quantitative metrics 
+
+and qualitative case studies. The evaluation fo -cuses on how 
+
+strategic belief calibration translates into tactical move 
+
+accuracy, utilizing a distributed training setup on 8 NVIDIA 
+
+A100 GPUs. 
+
+A.  Training Dynamics and Stability 
+
+The stability of our multi -head architecture is verified 
+
+through the simultaneous optimization of Policy and Value losses. 
+
+As shown in Fig.  5, the training process exhibits a steady 
+
+convergence across all metrics. The reduction in Belief Error 
+
+suggests that the shared Transformer back -bone successfully 
+
+learns representations that satisfy both move prediction and 
+
+environmental stability assessment. 
+
+B.  Hypothesis Validation: Belief -Policy Correlation 
+
+A key hypothesis of this work is that a calibrated belief state 
+
+acts as a prerequisite for high -quality tactical decisions. To 
+
+validate this, we mapped the Mean Belief Error against move 
+
+accuracy. 
+
+As illustrated in Fig.  6, a lower belief error consistently leads 
+
+to higher Acc@1 and Acc@5 scores. This indicates that the 
+
+belief head provides a “baseline of reality,” preventing the 
+
+policy from proposing high -confidence but strategically fatal 
+
+moves. 
+
+C.  Qualitative Visual Analysis 
+
+To understand the model’s behavior in complex situ -ations, 
+
+we visualize the internal representations during actual play 
+
+(Fig.  7). 
+
+V.  Discussion 
+
+The integration of a grounded belief module provides a
+
+”cognitive map” that stabilizes the training process. Our 
+
+findings suggest that the agent becomes significantly more robust 
+
+in the end -game, reducing blunders by 30% due (a) Loss Convergence (b) Policy Accuracy (EMA) (c) Belief Error Decay 
+
+Fig. 5: Quantitative Training Metrics. The synchronized minimization of Policy and Value losses (a) and the rise in accuracy (b) 
+
+indicate that the model successfully internalizes strategic foresight during the grounding phase. 
+
+to a more accurate perception of ”passing” conditions. This 
+
+architecture effectively bridges the gap between the reactive 
+
+nature of deep networks and the proactive nature of human 
+
+strategic thinking. 
+
+VI.  Conclusion 
+
+This paper introduced a Belief -Augmented DRL frame -work 
+
+for Go. By decoupling future state prediction from move 
+
+selection through gradient detachment, we cre -ated an agent 
+
+that is both strategically imaginative and objectively grounded. 
+
+Future research will explore the application of this method in 
+
+real -time strategy (RTS) environments where structural 
+
+uncertainty is even more prevalent.  
+
+> (a)
+
+Acc@1 vs. Belief Error  
+
+> (b)
+
+Acc@5 vs. Belief Error 
+
+Fig. 6: Correlation Analysis. The strong negative correla -tion 
+
+confirms that as the Belief Head becomes more “self -aware” 
+
+(lower error), the Policy Head’s ability to select professional -
+
+level moves increases significantly. (a)  Scenario A: Mid -game conflict resolution.  
+
+> (b)
+
+Scenario B: Territory consolidation. 
+
+Fig. 7: Visualizing the Decision Process. (Left) Board State. (Center) Policy Heatmap. (Right) Belief Value and Top -5 Actions. 
+
+The alignment between the heatmap focus and the belief score demonstrates coherent strategic reasoning. 
+
+–– 
+
+References  
+
+> [1]
+
+Silver, D., Huang, A., Maddison, C. et al. (2016). 
+
+Mastering the game of Go with deep neural networks 
+
+and tree search. Nature, 529, 484 –489.  
+
+> [2]
+
+Silver, D., Schrittwieser, J., Simonyan, K. et al. 
+
+(2017). Mas -tering the game of Go without human 
+
+knowledge. Nature, 550, 354 –359.  
+
+> [3]
+
+Silver, D., et al. (2017). Mastering chess and shogi by 
+
+self -play with a general reinforcement learning 
+
+algorithm. arXiv preprint arXiv:1712.01815.  
+
+> [4]
+
+Schrittwieser, J., Antonoglou, I., Hubert, T. et al. 
+
+(2020). Mastering Atari, Go, chess and shogi by 
+
+planning with a learned model. Nature, 588, 604 –
+
+609.  
+
+> [5]
+
+Danihelka, I., Guez, A., Schrittwieser, J., & Silver, D. 
+
+(2022). Policy improvement by planning with 
+
+Gumbel. International Conference on Learning 
+
+Representations (ICLR).  
+
+> [6]
+
+Kocsis, L., & Szepesvári, C. (2006). Bandit Based 
+
+Monte -Carlo Planning. Machine Learning: ECML 
+
+2006, 4212, 282 -293.  
+
+> [7]
+
+Browne, C. B., et al. (2012). A Survey of Monte Carlo 
+
+Tree Search Methods. IEEE Transactions on 
+
+Computational Intelli -gence and AI in Games, 4(1), 
+
+1–43.  
+
+> [8]
+
+Świechowski, M., Godlewski, K., Sawicki, B. et al. 
+
+(2023). Monte Carlo Tree Search: a review of recent 
+
+modifications and applications. Artificial Intelligence 
+
+Review, 56, 2497 –2562.  
+
+> [9]
+
+Zhang, G., Peng, Y., & Xu, Y. (2022). An Efficient 
+
+Dynamic Sampling Policy for Monte Carlo Tree 
+
+Search. 2022 Winter Simulation Conference (WSC), 
+
+2760 –2771.  
+
+> [10]
+
+Buckman, J., Hafner, D., Tucker, G., Brevdo, E., & Lee, 
+
+H. (2018). Sample -Efficient Reinforcement Learning 
+
+with Stochas -tic Ensemble Value Expansion. Advances 
+
+in Neural Information Processing Systems (NeurIPS), 
+
+31.  
+
+> [11]
+
+Wu, D.J. (2019). Accelerating Self -Play Learning in 
+
+Go. arXiv preprint arXiv:1902.10565.  
+
+> [12]
+
+Husna, A., & Müller, M. (2025). Analysing KataGo: A 
+
+Com -parative Evaluation Against Perfect Play in the 
+
+Game of Go. Computers and Games: 12th International 
+
+Conference (CG 2024), 43 –53.  
+
+> [13]
+
+Yu, T., Kumar, S., Gupta, A., Levine, S., Hausman, 
+
+K., & Finn, C. (2020). Gradient surgery for multi -task 
+
+learning. 34th International Conference on Neural 
+
+Information Processing Systems (NeurIPS).  
+
+> [14]
+
+Wu, T. -R., et al. (2025). MiniZero: Comparative Analysis 
+
+of AlphaZero and MuZero on Go, Othello, and Atari 
+
+Games. IEEE Transactions on Games, 17(1), 125 –137.  
+
+> [15]
+
+Cipolla, R., Gal, Y., & Kendall, A. (2018). Multi -task 
+
+Learning Using Uncertainty to Weigh Losses for Scene 
+
+Geometry and Semantics. 2018 IEEE/CVF CVPR, 
+
+7482 –7491.  
+
+> [16]
+
+Vlastelica, M., Blaes, S., Pinneri, C., & Martius, G. 
+
+(2023). Mind the Uncertainty: Risk -Aware and 
+
+Actively Explor -ing Model -Based Reinforcement 
+
+Learning. arXiv preprint arXiv:2309.05582.  
+
+> [17]
+
+Jafferjee, T., Imani, E., Talvitie, E.J., White, M., &
+
+Bowl -ing , M. (2020). Hallucinating Value: A Pitfall of 
+
+Dyna -style Planning with Imperfect Environment Models. 
+
+arXiv preprint arXiv:2006.04363.  
+
+> [18]
+
+Guo, C., Pleiss, G., Sun, Y., & Weinberger, K. Q. 
+
+(2017). On calibration of modern neural networks. 34th International Conference on Machine Learning (ICML), 
+
+70, 1321 –1330.  
+
+> [19]
+
+Gal, Y., & Ghahramani, Z. (2016). Dropout as a
+
+Bayesian approximation: representing model uncertainty 
+
+in deep learning. 33rd International Conference on 
+
+Machine Learning (ICML), 48, 1050 –1059.  
+
+> [20]
+
+Wang, J., Zhu, T., Li, H., Hsueh, C. -H., & Wu, I. -C. 
+
+(2018). 
+
+Belief -State Monte Carlo Tree Search for Phantom Go. 
+
+IEEE Transactions on Games, 10(2), 139 –154.  
+
+> [21]
+
+Liu, Y., et al. (2025). AlphaGo Moment for Model 
+
+Architecture Discovery. arXiv preprint 
+
+arXiv:2507.18074.  
+
+> [22]
+
+Haarnoja, T., Zhou, A., Abbeel, P., & Levine, S. 
+
+(2018). Soft Actor -Critic: Off -Policy Maximum 
+
+Entropy Deep Rein -forcement Learning with a
+
+Stochastic Actor. arXiv preprint arXiv:1801.01290.  
+
+> [23]
+
+Gal, Y. (2016). Uncertainty in Deep Learning. PhD 
+
+Thesis, University of Cambridge.  
+
+> [24]
+
+Lovering, C., Forde, J. Z., Konidaris , G. D., Pavlick, E., 
+
+& Littman, M. L. (2022). Evaluation Beyond Task 
+
+Performance: Analyzing Concepts in AlphaZero in 
+
+Hex. arXiv preprint arXiv:2211.14673.  
+
+> [25]
+
+Tian, Y., et al. (2019). ELF OpenGo: An Analysis and 
+
+Open Reimplementation of AlphaZero. International 
+
+Conference on Machine Learning (ICML).  
+
+> [26]
+
+Zhang, S., et al. (2024). Look Before You Leap: 
+
+Enhancing Attention and Vigilance Regarding Harmful 
+
+Content with GuidelineLLM. arXiv preprint 
+
+arXiv:2412.10423.  
+
+> [27]
+
+Ye, W., Liu, S. -W., Kurutach, T., Abbeel, P., & Gao, Y. 
+
+(2021). Mastering Atari Games with Limited Data. 
+
+arXiv preprint arXiv:2111.00210.  
+
+> [28]
+
+Schrittwieser, J., et al. (2021). Online and offline 
+
+reinforcement learning by planning with a learned 
+
+model. 35th Interna -tional Conference on Neural 
+
+Information Processing Systems (NeurIPS).  
+
+> [29]
+
+Chow, Y., Ghavamzadeh, M., Janson, L., & Pavone, M. 
+
+(2018). Risk -Constrained Reinforcement Learning with 
+
+Percentile Risk Criteria. Journal of Machine Learning 
+
+Research, 18(167), 1–51.  
+
+> [30]
+
+Bellemare, M. G., Dabney, W., & Munos, R. (2017). A 
+
+Distri -butional Perspective on Reinforcement Learning. 
+
+34th Interna -tional Conference on Machine Learning 
+
+(ICML), 449 –458.  
+
+> [31]
+
+Moerland, T. M., Broekens, J., Plaat, A., & Jonker, C. 
+
+M. (2023). Model -based Reinforcement Learning: A
+
+Survey. Foun -dations and Trends in Machine Learning, 
+
+16(1), 1 –118.  
+
+> [32]
+
+Shi, C., Yang, K., Yang, J., & Shen, C. (2024). 
+
+Transformers as game players: provable in -context 
+
+game -playing capabilities of pre -trained models. 38th 
+
+Conference on Neural Information Processing Systems 
+
+(NeurIPS).  
+
+> [33]
+
+Hsieh, Y. -H., Kao, C. -C., & Yuan, S. -M. (2025). 
+
+Imitating Human Go Players via Vision Transformer. 
+
+Algorithms, 18(2), 61.  
+
+> [34]
+
+Shai, A. S., et al. (2024). Transformers represent 
+
+belief state geometry in their residual stream. arXiv 
+
+preprint arXiv:2405.15943.  
+
+> [35]
+
+Hu, E. S., et al. (2024). The Belief State Transformer. 
+
+Interna -tional Conference on Learning Representations 
+
+(ICLR).  
+
+> [36]
+
+Movahedi, Z., Bastanfard, A. Toward competitive multi -
+
+agents in Polo game based on reinforcement learning. 
+
+Multimed Tools  https://doi.org/10.1007/s11042 -021 -
+
+10968 -z 
+
+> [37]
+
+Seyyed Amir Hadi Minoofam, Mohammad Mahdi 
+
+Dehshibi, Azam Bastanfard, and Parvin Eftekhari. 2012. 
+
+Ad -hocMa’qeli script generation using block cellular 
+
+automata. J. Cell. Autom. 7, 4 (2012), 321 –334  
+
+> [38]
+
+A. Bastanfard and D. Amirkhani, "Improving the Accuracy 
+
+of the Annotation Algorithm in Pattern -Based Tennis Game 
+
+Video," 2021 29th Iranian Conference on Electrical 
+
+Engineering (ICEE) , Tehran, Iran, 
+
+10.1109/ICEE52715.2021.9544273.

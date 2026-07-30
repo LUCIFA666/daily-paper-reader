@@ -1,0 +1,39 @@
+{
+  "label": "2026-07-30",
+  "date": "2026-07-30",
+  "generated_at": "2026-07-30T21:12:18",
+  "count": 2,
+  "papers": [
+    {
+      "paper_id": "202607/30/2607.26946v1-belief-guided-decision-making-with-uncertainty-gating-in-the-game-of-go",
+      "section": "deep",
+      "title_en": "Belief-Guided Decision Making with Uncertainty Gating in the Game of Go",
+      "authors": "Mehrad Yaghoubi, Azam Bastanfard, Abbas Jalilvand, Ashkan Rezaei",
+      "date": "2026-07-29",
+      "pdf": "https://arxiv.org/pdf/2607.26946v1",
+      "score": "9.0",
+      "evidence": "提出信念引导架构，扩展AlphaZero，加入不确定性门控用于围棋",
+      "tldr": "AlphaZero/MuZero依赖蒙特卡洛树搜索纠正神经网络策略，但在消费级硬件上计算开销大且存在幻觉问题。本文提出信念引导架构，将策略头与信念头分离，信念头作为内部模拟器建模认知不确定性和战略稳定性。通过Transformer/GRU记忆机制处理长期依赖和劫规则，门控机制过滤过度自信策略错误。该方法显著提升无搜索胜率并减少幻觉，在有限硬件上实现专业级对弈。",
+      "tags": "query:alphazero",
+      "abstract_en": "Recent advancements in Computer Go, driven by AlphaZero and MuZero, rely heavily on Monte Carlo Tree Search (MCTS) to correct the errors of the neural network policy. While effective on massive computational clusters, this dependence creates a critical bottleneck on consumer-grade hardware, where the computational cost of tree management severely limits inference rates. Furthermore, without deep search, these models suffer from hallucination, proposing moves with high confidence that are strategically fatal. This paper introduces a novel Belief-Guided architecture that disentangles the Policy head from a distinct Belief head. Unlike traditional value functions, the Belief head acts as an internal simulator and independent critic, modeling epistemic uncertainty and strategic stability. By integrating memory mechanisms (Transformer/GRU) to handle long-term dependencies and the Ko rule, and utilizing a gating mechanism to filter overconfident policy errors, our model shifts the burden of intelligence from runtime search to parametric \"intuition.\" Experimental results demonstrate that this approach significantly improves search-free win rates and reduces hallucination, enabling professional-level play on limited hardware where massive MCTS is infeasible.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202607/30/2607.25308v1-cast-game-solvers-as-turn-level-teachers-for-llm-agents",
+      "section": "quick",
+      "title_en": "CAST: Game Solvers as Turn-Level Teachers for LLM Agents",
+      "authors": "Yu Wang, Yi-Kai Zhang, Wentao Shi, Ziang Ye, Yuchun Miao, Yueqing Sun, Qi Gu, Xunliang Cai, Lan-Zhe Guo, Han-Jia Ye, Fuli Feng",
+      "date": "2026-07-28",
+      "pdf": "https://arxiv.org/pdf/2607.25308v1",
+      "score": "6.0",
+      "evidence": "将游戏求解器价值用于大语言模型强化学习，将AlphaZero方法扩展到新领域",
+      "tldr": "训练大语言模型进行长期游戏决策时，强化学习依赖稀疏的最终奖励，缺乏回合级信用分配。本文观察到游戏求解器的状态值变化能指示动作有效性，据此提出CAST方法，将状态值变化转为求解器优势作为密集回合信号注入RLVR。在软最优假设下，最大化该优势等价于从求解器进行在线策略蒸馏。实验表明CAST在Sokoban、Minesweeper、Rush Hour上全面超越基线，并在ALFWorld和WebShop上取得最优零样本性能，为LLM提供低成本高精度的过程训练信号。",
+      "tags": "query:alphazero",
+      "abstract_en": "Training large language models (LLMs) to act in long-horizon games is a promising step toward generalist decision-making, yet reinforcement learning with verifiable rewards (RLVR) relies on sparse final rewards that reveal little about which decisions determine success. Denser process signals could supply this missing turn-level credit, but existing sources are hard to keep both cheap and accurate. We observe that changes in a game solver's state value reveal whether an action advances the state toward success. Building on this insight, we propose CAST (Credit Assignment from Solver Teachers), which converts these value changes into solver advantages and injects them into RLVR as turn-level signals. We further show that, under a soft-optimal solver assumption, maximizing the solver advantage is equivalent to on-policy distillation from the solver, requiring only scalar values rather than teacher logits. Across Sokoban, Minesweeper, and Rush Hour, CAST outperforms all trained baselines on every game under both in-domain and unseen-difficulty evaluation and achieves the highest average zero-shot performance on ALFWorld and WebShop. Our code is available at https://github.com/Wloner0809/CAST.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}

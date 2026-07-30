@@ -1,0 +1,101 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-30T21:09:53.328885+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 1,
+    "deep_cap": 6,
+    "deep_selected": 1,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [
+    {
+      "id": "2607.26946v1",
+      "source": "arxiv",
+      "title": "Belief-Guided Decision Making with Uncertainty Gating in the Game of Go",
+      "abstract": "Recent advancements in Computer Go, driven by AlphaZero and MuZero, rely heavily on Monte Carlo Tree Search (MCTS) to correct the errors of the neural network policy. While effective on massive computational clusters, this dependence creates a critical bottleneck on consumer-grade hardware, where the computational cost of tree management severely limits inference rates. Furthermore, without deep search, these models suffer from hallucination, proposing moves with high confidence that are strategically fatal. This paper introduces a novel Belief-Guided architecture that disentangles the Policy head from a distinct Belief head. Unlike traditional value functions, the Belief head acts as an internal simulator and independent critic, modeling epistemic uncertainty and strategic stability. By integrating memory mechanisms (Transformer/GRU) to handle long-term dependencies and the Ko rule, and utilizing a gating mechanism to filter overconfident policy errors, our model shifts the burden of intelligence from runtime search to parametric \"intuition.\" Experimental results demonstrate that this approach significantly improves search-free win rates and reduces hallucination, enabling professional-level play on limited hardware where massive MCTS is infeasible.",
+      "authors": [
+        "Mehrad Yaghoubi",
+        "Azam Bastanfard",
+        "Abbas Jalilvand",
+        "Ashkan Rezaei"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-29T14:15:29+00:00",
+      "link": "https://arxiv.org/pdf/2607.26946v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "proposes belief-guided architecture extending AlphaZero with uncertainty gating for Go",
+      "llm_evidence_cn": "提出信念引导架构，扩展AlphaZero，加入不确定性门控用于围棋",
+      "llm_evidence": "提出信念引导架构，扩展AlphaZero，加入不确定性门控用于围棋",
+      "canonical_evidence": "提出信念引导架构，扩展AlphaZero，加入不确定性门控用于围棋",
+      "llm_tldr_en": "Belief-Guided Decision Making with Uncertainty Gating improves AlphaZero by disentangling policy and belief heads, reducing MCTS reliance and hallucination in computer Go on consumer hardware.",
+      "llm_tldr_cn": "现有AlphaZero过度依赖大规模MCTS，在消费级硬件上推理缓慢且易产生高置信度但致命的幻觉。该文提出信念引导架构，将策略头与信念头分离，信念头作为内部模拟器和独立评论家，建模认知不确定性并通过门控机制决定何时依赖深度搜索。在围棋上实验显示，该方法在显著降低搜索深度的同时达到甚至超越AlphaZero的性能，并有效缓解幻觉。这项研究为在资源受限场景中部署AlphaZero类系统提供了可行方案，推动了强化学习在实时应用中的实用性。",
+      "llm_tldr": "现有AlphaZero过度依赖大规模MCTS，在消费级硬件上推理缓慢且易产生高置信度但致命的幻觉。该文提出信念引导架构，将策略头与信念头分离，信念头作为内部模拟器和独立评论家，建模认知不确定性并通过门控机制决定何时依赖深度搜索。在围棋上实验显示，该方法在显著降低搜索深度的同时达到甚至超越AlphaZero的性能，并有效缓解幻觉。这项研究为在资源受限场景中部署AlphaZero类系统提供了可行方案，推动了强化学习在实时应用中的实用性。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "variants and extensions of the AlphaZero architecture for different games",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.25308v1",
+      "source": "arxiv",
+      "title": "CAST: Game Solvers as Turn-Level Teachers for LLM Agents",
+      "abstract": "Training large language models (LLMs) to act in long-horizon games is a promising step toward generalist decision-making, yet reinforcement learning with verifiable rewards (RLVR) relies on sparse final rewards that reveal little about which decisions determine success. Denser process signals could supply this missing turn-level credit, but existing sources are hard to keep both cheap and accurate. We observe that changes in a game solver's state value reveal whether an action advances the state toward success. Building on this insight, we propose CAST (Credit Assignment from Solver Teachers), which converts these value changes into solver advantages and injects them into RLVR as turn-level signals. We further show that, under a soft-optimal solver assumption, maximizing the solver advantage is equivalent to on-policy distillation from the solver, requiring only scalar values rather than teacher logits. Across Sokoban, Minesweeper, and Rush Hour, CAST outperforms all trained baselines on every game under both in-domain and unseen-difficulty evaluation and achieves the highest average zero-shot performance on ALFWorld and WebShop. Our code is available at https://github.com/Wloner0809/CAST.",
+      "authors": [
+        "Yu Wang",
+        "Yi-Kai Zhang",
+        "Wentao Shi",
+        "Ziang Ye",
+        "Yuchun Miao",
+        "Yueqing Sun",
+        "Qi Gu",
+        "Xunliang Cai",
+        "Lan-Zhe Guo",
+        "Han-Jia Ye",
+        "Fuli Feng"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-07-28T05:39:01+00:00",
+      "link": "https://arxiv.org/pdf/2607.25308v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "applies game solver values for reinforcement learning in LLM agents, extending AlphaZero's approach to new domains",
+      "llm_evidence_cn": "将游戏求解器价值用于大语言模型强化学习，将AlphaZero方法扩展到新领域",
+      "llm_evidence": "将游戏求解器价值用于大语言模型强化学习，将AlphaZero方法扩展到新领域",
+      "canonical_evidence": "将游戏求解器价值用于大语言模型强化学习，将AlphaZero方法扩展到新领域",
+      "llm_tldr_en": "CAST leverages game solver state values as turn-level credit assignment signals for RL in LLM agents, similar to how AlphaZero uses MCTS for self-play learning.",
+      "llm_tldr_cn": "该论文针对大语言模型在长期游戏中强化学习奖励稀疏的问题，提出CAST方法，利用游戏求解器的状态价值变化作为回合级信用分配信号。在假设求解器接近最优的条件下，该方法能显著提升学习效率，将AlphaZero中游戏求解器指导学习的思路扩展到LLM智能体领域。",
+      "llm_tldr": "该论文针对大语言模型在长期游戏中强化学习奖励稀疏的问题，提出CAST方法，利用游戏求解器的状态价值变化作为回合级信用分配信号。在假设求解器接近最优的条件下，该方法能显著提升学习效率，将AlphaZero中游戏求解器指导学习的思路扩展到LLM智能体领域。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "variants and extensions of the AlphaZero architecture for different games",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}
