@@ -6,26 +6,26 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-07-30
-- 运行时间：2026-07-30 21:12:12 UTC
+- 最新运行日期：2026-07-31
+- 运行时间：2026-07-31 20:11:46 UTC
 - 运行状态：成功
-- 本次总论文数：2
-- 精读区：1
+- 本次总论文数：1
+- 精读区：0
 - 速读区：1
 
 ### 今日简报（AI）
-今日精读一篇围棋顶级论文、速读一篇LLM教学论文，聚焦信念引导决策与不确定性门控。最值得看的是《Belief-Guided Decision Making with Uncertainty Gating in the Game of Go》，9分高质研究开创了围棋中的新决策范式。建议读者优先深挖这篇论文的核心机制，再将其思路迁移到其他复杂策略AI领域。
-- 详情：[/202607/30/README](/202607/30/README)
+今日精读零篇，速读一篇论文，聚焦智能体工作流优化。  
+值得关注的是《Agent-UCT》将UCT算法引入智能体流程，并加入成本感知考量。  
+建议对自动化工作流感兴趣的读者快速浏览此文，了解成本约束下的决策思路。
+- 详情：[/202607/31/README](/202607/31/README)
 
 ### 精读区论文标签
-1. [Belief-Guided Decision Making with Uncertainty Gating in the Game of Go](/202607/30/2607.26946v1-belief-guided-decision-making-with-uncertainty-gating-in-the-game-of-go)  
-   标签：评分：9.0/10、query:alphazero
-   evidence：提出信念引导架构，扩展AlphaZero，加入不确定性门控用于围棋
+- 本次无精读推荐。
 
 ### 速读区论文标签
-1. [CAST: Game Solvers as Turn-Level Teachers for LLM Agents](/202607/30/2607.25308v1-cast-game-solvers-as-turn-level-teachers-for-llm-agents)  
+1. [Agent-UCT: Upper Confidence Bounds Applied to Trees for Agentic Workflow Optimization with Cost-Awareness](/202607/31/2607.24162v1-agent-uct-upper-confidence-bounds-applied-to-trees-for-agentic-workflow-optimization-with-cost-awareness)  
    标签：评分：6.0/10、query:alphazero
-   evidence：将游戏求解器价值用于大语言模型强化学习，将AlphaZero方法扩展到新领域
+   evidence：将AlphaZero核心的UCT树搜索用于棋类游戏之外的智能体工作流
 
 
 <div class="dpr-home-promo-card">

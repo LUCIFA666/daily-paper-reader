@@ -1,6 +1,9 @@
 * <a class="dpr-sidebar-root-link" href="#/">首页</a>
 * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="javascript:void(0)" data-dpr-hash="#/tutorial/README">使用教程</a>
 * Daily Papers
+  * 2026-07-31 <!--dpr-date:20260731-->
+    * 速读区
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202607/31/2607.24162v1-agent-uct-upper-confidence-bounds-applied-to-trees-for-agentic-workflow-optimization-with-cost-awareness" data-sidebar-item="{&quot;title&quot;: &quot;Agent-UCT: Upper Confidence Bounds Applied to Trees for Agentic Workflow Optimization with Cost-Awareness&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2607.24162v1-agent-uct-upper-confidence-bounds-applied-to-trees-for-agentic-workflow-optimization-with-cost-awareness&quot;, &quot;score&quot;: &quot;6.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;将AlphaZero核心的UCT树搜索用于棋类游戏之外的智能体工作流&quot;}">Agent-UCT: Upper Confidence Bounds Applied to Trees for Agentic Workflow Optimization with Cost-Awareness</a>
   * 2026-07-30 <!--dpr-date:20260730-->
     * 精读区
       * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202607/30/2607.26946v1-belief-guided-decision-making-with-uncertainty-gating-in-the-game-of-go" data-sidebar-item="{&quot;title&quot;: &quot;Belief-Guided Decision Making with Uncertainty Gating in the Game of Go&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2607.26946v1-belief-guided-decision-making-with-uncertainty-gating-in-the-game-of-go&quot;, &quot;score&quot;: &quot;9.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;提出信念引导架构，扩展AlphaZero，加入不确定性门控用于围棋&quot;}">Belief-Guided Decision Making with Uncertainty Gating in the Game of Go</a>

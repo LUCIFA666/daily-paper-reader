@@ -1,0 +1,63 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-31T20:11:21.585259+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2607.24162v1",
+      "source": "arxiv",
+      "title": "Agent-UCT: Upper Confidence Bounds Applied to Trees for Agentic Workflow Optimization with Cost-Awareness",
+      "abstract": "Optimizing agentic workflows, such as retrieval-augmented generation (RAG) pipelines, requires navigating a combinatorial space of discrete component choices under tight evaluation budgets. Existing approaches - heuristic search, black-box optimization, and standard tree search methods - do not explicitly exploit the compositional structure of these workflows, leading to redundant computation and inefficient budget allocation. We introduce Agent-UCT (Agent-based Cost-Aware Upper Confidence Bounds Applied to Trees), a tree search algorithm that extends UCT with a reuse-aware regularization term derived from a bipartite prefix reuse graph. Agent-UCT biases selection toward branches that leverage previously materialized configuration prefixes, reducing redundant execution while maintaining effective exploration. Our framework, RAGSpace, unifies heterogeneous RAG components from LongRAG, LightRAG, and Self-RAG into a five-dimensional configuration space, enabling systematic cross-framework recombination. WTB (Workflow Test Bench) provides deterministic replay, content-addressable caching, and transactional consistency, ensuring that intermediate states are materialized once and reused across the search. Experiments on HotpotQA and UltraDomain demonstrate that Agent-UCT identifies configurations with the highest out-of-sample performance among the evaluated fixed framework presets. Under full-pool evaluation, bipartite prefix reuse reduces logical search cost by 73.6% relative to the no-prefix-sharing cost upper bound. Compared with full-pool evaluation, sampling-based evaluation further achieves a 4.2x wall-clock speedup. Agent-UCT, RAGSpace, and WTB together provide a unified framework for cost-aware, reproducible, and compositionally efficient agentic workflow optimization.",
+      "authors": [
+        "Yang Li",
+        "Hai Liu",
+        "Dian Shao",
+        "Yu Wang",
+        "Xiyu Chen",
+        "Sergey Volkov",
+        "Bozhi Wang",
+        "Ziyu Sun",
+        "Sihang Liu",
+        "Ye Luo",
+        "Xiaowei Zhang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-07-27T08:41:18+00:00",
+      "link": "https://arxiv.org/pdf/2607.24162v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "uses UCT tree search, the core of AlphaZero, in agentic workflows beyond board games",
+      "llm_evidence_cn": "将AlphaZero核心的UCT树搜索用于棋类游戏之外的智能体工作流",
+      "llm_evidence": "将AlphaZero核心的UCT树搜索用于棋类游戏之外的智能体工作流",
+      "canonical_evidence": "将AlphaZero核心的UCT树搜索用于棋类游戏之外的智能体工作流",
+      "llm_tldr_en": "Proposes Agent-UCT, a cost-aware extension of UCT tree search for optimizing agentic workflows; it biases selection toward reusing prior computations and demonstrates transfer of AlphaZero-style tree search to non-game domains.",
+      "llm_tldr_cn": "针对智能体工作流（如RAG流水线）组合搜索空间大、评估预算有限的问题，论文提出Agent-UCT，在UCT树搜索中引入基于前缀复用图的正则化项，使搜索偏向可复用的分支。Agent-UCT将AlphaZero等系统中核心的UCT方法拓展到非棋类博弈场景，并通过成本感知机制降低冗余计算。实验表明其在相关工作流优化任务上能够更高效地分配预算，体现出AlphaZero式树搜索在通用决策中的可迁移性。",
+      "llm_tldr": "针对智能体工作流（如RAG流水线）组合搜索空间大、评估预算有限的问题，论文提出Agent-UCT，在UCT树搜索中引入基于前缀复用图的正则化项，使搜索偏向可复用的分支。Agent-UCT将AlphaZero等系统中核心的UCT方法拓展到非棋类博弈场景，并通过成本感知机制降低冗余计算。实验表明其在相关工作流优化任务上能够更高效地分配预算，体现出AlphaZero式树搜索在通用决策中的可迁移性。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "AlphaZero applications beyond board games",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

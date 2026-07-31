@@ -1,0 +1,24 @@
+{
+  "label": "2026-07-31",
+  "date": "2026-07-31",
+  "generated_at": "2026-07-31T20:11:51",
+  "count": 1,
+  "papers": [
+    {
+      "paper_id": "202607/31/2607.24162v1-agent-uct-upper-confidence-bounds-applied-to-trees-for-agentic-workflow-optimization-with-cost-awareness",
+      "section": "quick",
+      "title_en": "Agent-UCT: Upper Confidence Bounds Applied to Trees for Agentic Workflow Optimization with Cost-Awareness",
+      "authors": "Yang Li, Hai Liu, Dian Shao, Yu Wang, Xiyu Chen, Sergey Volkov, Bozhi Wang, Ziyu Sun, Sihang Liu, Ye Luo, Xiaowei Zhang",
+      "date": "2026-07-27",
+      "pdf": "https://arxiv.org/pdf/2607.24162v1",
+      "score": "6.0",
+      "evidence": "将AlphaZero核心的UCT树搜索用于棋类游戏之外的智能体工作流",
+      "tldr": "优化RAG等代理工作流需在组合空间中高效搜索，现有方法未利用其组合结构导致冗余。提出Agent-UCT树搜索算法，引入基于二部前缀复用图的正则项，偏向复用已物化配置前缀，减少冗余执行。在RAGSpace框架中跨框架重组组件，WTB保证确定性回放与缓存。实验显示优于固定框架预设，前缀复用降低73.6%逻辑搜索成本，采样评估加速4.2倍。",
+      "tags": "query:alphazero",
+      "abstract_en": "Optimizing agentic workflows, such as retrieval-augmented generation (RAG) pipelines, requires navigating a combinatorial space of discrete component choices under tight evaluation budgets. Existing approaches - heuristic search, black-box optimization, and standard tree search methods - do not explicitly exploit the compositional structure of these workflows, leading to redundant computation and inefficient budget allocation. We introduce Agent-UCT (Agent-based Cost-Aware Upper Confidence Bounds Applied to Trees), a tree search algorithm that extends UCT with a reuse-aware regularization term derived from a bipartite prefix reuse graph. Agent-UCT biases selection toward branches that leverage previously materialized configuration prefixes, reducing redundant execution while maintaining effective exploration. Our framework, RAGSpace, unifies heterogeneous RAG components from LongRAG, LightRAG, and Self-RAG into a five-dimensional configuration space, enabling systematic cross-framework recombination. WTB (Workflow Test Bench) provides deterministic replay, content-addressable caching, and transactional consistency, ensuring that intermediate states are materialized once and reused across the search. Experiments on HotpotQA and UltraDomain demonstrate that Agent-UCT identifies configurations with the highest out-of-sample performance among the evaluated fixed framework presets. Under full-pool evaluation, bipartite prefix reuse reduces logical search cost by 73.6% relative to the no-prefix-sharing cost upper bound. Compared with full-pool evaluation, sampling-based evaluation further achieves a 4.2x wall-clock speedup. Agent-UCT, RAGSpace, and WTB together provide a unified framework for cost-aware, reproducible, and compositionally efficient agentic workflow optimization.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}
