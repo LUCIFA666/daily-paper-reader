@@ -6,26 +6,28 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-08-15
-- 运行时间：2026-08-15 20:10:20 UTC
+- 最新运行日期：2026-08-16
+- 运行时间：2026-08-16 19:35:54 UTC
 - 运行状态：成功
 - 本次总论文数：1
 - 精读区：0
 - 速读区：1
 
 ### 今日简报（AI）
-今日仅速读1篇零和博弈算法论文，无精读。  
-值得关注的是博弈中算法不对称性：面对慢速对手时，单边恢复快速收敛可达7.0分。  
-建议普通读者先了解零和博弈与收敛速度的基本概念，再决定是否深入该文。
-- 详情：[/202608/15/README](/202608/15/README)
+今日速读1篇，聚焦深度搜索智能体的步骤级自蒸馏策略优化方法。
+
+值得关注的是：该研究跳出传统结果奖励，提出步骤级自蒸馏训练思路，但评分仅6.0，说明创新有余、实效待验。
+
+建议普通读者先浏览摘要与实验图，重点看它对比基线模型的搜索路径改进幅度。
+- 详情：[/202608/16/README](/202608/16/README)
 
 ### 精读区论文标签
 - 本次无精读推荐。
 
 ### 速读区论文标签
-1. [Algorithmic Asymmetry in Zero-Sum Games: Unilateral Recovery of Fast Convergence Against a Slow Opponent](/202608/15/2608.09780v1-algorithmic-asymmetry-in-zero-sum-games-unilateral-recovery-of-fast-convergence-against-a-slow-opponent)  
-   标签：评分：7.0/10、query:alphazero
-   evidence：零和博弈收敛性改进，与AlphaZero自博弈训练相关
+1. [Beyond Outcome Rewards: Step-Level Self-Distilled Policy Optimization for Deep Search Agents](/202608/16/2608.12764v1-beyond-outcome-rewards-step-level-self-distilled-policy-optimization-for-deep-search-agents)  
+   标签：评分：6.0/10、query:alphazero
+   evidence：面向深度搜索智能体的逐步自蒸馏，缓解稀疏奖励问题，可用于改进AlphaZero类算法
 
 
 <div class="dpr-home-promo-card">

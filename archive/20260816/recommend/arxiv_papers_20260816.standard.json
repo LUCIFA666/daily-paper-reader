@@ -1,0 +1,56 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-08-16T19:34:10.547133+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2608.12764v1",
+      "source": "arxiv",
+      "title": "Beyond Outcome Rewards: Step-Level Self-Distilled Policy Optimization for Deep Search Agents",
+      "abstract": "Deep search agents operate over trajectories spanning dozens of steps, yet standard reinforcement learning provides only a single outcome reward per trajectory, which is far too sparse for effective credit assignment. On-policy self-distillation (OPSD) addresses this by using the model's own logits as dense token-level teachers, but extending it to search agents introduces a fundamental tension: the teacher, having access to privileged information such as the correct answer, produces a distribution that differs systematically from the student's exploration-based reasoning, and naive distillation causes the student to inherit this information asymmetry rather than learn better search strategies. We resolve this tension through two contributions. First, we construct Evidence Anchors, which are concise, step-level evidence snippets extracted from the web, as privileged information that captures key reasoning steps without revealing the entire answer path. Second, we propose Step-Level Self-Distilled Policy Optimization (SSPO), which converts teacher-student disagreement into step-level advantage weights within GRPO, applied exclusively to incorrect trajectories. This design decouples what to update from how much to update: the outcome reward determines the direction of policy change, while the teacher modulates its magnitude at each step. Correct trajectories are left untouched, preserving their diversity. On Qwen3-8B, SSPO consistently outperforms GRPO across BrowseComp, GAIA, and FRAMES, surpassing or matching GRPO trained with twice as many gradient steps while adding only about 5 percent overhead per step from a single additional forward pass.",
+      "authors": [
+        "Haoze Wu",
+        "Chuqiao Kuang",
+        "Tianyi Zhuang",
+        "Xiaoguang Li"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-08-13T03:13:18+00:00",
+      "link": "https://arxiv.org/pdf/2608.12764v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "step-level self-distillation for deep search agents; addresses sparse reward credit assignment",
+      "llm_evidence_cn": "面向深度搜索智能体的逐步自蒸馏，缓解稀疏奖励问题，可用于改进AlphaZero类算法",
+      "llm_evidence": "面向深度搜索智能体的逐步自蒸馏，缓解稀疏奖励问题，可用于改进AlphaZero类算法",
+      "canonical_evidence": "面向深度搜索智能体的逐步自蒸馏，缓解稀疏奖励问题，可用于改进AlphaZero类算法",
+      "llm_tldr_en": "Tackles sparse outcome rewards in deep search agents with step-level self-distilled policy optimization, using own logits as dense teachers and resolving privileged-information asymmetry; offers transferable improvements for AlphaZero-style algorithms.",
+      "llm_tldr_cn": "深度搜索智能体在长轨迹上仅获得单一结果奖励，信用分配稀疏。本文提出逐步自蒸馏策略优化，利用模型自身logits作为密集逐步骤教师信号，并解决教师特权信息与学生探索推理之间的不对称问题。实验表明该方法相比基线显著提升样本效率与搜索策略质量。相关工作为AlphaZero等深度搜索代理的奖励稀疏难题提供可迁移改进。",
+      "llm_tldr": "深度搜索智能体在长轨迹上仅获得单一结果奖励，信用分配稀疏。本文提出逐步自蒸馏策略优化，利用模型自身logits作为密集逐步骤教师信号，并解决教师特权信息与学生探索推理之间的不对称问题。实验表明该方法相比基线显著提升样本效率与搜索策略质量。相关工作为AlphaZero等深度搜索代理的奖励稀疏难题提供可迁移改进。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "Research papers on AlphaZero algorithm improvements",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}
