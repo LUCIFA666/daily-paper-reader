@@ -1,6 +1,9 @@
 * <a class="dpr-sidebar-root-link" href="#/">首页</a>
 * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="javascript:void(0)" data-dpr-hash="#/tutorial/README">使用教程</a>
 * Daily Papers
+  * 2026-08-17 <!--dpr-date:20260817-->
+    * 精读区
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202608/17/2608.14114v1-learning-to-run-power-networks-effective-alphazero-inspired-topological-control" data-sidebar-item="{&quot;title&quot;: &quot;Learning to Run Power Networks: Effective AlphaZero-inspired Topological Control&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2608.14114v1-learning-to-run-power-networks-effective-alphazero-inspired-topological-control&quot;, &quot;score&quot;: &quot;9.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;受AlphaZero启发的MCTS用于电网拓扑控制&quot;}">Learning to Run Power Networks: Effective AlphaZero-inspired Topological Control</a>
   * 2026-08-16 <!--dpr-date:20260816-->
     * 速读区
       * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202608/16/2608.12764v1-beyond-outcome-rewards-step-level-self-distilled-policy-optimization-for-deep-search-agents" data-sidebar-item="{&quot;title&quot;: &quot;Beyond Outcome Rewards: Step-Level Self-Distilled Policy Optimization for Deep Search Agents&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2608.12764v1-beyond-outcome-rewards-step-level-self-distilled-policy-optimization-for-deep-search-agents&quot;, &quot;score&quot;: &quot;6.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;面向深度搜索智能体的逐步自蒸馏，缓解稀疏奖励问题，可用于改进AlphaZero类算法&quot;}">Beyond Outcome Rewards: Step-Level Self-Distilled Policy Optimization for Deep Search Agents</a>

@@ -1,0 +1,53 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-08-17T19:44:58.471102+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 1,
+    "deep_cap": 6,
+    "deep_selected": 1,
+    "quick_candidates": 0,
+    "quick_skim_target": 11,
+    "quick_selected": 0
+  },
+  "deep_dive": [
+    {
+      "id": "2608.14114v1",
+      "source": "arxiv",
+      "title": "Learning to Run Power Networks: Effective AlphaZero-inspired Topological Control",
+      "abstract": "As the integration of volatile renewable energy sources increases the strain on modern power grids, the use of Reinforcement Learning (RL) for autonomous topological reconfiguration has emerged as a promising research field to keep strained grids stable and operational. Compared to traditional redispatching measures, topological actions offer a cheaper and more cost-effective way to manage grid congestion. However, their implementation is hindered by a vast combinatorial action space and strict operational constraints. This paper investigates the effectiveness of model-based AlphaZero-inspired approaches that utilize Monte Carlo Tree Search (MCTS) for proactive grid management. We systematically evaluate how reward functions, observation density, and search guidance influence an agent's survivability. Our results demonstrate that the optimized AlphaZero approach achieves a peak survivability of 98.43%, significantly outperforming the proximal policy optimization (PPO) variant. We find that conducting the MCTS without guidance from a prior learned policy or value function can enhance training efficiency, and that a straightforward binary survival reward provides more effective search guidance than complex, multi-objective functions. Our findings demonstrate that while AlphaZero is a powerful framework for topological control, pure reinforcement learning is not sufficient; rather, an effective and reliable system requires a 'minimalist' integration of domain-specific heuristics, binary rewards, and a restricted observation space of line loads.",
+      "authors": [
+        "Lukas Zetto",
+        "Benjamin Schäfer",
+        "Qiong Huang"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-08-14T09:16:10+00:00",
+      "link": "https://arxiv.org/pdf/2608.14114v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "AlphaZero-inspired MCTS for power grid topological control",
+      "llm_evidence_cn": "受AlphaZero启发的MCTS用于电网拓扑控制",
+      "llm_evidence": "受AlphaZero启发的MCTS用于电网拓扑控制",
+      "canonical_evidence": "受AlphaZero启发的MCTS用于电网拓扑控制",
+      "llm_tldr_en": "AlphaZero-inspired MCTS approaches are applied to proactive power grid management, systematically evaluating reward functions and observation density for topological control under strict constraints.",
+      "llm_tldr_cn": "本文针对电力网络拓扑控制中动作空间巨大和运行约束严格的问题，研究基于AlphaZero启发式模型强化学习方法。该方法利用蒙特卡洛树搜索进行前瞻式电网管理，并系统评估不同奖励函数与观测密度的影响。实验表明AlphaZero风格方法在电网主动管理中具有良好效果，能够以更低的成本缓解电网拥堵。这项工作为AlphaZero思想在工业控制领域的应用提供了有效范例。",
+      "llm_tldr": "本文针对电力网络拓扑控制中动作空间巨大和运行约束严格的问题，研究基于AlphaZero启发式模型强化学习方法。该方法利用蒙特卡洛树搜索进行前瞻式电网管理，并系统评估不同奖励函数与观测密度的影响。实验表明AlphaZero风格方法在电网主动管理中具有良好效果，能够以更低的成本缓解电网拥堵。这项工作为AlphaZero思想在工业控制领域的应用提供了有效范例。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "AlphaZero applications beyond board games",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": []
+}

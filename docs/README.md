@@ -6,28 +6,24 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-08-16
-- 运行时间：2026-08-16 19:35:54 UTC
+- 最新运行日期：2026-08-17
+- 运行时间：2026-08-17 19:46:02 UTC
 - 运行状态：成功
 - 本次总论文数：1
-- 精读区：0
-- 速读区：1
+- 精读区：1
+- 速读区：0
 
 ### 今日简报（AI）
-今日速读1篇，聚焦深度搜索智能体的步骤级自蒸馏策略优化方法。
-
-值得关注的是：该研究跳出传统结果奖励，提出步骤级自蒸馏训练思路，但评分仅6.0，说明创新有余、实效待验。
-
-建议普通读者先浏览摘要与实验图，重点看它对比基线模型的搜索路径改进幅度。
-- 详情：[/202608/16/README](/202608/16/README)
+今日精读1篇论文，聚焦电力网络运行中的拓扑控制优化。最值得关注的是受AlphaZero启发的强化学习方法，在电网调度决策中展现出有效潜力。建议下一步可结合真实电网数据，验证该方法的实用性与可扩展性。
+- 详情：[/202608/17/README](/202608/17/README)
 
 ### 精读区论文标签
-- 本次无精读推荐。
+1. [Learning to Run Power Networks: Effective AlphaZero-inspired Topological Control](/202608/17/2608.14114v1-learning-to-run-power-networks-effective-alphazero-inspired-topological-control)  
+   标签：评分：9.0/10、query:alphazero
+   evidence：受AlphaZero启发的MCTS用于电网拓扑控制
 
 ### 速读区论文标签
-1. [Beyond Outcome Rewards: Step-Level Self-Distilled Policy Optimization for Deep Search Agents](/202608/16/2608.12764v1-beyond-outcome-rewards-step-level-self-distilled-policy-optimization-for-deep-search-agents)  
-   标签：评分：6.0/10、query:alphazero
-   evidence：面向深度搜索智能体的逐步自蒸馏，缓解稀疏奖励问题，可用于改进AlphaZero类算法
+- 本次无速读推荐。
 
 
 <div class="dpr-home-promo-card">
