@@ -1,0 +1,132 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-08-18T20:12:32.509789+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 2,
+    "deep_cap": 6,
+    "deep_selected": 2,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [
+    {
+      "id": "2608.15700v1",
+      "source": "arxiv",
+      "title": "Adaptive Mixing of Policies from Searching and Policies from Learning",
+      "abstract": "Background: Distillation of training targets generated thru search/planning has proven useful in reinforcement learning, but search can take exceedingly long. Objectives: Rather than perform search to the same depth every time (typically at a fixed period of steps), reduce the search depth proportionally to the quality of the policy network priors. Methods: We describe Flexer, an architecture that, for each step, mixes the policy from a neural network and the policy from Monte Carlo tree search. The mixing factor favors the MCTS policy as the policy imitation error of the network and the environment models' variance increases. Results: Flexer outperforms a version of AlphaZero (and DQN and ADP) for some experiments on three toy symbolic problems.",
+      "authors": [
+        "Gavin B. Rens"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-16T12:11:01+00:00",
+      "link": "https://arxiv.org/pdf/2608.15700v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Flexer architecture mixes network policy with MCTS policy and outperforms a version of AlphaZero, directly addressing AlphaZero improvements.",
+      "llm_evidence_cn": "Flexer架构混合神经网络策略与蒙特卡洛树搜索策略，并优于AlphaZero版本，直接涉及AlphaZero改进。",
+      "llm_evidence": "Flexer架构混合神经网络策略与蒙特卡洛树搜索策略，并优于AlphaZero版本，直接涉及AlphaZero改进。",
+      "canonical_evidence": "Flexer架构混合神经网络策略与蒙特卡洛树搜索策略，并优于AlphaZero版本，直接涉及AlphaZero改进。",
+      "llm_tldr_en": "Proposes Flexer, which adaptively mixes learned and search policies and reduces search depth based on policy quality, showing it outperforms a version of AlphaZero on three toy symbolic problems.",
+      "llm_tldr_cn": "该论文针对搜索耗时过长的问题，提出Flexer架构：每步根据策略网络质量和环境模型方差，混合神经网络策略与蒙特卡洛树搜索策略，并自适应减少搜索深度。在三个玩具符号问题上，Flexer优于AlphaZero、DQN和ADP版本，展示了通过动态调整搜索与学习结合方式改进AlphaZero类算法的潜力，为降低搜索开销提供了新思路。",
+      "llm_tldr": "该论文针对搜索耗时过长的问题，提出Flexer架构：每步根据策略网络质量和环境模型方差，混合神经网络策略与蒙特卡洛树搜索策略，并自适应减少搜索深度。在三个玩具符号问题上，Flexer优于AlphaZero、DQN和ADP版本，展示了通过动态调整搜索与学习结合方式改进AlphaZero类算法的潜力，为降低搜索开销提供了新思路。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "Research papers on AlphaZero algorithm improvements",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.16884v1",
+      "source": "arxiv",
+      "title": "Improving the matrix multiplication exponent with modern optimization and AlphaEvolve",
+      "abstract": "The current best bounds on the matrix multiplication exponent $ω$ are obtained through a refinement of the laser method called combination loss analysis (Duan et al., 2022; Williams et al., 2024; Alman et al., 2025). In this note, we address the optimization problem at the core of this approach and propose several improvements. First, we reformulate the optimization problem allowing us to solve it in a larger setting than was previously possible. Second, we leverage recent advances in machine learning to design a new optimization algorithm for this problem. Finally, we refine the resulting optimization algorithm with AlphaEvolve. Our combined approach yields an upper bound of $ω$ < 2.371177, improving the previous best bound of 2.371339.",
+      "authors": [
+        "Emilien Dupont",
+        "Marvin Eisenberger",
+        "Borislav Kozlovskii",
+        "Abbas Mehrabian",
+        "Francisco J. R. Ruiz",
+        "Abigail See",
+        "Renfei Zhou",
+        "Josh Alman",
+        "Virginia Vassilevska Williams",
+        "Matej Balog"
+      ],
+      "primary_category": "cs.DS",
+      "categories": [
+        "cs.DS",
+        "cs.AI",
+        "cs.CC",
+        "cs.LG"
+      ],
+      "published": "2026-08-17T17:59:05+00:00",
+      "link": "https://arxiv.org/pdf/2608.16884v1",
+      "tags": [
+        "query:alphazero"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Uses AlphaEvolve, an AlphaZero-based program, to improve matrix multiplication exponent beyond board games",
+      "llm_evidence_cn": "使用AlphaEvolve（基于AlphaZero的程序）改进矩阵乘法指数，属于棋类游戏之外的应用",
+      "llm_evidence": "使用AlphaEvolve（基于AlphaZero的程序）改进矩阵乘法指数，属于棋类游戏之外的应用",
+      "canonical_evidence": "使用AlphaEvolve（基于AlphaZero的程序）改进矩阵乘法指数，属于棋类游戏之外的应用",
+      "llm_tldr_en": "Reformulates the core optimization problem for the matrix multiplication exponent, designs a modern ML-based optimizer, and refines it with AlphaEvolve, lowering the upper bound from 2.371339 to 2.371177.",
+      "llm_tldr_cn": "本文针对矩阵乘法指数上界证明中的组合损失分析优化问题，首先重新表述优化问题以支持更大范围的求解；随后利用现代机器学习设计新的优化算法，并引入AlphaEvolve——一种源自AlphaZero的自动算法发现程序——对优化结果进一步精炼。最终将矩阵乘法指数上界从2.371339改进到2.371177。这项研究体现了AlphaZero类方法在数学与算法发现等非棋类领域的显著拓展价值。",
+      "llm_tldr": "本文针对矩阵乘法指数上界证明中的组合损失分析优化问题，首先重新表述优化问题以支持更大范围的求解；随后利用现代机器学习设计新的优化算法，并引入AlphaEvolve——一种源自AlphaZero的自动算法发现程序——对优化结果进一步精炼。最终将矩阵乘法指数上界从2.371339改进到2.371177。这项研究体现了AlphaZero类方法在数学与算法发现等非棋类领域的显著拓展价值。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "AlphaZero applications beyond board games",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2608.15146v1",
+      "source": "arxiv",
+      "title": "PureTD: Reinforcement Learning for Backgammon Money Games with No Evaluation-time Search",
+      "abstract": "We revisit Tesauro's TD-Gammon for backgammon money games in the setting of no evaluation-time search. Both checker play and cube action (use of the doubling cube) are learned from scratch via self-play reinforcement learning (RL), with minimal hand-coded logic and no expert features. In this setting, we demonstrate that pure self-play RL suffices to train models that reach near-state-of-the-art playing strength. Specifically, for cubeful money games, our search-free model evaluates faster and is substantially stronger than the open-source engines GNU Backgammon and Open Sage running a one-move (1-ply) look-ahead search.",
+      "authors": [
+        "Alexander L. Strehl"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-08-15T09:46:03+00:00",
+      "link": "https://arxiv.org/pdf/2608.15146v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "PureTD learns backgammon solely via self-play reinforcement learning without evaluation-time search, closely related to AlphaZero's self-play RL paradigm.",
+      "llm_evidence_cn": "PureTD仅通过自我对弈强化学习训练双陆棋，无评估期搜索，与AlphaZero自我对弈强化学习范式密切相关。",
+      "llm_evidence": "PureTD仅通过自我对弈强化学习训练双陆棋，无评估期搜索，与AlphaZero自我对弈强化学习范式密切相关。",
+      "canonical_evidence": "PureTD仅通过自我对弈强化学习训练双陆棋，无评估期搜索，与AlphaZero自我对弈强化学习范式密切相关。",
+      "llm_tldr_en": "Shows pure self-play reinforcement learning without evaluation-time search reaches near-state-of-the-art backgammon playing strength, closely paralleling AlphaZero's self-play training paradigm.",
+      "llm_tldr_cn": "该论文在不使用评估期搜索的条件下，重新审视TD-Gammon思路，提出PureTD：通过纯自我对弈强化学习从零训练双陆棋的走法和加倍动作，几乎不依赖人工逻辑或专家特征。实验表明其搜索免费模型达到接近最先进水平，且强于带1步搜索的GNU Backgammon和OpenSage，证明纯自我对弈RL足以掌握棋类游戏，与AlphaZero的核心思想一致。",
+      "llm_tldr": "该论文在不使用评估期搜索的条件下，重新审视TD-Gammon思路，提出PureTD：通过纯自我对弈强化学习从零训练双陆棋的走法和加倍动作，几乎不依赖人工逻辑或专家特征。实验表明其搜索免费模型达到接近最先进水平，且强于带1步搜索的GNU Backgammon和OpenSage，证明纯自我对弈RL足以掌握棋类游戏，与AlphaZero的核心思想一致。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "how does AlphaZero use self play reinforcement learning",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

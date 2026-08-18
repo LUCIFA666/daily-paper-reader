@@ -1,0 +1,54 @@
+{
+  "label": "2026-08-18",
+  "date": "2026-08-18",
+  "generated_at": "2026-08-18T20:15:24",
+  "count": 3,
+  "papers": [
+    {
+      "paper_id": "202608/18/2608.15700v1-adaptive-mixing-of-policies-from-searching-and-policies-from-learning",
+      "section": "deep",
+      "title_en": "Adaptive Mixing of Policies from Searching and Policies from Learning",
+      "authors": "Gavin B. Rens",
+      "date": "2026-08-16",
+      "pdf": "https://arxiv.org/pdf/2608.15700v1",
+      "score": "8.0",
+      "evidence": "Flexer架构混合神经网络策略与蒙特卡洛树搜索策略，并优于AlphaZero版本，直接涉及AlphaZero改进。",
+      "tldr": "传统强化学习常借助搜索/规划生成训练目标并进行蒸馏，然而搜索每一步都固定于相同深度，计算开销极高。本文提出Flexer架构，它不再机械执行固定深度搜索，而是在每个决策步将策略网络输出与蒙特卡洛树搜索策略进行加权混合，混合权重由策略网络对搜索目标的模仿误差以及环境模型的方差共同决定。当网络先验不准确或环境模型不确定性升高时，混合更偏向MCTS策略；反之则加大网络策略比重，从而自适应地降低搜索深度。在三个玩具符号问题的实验中，Flexer在若干设定下性能优于AlphaZero、DQN和ADP等基线。该工作展示了根据策略质量动态权衡搜索与学习的新思想，为减少规划开销、提升样本效率提供了可行方案。",
+      "tags": "query:alphazero",
+      "abstract_en": "Background: Distillation of training targets generated thru search/planning has proven useful in reinforcement learning, but search can take exceedingly long. Objectives: Rather than perform search to the same depth every time (typically at a fixed period of steps), reduce the search depth proportionally to the quality of the policy network priors. Methods: We describe Flexer, an architecture that, for each step, mixes the policy from a neural network and the policy from Monte Carlo tree search. The mixing factor favors the MCTS policy as the policy imitation error of the network and the environment models' variance increases. Results: Flexer outperforms a version of AlphaZero (and DQN and ADP) for some experiments on three toy symbolic problems.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202608/18/2608.16884v1-improving-the-matrix-multiplication-exponent-with-modern-optimization-and-alphaevolve",
+      "section": "deep",
+      "title_en": "Improving the matrix multiplication exponent with modern optimization and AlphaEvolve",
+      "authors": "Emilien Dupont, Marvin Eisenberger, Borislav Kozlovskii, Abbas Mehrabian, Francisco J. R. Ruiz, Abigail See, Renfei Zhou, Josh Alman, Virginia Vassilevska Williams, Matej Balog",
+      "date": "2026-08-17",
+      "pdf": "https://arxiv.org/pdf/2608.16884v1",
+      "score": "8.0",
+      "evidence": "使用AlphaEvolve（基于AlphaZero的程序）改进矩阵乘法指数，属于棋类游戏之外的应用",
+      "tldr": "矩阵乘法指数ω的上界是理论计算机科学的核心问题，它直接影响矩阵乘法、线性代数及多项式的计算复杂度。近年来，最佳上界由组合损失分析优化得出，然而其优化问题受限于特定表述。本文重新表述优化问题，使其覆盖更大参数空间，又利用现代机器学习设计出新型优化算法，并借助AlphaEvolve进行进化式精细化搜索。最终取得ω<2.371177，将此前2.371339的纪录大幅推进，这是该领域数月内的再次突破。本工作将优化与自动进化策略成功应用于基础数学问题，为后续研究提供了重要基准。",
+      "tags": "query:alphazero",
+      "abstract_en": "The current best bounds on the matrix multiplication exponent $ω$ are obtained through a refinement of the laser method called combination loss analysis (Duan et al., 2022; Williams et al., 2024; Alman et al., 2025). In this note, we address the optimization problem at the core of this approach and propose several improvements. First, we reformulate the optimization problem allowing us to solve it in a larger setting than was previously possible. Second, we leverage recent advances in machine learning to design a new optimization algorithm for this problem. Finally, we refine the resulting optimization algorithm with AlphaEvolve. Our combined approach yields an upper bound of $ω$ < 2.371177, improving the previous best bound of 2.371339.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202608/18/2608.15146v1-puretd-reinforcement-learning-for-backgammon-money-games-with-no-evaluation-time-search",
+      "section": "quick",
+      "title_en": "PureTD: Reinforcement Learning for Backgammon Money Games with No Evaluation-time Search",
+      "authors": "Alexander L. Strehl",
+      "date": "2026-08-15",
+      "pdf": "https://arxiv.org/pdf/2608.15146v1",
+      "score": "6.0",
+      "evidence": "PureTD仅通过自我对弈强化学习训练双陆棋，无评估期搜索，与AlphaZero自我对弈强化学习范式密切相关。",
+      "tldr": "针对双陆棋博彩游戏，现有引擎依赖评估时搜索和专家特征。本文提出PureTD方法，无需评估时搜索，仅通过自对弈强化学习从零学习落子和加倍策略，仅用极少手工逻辑。训练出的无搜索模型在速度上显著快于带1-ply搜索的GNU Backgammon和Open Sage，且棋力大幅超越，达到接近最先进水平，证明了纯自对弈RL的潜力。",
+      "tags": "query:alphazero",
+      "abstract_en": "We revisit Tesauro's TD-Gammon for backgammon money games in the setting of no evaluation-time search. Both checker play and cube action (use of the doubling cube) are learned from scratch via self-play reinforcement learning (RL), with minimal hand-coded logic and no expert features. In this setting, we demonstrate that pure self-play RL suffices to train models that reach near-state-of-the-art playing strength. Specifically, for cubeful money games, our search-free model evaluates faster and is substantially stronger than the open-source engines GNU Backgammon and Open Sage running a one-move (1-ply) look-ahead search.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}
