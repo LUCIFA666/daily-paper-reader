@@ -1,0 +1,143 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-08-20T19:28:52.299008+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 3,
+    "quick_skim_target": 11,
+    "quick_selected": 3
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2608.12522v1",
+      "source": "arxiv",
+      "title": "$\\varepsilon$-MemEvo: Adaptive Cross-Task Memory Transfer for LLM Program Evolution",
+      "abstract": "LLM-based program evolution systems such as FunSearch and AlphaEvolve have shown strong ability to discover novel algorithms, but typically optimize each task in isolation, discarding search experience after completion. We introduce $\\varepsilon$-MemEvo, a framework for cross-task knowledge transfer in LLM program evolution. $\\varepsilon$-MemEvo stores prior experience as task-agnostic tactic memories: compact natural-language summaries of successful algorithmic strategies rather than raw code, enabling transfer across tasks with different APIs and evaluators. To avoid negative transfer from semantically mismatched memories, $\\varepsilon$-MemEvo uses an adaptive injection gate that decides whether retrieved memories should be injected, and at what intensity. We evaluate $\\varepsilon$-MemEvo on 8 diverse optimization benchmarks spanning mathematical optimization and systems engineering, using a content-level Leave-One-Out protocol that excludes target-task memory entries. On the primary GPT-5 backbone, $\\varepsilon$-MemEvo improves AUCC over AdaEvolve on all 8 tasks, with a mean relative gain of +8.7%, and improves early-stage convergence by +9.4% on average. Ablations show that naive memory injection can fail catastrophically, while adaptive gating remains safe across all five ablation tasks. The data-updated posterior is interpretable in observed states: it favors skip during improving search and shifts from skip to hint across early and late plateaus. These gains incur less than 1% computational overhead.",
+      "authors": [
+        "Aofan Liu",
+        "Shiyuan Song",
+        "Yiyan Qi"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-12T18:56:31+00:00",
+      "link": "https://arxiv.org/pdf/2608.12522v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Extends AlphaEvolve/FunSearch-style LLM program evolution with adaptive cross-task memory transfer, an AlphaZero-family application beyond board games.",
+      "llm_evidence_cn": "针对AlphaEvolve/FunSearch式LLM程序演化提出自适应跨任务记忆迁移，属于AlphaZero家族在棋类之外的算法演化应用。",
+      "llm_evidence": "针对AlphaEvolve/FunSearch式LLM程序演化提出自适应跨任务记忆迁移，属于AlphaZero家族在棋类之外的算法演化应用。",
+      "canonical_evidence": "针对AlphaEvolve/FunSearch式LLM程序演化提出自适应跨任务记忆迁移，属于AlphaZero家族在棋类之外的算法演化应用。",
+      "llm_tldr_en": "Paper introduces ε-MemEvo, an adaptive cross-task memory transfer framework for LLM program evolution like FunSearch and AlphaEvolve, storing natural-language tactic memories and gating injection to avoid negative transfer, advancing AlphaZero-family algorithm discovery.",
+      "llm_tldr_cn": "针对FunSearch、AlphaEvolve等LLM程序演化系统每任务独立优化、搜索经验被丢弃的问题，本文提出ε-MemEvo，将跨任务经验存为任务无关的自然语言策略记忆，并通过自适应注入门判断是否注入，以避免语义不匹配带来的负迁移。该框架突破了单任务孤立优化的限制，使AlphaEvolve这类AlphaZero衍生方法在算法发现中能够积累和复用经验，提升多任务演化搜索的效率和泛化能力。",
+      "llm_tldr": "针对FunSearch、AlphaEvolve等LLM程序演化系统每任务独立优化、搜索经验被丢弃的问题，本文提出ε-MemEvo，将跨任务经验存为任务无关的自然语言策略记忆，并通过自适应注入门判断是否注入，以避免语义不匹配带来的负迁移。该框架突破了单任务孤立优化的限制，使AlphaEvolve这类AlphaZero衍生方法在算法发现中能够积累和复用经验，提升多任务演化搜索的效率和泛化能力。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "AlphaZero applications beyond board games",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2608.15372v1",
+      "source": "arxiv",
+      "title": "UC-PSRO: Utility-Conditioned Policy-Space Response Oracles with a Communication-Dropout Curriculum for Game-Theoretic Course-of-Action Generation in Adversarial Swarms",
+      "abstract": "We study generating game-theoretically optimized Courses of Action (COAs) for a Blue UAS swarm against an adaptive Red adversary in a communication-degraded environment, motivated by (but not derived from) a public U.S. Air Force SBIR solicitation. We propose UC-PSRO (Utility-Conditioned Policy-Space Response Oracles with a Communication-Dropout Curriculum), combining three mechanisms: (i) PSRO self-play, so Blue and Red policies train as approximate best responses to each other rather than one side against a fixed scripted opponent; (ii) FiLM conditioning of the Blue policy on a Commander's-Intent weight vector, sampled from a Dirichlet distribution during training, so one trained policy is re-steerable at execution time without retraining; and (iii) a curriculum annealing communication-graph edge dropout during training, so the swarm learns decentralized, peer-to-peer fallback instead of depending on full connectivity. We evaluate on a synthetic, unclassified stand-in for the solicitation's maritime scenario, with 5 seeds at N=25 Blue agents and a scalability sweep to N=200. We find a genuine trade-off, not a uniform win: the communication-dropout curriculum alone gives the strongest, most robust mission-completion rates of any learned method, improving counter-intuitively as denial increases (35% to 62% success as dropout rises from 0 to 0.75); adding utility-conditioning and PSRO self-play substantially slows convergence within a fixed budget, and we find no reliable exploitability advantage for self-play over a fixed-opponent policy, both statistically indistinguishable from a small, near-zero gap. We report this honestly as a convergence cost not yet offset by a demonstrated robustness benefit, rather than overstating one method as dominant, and provide a fully vectorized, open environment training at N=200 agents in single-digit milliseconds per step on a single consumer GPU.",
+      "authors": [
+        "Phillip Jiang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.MA"
+      ],
+      "published": "2026-08-15T18:52:50+00:00",
+      "link": "https://arxiv.org/pdf/2608.15372v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "PSRO self-play for adversarial swarm COA generation",
+      "llm_evidence_cn": "基于PSRO自我对弈的对抗蜂群行动方案生成",
+      "llm_evidence": "基于PSRO自我对弈的对抗蜂群行动方案生成",
+      "canonical_evidence": "基于PSRO自我对弈的对抗蜂群行动方案生成",
+      "llm_tldr_en": "UC-PSRO combines PSRO self-play, FiLM conditioning on commander intent, and a communication-dropout curriculum to generate game-theoretically optimized courses of action for Blue UAS swarms against adaptive Red adversaries.",
+      "llm_tldr_cn": "针对通信降级环境中蓝方蜂群面对自适应红方对抗的行动方案生成问题，UC-PSRO将PSRO自我对弈与效用条件策略空间响应预言机结合，使双方策略互相学习。蓝方策略通过FiLM受指挥意图权重条件化，并引入通信中断课程提升鲁棒性。该方法可生成博弈论意义上优化的行动方案，展示了自我对弈在军事博弈场景中的应用价值。",
+      "llm_tldr": "针对通信降级环境中蓝方蜂群面对自适应红方对抗的行动方案生成问题，UC-PSRO将PSRO自我对弈与效用条件策略空间响应预言机结合，使双方策略互相学习。蓝方策略通过FiLM受指挥意图权重条件化，并引入通信中断课程提升鲁棒性。该方法可生成博弈论意义上优化的行动方案，展示了自我对弈在军事博弈场景中的应用价值。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "how does AlphaZero use self play reinforcement learning",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2608.19197v1",
+      "source": "arxiv",
+      "title": "SPADE: Self-Play in Adaptive Synthetic Executable Environments",
+      "abstract": "Continuous self-improvement requires an ever-expanding pool of self-generated, diverse, adaptive goals. For language agents, existing training environment pools (hand-curated, statically synthesized, or frozen-verifier) keep the goal distribution fixed as the learner scales. We introduce SPADE (Self-Play in Adaptive Synthetic Executable Environments), a self-play RL framework in which a single LLM plays two roles: an Environment Designer that writes complete, long-horizon training environments as executable code with an OpenAI Gym-style reset()/step() interface, and a Reasoning Agent that learns to act in them. Each is a stateful, multi-turn environment (state transitions, reward functions, and verification code), so one interface spans reasoning problems and multi-step agentic tool use. The Reasoning Agent's regret is estimated using the gap between its reward with and without privileged hints; in optimizing this regret signal the Environment Designer learns to target environments at the edge of the agent's capabilities while keeping them feasible. Through extensive experimentation, we find several components critical to success: grounding the Environment Designer on documents sampled from a large pretraining corpus, and giving it an accumulated environment memory. Scaling to 30B-parameter models, SPADE improves over the strongest fixed-environment baseline by +5.3 on average across eight held-out math, science, code, and reasoning benchmarks, and lifts the tool-use setting by +5.7 on BFCL-v4 multi-turn and +13.9 on ACEBench-Agent; on the games setting, the margin over the strongest baseline grows with model scale. By making environment design itself a learnable component, SPADE takes a concrete step toward open-ended self-improvement.",
+      "authors": [
+        "Bo Liu",
+        "Simon Yu",
+        "Yiding Jiang",
+        "Ao Qu",
+        "Andrew Zhao",
+        "Zichen Liu",
+        "Junsu Kim",
+        "Zijian Zhou",
+        "Seungone Kim",
+        "Tongzheng Ren",
+        "Mickel Liu",
+        "Hanfei Yu",
+        "Zhaorun Chen",
+        "Weiyan Shi",
+        "Paul Pu Liang",
+        "Luke Zettlemoyer",
+        "Yejin Choi",
+        "Natasha Jaques"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-08-19T17:58:56+00:00",
+      "link": "https://arxiv.org/pdf/2608.19197v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "self-play reinforcement learning framework using two LLM roles",
+      "llm_evidence_cn": "采用自我对弈强化学习，LLM同时担任环境设计者与推理智能体",
+      "llm_evidence": "采用自我对弈强化学习，LLM同时担任环境设计者与推理智能体",
+      "canonical_evidence": "采用自我对弈强化学习，LLM同时担任环境设计者与推理智能体",
+      "llm_tldr_en": "SPADE is a self-play RL framework where one LLM acts as both environment designer and reasoning agent, generating adaptive executable environments to support continuous self-improvement beyond static training pools.",
+      "llm_tldr_cn": "现有语言智能体的训练环境池往往保持目标分布固定，限制了持续自我提升。SPADE提出一种自我对弈强化学习框架，让同一个LLM既作为环境设计者编写可执行的完整训练环境，又作为推理智能体在其中学习。通过可重置可交互的接口统一推理与交互问题，实现自适应合成环境中的持续改进。该工作为自我对弈思想在语言智能体训练中的应用提供了新范式。",
+      "llm_tldr": "现有语言智能体的训练环境池往往保持目标分布固定，限制了持续自我提升。SPADE提出一种自我对弈强化学习框架，让同一个LLM既作为环境设计者编写可执行的完整训练环境，又作为推理智能体在其中学习。通过可重置可交互的接口统一推理与交互问题，实现自适应合成环境中的持续改进。该工作为自我对弈思想在语言智能体训练中的应用提供了新范式。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "how does AlphaZero use self play reinforcement learning",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

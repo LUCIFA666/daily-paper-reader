@@ -1,0 +1,429 @@
+Title: ε-MemEvo: Adaptive Cross-Task Memory Transfer for LLM Program Evolution
+
+URL Source: https://arxiv.org/pdf/2608.12522v1
+
+Published Time: Fri, 14 Aug 2026 00:09:45 GMT
+
+Number of Pages: 9
+
+Markdown Content:
+# ε-MemEvo: Adaptive Cross-Task Memory Transfer for LLM Program Evolution 
+
+## Aofan Liu, Song Shiyuan, Qi Yiyan ∗
+
+Abstract 
+
+LLM-based program evolution systems such as FunSearch and AlphaEvolve have shown strong ability to discover novel algorithms, but typically optimize each task in isolation, dis-carding search experience after completion. We introduce 
+
+ε-MemEvo, a framework for cross-task knowledge transfer in LLM program evolution. ε-MemEvo stores prior experience as task-agnostic tactic memories : compact natural-language summaries of successful algorithmic strategies rather than raw code, enabling transfer across tasks with different APIs and evaluators. To avoid negative transfer from semantically mis-matched memories, ε-MemEvo uses an adaptive injection gate that decides whether retrieved memories should be injected, and at what intensity. We evaluate ε-MemEvo on 8 diverse optimization benchmarks spanning mathematical optimization and systems engineering, using a content-level Leave-One-Out protocol that excludes target-task memory entries. On the primary GPT-5 backbone, ε-MemEvo improves AUCC over AdaEvolve on all 8 tasks, with a mean relative gain of 
+
++8 .7% , and improves early-stage convergence by +9 .4% on average. Ablations show that naive memory injection can fail catastrophically, while adaptive gating remains safe across all five ablation tasks. The data-updated posterior is interpretable in observed states: it favors skip during improving search and shifts from skip to hint across early and late plateaus. These gains incur < 1% computational overhead. 
+
+## 1 Introduction 
+
+Large language models (LLMs) have emerged as power-ful engines for automated algorithm discovery. Systems like FunSearch (Romera-Paredes et al. 2024) and AlphaE-volve (Novikov et al. 2025) use LLMs to iteratively generate, evaluate, and refine programs, achieving breakthroughs in combinatorial optimization, matrix multiplication, and scien-tific computing. More recent work such as AdaEvolve (Cemri et al. 2026) introduces adaptive island models and paradigm breakthroughs to further improve search diversity. Despite these advances, a fundamental limitation persists: 
+
+every task starts from scratch . When an LLM evolution sys-tem finishes one optimization task and moves to a related task, it retains nothing—no memory of which strategies worked, no intuition about search structure, no reusable heuristics. This 
+
+> ∗
+
+Corresponding author. 0 5 10 15 20 25 30 35 0.40.60.81     
+
+> 𝑇 90% =3𝑇 90% =9
+
+Iteration Best Score 
+
+> AdaEvolve (final 0.9524)
+> 𝜀 -MemEvo (final 0.9756)
+
+Figure 1: Motivating example. On circle packing after solving a related geometric task, ε-MemEvo retrieves a geometric arrangement heuristic from memory and reaches 90% of its final score in 3 iterations (vs. 9 for AdaEvolve). The Tactic Memory Bank stores strategy summaries (not code), enabling transfer across tasks with different APIs and metrics. “amnesic” behavior leads to redundant exploration across related tasks, slow cold-start convergence, and wasted API budget. Consider a concrete scenario: after optimizing a geometric packing problem, the system has learned that “structured grid layouts with symmetric offsets minimize overlap.” This geo-metric intuition can also benefit a related packing task, yet ex-isting systems cannot leverage it. Human researchers naturally build on prior experience—why shouldn’t LLM evolution systems? We propose ε-MemEvo ( ε-Mem ory-augmented 
+
+Evo lution), a framework for cross-task knowledge transfer in LLM-based program evolution. ε-MemEvo makes two methodological moves tailored to evolutionary coding: 
+
+• Content-level transfer via a Tactic Memory Bank that stores LLM-extracted natural-language strategy sum-maries (not raw code) from completed tasks, enabling transfer across heterogeneous APIs and evaluators. 
+
+• Strategy-level gating via an Adaptive Injection Gate that treats memory usage as an adaptive gating problem whose primary role is to avoid negative transfer: it learns when retrieved memories should be withheld, softly suggested, or strongly imposed based on search state. The key insight behind ε-MemEvo is that cross-task trans-fer in evolutionary coding is a safety problem, not a retrieval arXiv:2608.12522v1 [cs.AI] 12 Aug 2026 problem alone . Naïvely injecting cross-task strategies every iteration can cause catastrophic negative transfer—in our ablation, two of five tasks see the search fail to produce any 
+
+score-improving program under always-inject, and the same two fail under a rule-based stagnation policy (Section 4.5). The adaptive gate addresses this by posterior-sampling over Beta arms, so the guide arm is down-weighted after a few unsuccessful injections, recovering skip -like behavior on mismatched tasks while retaining injection benefits elsewhere. Although the adaptive gate is not uniformly better than hand-tuned rules on benign tasks, it is the only variant in our study that remains safe across all five tasks without requiring per-task threshold tuning. To evaluate content-level cross-task transfer, we use a 
+
+Leave-One-Out (LOO) protocol : when evaluating on task k,the memory bank excludes all experience from task k itself. We evaluate ε-MemEvo on 8 benchmarks spanning circle packing, signal processing, load balancing, SQL optimization, and more, on two LLM backbones (GPT-5 and Gemini-3-Pro). Our key findings: 1. Consistent convergence improvement. ε-MemEvo achieves higher AUCC on all 8 tasks ( p = 0.0078 ,Wilcoxon signed-rank) with +8 .7% mean relative im-provement on GPT-5 and +11 .7% on Gemini-3-Pro. 2. Strongest early-stage acceleration. On GPT-5, AUC@20 improves by +9 .4% on average, with circle packing 
+
++26 .0% and transaction scheduling +27 .2% , showing that the largest gains occur during cold-start convergence. 3. TS prevents catastrophic negative transfer. Full ε-MemEvo improves over AdaEvolve on all 5 ablation tasks; both naïve always-inject and rule-based stagnation variants fail to produce any score-improving program on 2/5 tasks. 4. Negligible overhead. Cross-task transfer adds < 1% per-iteration cost ( ∼0.77 s vs. 80–140 s baseline); aggregate wall-clock time across the 8 main tasks is 0.69 × that of AdaEvolve. 
+
+## 2 Related Work 
+
+LLM-based program evolution. Building on genetic pro-gramming (Koza 1992), recent work replaces hand-designed variation operators with LLMs. FunSearch (Romera-Paredes et al. 2024), AlphaEvolve (Novikov et al. 2025), and OpenEvolve (Sharma 2025) establish LLM-based evolu-tionary search on math and systems benchmarks; ShinkaE-volve (Lange, Imajuku, and Cetin 2025), CodeEvolve (As-sumpção et al. 2025), GEPA (Agrawal et al. 2025), and AdaEvolve (Cemri et al. 2026) extend these via sample-efficient sampling, island models, and adaptive paradigm breakthroughs. Earlier work includes ELM (Lehman et al. 2022), Language Model Crossover (Meyerson et al. 2023), EoH (Liu et al. 2024), OPRO (Yang et al. 2024), EvoPrompt-ing (Chen, Dohan, and So 2023), and EvoX (Liu et al. 2026). 
+
+All operate per-task without explicit cross-task memory. 
+
+ε-MemEvo addresses this gap by making cross-task transfer first-class at both the representation level (tactic memories) and the control level (adaptive intervention). 
+
+Selection in LLM-based program evolution. Recent LLM-evolution frameworks select within-task programs for muta-tion through a variety of mechanisms. FunSearch (Romera-Paredes et al. 2024) and OpenEvolve (Sharma 2025) use island models with score-weighted parent sampling and peri-odic island resets; AlphaEvolve (Novikov et al. 2025) extends this with multi-model collaboration; ShinkaEvolve (Lange, Imajuku, and Cetin 2025) adds rejection-sampled adaptive parent sampling for sample efficiency; AdaEvolve (Cemri et al. 2026) couples adaptive island models with paradigm breakthroughs that periodically inject conceptually different strategies into the next mutation prompt. All operate within one task: selection uses programs discovered for the cur-rent problem, and memorisable artifacts reset between tasks. ε-MemEvo instead adds a cross-task layer: a con-textual Thompson Sampling gate (Slivkins 2019; Chapelle and Li 2011; Kaufmann, Korda, and Munos 2012; Agrawal and Goyal 2013) decides whether retrieved tactics should be withheld, suggested, or imposed. The closest precedent is within-run adaptive operator selection (Da Costa et al. 2008; Fialho et al. 2010); ε-MemEvo instead gates cross-task interventions. Related foundations include meta-learning (Hospedales et al. 2022; Finn, Abbeel, and Levine 2017), retrieval-augmented code generation (Lewis et al. 2020; Lu et al. 2022; Parvez et al. 2021; Zhou et al. 2023), agentic mem-ory (Shinn et al. 2023; Wang et al. 2023; Packer et al. 2023; Park et al. 2023), and continual learning (Kirkpatrick et al. 2017; Rusu et al. 2016; De Lange et al. 2021). 
+
+## 3 Method 
+
+3.1 Problem Formulation 
+
+We consider a sequential setting where an LLM-based evo-lution system solves tasks T = {T1, . . . , T N }. Each task Ti
+
+has description di, evaluation function fi : P → R, and seed program p0 
+
+> i
+
+; the system runs M iterations per task to maxi-mize fi. ε-MemEvo augments the standard (per-task) setting with a persistent memory state M = ( B, π ) comprising a Tactic Memory Bank B and an Injection Policy π. The policy is updated during each task, while the bank is appended once at successful task completion; both are carried forward to subsequent tasks. 
+
+3.2 Architecture Overview 
+
+ε-MemEvo wraps around the AdaEvolve (Cemri et al. 2026) base framework, adding two cross-task transfer modules (Figure 2): a Tactic Memory Bank B that stores strategy summaries from prior tasks (retrieved by embedding sim-ilarity), and an Adaptive Injection Gate π that decides whether to inject memories and at what intensity. At itera-tion t of task Ti, the controller (1) queries π for an action 
+
+at ∈ { skip , hint , guide } given search state st; (2) if 
+
+at̸ = skip , retrieves the top-3 strategies from B−i; (3) con-structs an augmented prompt at intensity at; (4) generates and evaluates a candidate; (5) resolves delayed rewards and updates π.Population Update   
+
+> update population; track finn al best
+> Task Complete
+> extract finn al best
+> T1: Prior task A T2: Prior task B T{k-1}: Prior task C
+> Content-level LOO: exclude T_k
+
+Figure 2: ε-MemEvo architecture. Prior-task best programs are distilled into task-agnostic tactics under LOO. At each iteration, a state-conditioned Thompson Sampling gate selects skip , hint , or guide ; retrieved tactics and the selected intensity augment the base prompt. AdaEvolve evaluates each candidate and returns a delayed reward that updates the gate. After a successful task run completes, its final best program contributes one tactic to memory for subsequent tasks. 
+
+3.3 Tactic Memory Bank 
+
+Strategy extraction. After a successful task run completes, we use GPT-4.1-mini to extract a task-agnostic strategy sum-mary from its final best program: tactic i = LLM extract 
+
+ di, p best  
+
+> i
+
+, f i(pbest  
+
+> i
+
+) . (1) The extraction prompt asks for general algorithmic descrip-tions (e.g., “two-phase optimization with greedy initialization followed by gradient descent”) rather than task-specific code. Each completed successful task contributes one entry con-taining the tactic, approach-type label, task description, and embedding; the entry becomes available only to subsequent tasks. 
+
+Semantic retrieval. Given a new task with description 
+
+dj , we embed ej = Embed (dj ) via text-embedding-3-small (1536-dim) and rank memory entries by a score-weighted similarity: 
+
+rk = cos( ej , ek) · (1 + 0 .3 · log(1 + max(∆ k, 0.01))) ,
+
+(2) where ∆k is the score improvement of entry k’s strategy over its baseline; we return the top-3. 
+
+3.4 Adaptive Injection Gate 
+
+The injection gate is implemented as a contextual bandit with Beta-distributed arms updated by Thompson sampling. We design it primarily as a gate against negative transfer rather than a reward-maximizing controller: on tasks where retrieved strategies are mismatched, the posterior for guide collapses within a handful of unsuccessful injections and the policy reverts to predominantly skip actions. 
+
+State space. Six discrete states from two features: search phase ∈ { improving , plateau , stagnating } from global improvement rate ρ = improvements evaluations (ρ > 0.1 ⇒
+
+improving ; 0.02 < ρ ≤ 0.1 ⇒ plateau ; ρ ≤ 0.02 ⇒
+
+stagnating ); and task stage ∈ { early , late }, where 
+
+t/M < 0.4 is early and the remaining iterations are late. 
+
+Action space. Three injection intensities: skip (no injec-tion, base prompt), hint (retrieved strategies as optional references), and guide (top strategy as recommended ap-proach plus injection into paradigm breakthrough generation). 
+
+Informative priors. Each (s, a ) pair is Beta (αs,a , β s,a ).We set Prior (improving , skip ) = Beta (3 , 1) and Algorithm 1 ε-MemEvo: One Iteration of Cross-Task Aug-mented Evolution  
+
+> 1:
+
+Require: Memory bank B−k, policy π with Beta counts 
+
+{(αs,a , β s,a )} and pending queue Q, iteration t, task description dk, current best score f ∗
+
+> t−1
+
+, reward window 
+
+w, total iterations M 
+
+> 2:
+
+st ← GetState (ρt, t/M ) {6-state discretisation } 
+
+> 3:
+
+Sample θst,a ∼ Beta (αst,a , β st,a ) for a ∈{skip , hint , guide } 
+
+> 4:
+
+at ← arg max a θst,a {posterior sampling } 
+
+> 5:
+
+f ∗ 
+
+> pre
+
+← f ∗
+
+> t−1
+
+; tactics ← ∅  
+
+> 6:
+
+if at̸ = skip then  
+
+> 7:
+
+tactics ← B −k.Retrieve (dk, top_k =3)  
+
+> 8:
+
+end if  
+
+> 9:
+
+prompt ← BuildPrompt (parent , context , tactics , a t) 
+
+> 10:
+
+pnew ← LLM (prompt ); score ← fk(pnew ) 
+
+> 11:
+
+f ∗ 
+
+> t
+
+← UpdatePopulation (pnew , score ) 
+
+> 12:
+
+Q.Append  (st, a t, t, f ∗
+
+> pre
+
+) 
+
+> 13:
+
+ResolvePending (Q, t, w, f ∗ 
+
+> t
+
+) {Beta updates for records with t ≥ τ + w}Prior (stagnating , guide ) = Beta (3 , 1) , with Beta (1 , 1) 
+
+for other pairs. 
+
+Decision and reward. At each iteration we sample θs,a ∼
+
+Beta (αs,a , β s,a ) and pick a∗ = arg max a θs,a . Before ap-plying the action, we record the current best score f ∗
+
+> pre
+
+.The reward is delayed: after window w = 5 iterations, 
+
+Rt = 1[f ∗ 
+
+> t+w
+
+> f ∗ 
+
+> pre
+
++ ϵ] with ϵ = 10 −8; on success, 
+
+αst,a t += 1 , otherwise βst,a t += 1 . Concurrent pending decisions are resolved via a FIFO queue Q. At the task bound-ary, unresolved records are evaluated against the final best score before the queue is cleared. 
+
+3.5 Leave-One-Out Evaluation Protocol 
+
+When evaluating ε-MemEvo on task Tk: (1) the memory bank 
+
+B−k excludes any entries from Tk; (2) the policy π retains its full posterior, since it learns task-agnostic state-action mappings rather than task-specific content or task identity; (3) all methods share the same seed program and evaluator. Thus, the protocol leaves out target-task memory content while retaining the globally warm-started policy. 
+
+## 4 Experiments 
+
+4.1 Experimental Setup 
+
+Benchmarks. We evaluate 8 tasks across two categories: 
+
+mathematical optimization (4 from AlphaEvolve (Novikov et al. 2025): circle packing, signal processing, two inequality problems) and systems optimization (4 from ADRS: EPLB, LLM-SQL, PRISM, transaction scheduling). All task objec-tive scores are higher-is-better. 
+
+Methods. We compare ε-MemEvo (ours), which augments AdaEvolve with LOO memory and a TS gate; AdaEvolve ,the base adaptive evolution framework; and TopK , a simpler top-K mutation baseline. 
+
+Protocol. GPT-5 via LiteLLM is the primary generator, with Gemini-3-Pro replication runs reported in the tables; text-embedding-3-small is used for retrieval. Exp. 1 (memory accumulation): 8 tasks × 50 iterations × 2 methods, sequen-tial. Exp. 2 (main): 8 tasks × 80 iterations × 3 methods, using LOO memory from Exp. 1. Exp. 3 (ablation): 5 tasks 
+
+× 50 iterations × 5 variants. Each score is the mean over 
+
+5 paired seeds {42 , 0, 1, 2, 3}. Metrics are: Final Score at iteration 80; AUCC (normalized area under the convergence curve); AUC@20 (cold-start efficiency); and T90% (iterations to 90% of a method’s own final score). 
+
+4.2 Main Results 
+
+On GPT-5, ε-MemEvo achieves higher final scores than AdaEvolve on 7/8 tasks, with large gains on EPLB ( +46 .0% )and txn_scheduling ( +45 .2% ). The single loss on PRISM (−0.04% ) is negligible. 
+
+4.3 Convergence Efficiency 
+
+AUCC. ε-MemEvo wins on all 8 tasks (mean +8 .7% 
+
+on GPT-5, +11 .7% on Gemini-3-Pro). Largest gains are on txn_scheduling (+37 .3% /+38 .8% ) and EPLB (+17 .9% /+13 .3% ). 
+
+AUC@20. Cold-start improves on 7/8 tasks (mean 
+
++9 .4% /+12 .6% ), exceeding the full-horizon AUCC gain and indicating that the largest improvements occur in the cold-start phase. The largest GPT-5 gains are circle_packing ( +26 .0% ), txn_scheduling ( +27 .2% ), and PRISM ( +10 .6% ). 
+
+T90% . On GPT-5, ε-MemEvo reaches 90% faster on cir-cle_packing (3 vs. 9, 3.0×), PRISM (2 vs. 17, 8.5×), and signal_processing (15 vs. 23, 1.5×). 
+
+4.4 Statistical Significance 
+
+On AUCC, the paired Wilcoxon signed-rank gives p = 0 .0078 
+
+(the minimum two-sided p-value at n=8 when all task-level differences share the same sign); the bootstrap 95% BCa CI on mean relative improvement is [+2 .9% , +21 .4%] ; Cohen’s 
+
+dz = 0 .675 (medium effect). 
+
+4.5 Ablation Study 
+
+We compare five variants on 5 tasks (50 iter): ε-MemEvo (full) (LOO bank + TS), MemEvo-always (always guide), 
+
+MemEvo-stagnation (rule-based: guide if stagnating, else skip), AdaEvolve (no memory), TopK (weak baseline). 
+
+Both naive always-inject and rule-based stagnation fail catastrophically on mismatched tasks. MemEvo-always and MemEvo-stagnation both achieve AUCC = 0 on EPLB and LLM-SQL— no iteration in 50 produces a score-improving program on these tasks, while ε-MemEvo (full) and AdaEvolve both produce valid programs on the same tasks. MemEvo-always injects every iteration; MemEvo-stagnation injects whenever stagnation is detected. These failures are consistent with static policies repeatedly injecting inapplica-ble code patterns. TS limits this behavior because the guide Backbone: GPT-5 Backbone: Gemini-3-Pro Task ε-MemEvo AdaEvolve TopK ∆% ε-MemEvo AdaEvolve TopK ∆%circle_packing 0.9756 0.9524 0.9645 +2.4% 0.9761 0.9534 0.9650 +2.4% signal_processing 0.7227 0.7057 0.5508 +2.4% 0.6685 0.5998 0.5095 +11.5% first_autocorr_ineq 0.9936 0.9913 0.9945 +0.2% 0.9191 0.8426 0.9199 +9.1% uncertainty_ineq 0.9024 0.8938 0.8975 +1.0% 0.8347 0.7597 0.8302 +9.9% eplb 0.2171 0.1487 0.1336 +46.0% 0.2260 0.1609 0.1391 +40.5% llm_sql 0.7247 0.7047 0.7367 +2.8% 0.7232 0.7019 0.7352 +3.0% prism 26.256 26.266 26.233 −0.04% 26.230 26.213 26.207 +0.06% txn_scheduling 4032.3 2777.8 2688.2 +45.2% 3987.9 2716.0 2658.6 +46.8% 
+
+Table 1: Final scores (Exp. 2, 80 iter, mean over 5 seeds), on two LLM backbones. Bold: best of ε-MemEvo / AdaEvolve. posterior drops after unsuccessful injections, and the gate reverts to predominantly skip .
+
+Memory injection is highly valuable when appropriate. 
+
+On circle_packing, signal, and txn_scheduling, all three mem-ory variants outperform AdaEvolve by +2 .9% to +55 .3% ,demonstrating genuine value when semantically aligned mem-ories are available. 
+
+The adaptive gate trades peak upside for robustness. 
+
+On circle_packing ( +13 .4% vs. +9 .9% ) and signal ( +4 .0% 
+
+vs. +2 .9% ), MemEvo-stagnation edges out ε-MemEvo by small margins; on txn_scheduling, MemEvo-always is best (+55 .3% ). These results show that memory content is valu-able when aligned, while the adaptive gate keeps that upside without exposing the system to static-injection brittleness. ε-MemEvo is the only memory-augmented variant that improves over AdaEvolve on all 5 tasks without per-task threshold tuning. 
+
+4.6 Analysis 
+
+Policy posterior and prior sensitivity. Figure 3 shows the warm-start policy posterior obtained from Exp. 1. The observed states recover an interpretable hierarchy: improving 
+
+→ skip , plateau_early → skip , and plateau_late → hint .These greedy actions are unchanged when the informative prior is replaced by uniform Beta(1,1), confirming that the observed-state behavior is learned rather than inherited from initialization. The unobserved stagnating states retain the informative prior that favors stronger memory use when progress stalls. 
+
+Reward rate validation. Within the improving_early 
+
+decisions in Exp. 2, skip attains a 39.6% positive reward rate (99/250), compared with 34.0% for hint (17/50) and 19.7% for guide (15/76). Over-injection during productive search actively harms performance : guide ’s reward rate is half that of skip .
+
+Negative transfer avoided in practice. On EPLB, the closest retrievable memory (from LLM-SQL, cosine 0.481 )prescribes SQL-style grouping; under MemEvo-always 
+
+this produces code that scores 0 every iteration, whereas the adaptive gate’s guide -arm posterior collapses after a handful of failures and the policy reverts to skip , allowing normal AdaEvolve search to proceed. skip hint guide                      
+
+> improving, early 0.229 0.125 0.186 improving, late 0.200 0.154 0.118 plateau, early 0.088 0.044 0.036 plateau, late 0.024 0.202 0.081 stagnating, early 0.333 0.500 0.750
+> stagnating, late 0.333 0.500 0.750
+> data-driven prior-driven
+> Posterior mean
+> 0.00 0.25 0.50 0.75
+
+Figure 3: Policy posterior as a posterior-mean heatmap over 6 states × 3 actions after Exp. 1. Bold-bordered cells mark the greedy arm per state. Observed states yield the data-driven hierarchy improving → skip , plateau_early → skip , and plateau_late → hint ; the unobserved stagnating states retain the prior-initialized guide action. 
+
+Retrieval forms semantic clusters. Retrieval similarity reveals two natural clusters: geometric placement (similari-ties 0.420 –0.646 ) and numerical/systems (similarities 0.375 –
+
+0.555 ). The catastrophic-failure pair (EPLB ↔ LLM-SQL at 
+
+0.481 ) is a post-hoc diagnostic , not an inference-time cutoff: 
+
+ε-MemEvo always retrieves top-3 by weighted similarity and lets TS gate the decision. 
+
+Computational overhead. ε-MemEvo adds ∼0.77 s per iteration ( < 1% of the 80–140 s baseline). Wall-clock time is faster on 5/8 main tasks, with an aggregate ratio of 0.69 ×
+
+relative to AdaEvolve. 
+
+## 5 Discussion 
+
+When does transfer help most? Our results suggest cross-task transfer is most beneficial when: (1) the memory bank contains strategies from semantically related tasks (e.g., 
+
+circle_packing benefits from other geometric layout strategies at similarity ≥ 0.5); (2) the target task has a smooth fitness landscape where the base framework can make steady progress; (3) the search is in its early stages (AUC@20 gains exceed full-horizon AUCC gains on both backbones). Transfer is less direct when available memories are from distant task AUCC (full 80) AUC@20 T90% (iter) Task ε-MemEvo AdaEvolve ∆ ε-MemEvo AdaEvolve ∆ ε-MemEvo AdaEvolve Speedup                                                                                                                                                                
+
+> Backbone: GPT-5
+> circle_pack .946 .885 +6.9% .861 .683 +26.0% 393.0 ×
+> eplb .159 .135 +17.9% .124 .123 +1.0% 53 50 0.9 ×
+> autocorr .980 .979 +0.1% .942 .942 +0.0% 111.0 ×
+> llm_sql .708 .696 +1.8% .675 .669 +0.8% 111.0 ×
+> prism 25.90 25.31 +2.3% 24.84 22.45 +10.6% 217 8.5 ×
+> signal .668 .651 +2.5% .573 .525 +9.2% 15 23 1.5 ×
+> txn_sched 3766 2743 +37.3% 3358 2639 +27.2% 15 1‡—uncert_ineq .890 .882 +0.9% .855 .848 +0.8% 111.0 ×
+> Win/Total 8/8 7/8 3/8 ‡‡
+> Mean ∆+8.7% +9.4%
+> Backbone: Gemini-3-Pro
+> circle_pack .947 .886 +6.9% .861 .684 +25.9% 410 2.5 ×
+> eplb .166 .146 +13.3% .129 .133 −3.0% 56 52 0.9 ×
+> autocorr .907 .832 +8.9% .871 .801 +8.8% 221.0 ×
+> llm_sql .707 .693 +1.9% .674 .666 +1.1% 122.0 ×
+> prism 25.87 25.26 +2.4% 24.82 22.41 +10.8% 316 5.3 ×
+> signal .618 .553 +11.7% .530 .446 +18.8% 14 22 1.6 ×
+> txn_sched 3725 2683 +38.8% 3321 2581 +28.7% 16 1‡—uncert_ineq .823 .750 +9.8% .791 .721 +9.7% 221.0 ×
+> Win/Total 8/8 7/8 4/8 ‡‡
+> Mean ∆+11.7% +12.6%
+> ‡AdaEvolve’s T90% =1 when its final score is materially lower than ε-MemEvo’s—reaching 90% of a lower target is trivially faster.
+> ‡‡ Excluding ties.
+
+Table 2: Convergence efficiency (ε-MemEvo vs. AdaEvolve on 8 tasks, two backbones). ∆% = relative improvement. domains, which is where the adaptive gate is most important. 
+
+Theoretical safety guarantee. Specialising the standard regret bound for Bernoulli Thompson sampling (Russo et al. 2018; Agrawal and Goyal 2013) to our 3-arm gat-ing problem shows that, when retrieved tactics are mis-matched (so pskip > p guide in a fixed search state), the expected number of guide pulls in the first T rounds sat-isfies E[Tguide (T )] ≤ C log T / ∆2 
+
+> guide
+
++ o(log T ), so the per-round probability of injecting a harmful tactic decays as 
+
+O(1 /t ). In a synthetic validation over T =500 rounds, the rolling selection frequency of guide falls below 5% by 
+
+t ≈ 100 in the mismatched setting. 
+
+Why Thompson sampling? Our gate needs to support delayed binary rewards, informative Beta priors, and rapid suppression of harmful actions. Fixed ε-greedy continues to select every arm with nonzero probability even after repeated failures, while UCB1 has no natural mechanism for incorpo-rating the state-specific priors used by ε-MemEvo. In matched and mismatched synthetic bandits, Thompson sampling is the only tested controller that combines near-lowest regret in both regimes with a vanishing harmful-arm selection rate. This choice does not imply that Thompson sampling is universally optimal: our LLM-in-the-loop experiments isolate adaptive gating against always-inject and stagnation-triggered controls, rather than replacing the gate with every bandit alternative. 
+
+Limitations. We evaluate two LLM backbones (GPT-5, Gemini-3-Pro). The memory bank is built at the task level: each entry distills a complete optimization run, and LOO evaluation tests transfer from other tasks. We do not yet know how retrieval precision, gate calibration, or negative-transfer frequency change as the bank grows to hundreds of entries. Moreover, ε-MemEvo augments rather than replaces its base evolution framework, so memory transfer cannot compen-sate for fundamental exploration failures in the underlying search. A stronger rule-based control not evaluated here would combine stagnation-triggered injection with a k-strike auto-disable rule. Such a controller could recover much of the observed safety benefit without posterior sampling, but would introduce a task-dependent strike threshold; comparing it with ε-MemEvo is an important missing ablation. The within-paper AdaEvolve vs. ε-MemEvo comparison (Tables 1–2) remains the primary controlled test. 
+
+## 6 Conclusion 
+
+We presented ε-MemEvo, a framework that formalizes cross-task knowledge transfer as an adaptive intervention problem 
+
+in LLM-based program evolution. Through a Tactic Memory Bank for content-level transfer and an Adaptive Injection Gate for strategy-level transfer, ε-MemEvo achieves statisti-cally significant convergence improvements across 8 diverse optimization benchmarks on GPT-5 ( p = 0 .0078 , 8/8 AUCC wins, +8 .7% average improvement). The key insight is that Task ε-MemEvo always stagnation AdaEvolve TopK                                          
+
+> circle_pack 0.928 (+9.9%) 0.942 (+11.5%) 0.957 (+13.4%) 0.845 0.781 eplb 0.129 (+1.3%) 0.000 0.000 0.127 0.122 signal 0.639 (+2.9%) 0.599 ( −3.5%) 0.646 (+4.0%) 0.621 0.421 txn_sched 3647 (+34.0%) 4227 (+55.3%) 3548 (+30.3%) 2722 —llm_sql 0.700 (+1.3%) 0.000 0.000 0.691 0.652
+> Avg. ∆%+9.9% −27.4% −30.4% 0% −12.3%
+> Safe tasks 5/5 3/5 3/5 5/5 4/4
+
+Table 3: Ablation : AUCC@50 and relative improvement over AdaEvolve. Red = catastrophic failure (AUCC = 0 ). Avg. ∆%
+
+averages per-task relative improvements over AdaEvolve; AUCC = 0 failures are scored as −100% .20 40 60 80 0.40.60.81.0
+
+Iteration Sum of radii ( ↑)      
+
+> (a) circle packing (ΔAUCC =+6.9% )
+> 20 40 60 80 0.15 0.20
+
+Iteration Load balance ( ↑)      
+
+> (b) eplb (ΔAUCC =+17 .9% )
+> 20 40 60 80 2.500 3.000 3.500 4.000
+
+Iteration Throughput ( ↑)      
+
+> (c) txn scheduling (ΔAUCC =+37 .3% )
+> 20 40 60 80 22 24 26
+
+Iteration Verification score ( ↑) (d) prism (ΔAUCC = +2.3% , 𝑇 90% = 8.5×) 
+
+> 𝜀 -MemEvo AdaEvolve
+
+Figure 4: Convergence curves on four representative tasks. ε-MemEvo (blue) converges faster than AdaEvolve (orange) in early iterations; the gap is most pronounced on circle_packing and txn_scheduling. Shaded region: AUC@20 zone. 
+
+adaptive injection control is essential: while cross-task memo-ries can provide substantial value (up to +55% ), uncontrolled injection can actively harm the search—in our ablation, two of five tasks fail to improve under naive always-inject. The adaptive gate resolves this tension with an interpretable poste-rior: data favor skip in improving and early-plateau states and 
+
+hint in late-plateau states, while the unobserved stagnating states retain the prior-initialized guide action. This control incurs negligible overhead ( < 1% ). The content-level LOO protocol excludes target-task entries from the memory bank, so the transferred tactics come from other tasks rather than target solutions. These results establish adaptive cross-task memory as a complementary layer for evolutionary coding agents. Next steps include larger, more diverse banks, hierarchical memory, and transfer across base search frameworks and weaker LLM backbones. 
+
+Broader Impact Statement 
+
+ε-MemEvo uses 0.69 × the aggregate wall-clock time of AdaEvolve across the 8 main tasks but costs 2–34 GPU-hours per task; scaling may raise energy use. Cross-task reuse lowers cost; gating reveals memory influence. 
+
+## References 
+
+Agrawal, L. A.; Tan, S.; Soylu, D.; Ziems, N.; Khare, R.; Opsahl-Ong, K.; Singhvi, A.; Shandilya, H.; Ryan, M. J.; Jiang, M.; et al. 2025. GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning. arXiv preprint arXiv:2507.19457 .Agrawal, S.; and Goyal, N. 2013. Further Optimal Regret Bounds for Thompson Sampling. In International Conference on Artificial Intelligence and Statistics (AISTATS) .Assumpção, H.; Ferreira, D.; Campos, L.; and Murai, F. 2025. CodeEvolve: An Open Source Evolutionary Coding Agent for Algorithm Discovery and Optimization. arXiv preprint arXiv:2510.14150 .Cemri, M.; Agrawal, S.; Gupta, A.; Liu, S.; Cheng, A.; Mang, Q.; Naren, A.; Erdogan, L. E.; Sen, K.; Zaharia, M.; Dimakis, A.; and Stoica, I. 2026. AdaEvolve: Adaptive LLM Driven Zeroth-Order Optimization. arXiv preprint arXiv:2602.20133 .Chapelle, O.; and Li, L. 2011. An Empirical Evaluation of Thompson Sampling. In Advances in Neural Information Processing Systems (NeurIPS) .Chen, A.; Dohan, D. M.; and So, D. R. 2023. EvoPrompting: Language Models for Code-Level Neural Architecture Search. In Advances in Neural Information Processing Systems .Da Costa, L.; Fialho, Á.; Schoenauer, M.; and Sebag, M. 2008. Adaptive Operator Selection with Dynamic Multi-Armed Bandits. In Genetic and Evolutionary Computation Conference (GECCO) .De Lange, M.; Aljundi, R.; Masana, M.; Parisot, S.; Jia, X.; Leonardis, A.; Slabaugh, G.; and Tuytelaars, T. 2021. A Con-tinual Learning Survey: Defying Forgetting in Classification Tasks. IEEE Transactions on Pattern Analysis and Machine Intelligence , 44(7): 3366–3385. Fialho, Á.; Da Costa, L.; Schoenauer, M.; and Sebag, M. 2010. Analyzing Bandit-based Adaptive Operator Selection Mech-anisms. Annals of Mathematics and Artificial Intelligence ,60(1-2): 25–64. Finn, C.; Abbeel, P.; and Levine, S. 2017. Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks. In 
+
+International Conference on Machine Learning .Hospedales, T.; Antoniou, A.; Micaelli, P.; and Storkey, A. 2022. Meta-Learning in Neural Networks: A Survey. IEEE Transactions on Pattern Analysis and Machine Intelligence ,44(9): 5149–5169. Kaufmann, E.; Korda, N.; and Munos, R. 2012. Thompson Sampling: An Asymptotically Optimal Finite-Time Analysis. In Algorithmic Learning Theory (ALT) .Kirkpatrick, J.; Pascanu, R.; Rabinowitz, N.; Veness, J.; Desjardins, G.; Rusu, A. A.; Milan, K.; Quan, J.; Ramalho, T.; Grabska-Barwinska, A.; Hassabis, D.; Clopath, C.; Kumaran, D.; and Hadsell, R. 2017. Overcoming catastrophic forgetting in neural networks. Proceedings of the National Academy of Sciences , 114(13): 3521–3526. Koza, J. R. 1992. Genetic Programming: On the Programming of Computers by Means of Natural Selection . MIT Press. Lange, R. T.; Imajuku, Y.; and Cetin, E. 2025. ShinkaE-volve: Towards Open-Ended and Sample-Efficient Program Evolution. arXiv preprint arXiv:2509.19349 .Lehman, J.; Gordon, J.; Jain, S.; Ndousse, K.; Yeh, C.; and Stanley, K. O. 2022. Evolution through Large Models. arXiv preprint arXiv:2206.08896 .Lewis, P.; Perez, E.; Piktus, A.; Petroni, F.; Karpukhin, V.; Goyal, N.; Küttler, H.; Lewis, M.; Yih, W.-t.; Rocktäschel, T.; Riedel, S.; and Kiela, D. 2020. Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks. In Advances in Neural Information Processing Systems .Liu, F.; Tong, X.; Yuan, M.; Lin, X.; Luo, F.; Wang, Z.; Lu, Z.; and Zhang, Q. 2024. Evolution of Heuristics: Towards Efficient Automatic Algorithm Design Using Large Language Model. In International Conference on Machine Learning .Liu, S.; Agarwal, S.; Maheswaran, M.; Cemri, M.; et al. 2026. EvoX: Meta-Evolution for Automated Discovery. arXiv preprint arXiv:2602.23413 .Lu, S.; Duan, N.; Han, H.; Guo, D.; Hwang, S.-w.; and Svy-atkovskiy, A. 2022. ReACC: A Retrieval-Augmented Code Completion Framework. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics .Meyerson, E.; Nelson, M. J.; Bradley, H.; Gaier, A.; Moradi, A.; Hoover, A. K.; and Lehman, J. 2023. Language Model Crossover: Variation through Few-Shot Prompting. arXiv preprint arXiv:2302.12170 .Novikov, A.; Vu, N.; Eisenberger, M.; Dupont, E.; Huang, P.-S.; Wagner, A. Z.; et al. 2025. AlphaEvolve: A coding agent for scientific and algorithmic discovery. arXiv preprint arXiv:2506.13131 .Packer, C.; Wooders, S.; Lin, K.; Fang, V.; Patil, S. G.; Stoica, I.; and Gonzalez, J. E. 2023. MemGPT: Towards LLMs as Operating Systems. arXiv preprint arXiv:2310.08560 .Park, J. S.; O’Brien, J. C.; Cai, C. J.; Morris, M. R.; Liang, P.; and Bernstein, M. S. 2023. Generative Agents: Interactive Simulacra of Human Behavior. In Proceedings of the 36th Annual ACM Symposium on User Interface Software and Technology (UIST) .Parvez, M. R.; Ahmad, W. U.; Chakraborty, S.; Ray, B.; and Chang, K.-W. 2021. Retrieval Augmented Code Generation and Summarization. In Findings of the Association for Computational Linguistics: EMNLP 2021 .Romera-Paredes, B.; Barekatain, M.; Novikov, A.; Balog, M.; Kumar, M. P.; Dupont, E.; Ruiz, F. J. R.; Ellenberg, J.; Wang, P.; Fawzi, O.; Kohli, P.; and Fawzi, A. 2024. Mathematical discoveries from program search with large language models. 
+
+Nature , 625: 468–475. Russo, D.; Van Roy, B.; Kazerouni, A.; Osband, I.; and Wen, Z. 2018. A Tutorial on Thompson Sampling. Foundations and Trends in Machine Learning , 11(1): 1–96. Rusu, A. A.; Rabinowitz, N. C.; Desjardins, G.; Soyer, H.; Kirkpatrick, J.; Kavukcuoglu, K.; Pascanu, R.; and Hadsell, R. 2016. Progressive Neural Networks. arXiv preprint arXiv:1606.04671 .Sharma, A. 2025. OpenEvolve: An Open-Source Evolutionary Coding Agent. https://github.com/ algorithmicsuperintelligence/openevolve. Shinn, N.; Cassano, F.; Gopinath, A.; Narasimhan, K.; and Yao, S. 2023. Reflexion: Language Agents with Verbal Reinforcement Learning. In Advances in Neural Information Processing Systems .Slivkins, A. 2019. Introduction to Multi-Armed Bandits. 
+
+Foundations and Trends in Machine Learning , 12(1–2): 1– 286. Wang, G.; Xie, Y.; Jiang, Y.; Mandlekar, A.; Xiao, C.; Zhu, Y.; Fan, L.; and Anandkumar, A. 2023. Voyager: An Open-Ended Embodied Agent with Large Language Models. In Advances in Neural Information Processing Systems .Yang, C.; Wang, X.; Lu, Y.; Liu, H.; Le, Q. V.; Zhou, D.; and Chen, X. 2024. Large Language Models as Optimizers. In 
+
+International Conference on Learning Representations .Zhou, S.; Alon, U.; Xu, F. F.; Wang, Z.; Jiang, Z.; and Neubig, G. 2023. DocPrompting: Generating Code by Retrieving the Docs. In International Conference on Learning Representa-tions .

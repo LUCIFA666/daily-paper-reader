@@ -1,0 +1,54 @@
+{
+  "label": "2026-08-20",
+  "date": "2026-08-20",
+  "generated_at": "2026-08-20T19:31:35",
+  "count": 3,
+  "papers": [
+    {
+      "paper_id": "202608/20/2608.12522v1-varepsilon-memevo-adaptive-cross-task-memory-transfer-for-llm-program-evolution",
+      "section": "quick",
+      "title_en": "$\\varepsilon$-MemEvo: Adaptive Cross-Task Memory Transfer for LLM Program Evolution",
+      "authors": "Aofan Liu, Shiyuan Song, Yiyan Qi",
+      "date": "2026-08-12",
+      "pdf": "https://arxiv.org/pdf/2608.12522v1",
+      "score": "7.0",
+      "evidence": "针对AlphaEvolve/FunSearch式LLM程序演化提出自适应跨任务记忆迁移，属于AlphaZero家族在棋类之外的算法演化应用。",
+      "tldr": "基于LLM的程序进化系统（如FunSearch、AlphaEvolve）通常孤立优化每个任务，搜索经验随任务结束被直接丢弃，缺乏跨任务复用。ε-MemEvo将成功策略提炼为任务无关的自然语言记忆，并设计自适应注入门控，根据搜索状态动态决定记忆是否注入及注入强度，从而规避语义不匹配造成的负迁移。在8个数学优化与系统工程基准上（采用留一法评测），其AUCC平均相对提升8.7%，早期收敛提升9.4%，计算开销不足1%。该工作为LLM程序演化提供了安全、可解释且轻量的经验传承机制，拓展了其泛化能力。",
+      "tags": "query:alphazero",
+      "abstract_en": "LLM-based program evolution systems such as FunSearch and AlphaEvolve have shown strong ability to discover novel algorithms, but typically optimize each task in isolation, discarding search experience after completion. We introduce $\\varepsilon$-MemEvo, a framework for cross-task knowledge transfer in LLM program evolution. $\\varepsilon$-MemEvo stores prior experience as task-agnostic tactic memories: compact natural-language summaries of successful algorithmic strategies rather than raw code, enabling transfer across tasks with different APIs and evaluators. To avoid negative transfer from semantically mismatched memories, $\\varepsilon$-MemEvo uses an adaptive injection gate that decides whether retrieved memories should be injected, and at what intensity. We evaluate $\\varepsilon$-MemEvo on 8 diverse optimization benchmarks spanning mathematical optimization and systems engineering, using a content-level Leave-One-Out protocol that excludes target-task memory entries. On the primary GPT-5 backbone, $\\varepsilon$-MemEvo improves AUCC over AdaEvolve on all 8 tasks, with a mean relative gain of +8.7%, and improves early-stage convergence by +9.4% on average. Ablations show that naive memory injection can fail catastrophically, while adaptive gating remains safe across all five ablation tasks. The data-updated posterior is interpretable in observed states: it favors skip during improving search and shifts from skip to hint across early and late plateaus. These gains incur less than 1% computational overhead.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202608/20/2608.15372v1-uc-psro-utility-conditioned-policy-space-response-oracles-with-a-communication-dropout-curriculum-for-game-theoretic-course-of-action-generation-in-adversarial-swarms",
+      "section": "quick",
+      "title_en": "UC-PSRO: Utility-Conditioned Policy-Space Response Oracles with a Communication-Dropout Curriculum for Game-Theoretic Course-of-Action Generation in Adversarial Swarms",
+      "authors": "Phillip Jiang",
+      "date": "2026-08-15",
+      "pdf": "https://arxiv.org/pdf/2608.15372v1",
+      "score": "6.0",
+      "evidence": "基于PSRO自我对弈的对抗蜂群行动方案生成",
+      "tldr": "针对通信受限下蓝方无人机群对抗自适应红方的博弈论行动方案生成问题，提出UC-PSRO方法。该方法结合PSRO自博弈使双方策略互为近似最优响应，用Dirichlet采样的指挥官意图向量对蓝方策略进行FiLM条件化以实现运行时重定向，并设计通信图边丢弃退火课程以学习去中心化容错。实验表明该课程单独即可显著提升任务完成率，但加入效用条件化与自博弈在固定预算内拖慢收敛且未带来可验证的利用优势。贡献在于诚实报告权衡并开源支持N=200的高速训练环境。",
+      "tags": "query:alphazero",
+      "abstract_en": "We study generating game-theoretically optimized Courses of Action (COAs) for a Blue UAS swarm against an adaptive Red adversary in a communication-degraded environment, motivated by (but not derived from) a public U.S. Air Force SBIR solicitation. We propose UC-PSRO (Utility-Conditioned Policy-Space Response Oracles with a Communication-Dropout Curriculum), combining three mechanisms: (i) PSRO self-play, so Blue and Red policies train as approximate best responses to each other rather than one side against a fixed scripted opponent; (ii) FiLM conditioning of the Blue policy on a Commander's-Intent weight vector, sampled from a Dirichlet distribution during training, so one trained policy is re-steerable at execution time without retraining; and (iii) a curriculum annealing communication-graph edge dropout during training, so the swarm learns decentralized, peer-to-peer fallback instead of depending on full connectivity. We evaluate on a synthetic, unclassified stand-in for the solicitation's maritime scenario, with 5 seeds at N=25 Blue agents and a scalability sweep to N=200. We find a genuine trade-off, not a uniform win: the communication-dropout curriculum alone gives the strongest, most robust mission-completion rates of any learned method, improving counter-intuitively as denial increases (35% to 62% success as dropout rises from 0 to 0.75); adding utility-conditioning and PSRO self-play substantially slows convergence within a fixed budget, and we find no reliable exploitability advantage for self-play over a fixed-opponent policy, both statistically indistinguishable from a small, near-zero gap. We report this honestly as a convergence cost not yet offset by a demonstrated robustness benefit, rather than overstating one method as dominant, and provide a fully vectorized, open environment training at N=200 agents in single-digit milliseconds per step on a single consumer GPU.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202608/20/2608.19197v1-spade-self-play-in-adaptive-synthetic-executable-environments",
+      "section": "quick",
+      "title_en": "SPADE: Self-Play in Adaptive Synthetic Executable Environments",
+      "authors": "Bo Liu, Simon Yu, Yiding Jiang, Ao Qu, Andrew Zhao, Zichen Liu, Junsu Kim, Zijian Zhou, Seungone Kim, Tongzheng Ren, Mickel Liu, Hanfei Yu, Zhaorun Chen, Weiyan Shi, Paul Pu Liang, Luke Zettlemoyer, Yejin Choi, Natasha Jaques",
+      "date": "2026-08-19",
+      "pdf": "https://arxiv.org/pdf/2608.19197v1",
+      "score": "6.0",
+      "evidence": "采用自我对弈强化学习，LLM同时担任环境设计者与推理智能体",
+      "tldr": "语言智能体自我改进受限于固定目标分布。SPADE提出自我对弈强化学习框架，单个LLM同时充当环境设计者和推理智能体，环境以可执行代码形式呈现，实现多轮交互。通过优化基于特权提示的遗憾信号，环境设计者动态生成处于智能体能力边缘的可行任务。实验表明，在多个基准上显著提升，特别是工具使用和游戏设置，为开放端自我改进提供了可行路径。",
+      "tags": "query:alphazero",
+      "abstract_en": "Continuous self-improvement requires an ever-expanding pool of self-generated, diverse, adaptive goals. For language agents, existing training environment pools (hand-curated, statically synthesized, or frozen-verifier) keep the goal distribution fixed as the learner scales. We introduce SPADE (Self-Play in Adaptive Synthetic Executable Environments), a self-play RL framework in which a single LLM plays two roles: an Environment Designer that writes complete, long-horizon training environments as executable code with an OpenAI Gym-style reset()/step() interface, and a Reasoning Agent that learns to act in them. Each is a stateful, multi-turn environment (state transitions, reward functions, and verification code), so one interface spans reasoning problems and multi-step agentic tool use. The Reasoning Agent's regret is estimated using the gap between its reward with and without privileged hints; in optimizing this regret signal the Environment Designer learns to target environments at the edge of the agent's capabilities while keeping them feasible. Through extensive experimentation, we find several components critical to success: grounding the Environment Designer on documents sampled from a large pretraining corpus, and giving it an accumulated environment memory. Scaling to 30B-parameter models, SPADE improves over the strongest fixed-environment baseline by +5.3 on average across eight held-out math, science, code, and reasoning benchmarks, and lifts the tool-use setting by +5.7 on BFCL-v4 multi-turn and +13.9 on ACEBench-Agent; on the games setting, the margin over the strongest baseline grows with model scale. By making environment design itself a learnable component, SPADE takes a concrete step toward open-ended self-improvement.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}
