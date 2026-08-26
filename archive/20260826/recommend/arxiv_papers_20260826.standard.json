@@ -1,0 +1,70 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-08-26T22:04:28.451326+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2608.19197v2",
+      "source": "arxiv",
+      "title": "SPADE: Self-Play in Adaptive Synthetic Executable Environments",
+      "abstract": "Continuous self-improvement requires an ever-expanding pool of self-generated, diverse, adaptive goals. For language agents, existing training environment pools (hand-curated, statically synthesized, or frozen-verifier) keep the goal distribution fixed as the learner scales. We introduce SPADE (Self-Play in Adaptive Synthetic Executable Environments), a self-play RL framework in which a single LLM plays two roles: an Environment Designer that writes complete, long-horizon training environments as executable code with an OpenAI Gym-style reset()/step() interface, and a Reasoning Agent that learns to act in them. Each is a stateful, multi-turn environment (state transitions, reward functions, and verification code), so one interface spans reasoning problems and multi-step agentic tool use. The Reasoning Agent's regret is estimated using the gap between its reward with and without privileged hints; in optimizing this regret signal the Environment Designer learns to target environments at the edge of the agent's capabilities while keeping them feasible. Through extensive experimentation, we find several components critical to success: grounding the Environment Designer on documents sampled from a large pretraining corpus, and giving it an accumulated environment memory. Scaling to 30B-parameter models, SPADE improves over the strongest fixed-environment baseline by +5.3 on average across eight held-out math, science, code, and reasoning benchmarks, and lifts the tool-use setting by +5.7 on BFCL-v4 multi-turn and +13.9 on ACEBench-Agent; on the games setting, the margin over the strongest baseline grows with model scale. By making environment design itself a learnable component, SPADE takes a concrete step toward open-ended self-improvement.",
+      "authors": [
+        "Bo Liu",
+        "Simon Yu",
+        "Yiding Jiang",
+        "Ao Qu",
+        "Andrew Zhao",
+        "Zichen Liu",
+        "Junsu Kim",
+        "Zijian Zhou",
+        "Seungone Kim",
+        "Tongzheng Ren",
+        "Mickel Liu",
+        "Hanfei Yu",
+        "Zhaorun Chen",
+        "Weiyan Shi",
+        "Paul Pu Liang",
+        "Luke Zettlemoyer",
+        "Yejin Choi",
+        "Natasha Jaques"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-08-19T17:58:56+00:00",
+      "link": "https://arxiv.org/pdf/2608.19197v2",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Self-play reinforcement learning framework directly extending AlphaZero-style self-play to adaptive executable environments",
+      "llm_evidence_cn": "将AlphaZero式自我对弈强化学习扩展到自适应可执行环境的自博弈框架",
+      "llm_evidence": "将AlphaZero式自我对弈强化学习扩展到自适应可执行环境的自博弈框架",
+      "canonical_evidence": "将AlphaZero式自我对弈强化学习扩展到自适应可执行环境的自博弈框架",
+      "llm_tldr_en": "SPADE is a self-play RL framework where one LLM acts as environment designer and reasoning agent, generating executable Gym-style environments and learning to act in them, echoing AlphaZero's self-play loop.",
+      "llm_tldr_cn": "现有语言代理训练环境池的目标分布固定，难以随模型能力持续提升。SPADE提出一种自我对弈强化学习框架，让同一个大语言模型同时扮演环境设计者和推理代理，以OpenAI Gym风格的可执行代码生成自适应长程训练环境。实验表明该方法能持续产生多样化的新目标，提升代理能力。其单模型双角色循环与AlphaZero式自我对弈思想一脉相承，是自适应环境生成的重要探索。",
+      "llm_tldr": "现有语言代理训练环境池的目标分布固定，难以随模型能力持续提升。SPADE提出一种自我对弈强化学习框架，让同一个大语言模型同时扮演环境设计者和推理代理，以OpenAI Gym风格的可执行代码生成自适应长程训练环境。实验表明该方法能持续产生多样化的新目标，提升代理能力。其单模型双角色循环与AlphaZero式自我对弈思想一脉相承，是自适应环境生成的重要探索。",
+      "llm_tags": [
+        "query:alphazero:composite"
+      ],
+      "matched_query_tag": "query:alphazero:composite",
+      "matched_query_text": "Papers central to 阿尔法零：一种通过自我对弈和强化学习掌握棋类游戏的人工智能程序；alphazero衍生, especially work that connects or combines: AlphaZero artificial intelligence program; variants and extensions of the AlphaZero architecture for different games; how does AlphaZero use self play reinforcement learning; implementation of AlphaZero algorithm; Research papers on AlphaZero algorithm improvements; AlphaZero applications beyond board games.",
+      "matched_requirement_id": "req-composite-alphazero",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "label": "2026-08-26",
+  "date": "2026-08-26",
+  "generated_at": "2026-08-26T22:07:06",
+  "count": 1,
+  "papers": [
+    {
+      "paper_id": "202608/26/2608.19197v2-spade-self-play-in-adaptive-synthetic-executable-environments",
+      "section": "quick",
+      "title_en": "SPADE: Self-Play in Adaptive Synthetic Executable Environments",
+      "authors": "Bo Liu, Simon Yu, Yiding Jiang, Ao Qu, Andrew Zhao, Zichen Liu, Junsu Kim, Zijian Zhou, Seungone Kim, Tongzheng Ren, Mickel Liu, Hanfei Yu, Zhaorun Chen, Weiyan Shi, Paul Pu Liang, Luke Zettlemoyer, Yejin Choi, Natasha Jaques",
+      "date": "2026-08-19",
+      "pdf": "https://arxiv.org/pdf/2608.19197v2",
+      "score": "7.0",
+      "evidence": "将AlphaZero式自我对弈强化学习扩展到自适应可执行环境的自博弈框架",
+      "tldr": "现有语言智能体的训练环境池大多固定不变，难以随学习进程持续提供多样化挑战。SPADE提出自我对弈强化学习框架，让同一个LLM扮演环境设计器和推理智能体：前者编写带reset/step接口的可执行代码环境，后者在其中学习并利用带特权提示的奖励差异定义遗憾。优化遗憾信号使环境生成器聚焦于智能体能力边界且可行的任务，关键组件包括基于预训练语料文档引导和累积环境记忆。在30B模型上，SPADE在八个基准平均超越强基线5.3分，工具使用场景提升5.7和13.9分，且游戏场景优势随规模增长，为实现开放式自我改进迈出具体一步。",
+      "tags": "query:alphazero",
+      "abstract_en": "Continuous self-improvement requires an ever-expanding pool of self-generated, diverse, adaptive goals. For language agents, existing training environment pools (hand-curated, statically synthesized, or frozen-verifier) keep the goal distribution fixed as the learner scales. We introduce SPADE (Self-Play in Adaptive Synthetic Executable Environments), a self-play RL framework in which a single LLM plays two roles: an Environment Designer that writes complete, long-horizon training environments as executable code with an OpenAI Gym-style reset()/step() interface, and a Reasoning Agent that learns to act in them. Each is a stateful, multi-turn environment (state transitions, reward functions, and verification code), so one interface spans reasoning problems and multi-step agentic tool use. The Reasoning Agent's regret is estimated using the gap between its reward with and without privileged hints; in optimizing this regret signal the Environment Designer learns to target environments at the edge of the agent's capabilities while keeping them feasible. Through extensive experimentation, we find several components critical to success: grounding the Environment Designer on documents sampled from a large pretraining corpus, and giving it an accumulated environment memory. Scaling to 30B-parameter models, SPADE improves over the strongest fixed-environment baseline by +5.3 on average across eight held-out math, science, code, and reasoning benchmarks, and lifts the tool-use setting by +5.7 on BFCL-v4 multi-turn and +13.9 on ACEBench-Agent; on the games setting, the margin over the strongest baseline grows with model scale. By making environment design itself a learnable component, SPADE takes a concrete step toward open-ended self-improvement.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}
