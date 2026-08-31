@@ -1,6 +1,9 @@
 * <a class="dpr-sidebar-root-link" href="#/">首页</a>
 * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="javascript:void(0)" data-dpr-hash="#/tutorial/README">使用教程</a>
 * Daily Papers
+  * 2026-08-31 <!--dpr-date:20260831-->
+    * 精读区
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202608/31/2608.27757v1-beyond-search-imitation-prior-directed-exploration-for-searchless-chess" data-sidebar-item="{&quot;title&quot;: &quot;Beyond Search-Imitation: Prior-Directed Exploration for Searchless Chess&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2608.27757v1-beyond-search-imitation-prior-directed-exploration-for-searchless-chess&quot;, &quot;score&quot;: &quot;9.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;面向无搜索象棋的AlphaZero式MCTS与自对弈RL变体&quot;}">Beyond Search-Imitation: Prior-Directed Exploration for Searchless Chess</a>
   * 2026-08-26 <!--dpr-date:20260826-->
     * 速读区
       * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202608/26/2608.19197v2-spade-self-play-in-adaptive-synthetic-executable-environments" data-sidebar-item="{&quot;title&quot;: &quot;SPADE: Self-Play in Adaptive Synthetic Executable Environments&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2608.19197v2-spade-self-play-in-adaptive-synthetic-executable-environments&quot;, &quot;score&quot;: &quot;7.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;将AlphaZero式自我对弈强化学习扩展到自适应可执行环境的自博弈框架&quot;}">SPADE: Self-Play in Adaptive Synthetic Executable Environments</a>

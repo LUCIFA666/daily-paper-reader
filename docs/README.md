@@ -6,19 +6,25 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-08-30
-- 运行时间：2026-08-30 22:18:36 UTC
+- 最新运行日期：2026-08-31
+- 运行时间：2026-08-31 23:48:36 UTC
 - 运行状态：成功
-- 本次总论文数：0
-- 精读区：0
+- 本次总论文数：1
+- 精读区：1
 - 速读区：0
 
 ### 今日简报（AI）
-> 今日无新推荐，系统未产出可展示论文。
-- 详情：[/202608/30/README](/202608/30/README)
+今日精读1篇高分论文，聚焦无搜索国际象棋的探索新方法。
+
+核心看点：论文提出“先验引导探索”替代传统搜索模仿，为棋类AI开辟新路径，评分高达9.0。
+
+建议关注该研究方向，后续可延伸至其他棋类或决策场景。
+- 详情：[/202608/31/README](/202608/31/README)
 
 ### 精读区论文标签
-- 本次无精读推荐。
+1. [Beyond Search-Imitation: Prior-Directed Exploration for Searchless Chess](/202608/31/2608.27757v1-beyond-search-imitation-prior-directed-exploration-for-searchless-chess)  
+   标签：评分：9.0/10、query:alphazero
+   evidence：面向无搜索象棋的AlphaZero式MCTS与自对弈RL变体
 
 ### 速读区论文标签
 - 本次无速读推荐。
