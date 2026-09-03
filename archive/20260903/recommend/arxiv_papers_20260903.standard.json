@@ -1,0 +1,53 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-09-03T22:55:55.385742+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2609.01549v1",
+      "source": "arxiv",
+      "title": "NashDreamer: Model-Based Reinforcement Learning for Zero-Sum Imperfect-Information Games",
+      "abstract": "Model-based reinforcement learning (MBRL) has achieved remarkable results in single-agent domains, yet its extension to competitive imperfect information games (IIGs) remains underexplored. In multi-agent settings, opponent-induced non-stationarity complicates the learning process, and decentralized model learning faces severe identifiability barriers, which we argue make centralized model learning a mathematical necessity. Building on this analysis, we propose NashDreamer, a principled MBRL framework for two-player zero-sum IIGs. It introduces a centralized Multi-Agent Recurrent State-Space Model (MARSSM) that decouples environment dynamics from the effect of players' strategies on their individual observations. NashDreamer is designed to use arbitrary policy gradient algorithms and inherits their convergence guarantees towards Nash equilibria under an idealized model. Empirical evaluations across four benchmark games demonstrate that NashDreamer substantially improves sample efficiency over model-free baselines early in the training. Finally, we theoretically analyze the architecture's optimization landscape, identifying the vulnerability of the Dreamer family of algorithms to posterior collapse in stochastic environments. We leave it as an open challenge.",
+      "authors": [
+        "Tomáš Holeček",
+        "Viliam Lisý"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-09-01T17:15:41+00:00",
+      "link": "https://arxiv.org/pdf/2609.01549v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "model-based RL for zero-sum imperfect-information games; bridges to AlphaZero-type game reinforcement learning",
+      "llm_evidence_cn": "面向零和不完美信息博弈的基于模型强化学习，与AlphaZero类博弈强化学习方法相通",
+      "llm_evidence": "面向零和不完美信息博弈的基于模型强化学习，与AlphaZero类博弈强化学习方法相通",
+      "canonical_evidence": "面向零和不完美信息博弈的基于模型强化学习，与AlphaZero类博弈强化学习方法相通",
+      "llm_tldr_en": "NashDreamer proposes model-based RL for zero-sum imperfect-information games with a centralized recurrent state-space model that separates environment dynamics from player strategies.",
+      "llm_tldr_cn": "模型强化学习在竞争性不完美信息博弈中的扩展长期受对手引发的非平稳性和可辨识性难题阻碍。为此本文提出NashDreamer框架，利用集中式多智能体循环状态空间模型将环境动态与玩家策略效应解耦，并指出集中式模型学习在数学上具有必要性。该方法为两玩家零和不完美信息博弈提供了可训练的新范式，对AlphaZero式算法向隐藏信息场景推广具有借鉴价值。",
+      "llm_tldr": "模型强化学习在竞争性不完美信息博弈中的扩展长期受对手引发的非平稳性和可辨识性难题阻碍。为此本文提出NashDreamer框架，利用集中式多智能体循环状态空间模型将环境动态与玩家策略效应解耦，并指出集中式模型学习在数学上具有必要性。该方法为两玩家零和不完美信息博弈提供了可训练的新范式，对AlphaZero式算法向隐藏信息场景推广具有借鉴价值。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "variants and extensions of the AlphaZero architecture for different games",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

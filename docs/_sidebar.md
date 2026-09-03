@@ -1,6 +1,9 @@
 * <a class="dpr-sidebar-root-link" href="#/">首页</a>
 * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="javascript:void(0)" data-dpr-hash="#/tutorial/README">使用教程</a>
 * Daily Papers
+  * 2026-09-03 <!--dpr-date:20260903-->
+    * 速读区
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202609/03/2609.01549v1-nashdreamer-model-based-reinforcement-learning-for-zero-sum-imperfect-information-games" data-sidebar-item="{&quot;title&quot;: &quot;NashDreamer: Model-Based Reinforcement Learning for Zero-Sum Imperfect-Information Games&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2609.01549v1-nashdreamer-model-based-reinforcement-learning-for-zero-sum-imperfect-information-games&quot;, &quot;score&quot;: &quot;6.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;面向零和不完美信息博弈的基于模型强化学习，与AlphaZero类博弈强化学习方法相通&quot;}">NashDreamer: Model-Based Reinforcement Learning for Zero-Sum Imperfect-Information Games</a>
   * 2026-08-31 <!--dpr-date:20260831-->
     * 精读区
       * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202608/31/2608.27757v1-beyond-search-imitation-prior-directed-exploration-for-searchless-chess" data-sidebar-item="{&quot;title&quot;: &quot;Beyond Search-Imitation: Prior-Directed Exploration for Searchless Chess&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2608.27757v1-beyond-search-imitation-prior-directed-exploration-for-searchless-chess&quot;, &quot;score&quot;: &quot;9.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;面向无搜索象棋的AlphaZero式MCTS与自对弈RL变体&quot;}">Beyond Search-Imitation: Prior-Directed Exploration for Searchless Chess</a>

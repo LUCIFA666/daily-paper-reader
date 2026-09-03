@@ -1,0 +1,24 @@
+{
+  "label": "2026-09-03",
+  "date": "2026-09-03",
+  "generated_at": "2026-09-03T22:57:41",
+  "count": 1,
+  "papers": [
+    {
+      "paper_id": "202609/03/2609.01549v1-nashdreamer-model-based-reinforcement-learning-for-zero-sum-imperfect-information-games",
+      "section": "quick",
+      "title_en": "NashDreamer: Model-Based Reinforcement Learning for Zero-Sum Imperfect-Information Games",
+      "authors": "Tomáš Holeček, Viliam Lisý",
+      "date": "2026-09-01",
+      "pdf": "https://arxiv.org/pdf/2609.01549v1",
+      "score": "6.0",
+      "evidence": "面向零和不完美信息博弈的基于模型强化学习，与AlphaZero类博弈强化学习方法相通",
+      "tldr": "模型强化学习在完美信息博弈中成果显著，但在两人零和、不完美信息等对抗场景中尚未充分探索。本文论证该场景下集中式模型学习具备数学必要性，提出NashDreamer框架，利用集中式多智能体循环状态空间模型解耦环境动力学与策略效应，可搭配任意策略梯度算法，在理想模型下保有纳什均衡收敛保证。在四个基准游戏上，训练早期相对模型无关基线的样本效率获得大幅提升；同时理论分析指出Dreamer族在随机环境中易发生后验坍塌，作为开放难题留给未来研究。",
+      "tags": "query:alphazero",
+      "abstract_en": "Model-based reinforcement learning (MBRL) has achieved remarkable results in single-agent domains, yet its extension to competitive imperfect information games (IIGs) remains underexplored. In multi-agent settings, opponent-induced non-stationarity complicates the learning process, and decentralized model learning faces severe identifiability barriers, which we argue make centralized model learning a mathematical necessity. Building on this analysis, we propose NashDreamer, a principled MBRL framework for two-player zero-sum IIGs. It introduces a centralized Multi-Agent Recurrent State-Space Model (MARSSM) that decouples environment dynamics from the effect of players' strategies on their individual observations. NashDreamer is designed to use arbitrary policy gradient algorithms and inherits their convergence guarantees towards Nash equilibria under an idealized model. Empirical evaluations across four benchmark games demonstrate that NashDreamer substantially improves sample efficiency over model-free baselines early in the training. Finally, we theoretically analyze the architecture's optimization landscape, identifying the vulnerability of the Dreamer family of algorithms to posterior collapse in stochastic environments. We leave it as an open challenge.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}
