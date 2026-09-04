@@ -1,0 +1,56 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-09-04T22:26:36.944565+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2609.03660v1",
+      "source": "arxiv",
+      "title": "Local Updates, Global Learning (LUGL): Playing Games with non-incremental Learners",
+      "abstract": "The dominance of Neural Networks (NNs) in RL is partially due to their incremental learning capability, which naturally suits the online, non-stationary nature of self-play training. However, gradient-boosted trees like LightGBM are widely recognised as the state of the art for tabular data in supervised learning, often outperforming NNs in accuracy and efficiency. Game states are inherently tabular---discrete actions, categorical card identities, structured board positions---which makes them an ideal candidate for tree-based methods. We introduce LUGL (Local Updates, Global Learning), a framework that decouples data collection from model fitting, enabling non-incremental learners such as GBTs to operate in RL settings where they would otherwise fail due to distributional shift. LUGL alternates between a local updates phase, where the agent plays self-play games and accumulates tabular updates (Q-values, V-values, policies, or regret values) in a finite table, and a global learning phase, where the table is used to train a function approximator that generalises to unseen states before the table is reset. We test our approach in four standard perfect-information games (Tic-tac-toe, Connect-4, Othello, and Hex) and five imperfect-information games (Kuhn's poker, Leduc Hold'em, Liar's Dice, Goofspiel, and Flop5 Hold'em), and show that our results are competitive with or superior to DQN and DeepCFR. Our experiments demonstrate that the community's strong bias towards NNs in game-playing may be unwarranted, since LightGBM-based agents achieve competitive or superior performance across all tested benchmarks.",
+      "authors": [
+        "David Milec",
+        "Spyridon Samothrakis",
+        "Michael Fairbank",
+        "Dennis J. N. J. Soemers"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-09-03T10:58:09+00:00",
+      "link": "https://arxiv.org/pdf/2609.03660v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "self-play RL in games with non-incremental learners",
+      "llm_evidence_cn": "关注游戏自对弈强化学习与非增量学习器结合的方法",
+      "llm_evidence": "关注游戏自对弈强化学习与非增量学习器结合的方法",
+      "canonical_evidence": "关注游戏自对弈强化学习与非增量学习器结合的方法",
+      "llm_tldr_en": "Introduces LUGL for making non-incremental learners work in online, non-stationary self-play RL, enabling gradient-boosted trees to play games despite lacking incremental updates.",
+      "llm_tldr_cn": "论文针对神经网络在自博弈强化学习中的主导地位但梯度提升树在表格化游戏状态上更优的现状展开。作者提出LUGL框架，将数据采集与模型拟合解耦，使非增量式学习器能够用于在线非平稳的自博弈强化学习。实验表明基于梯度提升树的模型可在游戏RL中替代神经网络并使用本地更新实现全局学习。这为AlphaZero等自对弈系统的学习器选择提供了新思路。",
+      "llm_tldr": "论文针对神经网络在自博弈强化学习中的主导地位但梯度提升树在表格化游戏状态上更优的现状展开。作者提出LUGL框架，将数据采集与模型拟合解耦，使非增量式学习器能够用于在线非平稳的自博弈强化学习。实验表明基于梯度提升树的模型可在游戏RL中替代神经网络并使用本地更新实现全局学习。这为AlphaZero等自对弈系统的学习器选择提供了新思路。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "how does AlphaZero use self play reinforcement learning",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

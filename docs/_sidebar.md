@@ -1,6 +1,9 @@
 * <a class="dpr-sidebar-root-link" href="#/">首页</a>
 * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="javascript:void(0)" data-dpr-hash="#/tutorial/README">使用教程</a>
 * Daily Papers
+  * 2026-09-04 <!--dpr-date:20260904-->
+    * 速读区
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202609/04/2609.03660v1-local-updates-global-learning-lugl-playing-games-with-non-incremental-learners" data-sidebar-item="{&quot;title&quot;: &quot;Local Updates, Global Learning (LUGL): Playing Games with non-incremental Learners&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2609.03660v1-local-updates-global-learning-lugl-playing-games-with-non-incremental-learners&quot;, &quot;score&quot;: &quot;6.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;关注游戏自对弈强化学习与非增量学习器结合的方法&quot;}">Local Updates, Global Learning (LUGL): Playing Games with non-incremental Learners</a>
   * 2026-09-03 <!--dpr-date:20260903-->
     * 速读区
       * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202609/03/2609.01549v1-nashdreamer-model-based-reinforcement-learning-for-zero-sum-imperfect-information-games" data-sidebar-item="{&quot;title&quot;: &quot;NashDreamer: Model-Based Reinforcement Learning for Zero-Sum Imperfect-Information Games&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2609.01549v1-nashdreamer-model-based-reinforcement-learning-for-zero-sum-imperfect-information-games&quot;, &quot;score&quot;: &quot;6.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;面向零和不完美信息博弈的基于模型强化学习，与AlphaZero类博弈强化学习方法相通&quot;}">NashDreamer: Model-Based Reinforcement Learning for Zero-Sum Imperfect-Information Games</a>
