@@ -6,28 +6,22 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-09-04
-- 运行时间：2026-09-04 22:27:15 UTC
+- 最新运行日期：2026-09-05
+- 运行时间：2026-09-05 21:06:09 UTC
 - 运行状态：成功
-- 本次总论文数：1
+- 本次总论文数：0
 - 精读区：0
-- 速读区：1
+- 速读区：0
 
 ### 今日简报（AI）
-今日速读聚焦一篇新方法论文，但整体阅读量较低，仅1篇入列。
-
-最值得关注的是《Local Updates, Global Learning (LUGL)》一文，评分6.0/10，探讨非增量学习者在游戏中的局部更新与全局学习权衡。
-
-建议后续可围绕LUGL方法补充精读，并扩展检索同类增量学习对比研究。
-- 详情：[/202609/04/README](/202609/04/README)
+> 今日无新推荐，系统未产出可展示论文。
+- 详情：[/202609/05/README](/202609/05/README)
 
 ### 精读区论文标签
 - 本次无精读推荐。
 
 ### 速读区论文标签
-1. [Local Updates, Global Learning (LUGL): Playing Games with non-incremental Learners](/202609/04/2609.03660v1-local-updates-global-learning-lugl-playing-games-with-non-incremental-learners)  
-   标签：评分：6.0/10、query:alphazero
-   evidence：关注游戏自对弈强化学习与非增量学习器结合的方法
+- 本次无速读推荐。
 
 
 <div class="dpr-home-promo-card">
