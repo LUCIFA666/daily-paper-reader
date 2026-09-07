@@ -1,0 +1,94 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-09-07T22:32:04.538095+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 2,
+    "quick_skim_target": 11,
+    "quick_selected": 2
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2608.30635v1",
+      "source": "arxiv",
+      "title": "Test-time Reinforcement Learning in Imperfect Information Games",
+      "abstract": "Test-time reasoning has significantly improved performance in domains ranging from games to language models. However, test-time policy changes with formal guarantees on the performance of the resulting strategy remain a challenge in two-player zero-sum imperfect-information games. Existing solutions are limited to tabular methods or single gradient step updates. In this work, we investigate policy-gradient algorithms as a method for scalable test-time reasoning. We extend the concept of gadget game, tabular technique for test-time search, to the reinforcement learning setting. Unlike prior approaches, we represent the gadget game implicitly by modified sampling and neural policy rather then explicitly by constructing it, thereby removing constraints on subgame size. Furthermore, we formally prove that, unlike prior tabular algorithms, regularized policy-gradient algorithms limit possible strategy degradation caused by test-time reasoning, even without the gadget games. Our evaluation across small- and large-scale games confirms that additional test-time training often substantially improves performance relative to the blueprint strategy.",
+      "authors": [
+        "Ondrej Kubicek",
+        "Viliam Lisy",
+        "Tuomas Sandholm"
+      ],
+      "primary_category": "cs.GT",
+      "categories": [
+        "cs.GT"
+      ],
+      "published": "2026-08-31T11:44:15+00:00",
+      "link": "https://arxiv.org/pdf/2608.30635v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "extends RL with scalable test-time policy search in two-player zero-sum games with neural policies, conceptually aligned with AlphaZero-style search and self-play for different game classes",
+      "llm_evidence_cn": "用策略梯度实现不完全信息零和博弈中的可扩展测试时搜索，与AlphaZero搜索加自博弈思想在更广博弈类别上相通",
+      "llm_evidence": "用策略梯度实现不完全信息零和博弈中的可扩展测试时搜索，与AlphaZero搜索加自博弈思想在更广博弈类别上相通",
+      "canonical_evidence": "用策略梯度实现不完全信息零和博弈中的可扩展测试时搜索，与AlphaZero搜索加自博弈思想在更广博弈类别上相通",
+      "llm_tldr_en": "Develops policy-gradient test-time search for imperfect-information games by implicitly representing gadget games with neural policies. Enables scalable, guaranteed policy updates at test time, matching the search-plus-RL spirit of AlphaZero for new game classes.",
+      "llm_tldr_cn": "不完全信息博弈中的测试时搜索通常局限于表格法或单步梯度更新，难以兼顾扩展性与策略保证。本文将gadget game这一表格化测试时搜索技术推广到强化学习框架，利用隐式修正采样和神经策略表示搜索博弈，避免了显式子博弈构造。基于策略梯度的算法支持多步可扩展的测试时策略更新并保持性能保证。该工作为AlphaZero式搜索与自博弈思想从完美信息博弈扩展到不完全信息博弈提供了可行的强化学习路径。",
+      "llm_tldr": "不完全信息博弈中的测试时搜索通常局限于表格法或单步梯度更新，难以兼顾扩展性与策略保证。本文将gadget game这一表格化测试时搜索技术推广到强化学习框架，利用隐式修正采样和神经策略表示搜索博弈，避免了显式子博弈构造。基于策略梯度的算法支持多步可扩展的测试时策略更新并保持性能保证。该工作为AlphaZero式搜索与自博弈思想从完美信息博弈扩展到不完全信息博弈提供了可行的强化学习路径。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "variants and extensions of the AlphaZero architecture for different games",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2609.04697v1",
+      "source": "arxiv",
+      "title": "SQL-Zero: Self-Evolving Text-to-SQL",
+      "abstract": "Training a competitive Text-to-SQL agent usually depends on human-annotated natural-language/SQL pairs, which are expensive, domain-specific, and a bottleneck for scaling to new databases. We show it is possible to train a competitive solver with zero annotated pairs. We introduce SQL-Zero, a proposer-solver self-play in which a challenger and a solver start from the same base LLM and the only ground truth is execution against the database itself. The challenger generates SQL pairs calibrated to the solver's current difficulty (targeting \"hard but solvable\"), and both roles are updated with GRPO in alternating turns, with a template-level repetition penalty on the challenger to prevent diversity collapse. Training on BIRD databases with no labels, self-play improves over the zero-shot base on BIRD dev by 6.6 points at 3B and 7.3 points at 7B. It also scores higher than a matched control trained under the same recipe on human BIRD gold over the same databases, although an exact paired test does not resolve that margin. Transfer depends on scale: at 3B every iteration outperforms the base on unseen Spider databases and under lexical perturbation (Spider-Syn), where it also degrades less than the matched BIRD-gold control, whereas at 7B only the first iteration preserves transfer.",
+      "authors": [
+        "Daniel Machado Pedrozo",
+        "Julia Soares Dollis",
+        "Bryan Lincoln Marques de Oliveira",
+        "Vinicius Alboneti Aguiar",
+        "Sávio Salvarino Teles de Oliveira",
+        "Telma Woerle de Lima Soares"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-04T04:00:11+00:00",
+      "link": "https://arxiv.org/pdf/2609.04697v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "zero-annotation self-play with an opponent and solver resembles AlphaZero self-play, applied to text-to-SQL",
+      "llm_evidence_cn": "零标注自我对弈，挑战者与求解者机制类似AlphaZero自我对弈思想并应用于文本转SQL",
+      "llm_evidence": "零标注自我对弈，挑战者与求解者机制类似AlphaZero自我对弈思想并应用于文本转SQL",
+      "canonical_evidence": "零标注自我对弈，挑战者与求解者机制类似AlphaZero自我对弈思想并应用于文本转SQL",
+      "llm_tldr_en": "SQL-Zero substitutes human-labeled text-to-SQL pairs with challenger-solver self-play where only database execution provides reward, mirroring AlphaZero's self-play bootstrapping for non-board-game domains.",
+      "llm_tldr_cn": "训练文本到SQL智能体通常依赖人工标注的自然语言-SQL对，成本高且难以扩展。SQL-Zero借鉴AlphaZero式自我对弈思想，令挑战者与求解者从同一基础模型出发，仅以数据库执行结果作为真值交替训练，并引入难而可解的难度校准与模板级重复惩罚。在BIRD基准上无需任何人工标注即可提升零样本性能。该方法展示了把自我对弈强化学习从棋类推广到代码生成等非棋类任务的有效路径。",
+      "llm_tldr": "训练文本到SQL智能体通常依赖人工标注的自然语言-SQL对，成本高且难以扩展。SQL-Zero借鉴AlphaZero式自我对弈思想，令挑战者与求解者从同一基础模型出发，仅以数据库执行结果作为真值交替训练，并引入难而可解的难度校准与模板级重复惩罚。在BIRD基准上无需任何人工标注即可提升零样本性能。该方法展示了把自我对弈强化学习从棋类推广到代码生成等非棋类任务的有效路径。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "AlphaZero applications beyond board games",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}
