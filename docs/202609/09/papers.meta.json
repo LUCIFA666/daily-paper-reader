@@ -1,0 +1,39 @@
+{
+  "label": "2026-09-09",
+  "date": "2026-09-09",
+  "generated_at": "2026-09-09T21:55:31",
+  "count": 2,
+  "papers": [
+    {
+      "paper_id": "202609/09/2609.09094v1-the-surprising-effectiveness-of-approximate-value-iteration-in-self-play",
+      "section": "deep",
+      "title_en": "The Surprising Effectiveness of Approximate Value Iteration in Self-Play",
+      "authors": "Raphael Boige, Amine Boumaza, Bruno Scherrer",
+      "date": "2026-09-08",
+      "pdf": "https://arxiv.org/pdf/2609.09094v1",
+      "score": "9.0",
+      "evidence": "直接对比简化的近似值迭代自对弈与AlphaZero，并称能学到更准确的价值函数",
+      "tldr": "搜索与函数逼近的结合推动了游戏AI的进步，AlphaZero等基于蒙特卡洛树搜索（MCTS）的自对弈方法虽强，但计算开销很大。本文探讨在Connect Four、Hex(7x7)等中等规模游戏中，简单的近似值迭代（AVI）自对弈是否仍有竞争力。作者用最小化实现训练AVI，并借助真值oracle精确评估。结果显示，AVI学到的值函数比AlphaZero更准确，其一步前瞻贪心策略与MCTS策略性能相当，而训练和推理成本显著更低。在Othello和Go(9x9)上的初步实验同样表明AVI训练稳定、能学到有效值函数。这项研究揭示了MCTS的耀眼光芒可能掩盖了更简单方法的实用价值。",
+      "tags": "query:alphazero",
+      "abstract_en": "Combining search with function approximation has driven major advances in game-playing programs, making self-play algorithms more competitive than ever. Still, the computational overhead of the most popular methods, based on Monte Carlo Tree Search (MCTS), can be substantial. In this work, we investigate whether simpler methods remain competitive in non-trivial, moderately sized games such as Connect Four, Hex(7x7) and synthetic games. We train a minimal self-play implementation of Approximate Value Iteration (AVI) and use ground-truth oracles for exact evaluation. Contrary to expectations, our results demonstrate the surprising effectiveness of AVI: it learns more accurate value functions than those learned by AlphaZero, while its one-step-lookahead greedy policies remain competitive with MCTS-based policies at substantially lower training and inference costs. Preliminary experiments on Othello and Go(9x9) show that AVI trains stably on larger games and learns effective value functions. These findings suggest that the success of MCTS-based methods may have eclipsed simpler approaches that have become increasingly practical with modern deep-learning tools.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202609/09/2609.06816v1-unsound-search-with-policy-and-value-networks-in-legends-of-code-and-magic",
+      "section": "quick",
+      "title_en": "Unsound Search with Policy and Value Networks in Legends of Code and Magic",
+      "authors": "Dustin Rubin",
+      "date": "2026-09-06",
+      "pdf": "https://arxiv.org/pdf/2609.06816v1",
+      "score": "6.0",
+      "evidence": "在集换式卡牌游戏中使用策略与价值网络进行搜索，属于超越棋盘游戏的AlphaZero式应用",
+      "tldr": "LoCM 是一个信念状态达 2^101 的不完美信息卡牌游戏，冠军 ByteRL 不使用搜索。我们通过模仿学习亚军策略构建策略-价值网络，从对手牌堆先验采样世界进行非健全搜索。严格配置下以 51.35% 胜率击败 ByteRL，无搜索仅 26.8%，搜索贡献 +24.6 个百分点。实验表明非健全搜索可得到更强、更能抵抗最佳响应攻击的 LoCM 智能体。",
+      "tags": "query:alphazero",
+      "abstract_en": "Decision-time search in perfect and imperfect information games with enumerable belief states are effective methods for game AI. Collectible card games are imperfect information games with large belief states. Legends of Code and Magic is a collectible card game competition where the belief states are $2^{101}$. The Legends of Code and Magic (LoCM) champion, ByteRL, plays with no search. Other works claim sound enumeration-based search is unusable in the genre due to the number of belief states. We measured three previously defined properties that predict where theoretically unsound perfect information Monte Carlo's defects are cheap and found LoCM sits in the favorable region. Starting with imitation learning of the runner-up policy, NeteaseOPD, we created a policy and value feed-forward network. Our agent searches over worlds sampled from a prior over the opponent's deck built from the runner-up's drafts. Using our strictest configuration in the battle phase we beat ByteRL with a win percentage of 51.35% 95% CI [50.37, 52.33], over 10,000 pre-registered games using the LoCM official referee and time limit. Search is not a minor factor on the matchup between our agent and ByteRL. Without search this agent scores 26.8% and adding search adds +24.6 points. Unsound search in imperfect information games could be exploitable. We replicate a published best-response attack against ByteRL. We then apply the same attack protocol to two search configurations of our agent, and each one resists it better than ByteRL at every iteration. In LoCM unsound search gives us a stronger and more resilient agent.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}

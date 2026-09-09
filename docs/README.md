@@ -6,22 +6,28 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-09-08
-- 运行时间：2026-09-08 22:41:34 UTC
+- 最新运行日期：2026-09-09
+- 运行时间：2026-09-09 21:55:26 UTC
 - 运行状态：成功
-- 本次总论文数：0
-- 精读区：0
-- 速读区：0
+- 本次总论文数：2
+- 精读区：1
+- 速读区：1
 
 ### 今日简报（AI）
-> 今日无新推荐，系统未产出可展示论文。
-- 详情：[/202609/08/README](/202609/08/README)
+今日精读1篇、速读1篇：聚焦自博弈中近似值迭代的惊人有效性，附带棋牌类游戏非完备搜索的初步评估。  
+最值得关注的是精读论文：近似值迭代在自博弈框架下表现超出预期，建议优先理解其训练稳定性和收敛收益。  
+下一步可结合速读里的策略-价值网络搜索缺陷，验证近似迭代在真实博弈中的稳健性。
+- 详情：[/202609/09/README](/202609/09/README)
 
 ### 精读区论文标签
-- 本次无精读推荐。
+1. [The Surprising Effectiveness of Approximate Value Iteration in Self-Play](/202609/09/2609.09094v1-the-surprising-effectiveness-of-approximate-value-iteration-in-self-play)  
+   标签：评分：9.0/10、query:alphazero
+   evidence：直接对比简化的近似值迭代自对弈与AlphaZero，并称能学到更准确的价值函数
 
 ### 速读区论文标签
-- 本次无速读推荐。
+1. [Unsound Search with Policy and Value Networks in Legends of Code and Magic](/202609/09/2609.06816v1-unsound-search-with-policy-and-value-networks-in-legends-of-code-and-magic)  
+   标签：评分：6.0/10、query:alphazero
+   evidence：在集换式卡牌游戏中使用策略与价值网络进行搜索，属于超越棋盘游戏的AlphaZero式应用
 
 
 <div class="dpr-home-promo-card">
