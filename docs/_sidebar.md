@@ -1,6 +1,9 @@
 * <a class="dpr-sidebar-root-link" href="#/">首页</a>
 * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="javascript:void(0)" data-dpr-hash="#/tutorial/README">使用教程</a>
 * Daily Papers
+  * 2026-09-19 <!--dpr-date:20260919-->
+    * 速读区
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202609/19/2609.18599v1-online-robust-reinforcement-learning-through-monte-carlo-planning" data-sidebar-item="{&quot;title&quot;: &quot;Online Robust Reinforcement Learning Through Monte-Carlo Planning&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2609.18599v1-online-robust-reinforcement-learning-through-monte-carlo-planning&quot;, &quot;score&quot;: &quot;6.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;鲁棒蒙特卡洛树搜索变体，扩展AlphaZero式博弈规划&quot;}">Online Robust Reinforcement Learning Through Monte-Carlo Planning</a>
   * 2026-09-18 <!--dpr-date:20260918-->
     * 速读区
       * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202609/18/2609.18599v1-online-robust-reinforcement-learning-through-monte-carlo-planning" data-sidebar-item="{&quot;title&quot;: &quot;Online Robust Reinforcement Learning Through Monte-Carlo Planning&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2609.18599v1-online-robust-reinforcement-learning-through-monte-carlo-planning&quot;, &quot;score&quot;: &quot;6.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;面向国际象棋、围棋、将棋等博弈的鲁棒MCTS变体，是AlphaZero的规划核心&quot;}">Online Robust Reinforcement Learning Through Monte-Carlo Planning</a>

@@ -1,0 +1,56 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-09-19T21:54:21.050466+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2609.18599v1",
+      "source": "arxiv",
+      "title": "Online Robust Reinforcement Learning Through Monte-Carlo Planning",
+      "abstract": "Monte Carlo Tree Search (MCTS) is a powerful framework for solving complex decision-making problems, yet it often relies on the assumption that the simulator and the real-world dynamics are identical. Although this assumption helps achieve the success of MCTS in games like Chess, Go, and Shogi, the real-world scenarios incur ambiguity due to their modeling mismatches in low-fidelity simulators. In this work, we present a new robust variant of MCTS that mitigates dynamical model ambiguities. Our algorithm addresses transition dynamics and reward distribution ambiguities to bridge the gap between simulation-based planning and real-world deployment. We incorporate a robust power mean backup operator and carefully designed exploration bonuses to ensure finite-sample convergence at every node in the search tree. We show that our algorithm achieves a convergence rate of $\\mathcal{O}(n^{-1/2})$ for the value estimation at the root node, comparable to that of standard MCTS. Finally, we provide empirical evidence that our method achieves robust performance in planning problems even under significant ambiguity in the underlying reward distribution and transition dynamics.",
+      "authors": [
+        "Tuan Dam",
+        "Kishan Panaganti",
+        "Brahim Driss",
+        "Adam Wierman"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-09-16T12:52:13+00:00",
+      "link": "https://arxiv.org/pdf/2609.18599v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "robust MCTS variant extending game search like AlphaZero's planning",
+      "llm_evidence_cn": "鲁棒蒙特卡洛树搜索变体，扩展AlphaZero式博弈规划",
+      "llm_evidence": "鲁棒蒙特卡洛树搜索变体，扩展AlphaZero式博弈规划",
+      "canonical_evidence": "鲁棒蒙特卡洛树搜索变体，扩展AlphaZero式博弈规划",
+      "llm_tldr_en": "MCTS powers game AI like Chess, Go and Shogi but assumes simulator matches reality. This work proposes a robust MCTS variant with a robust power mean backup and exploration bonuses to handle transition and reward ambiguity, bridging simulation planning to real-world deployment.",
+      "llm_tldr_cn": "蒙特卡洛树搜索是解决复杂决策问题的强大框架，但其成功依赖仿真器与真实动态一致的假设，在国际象棋、围棋、将棋等博弈中有效，却难以应对真实世界的建模偏差。本文提出一种鲁棒的MCTS变体，针对转移动态与奖励分布的不确定性，引入鲁棒幂均值回溯算子与精心设计的探索奖励，以弥合基于仿真的规划与真实部署之间的差距。该工作为AlphaZero类规划方法在非理想环境中的推广提供了思路。",
+      "llm_tldr": "蒙特卡洛树搜索是解决复杂决策问题的强大框架，但其成功依赖仿真器与真实动态一致的假设，在国际象棋、围棋、将棋等博弈中有效，却难以应对真实世界的建模偏差。本文提出一种鲁棒的MCTS变体，针对转移动态与奖励分布的不确定性，引入鲁棒幂均值回溯算子与精心设计的探索奖励，以弥合基于仿真的规划与真实部署之间的差距。该工作为AlphaZero类规划方法在非理想环境中的推广提供了思路。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "Research papers on AlphaZero algorithm improvements",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

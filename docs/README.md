@@ -6,27 +6,26 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-09-18
-- 运行时间：2026-09-18 21:58:54 UTC
+- 最新运行日期：2026-09-19
+- 运行时间：2026-09-19 21:54:33 UTC
 - 运行状态：成功
-- 本次总论文数：2
+- 本次总论文数：1
 - 精读区：0
-- 速读区：2
+- 速读区：1
 
 ### 今日简报（AI）
-今日速读2篇强化学习论文，均分6.0，未做精读。值得关注的是在线鲁棒强化学习的蒙特卡洛规划方法，以及通过参考策略调控正则化自博弈中的均衡选择。建议对这两篇感兴趣的读者先看摘要，判断是否值得深入精读。
-- 详情：[/202609/18/README](/202609/18/README)
+今天速读了 1 篇、精读 0 篇，唯一入榜的是《Online Robust Reinforcement Learning Through Monte-Carlo Planning》（6.0/10）。
+最值得关注的是"在线鲁棒强化学习 + 蒙特卡洛规划"这一组合思路，但 6.0 分属中等水平，适合作为该方向的入门参考，不必预期过高。
+普通读者可先读它的摘要与实验设置，确认是否贴合自己面对的环境不确定、需在线决策场景，再决定是否深入。
+- 详情：[/202609/19/README](/202609/19/README)
 
 ### 精读区论文标签
 - 本次无精读推荐。
 
 ### 速读区论文标签
-1. [Online Robust Reinforcement Learning Through Monte-Carlo Planning](/202609/18/2609.18599v1-online-robust-reinforcement-learning-through-monte-carlo-planning)  
+1. [Online Robust Reinforcement Learning Through Monte-Carlo Planning](/202609/19/2609.18599v1-online-robust-reinforcement-learning-through-monte-carlo-planning)  
    标签：评分：6.0/10、query:alphazero
-   evidence：面向国际象棋、围棋、将棋等博弈的鲁棒MCTS变体，是AlphaZero的规划核心
-2. [Steering Equilibrium Selection in Regularized Self-Play via the Reference Policy](/202609/18/2609.19820v1-steering-equilibrium-selection-in-regularized-self-play-via-the-reference-policy)  
-   标签：评分：6.0/10、query:alphazero
-   evidence：正则化自我对弈将策略驱动至纳什均衡,与AlphaZero式自我对弈学习密切相关
+   evidence：鲁棒蒙特卡洛树搜索变体，扩展AlphaZero式博弈规划
 
 
 <div class="dpr-home-promo-card">
