@@ -6,26 +6,22 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-09-19
-- 运行时间：2026-09-19 21:54:33 UTC
+- 最新运行日期：2026-09-20
+- 运行时间：2026-09-20 21:36:46 UTC
 - 运行状态：成功
-- 本次总论文数：1
+- 本次总论文数：0
 - 精读区：0
-- 速读区：1
+- 速读区：0
 
 ### 今日简报（AI）
-今天速读了 1 篇、精读 0 篇，唯一入榜的是《Online Robust Reinforcement Learning Through Monte-Carlo Planning》（6.0/10）。
-最值得关注的是"在线鲁棒强化学习 + 蒙特卡洛规划"这一组合思路，但 6.0 分属中等水平，适合作为该方向的入门参考，不必预期过高。
-普通读者可先读它的摘要与实验设置，确认是否贴合自己面对的环境不确定、需在线决策场景，再决定是否深入。
-- 详情：[/202609/19/README](/202609/19/README)
+> 今日无新推荐，系统未产出可展示论文。
+- 详情：[/202609/20/README](/202609/20/README)
 
 ### 精读区论文标签
 - 本次无精读推荐。
 
 ### 速读区论文标签
-1. [Online Robust Reinforcement Learning Through Monte-Carlo Planning](/202609/19/2609.18599v1-online-robust-reinforcement-learning-through-monte-carlo-planning)  
-   标签：评分：6.0/10、query:alphazero
-   evidence：鲁棒蒙特卡洛树搜索变体，扩展AlphaZero式博弈规划
+- 本次无速读推荐。
 
 
 <div class="dpr-home-promo-card">
