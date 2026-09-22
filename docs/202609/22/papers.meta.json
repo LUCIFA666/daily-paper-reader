@@ -1,0 +1,24 @@
+{
+  "label": "2026-09-22",
+  "date": "2026-09-22",
+  "generated_at": "2026-09-22T22:02:13",
+  "count": 1,
+  "papers": [
+    {
+      "paper_id": "202609/22/2609.22968v1-searching-for-primes-a-neural-alphazero-approach-to-a-factoring-game",
+      "section": "deep",
+      "title_en": "Searching for Primes: A Neural AlphaZero Approach to a Factoring Game",
+      "authors": "Marcel Crasmaru",
+      "date": "2026-09-19",
+      "pdf": "https://arxiv.org/pdf/2609.22968v1",
+      "score": "9.0",
+      "evidence": "将神经AlphaZero方法应用于经典棋盘游戏之外的新型因数分解博弈",
+      "tldr": "本文把整数分解编码为一个 N×N 棋盘上的单人令牌游戏：令牌沿对角线滑动或复制，最终形成组合矩形，其守恒权重可分解为两个 N 比特因子。若目标矩形已知，求解可化为多项式时间的向下芯片流与基于 Cohn 定理的 0/1 多项式分解；全部困难集中在最初的数论分裂。作者利用因子 popcount 承诺缩小搜索空间，并训练策略/价值网络配合 AlphaZero 式蒙特卡洛树搜索，在等价于分解的环境上实证检验神经前瞻的极限。",
+      "tags": "query:alphazero",
+      "abstract_en": "We study a one-player token game on an $N\\times N$ board where tokens slide along diagonals or duplicate onto neighbouring ones to form a combinatorial rectangle $R\\times S$. A conserved integer weight $W'$ and a strict monovariant guarantee $O(N^2)$-length solutions, placing the game in $\\mathsf{NP}$. We prove that reaching a final position factors this $2N$-bit $W'$ into two $N$-bit factors $V,M < 2^N$ that encode the rectangle's rows and columns. Consequently, solving the game for a balanced-semiprime target is equivalent to integer factoring. However, if the target rectangle is known, the solution reduces to two polynomial-time steps: a forced downward chip-flow and a $0/1$-polynomial factorisation leveraging Cohn's theorem. The game's entire difficulty is thus isolated to the initial number-theoretic split. Supplying the popcounts of the factors as a promise preserves this asymptotic hardness but bounds the target search space. We exploit this constrained space using a learned policy/value network and an AlphaZero-style Monte-Carlo tree search, empirically probing the limits of neural look-ahead on a factoring-equivalent environment.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}

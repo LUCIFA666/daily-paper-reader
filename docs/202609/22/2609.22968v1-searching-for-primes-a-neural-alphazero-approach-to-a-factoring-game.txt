@@ -1,0 +1,578 @@
+Title: Searching for Primes: A Neural AlphaZero Approach to a Factoring Game
+
+URL Source: https://arxiv.org/pdf/2609.22968v1
+
+Published Time: Tue, 22 Sep 2026 00:49:26 GMT
+
+Number of Pages: 16
+
+Markdown Content:
+# Searching for Primes: A Neural AlphaZero Approach to a Factoring Game 
+
+Marcel Crasmaru September 22, 2026 
+
+Abstract 
+
+We study a one-player token game on an N × N board where tokens slide along diagonals or duplicate onto neighbouring ones to form a combinatorial rectangle R × S. A conserved integer weight W ′ and a strict monovariant guarantee O(N 2)-length solutions, placing the game in NP . We prove that reaching a final position factors this 2 N -bit W ′ into two N -bit factors 
+
+V, M < 2N that encode the rectangle’s rows and columns. Consequently, solving the game for a balanced-semiprime target is equivalent to integer factoring. However, if the target rectangle is known, the solution reduces to two polynomial-time steps: a forced downward chip-flow and a 0 /1-polynomial factorisation leveraging Cohn’s theorem. The game’s entire difficulty is thus isolated to the initial number-theoretic split. Supplying the popcounts of the factors as a promise preserves this asymptotic hardness but bounds the target search space. We exploit this constrained space using a learned policy/value network and an AlphaZero-style Monte-Carlo tree search, empirically probing the limits of neural look-ahead on a factoring-equivalent environment. 
+
+# 1 The game and the promise 
+
+Write [ N ] = {0, 1, . . . , N − 1} and index the board by cells ( r, c ) ∈ [N ]2, with r the row (top to bottom) and c the column (left to right). A cell holds at most one token; a position is the set 
+
+P ⊆ [N ]2 of occupied cells. The upper-left–to–lower-right diagonals are the level sets of d(r, c ) = r − c; we call d ∈ {− (N −
+
+1) , . . . , N − 1} the diagonal of the cell. The diagonal d contains 
+
+Ld = N − | d|
+
+cells. Let nd(P ) = |{ (r, c ) ∈ P : r − c = d}| be the number of tokens on diagonal d, and let col c(P ) = {r : ( r, c ) ∈ P } be the pattern of column c.
+
+Definition 1 (Moves) . Two moves are allowed. 
+
+Slide. Replace an occupied ( r, c ) by any empty cell ( r′, c ′) on the same diagonal, r′ − c′ = r − c.
+
+Duplicate. Remove an occupied cell on diagonal d and place two tokens on two distinct empty cells of diagonal d − 1 (so a duplicate at d requires nd−1 ≤ Ld−1 − 2). We fix the orientation so that a duplicate lowers d by one; the mirror convention ( d 7 → d + 1, weight P 2 c−r) is symmetric. 1arXiv:2609.22968v1 [math.OC] 19 Sep 2026 Definition 2 (Final position; rectangle) . P is final if all non-empty columns have the same pattern: col c(P ) = col c′ (P ) whenever both are non-empty. A position is a (combinatorial) rectangle if 
+
+P = R × S := {(r, c ) : r ∈ R, c ∈ S} for some R, S ⊆ [N ]. Every rectangle is final. Conversely a non-empty final position has one common pattern R
+
+shared by its non-empty columns S, so P = R × S; thus final = rectangle .Figure 1 illustrates the two moves and how a play ends, on a 3 × 3 board.         
+
+> initial position after a duplication final: a rectangle
+> c0 c1 c2 r0 r1 r2 c0 c1 c2 r0 r1 r2 c0 c1 c2 r0 r1 r2
+
+Figure 1: How the game is played, on a 3 ×3 board. A token may slide along its upper-left–to–lower-right diagonal, or duplicate onto the neighbouring diagonal, splitting into two. From the position on the left, one duplication sends the middle token onto the main diagonal as two tokens, and one slide (dashed) carries the off-place one to the corner. The play then ends : the two non-empty columns (shaded) carry the same pattern—a rectangle—which is the winning condition. What such a final position means arithmetically is taken up in Section 3. 
+
+Problem 1 (Rectangularise, with promise) . Given a position P0 and integers p, q , under the promise that a final position with exactly p · q tokens is reachable from P0, output a sequence of moves transforming P0 into such a final position. Here p = |R| and q = |S| for the target rectangle R × S.
+
+Remark 1 (Scope and motivation) . These choices simplify without softening the core. On a general (rectangular) board a rectangle target encodes an arbitrary two-factor split of the board weight, so the game is as hard as ordinary integer factoring; the square board and the balanced semiprime 
+
+target (two N -bit primes) single out factoring’s canonical hard case, as in RSA. The popcounts 
+
+p = |R| and q = |S| are then supplied as a promise . This does not make the instance easier—by Theorem 2 it stays as hard as splitting a balanced semiprime—but it fixes the dimensions of the target rectangle and thereby shrinks the search space a learning agent must explore. That is exactly our purpose: Sections 8–9 attack the promised problem with an AlphaZero-style [4] Monte-Carlo tree search guided by a learned policy/value network, and the popcount promise is the lever that turns target selection into a constrained search rather than an open one. 
+
+# 2 Invariants 
+
+Give the token at ( r, c ) the weight 2 r−c and set W (P ) = P 
+
+> (r,c )∈P
+
+2 r−c = P 
+
+> d
+
+nd(P ) 2 d.
+
+Lemma 1 (Conservation) . Both moves preserve W .Proof. A slide fixes r − c. A duplicate removes 2 d and adds 2 · 2 d−1 = 2 d.Since a slide can carry a token to any empty cell of its diagonal, two positions with the same count vector ( nd) are reachable from one another by slides alone. So, up to reachability, a position is its count vector n = ( nd) with 0 ≤ nd ≤ Ld, and a duplicate is the operation split( d) : nd ≥ 1, n d−1 ≤ Ld−1 − 2 =⇒ nd −= 1 , n d−1 += 2 .
+
+2Lemma 2 (Downward flow) . For every k, the top-cumulative weight Uk(P ) = P 
+
+> d≥k
+
+nd2d is non-increasing under moves. Proof. Slides fix n. A split( d) with d > k keeps the weight in {≥ k}; with d = k it sends 2 k to level 
+
+k − 1, decreasing Uk by 2 k; with d < k it does not touch Uk.
+
+Lemma 3 (Monovariant; short solutions) . Φ( P ) = P 
+
+> d
+
+nd d 2d strictly decreases by 2d under 
+
+split( d). Hence no position repeats, and since each duplicate raises the token count by 1 while the board holds at most N 2 tokens, any play uses at most N 2 duplicates. Proof. ∆Φ = −d 2d + 2( d − 1)2 d−1 = −d 2d + ( d − 1)2 d = −2d < 0. 
+
+Corollary 1. If a final position is reachable, one is reachable within O(N 2) moves ( ≤ N 2 duplicates and ≤ N 2 slides). In particular the decision version of Problem 1 is in NP .
+
+# 3 Final positions are rectangles, and they factor 
+
+For a rectangle R × S define the row value and column selector 
+
+V = X
+
+> r∈R
+
+2r, M = X
+
+> c∈S
+
+2 N −1−c.
+
+Both lie in [1 , 2N − 1]; the binary digits of V are R and those of M are {N − 1 − c : c ∈ S}. Note 
+
+p = |R| = pop( V ) and q = |S| = pop( M ), where pop is the number of 1-bits. The reflection c 7 → N − 1 − c in M is exactly what aligns the polynomial product with the board geometry. Writing ρ(x) = P 
+
+> r∈R
+
+xr and ˜ σ(x) = P 
+
+> c∈S
+
+x N −1−c, their product convolves to 
+
+ρ(x) ˜ σ(x) = X
+
+> r∈R, c ∈S
+
+x r−c+N −1,
+
+whose exponent r − c + N − 1 is the diagonal d = r − c shifted into [0 , 2N − 2]; evaluating at 
+
+x = 2 gives V · M = W (R × S) 2 N −1, the scaled diagonal weight P 2 r−c. This convolution is the polynomial P used in Step B (Section 5). 
+
+Theorem 1 (Factorisation identity) . Let P = R × S. Then W (P ) · 2N −1 = V · M . Consequently, if a final position is reachable from P0 then the scaled integer 
+
+W ′ := W (P0) · 2N −1 ∈ Z
+
+factors as W ′ = V · M with 1 ≤ V, M ≤ 2N − 1, and the two factors read off the rows and columns of the target. 
+
+Throughout we keep W (P ) = P 
+
+> (r,c )∈P
+
+2 r−c for the raw board weight (a conserved dyadic rational, Lemma 1) and reserve the primed symbol W ′ = W 2N −1 for its scaled integer form—the number actually factored. 
+
+Proof. W (R×S) = P 
+
+> r∈R, c ∈S
+
+2 r−c =  P  
+
+> r∈R
+
+2r P  
+
+> c∈S
+
+2−c = V · M 2−(N −1) . Multiply by 2 N −1.All exponents in W (P0) = P 
+
+> d
+
+nd2d satisfy d ≥ − (N − 1), so W ′ ∈ Z; and W ′ ≤ (2 N − 1) 2 < 22N .Reachability preserves W by Lemma 1. Thus W ′ is a 2 N -bit number and any final position exhibits a factorisation of it into two N -bit factors. 34 Hardness: splitting balanced semiprimes 
+
+Lemma 4 (Canonical maximal start) . Among all positions of a fixed weight W , the “greedy-high” position n0—obtained by filling diagonals from the largest d downward until the weight W is exhausted—maximises Uk for every k. Consequently every rectangle R × S with W (R × S) = W
+
+has Uk(R × S) ≤ Uk(n0) for all k, and is reachable from n0 by duplicates (the remaining capacity conditions of Proposition 1 hold because R × S is a genuine rectangle). 
+
+Theorem 2 (Hardness) . Any algorithm that, given P0, outputs a reachable final position also outputs a factorisation W ′ = V · M with V, M < 2N (Theorem 1). Moreover, given a balanced semiprime W ′ = f · g with 2N −1 < f, g < 2N , the greedy-high position of weight W ′ 2−(N −1) is solvable, and its only factorisation into two factors below 2N is f · g; hence a solution reveals {f, g }.Thus producing a final position is at least as hard as splitting balanced semiprimes, and an N O(log N )
+
+algorithm would split b-bit balanced semiprimes in time 2O(log 2 b). The promise version (Problem 1) inherits this by enumerating the O(N 2) pairs (p, q ) = (pop f, pop g).
+
+# 5 Algorithms once a target is fixed 
+
+By the invariants of Section 2 we may reason purely with count vectors (diagonal profiles) and defer the board geometry to a final round of slides, carried out in Step B (Section 5.2). Suppose the target rectangle R × S (equivalently the factorisation W ′ = V · M ) is known, and let n∗ be its diagonal profile, n∗ 
+
+> d
+
+= |{ (r, c ) ∈ R × S : r − c = d}| .
+
+5.1 Step A: a forced downward chip-flow (polynomial) 
+
+Weight can only move one diagonal down, so the flow that turns n0 into n∗ is forced. Let sd be the number of tokens pushed from d to d − 1. 
+
+Proposition 1 (Step A) . Sweeping from the top, set sd = n0 
+
+> d
+
++ 2 sd+1 − n∗ 
+
+> d
+
+(with s ≡ 0 above the board). The duplicates transforming n0 into n∗ are feasible iff 
+
+(i) sd ≥ 0 for all d (equivalently Uk(n∗) ≤ Uk(n0) for all k); 
+
+(ii) n∗ 
+
+> d
+
+≤ Ld for all d;
+
+(iii) Ld−1 ≥ 2 whenever sd > 0.When feasible, a pipelined schedule realises it with P 
+
+> d
+
+sd = pq − | n0| ≤ N 2 duplicates, in O(N 2)
+
+time. Proof sketch. The identity n∗ 
+
+> d
+
+= n0 
+
+> d
+
++2 sd+1 −sd (weight in = initial + arrivals, weight out = pushes) determines s uniquely top-down; s−(N −1) = 0 follows from W -conservation. Non-negativity of s is exactly reachability by Lemma 2; (iii) is the requirement that one may ever duplicate into a transit diagonal; (ii) is the target capacity. Executing highest-surplus-first, freeing a transit diagonal downward before refilling it, never deadlocks because every transit diagonal has ≥ 2 cells and the target leaves room below. The count bound is immediate. 
+
+Remark 2 (Extreme diagonals) . The length-1 diagonals never receive duplicated flow. A duplicate into d − 1 requires Ld−1 ≥ 2 (Definition 1), and L−(N −1) = 1, so condition (iii) forces s−(N −2) = 0: nothing is ever duplicated onto the bottom diagonal. Correspondingly a target rectangle needs at 4most n∗−(N −1) = 1[ 0 ∈ R and N − 1 ∈ S ] ≤ L−(N −1) = 1 token there—the single cell (0 , N − 1)— which the greedy-high start already supplies (its bottom count equals n∗−(N −1) once s−(N −2) = 0). Hence no rectangle target violates (iii) at the bottom. The top diagonal d = N − 1, also of length 1, only emits flow downward and is therefore unconstrained. 
+
+StepA(start, target): # start = greedy-high profile, target = rectangle profile for d from N-1 down to -(N-1): s[d] = start[d] + 2*s[d+1] - target[d] # s above the top is 0 if s[d] < 0: return INFEASIBLE # weight cannot flow upward if target[d] > L(d): return INFEASIBLE if s[d] > 0 and L(d-1) < 2: return INFEASIBLE cur = copy(start); moves = [] while cur != target: # pipelined realization d = highest diagonal with cur[d] > target[d] while free(cur, d-1) < 2: push one token from d-1 downward (recurse) duplicate: d -> two on d-1; record move; update cur return moves # |moves| = pq - |start| <= N^2 
+
+5.2 Step B: seating by slides (polynomial when R, S known) 
+
+With n∗ frozen, sliding into the rectangle is a placement. Encode the profile as the polynomial 
+
+P (x) = X
+
+> d
+
+n∗ 
+
+> d
+
+x d+N −1 = ρ(x) ˜ σ(x), ρ(x) = X
+
+> r∈R
+
+xr, ˜σ(x) = X
+
+> c∈S
+
+x N −1−c,
+
+two 0 /1 polynomials of degree < N ; note P (2) = ρ(2)˜ σ(2) = V · M = W ′.
+
+Proposition 2 (Step B) . (i) If R, S are known, seating is O(N 2): for each diagonal d, slide its 
+
+n∗ 
+
+> d
+
+tokens onto the target cells {(r, r − d) : r ∈ R, r − d ∈ S}.
+
+(ii) If only n∗ is given, recovering (R, S ) is the two-set turnpike (partial-digest) problem: factor 
+
+P over Z in polynomial time and regroup its irreducible factors into two 0/1 products ρ, ˜σ of sizes p, q .
+
+(iii) A dynamic program over 0/1-valid partial products runs in N O(k), where k is the number of irreducible factors of P ; this is N O(log N ) whenever k = O(log 2 N ) and polynomial when 
+
+k = O(1) .
+
+(iv) When W ′ is a balanced semiprime—the hardness instances—its factors V, M are prime, so ρ, ˜σ
+
+are the base-2 expansion polynomials of V, M ; taken at their true degrees max R = ⌊log 2 V ⌋
+
+and ⌊log 2 M ⌋ (leading coefficient 1, so Cohn’s hypothesis is met), they are irreducible by Cohn’s theorem [5]. Then k = 2 , and factoring P over Z returns (ρ, ˜σ) outright, making Step B unconditionally polynomial ; large k can occur only when V or M is composite. 
+
+StepB(target): # target = rectangle profile; returns (R,S), then seats # is_binary: coeffs in {0,1}; ones: #(1-coeffs); supp: exponents present P = sum_d target[d] * x^(d+N-1) F = factor_over_Z(P) # polynomial time (LLL / van Hoeij) states = {1} # candidate rho, kept 0/1 throughout for (phi, e) in F: 
+
+5states = { g*phi^j : g in states, 0<=j<=e, is_binary(g*phi^j) and ones(.) <= p and deg(.) < N } for rho in states with ones(rho)==p: st = P / rho if is_binary(st) and ones(st)==q: R = supp(rho); S = { N-1-j : coeff_j(st)==1 } return seat_by_slides(R, S) # O(N^2) slides return NO_RECTANGLE_WITH_THIS_PROFILE 
+
+# 6 Main theorem 
+
+Theorem 3. Under the p · q promise, if a final position is reachable then one is reachable within 
+
+O(N 2) moves, and a move sequence can be produced in time Tfact (N ) + O(N 2), where Tfact is the time to split W ′ = W (P0)2 N −1 into its two factors below 2N —exactly splitting the balanced semiprime, and the only hard step; no sub-exponential bound for it is known. Given the split, both phases are polynomial: Step A by the forced downward flow, and Step B because the two 0/1 factors 
+
+ρ, ˜σ are the base-2 expansions of the primes V, M , hence irreducible by Cohn’s theorem [5], so P
+
+has exactly two irreducible factors that Z-factorisation recovers directly. (For a general, non-prime balanced split the regrouping of Proposition 2 instead costs N O(k).) Proof. Corollary 1 bounds the length. Compute n0 from P0 and W ′ = W (P0)2 N −1. Find V, M < 
+
+2N with V · M = W ′, pop V = p, pop M = q (this is Tfact , the balanced-factoring step). Set 
+
+R = bits( V ), S = {N − 1 − j : bit j of M } and let n∗ be their profile. Run Step A (Proposition 1) and then seat by slides (Proposition 2); both are O(N 2). Hardness is Theorem 2. 
+
+Remark 3. The exact complexity of the target-selection core, the finite-versus-asymptotic picture, the worst-case boards of a general (non-prime) split, and the quantum status of the game are taken up in Section 10. 
+
+# 7 A worked example: factoring 143 
+
+Take N = 4 and M = 143 = 11 · 13, with 11 = 1011 2 and 13 = 1101 2. Laying M on the board as the conserved weight W ′ = 143 by the greedy-high placement (Lemma 4) gives the seven-token start of Figure 2 (left). Two duplications (Step A) and three slides (Step B) reach the rectangle 
+
+R × S with R = S = {0, 1, 3} (right): its occupied rows give V = 2 0 + 2 1 + 2 3 = 11 and its occupied columns give Msel = 2 3 + 2 2 + 2 0 = 13, so 143 = 11 · 13. The weight W ′ = 143 is unchanged on every board. The worked example was easy only because we already knew the factorisation. In general the one hard step is target selection —which rectangle R×S to aim for—and the popcount promise turns this into a bounded combinatorial search: the rows are a p-subset and the columns a q-subset of [ N ], and Step B gives a cheap, exact test of whether a candidate profile is a genuine factorisation. A short bounded action space (the duplications), a constrained target, and a verifiable 0 /1 terminal reward are exactly the ingredients an AlphaZero-style learner is built for: a policy network to propose moves and a value network to prune, wrapped in Monte-Carlo tree search over the promised targets. Sections 8–9 put this to the test—first cloning Step A with a network, then driving the search with it—and measure how far the promise’s bounded structure lets learning and look-ahead reach. (A dual full-or-R variant of the game, which factors the board complement A2 − W ′, is developed in Appendix A.) 6initial ( W ′=143) after Step A final rectangle             
+
+> c0 c1 c2 c3 r0 r1 r2 r3 842132 64 32 c0 c1 c2 c3 r0 r1 r2 r3
+> 128841
+
+Figure 2: Factoring 143 on a 4 ×4 board. Left: 143 laid on as weight W ′ = 64+64+8+4+2+1 = 143, each token marked with its weight 2 r−c+3 . Step A (two duplications): d=2, (3 , 1) → (1 , 0) , (2 , 1); then d=1, (2 , 1) → (1 , 1) , (2 , 2). Step B (three slides): (0 , 2) → (1 , 3), (2 , 2) → (3 , 3), (2 , 0) → (3 , 1). 
+
+Right: the final rectangle on rows and columns {0, 1, 3}; the blue row-weights 2 r sum to 11 and the amber column-weights 2 3−c (reflected) sum to 13, giving 143 = 11 · 13 .
+
+# 8 A neural probe of the hardness: cloning Step A 
+
+The reduction of the game to factoring is concrete enough to test empirically: one can train a neural network to imitate Step A move by move and ask whether it ever assembles a full solution. 1
+
+It does not, and why it does not mirrors Theorem 2 exactly. 
+
+Formulation. A state is the diagonal profile n ∈ Z2N −1 
+
+> ≥0
+
+(the coefficient vector of P ). An action is a duplication “at index i”, 1 ≤ i ≤ 2N − 2, sending ni → ni − 1 and ni−1 → ni−1 + 2; a distinguished stop action (the “ −1”) marks n = n∗. Because the weight P 
+
+> i
+
+ni2i = W ′ is conserved and determines n’s instance, the map n 7 → (next move) is a well-defined function—but computing it is exactly recovering the factorisation, so the learning target is factoring in supervised disguise. 
+
+Data. For random N -bit primes p ≤ q we lay C = pq greedy-high (Lemma 4) to get n0, compute the rectangle target n∗, and replay the forced-flow duplication sequence of Proposition 1, emitting one (profile , move) pair per step and a terminal stop . One N = 64 instance yields ≈ 10 3 pairs; the canonical order p ≤ q fixes the target, hence the labels. 
+
+Model and conditioning. The policy is a one-dimensional residual CNN (six convolutional blocks; a per-index 1 ×1 “move” head alongside a globally pooled stop head; ≈ 0.19M parameters), mapping features of shape (channels , 2N − 1) to 2 N logits. Three input regimes probe how much of the answer must be supplied: none (the profile only), pop (the profile plus the promised popcounts of 
+
+p, q as constant channels), and target (the profile plus n∗ itself). Deeper variants add capacity and, with dilated kernels, receptive field; Figure 3 diagrams the largest instance—the depth-16 dilated 1.2M-parameter net used at N = 16—including the value head that the search of Section 9 adds. We adopt a one-dimensional dilated residual CNN rather than an attention-based Transformer because the board profile is an ordered 1D grid on which chip flow is strictly local ( d → d − 1); exponentially dilated convolutions attain a complete global receptive field across all 2 N −1 diagonals in ⌈log 2(2 N −1) ⌉ layers with minimal parameters. Because the barrier is cryptographic (Theorem 2), replacing local inductive biases with global self-attention cannot alter the asymptotic hardness.  
+
+> 1A self-contained PyTorch implementation (data generation, model, and the metrics below) and the Java reference solver are available at https://github.com/crasmarum/TokenGame .
+
+7Input 3 × 31 profile + p, q                 
+
+> Dilated residual trunk 16 × (Conv 3+ BN + ReLU) width 160 dilations 1, 2, 4, 8, 16 (cycled) receptive field 189
+> Features 160 × 31
+> Move head 1×1 conv →31 Stop head GAP, 160 →160 →1Value head GAP, 160 →160 →1
+> Policy 32 logits (31 moves + STOP)
+> Value
+> σ∈[0, 1]
+> One residual block:
+> Conv 3, dilation dBN ReLU
+
++in 
+
+> skip (identity; 1×1 on block 0)
+> out 1,213,763 parameters
+
+Policy/value network (N=16, dilated, depth 16, width 160) Figure 3: The policy/value network, instantiated for N = 16 (the depth-16 dilated, 1 .2M-parameter checkpoint). The input channels are the profile plus the two constant popcount channels ( pop ); a stack of 16 residual blocks (Conv 3+BN+ReLU, width 160, dilation cycling 1 , 2, 4, 8, 16) reaches receptive field 189 ≫ 2N −1 = 31, spanning the whole profile. A per-index 1 ×1 “move” head and a globally pooled stop head form the 2 N policy logits; a second pooled head gives the scalar value (Pr[ n∗ reachable ]) used by the tree search of Section 9. 
+
+Training. We optimise with AdamW (weight decay 10 −4) at a constant learning rate—2 × 10 −4
+
+for the largest N = 16 run, 2 ×10 −3 for the smaller nets—and batch size up to 1024. Data is online :each round draws 256 fresh instances ( ≈ 1.8 × 10 4 (profile, move) pairs), regenerated every round, so there is no fixed training set and overfitting is moot; runs last up to 4000 rounds. The objective is the cross-entropy of the policy over the legal duplications—with the stop class up-weighted ×20 to offset its rarity (one per trajectory)—plus a binary cross-entropy on the value head, in equal weight. 
+
+Metrics. Move accuracy is the teacher-forced per-step agreement with the cloned label. Greedy-solve is the fraction of fresh instances for which the autonomous greedy rollout—arg max over the legal actions, applied to the network’s own profile until stop —halts exactly at n∗.
+
+Reading. Table 1 separates the two halves of the game cleanly. target makes the task well-posed—each move is then the local forced-flow decision of Proposition 1—and the network solves every instance. pop reveals only the rectangle’s dimensions p × q, not which rows and columns; it nudges per-step accuracy but leaves greedy-solve at 0, because choosing the rows and columns is choosing the factorisation. Across scale the two metrics decouple: move accuracy stays high everywhere (0 .9–0 .97), while greedy-solve is nonzero only in the small-N regime—0 .70 at N = 8— and collapses to 0 by N = 16–64. The long high-index prefix of each trajectory is the near-trivial “split the top diagonal” rule, so imitating it well says nothing about the few decisive low-index moves that encode the split; one wrong move leaves the cloned distribution onto an unseen profile, 8N conditioning channels move-acc greedy-solve 8 pop 3 0.97 0.70 12 none 1 0.79 0.00 12 pop 3 0.83 0.00 12 pop, dilated 3 0.93 0.08 12 target 2 1.00 1.00 
+
+16 pop 3 0.88 0.00 16 pop, deep 3 0.91 0.00 16 pop, dilated 3 0.95 0.05 64 pop 3 0.93 0.00 Table 1: Cloning Step A (short runs; the N = 8 , 16 , 64 rows use the full net and the N = 12 rows a smaller quick net for the conditioning ablation; deep is a 1 .2M-parameter depth-12 net, 7 ×
+
+the standard 0 .19M depth-6 net, and dilated a full-receptive-field net, depths 8–16). High per-step accuracy coexists with near-zero autonomous solves unless the target n∗ is supplied; splitting C
+
+into {p, q }, which target hands over and pop does not, is the entire difficulty. Full coverage ( dilated )lifts N = 12 and N = 16 off 0 (to 0 .08 and 0 .05); 0 .95 60 ≈ 0.05 shows greedy-solve still tracks (move-acc) depth , so the frontier shifts a few bits without breaking. and reaching n∗ exactly would in any case factor a 2 N -bit balanced semiprime. The crossover near N ≈ 8–16 marks where a network of this size stops covering the factorisation. Coverage, not just capacity, sets this frontier: giving the network a full receptive field (a dilated kernel-3 stack) raises N = 12 greedy-solve from 0 .00 to 0 .08 and lets tree search factor 23-bit semiprimes (4 /5, Table 2), shifting the crossover outward by a few bits. Scaling the network confirms the limit quantitatively. Deeper, better-covered nets raise move accuracy—0 .88 (depth 6) to 0 .91 (depth 12) to 0 .95 (a depth-16 dilated net whose receptive field finally spans the profile) 2—yet greedy-solve keeps tracking (move-acc) depth : over trajectories of mean depth ≈ 60, 0 .95 60 ≈ 0.05, matching the observed 0 .047. One wrong move leaves the cloned distribution onto an unseen profile, so greedy play alone stays near 0. What the extra accuracy buys is realised only under search : the same depth-16 dilated net, with a value head and 20 ,000 Monte-Carlo simulations, factors 2 /5 of random 
+
+N = 16 instances (Section 9)—including 31-bit semiprimes with c[p] · c[q] ∼ 2 × 10 5 and depth-60 trajectories. This fits hardness being asymptotic : N = 16 is still the finite, tabulatable regime (≈ 4.6M semiprimes, Section 10), so capacity and search climb into it a few bits at a time, while no fixed architecture escapes Theorem 2 as N grows. By Theorem 3, a classical learner that closed the move-accuracy/greedy-solve gap at scale would be a sub-exponential factoring algorithm. Figure 4 shows the full training run behind these numbers. 
+
+# 9 Search with a learned prior: Monte-Carlo tree search 
+
+The network of Section 8 is a pure policy; the natural strengthening is to wrap it in look-ahead, as in AlphaZero, and let search compensate for imperfect priors. We do, and meet the same wall from the other side. 3            
+
+> 2The receptive field must cover the whole length-(2 N−1) profile, because the correct move depends on cumulative sums across all diagonals (the forced flow of Proposition 1); a plain kernel-kstack reaches this only at depth Θ( N/k ), whereas kernel-3 blocks with exponentially growing dilation 1 ,2,4, . . . span it in ⌈log 2(2 N−1) ⌉layers—the same architecture then serves every N.
+> 3The accompanying implementation includes this tree search and the Step-B reward.
+
+90.0 0.5 1.0 training loss 
+
+> 0.16
+
+Learning process — N=16 (depth-16 dilated CNN, pop-conditioned, 4000 rounds)         
+
+> 0500 1000 1500 2000 2500 3000 3500 4000 training round 0.0 0.2 0.4 0.6 0.8 1.0 accuracy / solve rate
+> 0.99 0.95
+> ≈0
+> val-acc (target reachable) move-acc (next move) greedy-solve (full solve)
+
+Figure 4: Learning curves for the largest N = 16 run (depth-16 dilated network, 1 .2M parameters, 
+
+pop conditioning, 4000 rounds). The training loss falls and both per-step metrics saturate— move accuracy at 0 .95 and val accuracy (target reachability) at 0 .99—while greedy-solve (full autonomous solves) never leaves the neighbourhood of 0. Local imitation is learned; end-to-end solving is not, matching 0 .95 60 ≈ 0.05 and the hardness of Theorem 2. 
+
+Tree. A node is a profile; the root is the greedy-high placement of the number m to be factored, 
+
+n0. An action is a duplication at index i. Since every move adds exactly one token, every root-to-leaf path has the same length pq − P 
+
+> i
+
+n0 
+
+> i
+
+and every leaf carries pq tokens—the promised final count. 
+
+Reward (Step B). At a leaf we run Step B (Proposition 2): factor the leaf polynomial into two 0/1 polynomials ρ, ˜σ of sizes p, q , and return 1 iff this succeeds with ρ(2)˜ σ(2) = m, else 0. Step B is polynomial, so the reward is cheap to evaluate; the difficulty is reaching a rewarding leaf, since among the many pq -token profiles of weight m only the (essentially unique) rectangle profile of m’s factorisation scores 1. 
+
+Selection (PUCT). Descend by 
+
+a∗ = arg max  
+
+> a
+
+Q(s, a ) + cpuct P (s, a )
+
+pP  
+
+> b
+
+N (s, b )1 + N (s, a ) ,
+
+10 where the prior P (s, ·) is the policy network of Section 8 softmaxed over the legal duplications—the “additional weight” the model places on moves. We take cpuct = 1 .5 and a budget of 2000–20 ,000 simulations per move (the N = 16 results use 20 ,000); each simulation expands exactly one leaf, so there is no separate node-count cap. The search then commits the most-visited move and recurses. 
+
+Value head. A non-terminal leaf needs a value. Two options coincide in the limit. A policy-guided rollout to a terminal backs up the exact 0 /1 Step-B reward—no approximation error, but an O(N 2) playout per simulation. Alternatively we add a value head to the network: a second output σ(v) ≈ Pr[ n∗ reachable from this profile ]. Reachability is precisely the 0 /1 value—a profile that still majorises n∗ (a nonnegative forced flow, the Step-A feasibility test of Proposition 1) yields reward 1 under optimal play, otherwise 0—so the head is trained by the very reduction it accelerates, on the cloned trajectories (reachable, label 1) together with random off-path profiles that have left the feasible cone (label 0). It reaches about 0 .90 reachability accuracy at N = 8 and replaces each rollout with a single forward pass, so a fixed compute budget buys many more simulations. Either way the reward is exact at the leaves that matter, and the only obstacle is the size of the tree. 
+
+Findings. At small N the search solves outright, recovering the primes, and the learned prior sharpens a uniform one (Table 2): at N = 8 the bare greedy policy already solves about 0 .70 of instances (Table 1), and wrapping it in tree search lifts that to 5 /5 (the value head matches this while evaluating leaves in one forward pass rather than a rollout). Capacity and search then push the frontier through the small sizes: with a full-coverage dilated net they clear N = 12 (4 /5, 23-bit semiprimes), and a depth-16 dilated net with the value head and 20 ,000 simulations reaches 
+
+N = 16 itself—2 /5 of random 31–32-bit instances, including hard ones with candidate counts 
+
+c[p] · c[q] ∼ 2 × 10 5 and depth-60 trajectories (e.g. 34589 · 44711), where the bare policy is near 0. This answers the natural question— would a deeper network clear N = 16 ? —in the affirmative, but for a telling reason: N = 16 is still the finite, tabulatable regime ( ≈ 4.6M semiprimes, Section 10), so a large enough model and search climb into it. The wall is structural but asymptotic: the leaves are the pq -token profiles of weight m, a set that grows while the rewarding subset stays of size 
+
+≈ 1, so locating it is the target-selection of Theorem 2. A larger prior or more simulations shift the frontier outward by a bounded number of bits—each added bit roughly doubling the tree—so the gain is a constant-factor edge that is exhausted once N leaves the tabulatable range ( N ≳ 32); by Theorem 3, an MCTS that solved at scale would split balanced semiprimes in sub-exponential time. 
+
+# 10 Discussion and open problems 
+
+Steps A and B are polynomial, so the solver confines all difficulty to one number-theoretic split (Theorem 3); four questions sharpen its status. 
+
+Finite versus asymptotic hardness. That the experiments of §8– §9 factor instances up to 
+
+N = 16 does not contradict the hardness above, because the difficulty is asymptotic. For fixed 
+
+N the instance space is finite and, for small N , tiny: there are only π(2 N ) − π(2 N −1) primes of exactly N bits—e.g. 3030 at N = 16, hence  3030 2
+
+ ≈ 4.6M balanced semiprimes, a table one could precompute. The pop promise shrinks each instance further to the c[p] c[q] prime pairs of the 11 N prior sims/move solve rate 6 uniform 6000 3/56 learned ( pop ) 6000 5/58 learned ( pop ) 2000 5/512 learned ( pop, dilated ) 20000 4/516 learned ( pop ) 2000 0/516 learned ( pop, dilated depth 16 ) 20000 2/5Table 2: Monte-Carlo tree search on random semiprimes (five instances each; illustrative). The learned prior lifts the solve rate at N = 6, clears N = 8 (16-bit semiprimes, e.g. 167 · 211) and, with a full-coverage dilated net and a value head, N = 12 (23-bit, e.g. 2213 · 2293). A small net leaves N = 16 at 0 /5, but a depth-16 dilated net with the value head and 20 ,000 simulations reaches 2 /5 of 31–32-bit instances (e.g. 34589 · 44711, with c[p] · c[q] ≈ 2 × 10 5)— N = 16 being the last tabulatable size; the wall is asymptotic ( N ≳ 32). The tabulated rates are five-instance point estimates; a larger 50-instance sweep at N = 8 gives 49 /50 = 0 .98 (Wilson 95% CI [0 .90 , 1.00]), calibrating the 5 /5 entry. Matched 50–100-instance sweeps at N = 12 , 16 (at 20 ,000 simulations per move) are compute-intensive and left to GPU runs. promised popcounts, where by the prime number theorem 
+
+c[p] ≈
+
+ N −1
+
+> p−1
+
+
+
+N ln 2 
+
+
+
+or 2(N −2 
+
+> p−2
+
+)  
+
+> Nln 2
+
+forcing the odd bit 
+
+
+
+, c[p] c[q] ≈
+
+ N −1
+
+> p−1
+
+  N −1
+
+> q−1
+
+
+
+(N ln 2) 2 .
+
+The numerator counts N -bit integers of popcount p exactly, and 1 /(N ln 2) is the prime density near 2 N ; the odd-bit variant shifts the popcount peak up by one, as the data show. For balanced popcounts p ≈ q ≈ N/ 2 this is Θ(2 2N /N 3): the promise removes only a polynomial factor and the search stays exponential—whereas a rare popcount makes  N −1
+
+> p−1
+
+ small (a handful of candidates), which is exactly why those instances are easy. A large enough model with enough search therefore climbs into the small-N regime; but each added bit doubles the primes, the semiprimes, and the tree, the tabulatable range ends near N ≈ 32 ( ∼ 2 × 10 8 primes, ∼ 10 16 semiprimes), and beyond it Theorem 2 bites. 
+
+(1) Counting 0/1-polynomial divisors. Step B must single out the divisors of P that them-selves have coefficients in {0, 1}. The crude estimate is the 2 k subset-products of the k irreducible factors of P , but genuine 0 /1 divisors are far rarer than arbitrary subset-products. We conjecture that every degree-D integer polynomial has at most DO(log D) divisors in {0, 1}[x]. A proof would let Step B enumerate them directly in quasi-polynomial time, making target selection—and hence the whole solver— unconditionally N O(log N ), with no hypothesis on the factor count k. The bound holds trivially when k = O(log N ) (then even 2 k is polynomial) and is false for unrestricted coeffi-cients; the gap between these is the open content, and by item (3) it is exactly what the worst-case boards exercise. 
+
+(2) Exact complexity of the target-selection core. Recovering ( R, S ) from the profile n∗
+
+alone (Proposition 2) is the factorisation of P = ρ ˜σ into two 0 /1 polynomials—a partial-digest / turnpike-type reconstruction of two sets. Under the substitution x 7 → 2 it becomes splitting the balanced semiprime M = ρ(2) ˜ σ(2), so the search problem is integer factoring in disguise. Its decision version—“does M have a factor in [2 N −1, 2N ) of popcount p?”—lies in NP ∩coNP : the prime 12 factorisation of M together with Pratt primality certificates [1] witnesses both the yes- and the no-answer. This is strong evidence that the core is not NP -complete, since that would force NP = coNP ;symmetrically, a polynomial-time algorithm for it would split balanced semiprimes classically. The core therefore sits squarely in the factoring-flavoured “intermediate” regime, and deciding between 
+
+P and NP -completeness is tantamount to resolving the status of factoring itself—the precise sense in which its class is open. (For contrast, the classical turnpike problem—reconstruct points on a line from their multiset of pairwise differences—admits only a pseudo-polynomial backtracking algorithm [3] and has itself resisted classification for decades.) 
+
+(3) Which boards are worst-case (the general split). By Proposition 2 the prime promise forces k = 2 (Cohn’s theorem), so a large factor count is a feature of the general balanced split— where V, M may be composite—not of the semiprime instances. There the dynamic program runs in N O(k) with k the number of irreducible factors of P , and large k arises precisely when 
+
+ρ or ˜ σ is cyclotomic-rich, i.e. when a composite factor has a highly structured binary expansion. The extremal case is a composite Mersenne-type factor V = 2 m − 1 with m composite: then 
+
+R = {0, . . . , m − 1} is contiguous and 
+
+ρ(x) = 1 + x + · · · + xm−1 = Y
+
+> d|m, d> 1
+
+Φd(x)splits into τ (m) − 1 irreducible cyclotomic factors ( τ the divisor function; a Mersenne prime has m
+
+prime and ρ = Φ m irreducible). Arithmetic-progression and base-b repunit bit-sets behave the same way. Since τ (m) is 2 Ω(log m/ log log m), such k exceeds every fixed power of log N , so on these boards the naive 2 k enumeration is super-quasi-polynomial—exactly the regime that the 0 /1-divisor bound of item (1) would defuse. On prime factors, by contrast, Cohn’s theorem keeps ρ irreducible, P
+
+two-factored, and Step B polynomial. 
+
+(4) Quantum status. The game’s hardness core is balanced-semiprime splitting, and integer factoring is in BQP by Shor’s algorithm [2]—balancedness neither helps nor hinders Shor, which factors any composite in polynomial time. Hence target selection is in BQP : a quantum machine factors M = pq in time poly( N ) and, composed with the classical polynomial Steps A and B, outputs the full O(N 2) move sequence in quantum polynomial time. The decision problem “is a final position of at most p·q tokens reachable?” is therefore in BQP , and the game is not a candidate for post-quantum hardness: its apparent classical intractability is exactly as quantum-fragile as the factoring problem it encodes. 
+
+Constraint-satisfaction view. A final position is a combinatorial rectangle R×S, i.e. a biclique 
+
+in the N ×N board seen as a bipartite graph on rows and columns; target selection asks for a biclique of prescribed weight V · M = W ′ and prescribed dimensions |R| = p, |S| = q. This places the game in the family of weighted-biclique and monochromatic-rectangle problems—the maximum edge biclique problem is NP -hard, and 0 /1-matrix rectangles are the atoms of communication-complexity lower bounds—so the promised problem is naturally read as a constraint-satisfaction instance: choose p rows and q columns whose weighted product hits a target. What distinguishes our instance from generic biclique/SAT search is the number-theoretic weight constraint, which (Theorem 2) is precisely balanced factoring; the popcount promise fixes the biclique’s side lengths, and the diagonal invariant turns “reach a monochromatic rectangle” into “split W ′”. A tighter reduction to or from standard weighted-CSP encodings (independent set, exact cover) would connect the game to the broader constraint-satisfaction toolbox. 13 initial ( W ′=82) after Step A complementary grid           
+
+> c0 c1 c2 c3 r0 r1 r2 r3 64 16 2c0 c1 c2 c3 r0 r1 r2 r3 c0 c1 c2 c3 r0 r1 r2 r3
+
+Figure 5: The complementary (full-or-R) game on 143, with A2 − 143 = 225 − 143 = 82. Left: 82 = 64+16+2 laid on the board. Step A (four duplications): (3 , 0) → (2 , 0) , (3 , 1); (3 , 1) → (2 , 1) , (3 , 2); (3 , 2) → (0 , 0) , (1 , 1); (1 , 1) → (0 , 1) , (1 , 2). Step B (three slides): (0 , 1) → (2 , 3), (0 , 0) → (2 , 2), (1 , 0) → (3 , 2). Right: the final full-or-R position —column 2 full, columns {0, 1, 3} equal to 
+
+R′ = {2}— is exactly the occupied ↔ empty complement of Figure 2’s rectangle (shaded cells). 
+
+# Appendix A Binary operation on weights, and the full-or-R vari-ant 
+
+Consider the variant in which a position is final when every column is either full (the all-ones pattern 11 · · · 1, value A := 2 N − 1) or equal to one common pattern R. Putting R on every column and then completing the full columns gives, for U the (reflected) selector of the full columns and 
+
+VR the value of R,
+
+W ′ = A · U + VR (A − U ).
+
+This is one instance of a natural bitwise operation, which we isolate and analyse; the complementary game it governs is illustrated in Figure 5. 
+
+Definition 3. For N -bit integers U, W ∈ { 0, . . . , 2N − 1} with A := 2 N − 1, define 
+
+U # W := A U + W (A − U ) = A(U + W ) − U W = A2 − (A − U )( A − W ).
+
+Proposition 3 (bit-serial form) . U #W is computed by scanning the N bit-positions of U and emitting, at position i, the block W if bit i is 0 and the all-ones block A if it is 1, then summing the shifted blocks: U #W = PN −1 
+
+> i=0
+
+ci2i, ci ∈ { W, A }. Equivalently, with a width-0 terminator returning 
+
+0 and U = 2 A′ + a0,
+
+U # W = 2 ( A′ # W ) +  a0 = 0 ? W : A,
+
+run over all N positions. Proof. Since P  
+
+> i:ui=1
+
+2i = U and P  
+
+> i:ui=0
+
+2i = A − U , we get P 
+
+> i
+
+ci2i = A U + W (A − U ), which is Definition 3. The terminator must be 0: run at full width, an all-zeros U then emits W at every position and gives P 
+
+> i<N
+
+W 2i = A W ; a W -terminator would add a spurious 2 N W , and would also drop the leading-zero positions of U (which the game needs, as U = MF may have them). 
+
+Corollary 2. With p = U/A, q = W/A ∈ [0 , 1] , (U #W )/A 2 = p + q − pq = 1 − (1 − p)(1 − q).Hence # is commutative ( U #W = W #U ); it is the De Morgan dual of multiplication under the complement X = A − X; scaled by A2 it is the probabilistic OR (a t-conorm); it is monotone nondecreasing in each argument ( ∂(U #W )/∂U = A − W ≥ 0); A is absorbing ( X#A = A2); and 
+
+0# W = A W .
+
+14 Theorem 4 (the variant factors the complement) . The full-or-R final positions of weight W ′ are exactly those with W ′ = U # VR, equivalently 
+
+(A − U )( A − VR) = A2 − W ′.
+
+Thus a final position exists iff A2 − W ′ = (2 N − 1) 2 − W ′ factors into two N -bit factors U , V R.Consequently: (i) computing W ′ = U #W is two multiplications; (ii) given W ′ and one operand 
+
+U̸ = A, the other is a single division W = ( W ′ − AU )/(A − U ); (iii) recovering both operands from 
+
+W ′ alone is splitting the 2N -bit number A2 − W ′ — the balanced-factoring wall of Section 4, now applied to the board complement rather than to W ′.Remark 4. So the “empty-or-R” game (Section 3) factors W ′, while the “full-or-R” game factors 
+
+A2 − W ′: the two winning conditions are exchanged by complementing the board (occupied ↔
+
+empty), which sends W ′ 7 → A2 − W ′; Steps A and B are unchanged, only the target number differs. Reducing A2 − W ′ ≡ − W ′ (mod A) loses everything, since reduction mod 2 N − 1 is a homomorphism. More generally, allowing a fixed menu of k column patterns {R1, . . . , R k} makes 
+
+W ′ = P 
+
+> i
+
+VRi Mi, a sum of k products; k = 1 is Section 3, and k = 2 with one pattern full is the operation #. Concretely, run the complementary game on the instance of Section 7. The full 4 × 4 board has weight A2 = (2 4 −1) 2 = 15 2 = 225, so complementing W ′ = 143 gives A2 −W ′ = 225 −143 = 82 (the reference here is the full-board weight 15 2 = 225, not 2 2N − 1). Laying 82 and playing the full-or-R
+
+game reaches the board-complement of the rectangle of Figure 2: a “plus” with column 2 full and columns {0, 1, 3} carrying the lone pattern R′ = {2} (Figure 5). Its selectors are MF = 2 3−2 = 2 and VR′ = 2 2 = 4, and indeed ( A − MF )( A − VR′ ) = (15 − 2)(15 − 4) = 13 · 11 = A2 − 82 = 143 — the same 11 · 13, read through the complement. 
+
+The geometry is easy; the target is hard. The full-or-R variant exposes a clean decoupling in the game’s complexity. Complementing the winning condition radically alters the number-theoretic target—from W ′ to A2 − W ′—while leaving the geometric mechanics (Steps A and B) completely unchanged. The physical constraints of the board are therefore computationally easy: whatever the target number, duplications and slides reach it in polynomial time once it is known . The intractable core of the token game is purely the algebraic search for that target. More broadly, the operation # recasts the board as a visual calculator for polynomial arithmetic. One column pattern makes W ′ a single product V · M (Section 3); k patterns make it a sum of k
+
+products (Remark 4); the full-or-R condition realises the De Morgan dual A2 − (A − U )( A − W ). In every case the board’s rules are evaluating a polynomial , and the “gameplay”—driving tokens to a final position—is the search for its factorisation: for the roots that split the target over the promised {0, 1} alphabet. 
+
+# References 
+
+[1] V. R. Pratt. Every prime has a succinct certificate. SIAM Journal on Computing , 4(3):214–220, 1975. [2] P. W. Shor. Polynomial-time algorithms for prime factorization and discrete logarithms on a quantum computer. SIAM Journal on Computing , 26(5):1484–1509, 1997. 15 [3] S. S. Skiena, W. D. Smith, and P. Lemke. Reconstructing sets from interpoint distances. In 
+
+Proceedings of the Sixth Annual Symposium on Computational Geometry (SoCG) , pages 332– 339, 1990. [4] D. Silver, T. Hubert, J. Schrittwieser, I. Antonoglou, M. Lai, A. Guez, M. Lanctot, L. Sifre, D. Kumaran, T. Graepel, T. Lillicrap, K. Simonyan, and D. Hassabis. A general reinforcement learning algorithm that masters chess, shogi, and Go through self-play. Science , 362(6419):1140– 1144, 2018. [5] J. Brillhart, M. Filaseta, and A. Odlyzko. On an irreducibility theorem of A. Cohn. Canadian Journal of Mathematics , 33(5):1055–1059, 1981. 16

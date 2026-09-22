@@ -1,6 +1,9 @@
 * <a class="dpr-sidebar-root-link" href="#/">首页</a>
 * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="javascript:void(0)" data-dpr-hash="#/tutorial/README">使用教程</a>
 * Daily Papers
+  * 2026-09-22 <!--dpr-date:20260922-->
+    * 精读区
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202609/22/2609.22968v1-searching-for-primes-a-neural-alphazero-approach-to-a-factoring-game" data-sidebar-item="{&quot;title&quot;: &quot;Searching for Primes: A Neural AlphaZero Approach to a Factoring Game&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2609.22968v1-searching-for-primes-a-neural-alphazero-approach-to-a-factoring-game&quot;, &quot;score&quot;: &quot;9.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;将神经AlphaZero方法应用于经典棋盘游戏之外的新型因数分解博弈&quot;}">Searching for Primes: A Neural AlphaZero Approach to a Factoring Game</a>
   * 2026-09-19 <!--dpr-date:20260919-->
     * 速读区
       * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202609/19/2609.18599v1-online-robust-reinforcement-learning-through-monte-carlo-planning" data-sidebar-item="{&quot;title&quot;: &quot;Online Robust Reinforcement Learning Through Monte-Carlo Planning&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2609.18599v1-online-robust-reinforcement-learning-through-monte-carlo-planning&quot;, &quot;score&quot;: &quot;6.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;鲁棒蒙特卡洛树搜索变体，扩展AlphaZero式博弈规划&quot;}">Online Robust Reinforcement Learning Through Monte-Carlo Planning</a>
