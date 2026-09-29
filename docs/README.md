@@ -7,23 +7,31 @@
 
 ## 每次日报
 - 最新运行日期：2026-09-29
-- 运行时间：2026-09-29 00:25:11 UTC
+- 运行时间：2026-09-29 22:51:17 UTC
 - 运行状态：成功
-- 本次总论文数：1
+- 本次总论文数：3
 - 精读区：1
-- 速读区：0
+- 速读区：2
 
 ### 今日简报（AI）
-今日精读 1 篇：《Self-Play Search Distillation for Large Language Model Reasoning》（8.0/10），聚焦大模型推理能力提升。值得关注的是它用自对弈搜索蒸馏来强化推理，思路对训练更强推理模型有参考价值。普通读者可先了解“自对弈＋蒸馏”这一组合的基本逻辑，再跟进后续同类工作。
+- 今日共生成 3 篇推荐（精读 1 篇，速读 2 篇）
+- 精读：《Self-Play Search Distillation for Large Language Model Reasoning》（8.0/10）
+- 速读：《CompassPlay: Rewarding the Proposer for Where It Moves the Solver》（6.0/10）, 《ASCT: Attentive Search over Counterfactual Trees for Credit Assignment in Agentic Reinforcement Learning》（6.0/10）
+- 这些结果覆盖了当下较热的方向，建议先看精读区论文的关键问题与方法。
 - 详情：[/202609/29/README](/202609/29/README)
 
 ### 精读区论文标签
 1. [Self-Play Search Distillation for Large Language Model Reasoning](/202609/29/2609.30936v1-self-play-search-distillation-for-large-language-model-reasoning)  
    标签：评分：8.0/10、query:alphazero
-   evidence：MuZero类网络在棋类上的自对弈搜索转化为训练数据
+   evidence：在棋类游戏上用类MuZero网络自我对弈生成超人思维链
 
 ### 速读区论文标签
-- 本次无速读推荐。
+1. [CompassPlay: Rewarding the Proposer for Where It Moves the Solver](/202609/29/2609.32228v1-compassplay-rewarding-the-proposer-for-where-it-moves-the-solver)  
+   标签：评分：6.0/10、query:alphazero
+   evidence：自博弈提案者-求解器方法，基于梯度对齐奖励并对比AZR
+2. [ASCT: Attentive Search over Counterfactual Trees for Credit Assignment in Agentic Reinforcement Learning](/202609/29/2609.35215v1-asct-attentive-search-over-counterfactual-trees-for-credit-assignment-in-agentic-reinforcement-learning)  
+   标签：评分：6.0/10、query:alphazero
+   evidence：用于强化学习信用分配的树搜索（UCT），与AlphaZero式搜索加RL相关
 
 
 <div class="dpr-home-promo-card">

@@ -1,8 +1,8 @@
 {
   "label": "2026-09-29",
   "date": "2026-09-29",
-  "generated_at": "2026-09-29T00:25:13",
-  "count": 1,
+  "generated_at": "2026-09-29T22:51:25",
+  "count": 3,
   "papers": [
     {
       "paper_id": "202609/29/2609.30936v1-self-play-search-distillation-for-large-language-model-reasoning",
@@ -16,6 +16,36 @@
       "tldr": "LLM推理提升受限于高质量数据稀缺：合成数据质量低且人工标注昂贵。SPSD利用棋盘游戏上训练的MuZero类网络自对弈搜索，将可执行环境中的搜索记录转化为超人类思维链，用环境grounding监督训练LLM。仅在自对弈记录上训练，却能迁移到未见数学任务；在Qwen3-4B-Base上，六个数学基准均值由24.1升至36.6，留出游戏胜率由15%升至45%。",
       "tags": "query:alphazero",
       "abstract_en": "Improving reasoning abilities in Large Language Models (LLMs) requires high-quality data that exposes difficult decisions, competing alternatives, and their consequences. Data scarcity is driven by the low quality of synthetic data and the cost of human labeling. We introduce Self-Play Search Distillation (SPSD), a framework for generating superhuman synthetic data via self-play of MuZero-like networks trained on board games. SPSD uses executable environments to turn search into structured reasoning problems. At each state, the expert identifies a preferred decision, plausible alternatives, plausible opponent replies, and value estimates. By converting the self-play search records into superhuman chains-of-thought, we train LLMs with environment-grounded supervision. Although trained only on self-play search records, SPSD transfers to unseen mathematics. On Qwen3-4B-Base, it raises the mean over six mathematics benchmarks from 24.1 to 36.6 while increasing the held-out-game win rate from 15% to 45%. SPSD offers an annotation-efficient way to create high-quality synthetic data for improving LLM performance in reasoning tasks.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202609/29/2609.32228v1-compassplay-rewarding-the-proposer-for-where-it-moves-the-solver",
+      "section": "quick",
+      "title_en": "CompassPlay: Rewarding the Proposer for Where It Moves the Solver",
+      "authors": "Sophia Xiao Pu, Ximeng Sun, Jiang Liu, Jialian Wu, Emad Barsoum, Zicheng Liu, William Yang Wang",
+      "date": "2026-09-26",
+      "pdf": "https://arxiv.org/pdf/2609.32228v1",
+      "score": "6.0",
+      "evidence": "自博弈提案者-求解器方法，基于梯度对齐奖励并对比AZR",
+      "tldr": "在自博弈中，提案者生成可验证任务来训练求解器，但仅凭求解器成功率给予奖励无法区分同等难度任务的训练价值。本文提出CompassPlay，通过梯度对齐奖励提案者，优先选择求解器损失梯度与代表目标能力的参考任务一致的任务，且无需额外求解器训练。在代码自博弈中相对AZR基线提升了准确率与训练效率。该工作为自博弈课程生成提供了更有效的奖励信号。",
+      "tags": "query:alphazero",
+      "abstract_en": "In self-play, a proposer generates verifiable tasks to train a solver. Proposer rewards often depend on the solver's success rate, but equally difficult tasks can differ in their training value. We introduce CompassPlay, a self-play method that rewards the proposer through gradient alignment. The reward favors tasks whose solver loss gradients align with those of reference tasks representing the target capabilities. It draws on a first-order approximation to learning progress and scores each eligible task without additional solver training. Our experiments show gains in performance and training efficiency. In coding self-play with Qwen2.5-Coder-7B, a small external reference set guides task generation. CompassPlay improves average accuracy over AZR's difficulty reward by 1.5 percentage points on in-domain coding and 2.7 on out-of-domain mathematics. In Lean4 theorem proving, CompassPlay matches the difficulty baseline's 150-iteration cumulative coverage with 40\\% fewer GPU-hours.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202609/29/2609.35215v1-asct-attentive-search-over-counterfactual-trees-for-credit-assignment-in-agentic-reinforcement-learning",
+      "section": "quick",
+      "title_en": "ASCT: Attentive Search over Counterfactual Trees for Credit Assignment in Agentic Reinforcement Learning",
+      "authors": "Yang Li, Jinhan Yang, hai liu, Di Wan, Xiyu Chen, Zongsi Xu, Tuo Zhou, Sheng Zhong, Sergey Volkov, Ye Luo, Hao Sun",
+      "date": "2026-09-28",
+      "pdf": "https://arxiv.org/pdf/2609.35215v1",
+      "score": "6.0",
+      "evidence": "用于强化学习信用分配的树搜索（UCT），与AlphaZero式搜索加RL相关",
+      "tldr": "智能体强化学习通常只用最终效用评价完整工作流，难以对中间决策做信用分配。ASCT 在演员访问状态上构建辅助反事实树，评估同一可恢复前缀下的替代合法动作，并用冻结演员概率中心化动作价值表，为 PPO 在演员采样轨迹上提供局部信用。在 HotpotQA 智能体检索增强生成任务中，ASCT-AgentUCT 三随机种子平均留出效用达 0.6187，优于 VinePPO 的 0.5939，且辅助 Qwen token 记录减少 50.3%。该框架将反事实评估接入策略学习，部署时仅需演员。",
+      "tags": "query:alphazero",
+      "abstract_en": "Terminal utility evaluates a complete agentic workflow, but learning requires credit for the decisions within it. We introduce Attentive Search over Counterfactual Trees (ASCT), a framework that turns training-time multi-step search into local action credit. At actor-visited states, an auxiliary tree evaluates alternative legal actions from the same recoverable prefix. Its action-value table is centered by the frozen actor's probabilities and supplies credit for PPO on actor-sampled trajectories. This protocol connects counterfactual evaluation to policy learning while deploying the actor alone. Uniform, UCT, and cost-aware AgentUCT instantiate the framework. On HotpotQA agentic retrieval-augmented generation, all three improve mean held-out utility over trajectory-return PPO and workflow-adapted VinePPO. Across three seeds, ASCT-AgentUCT reaches 0.6187 utility versus 0.5939 for VinePPO, with gains in answer F1 and execution cost, and uses 50.3% fewer recorded auxiliary Qwen tokens. Transfer and component-description studies examine the learned policies beyond the training setting.",
       "source": "arxiv",
       "selection_source": "fresh_fetch"
     }

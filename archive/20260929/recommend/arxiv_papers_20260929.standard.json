@@ -1,15 +1,15 @@
 {
   "mode": "standard",
-  "generated_at": "2026-09-29T00:22:58.070688+00:00",
+  "generated_at": "2026-09-29T22:49:00.219472+00:00",
   "stats": {
     "mode": "standard",
     "tag_count": 1,
     "deep_divecandidates": 1,
     "deep_cap": 6,
     "deep_selected": 1,
-    "quick_candidates": 0,
+    "quick_candidates": 2,
     "quick_skim_target": 11,
-    "quick_selected": 0
+    "quick_selected": 2
   },
   "deep_dive": [
     {
@@ -38,13 +38,13 @@
         "query:alphazero"
       ],
       "llm_score": 8.0,
-      "llm_evidence_en": "Self-play of MuZero-like networks on board games converts search into training data",
-      "llm_evidence_cn": "MuZero类网络在棋类上的自对弈搜索转化为训练数据",
-      "llm_evidence": "MuZero类网络在棋类上的自对弈搜索转化为训练数据",
-      "canonical_evidence": "MuZero类网络在棋类上的自对弈搜索转化为训练数据",
-      "llm_tldr_en": "SPSD generates superhuman synthetic reasoning data via self-play of MuZero-like networks trained on board games, turning search records into chains-of-thought to train LLMs.",
-      "llm_tldr_cn": "针对大语言模型推理训练数据稀缺、合成数据质量低与人工标注成本高的问题，本文提出自对弈搜索蒸馏（SPSD）框架。该方法利用在棋类游戏上训练的MuZero类网络进行自对弈，将可执行环境中的搜索过程转化为结构化推理问题，并把搜索记录转写为超人级思维链用于训练LLM。实验表明环境锚定的监督信号能显著提升模型推理能力。该工作展示了棋类自对弈搜索可迁移为通用推理数据生成手段，拓展了AlphaZero/MuZero式自对弈的应用边界。",
-      "llm_tldr": "针对大语言模型推理训练数据稀缺、合成数据质量低与人工标注成本高的问题，本文提出自对弈搜索蒸馏（SPSD）框架。该方法利用在棋类游戏上训练的MuZero类网络进行自对弈，将可执行环境中的搜索过程转化为结构化推理问题，并把搜索记录转写为超人级思维链用于训练LLM。实验表明环境锚定的监督信号能显著提升模型推理能力。该工作展示了棋类自对弈搜索可迁移为通用推理数据生成手段，拓展了AlphaZero/MuZero式自对弈的应用边界。",
+      "llm_evidence_en": "self-play of MuZero-like networks on board games generating superhuman chains-of-thought",
+      "llm_evidence_cn": "在棋类游戏上用类MuZero网络自我对弈生成超人思维链",
+      "llm_evidence": "在棋类游戏上用类MuZero网络自我对弈生成超人思维链",
+      "canonical_evidence": "在棋类游戏上用类MuZero网络自我对弈生成超人思维链",
+      "llm_tldr_en": "SPSD generates superhuman synthetic reasoning data by self-play of MuZero-like networks on board games, converting search records into environment-grounded chains-of-thought to train LLMs.",
+      "llm_tldr_cn": "大语言模型推理训练缺乏高质量数据，合成数据质量偏低且人工标注代价高昂。本文提出自我对弈搜索蒸馏SPSD，利用在棋类游戏上训练的类MuZero网络进行自我对弈，把搜索过程转化为包含优选决策、可行备选、对手回应与价值估计的结构化推理问题。再将自我对弈搜索记录转写为超人思维链，以环境锚定的监督信号训练LLM，从而在推理任务上获得提升。",
+      "llm_tldr": "大语言模型推理训练缺乏高质量数据，合成数据质量偏低且人工标注代价高昂。本文提出自我对弈搜索蒸馏SPSD，利用在棋类游戏上训练的类MuZero网络进行自我对弈，把搜索过程转化为包含优选决策、可行备选、对手回应与价值估计的结构化推理问题。再将自我对弈搜索记录转写为超人思维链，以环境锚定的监督信号训练LLM，从而在推理任务上获得提升。",
       "llm_tags": [
         "query:alphazero"
       ],
@@ -54,5 +54,92 @@
       "selection_source": "fresh_fetch"
     }
   ],
-  "quick_skim": []
+  "quick_skim": [
+    {
+      "id": "2609.32228v1",
+      "source": "arxiv",
+      "title": "CompassPlay: Rewarding the Proposer for Where It Moves the Solver",
+      "abstract": "In self-play, a proposer generates verifiable tasks to train a solver. Proposer rewards often depend on the solver's success rate, but equally difficult tasks can differ in their training value. We introduce CompassPlay, a self-play method that rewards the proposer through gradient alignment. The reward favors tasks whose solver loss gradients align with those of reference tasks representing the target capabilities. It draws on a first-order approximation to learning progress and scores each eligible task without additional solver training. Our experiments show gains in performance and training efficiency. In coding self-play with Qwen2.5-Coder-7B, a small external reference set guides task generation. CompassPlay improves average accuracy over AZR's difficulty reward by 1.5 percentage points on in-domain coding and 2.7 on out-of-domain mathematics. In Lean4 theorem proving, CompassPlay matches the difficulty baseline's 150-iteration cumulative coverage with 40\\% fewer GPU-hours.",
+      "authors": [
+        "Sophia Xiao Pu",
+        "Ximeng Sun",
+        "Jiang Liu",
+        "Jialian Wu",
+        "Emad Barsoum",
+        "Zicheng Liu",
+        "William Yang Wang"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-09-26T04:42:56+00:00",
+      "link": "https://arxiv.org/pdf/2609.32228v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "self-play proposer-solver method with gradient-aligned rewards, AZR baseline",
+      "llm_evidence_cn": "自博弈提案者-求解器方法，基于梯度对齐奖励并对比AZR",
+      "llm_evidence": "自博弈提案者-求解器方法，基于梯度对齐奖励并对比AZR",
+      "canonical_evidence": "自博弈提案者-求解器方法，基于梯度对齐奖励并对比AZR",
+      "llm_tldr_en": "CompassPlay rewards the proposer in self-play via gradient alignment with reference tasks, improving task generation value; it is a self-play RL method related to AlphaZero-style training.",
+      "llm_tldr_cn": "在自博弈中，提案者生成可验证任务来训练求解器，但仅凭求解器成功率给予奖励无法区分同等难度任务的训练价值。本文提出CompassPlay，通过梯度对齐奖励提案者，优先选择求解器损失梯度与代表目标能力的参考任务一致的任务，且无需额外求解器训练。在代码自博弈中相对AZR基线提升了准确率与训练效率。该工作为自博弈课程生成提供了更有效的奖励信号。",
+      "llm_tldr": "在自博弈中，提案者生成可验证任务来训练求解器，但仅凭求解器成功率给予奖励无法区分同等难度任务的训练价值。本文提出CompassPlay，通过梯度对齐奖励提案者，优先选择求解器损失梯度与代表目标能力的参考任务一致的任务，且无需额外求解器训练。在代码自博弈中相对AZR基线提升了准确率与训练效率。该工作为自博弈课程生成提供了更有效的奖励信号。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "how does AlphaZero use self play reinforcement learning",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2609.35215v1",
+      "source": "arxiv",
+      "title": "ASCT: Attentive Search over Counterfactual Trees for Credit Assignment in Agentic Reinforcement Learning",
+      "abstract": "Terminal utility evaluates a complete agentic workflow, but learning requires credit for the decisions within it. We introduce Attentive Search over Counterfactual Trees (ASCT), a framework that turns training-time multi-step search into local action credit. At actor-visited states, an auxiliary tree evaluates alternative legal actions from the same recoverable prefix. Its action-value table is centered by the frozen actor's probabilities and supplies credit for PPO on actor-sampled trajectories. This protocol connects counterfactual evaluation to policy learning while deploying the actor alone. Uniform, UCT, and cost-aware AgentUCT instantiate the framework. On HotpotQA agentic retrieval-augmented generation, all three improve mean held-out utility over trajectory-return PPO and workflow-adapted VinePPO. Across three seeds, ASCT-AgentUCT reaches 0.6187 utility versus 0.5939 for VinePPO, with gains in answer F1 and execution cost, and uses 50.3% fewer recorded auxiliary Qwen tokens. Transfer and component-description studies examine the learned policies beyond the training setting.",
+      "authors": [
+        "Yang Li",
+        "Jinhan Yang",
+        "hai liu",
+        "Di Wan",
+        "Xiyu Chen",
+        "Zongsi Xu",
+        "Tuo Zhou",
+        "Sheng Zhong",
+        "Sergey Volkov",
+        "Ye Luo",
+        "Hao Sun"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-28T14:04:20+00:00",
+      "link": "https://arxiv.org/pdf/2609.35215v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "tree search (UCT) for RL credit assignment, related to AlphaZero-style search plus RL",
+      "llm_evidence_cn": "用于强化学习信用分配的树搜索（UCT），与AlphaZero式搜索加RL相关",
+      "llm_evidence": "用于强化学习信用分配的树搜索（UCT），与AlphaZero式搜索加RL相关",
+      "canonical_evidence": "用于强化学习信用分配的树搜索（UCT），与AlphaZero式搜索加RL相关",
+      "llm_tldr_en": "ASCT turns multi-step tree search into local action credit for PPO, using UCT-style auxiliary trees centered by actor probabilities; it bridges search and RL like AlphaZero.",
+      "llm_tldr_cn": "智能体工作流以终端效用评价整体流程，难以对中间决策进行信用分配。本文提出ASCT框架，在演员访问过的状态上用辅助树评估同一前缀下的替代合法动作，并用冻结演员概率中心化动作价值表，为PPO提供局部信用。均匀、UCT与代价感知AgentUCT均可实例化该框架，在HotpotQA检索增强生成任务上取得效果。该协议将反事实评估与策略学习相连，且部署时仅需演员。",
+      "llm_tldr": "智能体工作流以终端效用评价整体流程，难以对中间决策进行信用分配。本文提出ASCT框架，在演员访问过的状态上用辅助树评估同一前缀下的替代合法动作，并用冻结演员概率中心化动作价值表，为PPO提供局部信用。均匀、UCT与代价感知AgentUCT均可实例化该框架，在HotpotQA检索增强生成任务上取得效果。该协议将反事实评估与策略学习相连，且部署时仅需演员。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "how does AlphaZero use self play reinforcement learning",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
 }
