@@ -1,0 +1,58 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-09-29T00:22:58.070688+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 1,
+    "deep_cap": 6,
+    "deep_selected": 1,
+    "quick_candidates": 0,
+    "quick_skim_target": 11,
+    "quick_selected": 0
+  },
+  "deep_dive": [
+    {
+      "id": "2609.30936v1",
+      "source": "arxiv",
+      "title": "Self-Play Search Distillation for Large Language Model Reasoning",
+      "abstract": "Improving reasoning abilities in Large Language Models (LLMs) requires high-quality data that exposes difficult decisions, competing alternatives, and their consequences. Data scarcity is driven by the low quality of synthetic data and the cost of human labeling. We introduce Self-Play Search Distillation (SPSD), a framework for generating superhuman synthetic data via self-play of MuZero-like networks trained on board games. SPSD uses executable environments to turn search into structured reasoning problems. At each state, the expert identifies a preferred decision, plausible alternatives, plausible opponent replies, and value estimates. By converting the self-play search records into superhuman chains-of-thought, we train LLMs with environment-grounded supervision. Although trained only on self-play search records, SPSD transfers to unseen mathematics. On Qwen3-4B-Base, it raises the mean over six mathematics benchmarks from 24.1 to 36.6 while increasing the held-out-game win rate from 15% to 45%. SPSD offers an annotation-efficient way to create high-quality synthetic data for improving LLM performance in reasoning tasks.",
+      "authors": [
+        "Lorenzo Molfetta",
+        "Wai-Chung Kwan",
+        "Giacomo Frisoni",
+        "Luca Ragazzi",
+        "Gianluca Moro",
+        "Pavlos Vougiouklis",
+        "Jeff Z. Pan",
+        "Pasquale Minervini"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-09-25T07:53:21+00:00",
+      "link": "https://arxiv.org/pdf/2609.30936v1",
+      "tags": [
+        "keyword:alphazero",
+        "query:alphazero"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Self-play of MuZero-like networks on board games converts search into training data",
+      "llm_evidence_cn": "MuZero类网络在棋类上的自对弈搜索转化为训练数据",
+      "llm_evidence": "MuZero类网络在棋类上的自对弈搜索转化为训练数据",
+      "canonical_evidence": "MuZero类网络在棋类上的自对弈搜索转化为训练数据",
+      "llm_tldr_en": "SPSD generates superhuman synthetic reasoning data via self-play of MuZero-like networks trained on board games, turning search records into chains-of-thought to train LLMs.",
+      "llm_tldr_cn": "针对大语言模型推理训练数据稀缺、合成数据质量低与人工标注成本高的问题，本文提出自对弈搜索蒸馏（SPSD）框架。该方法利用在棋类游戏上训练的MuZero类网络进行自对弈，将可执行环境中的搜索过程转化为结构化推理问题，并把搜索记录转写为超人级思维链用于训练LLM。实验表明环境锚定的监督信号能显著提升模型推理能力。该工作展示了棋类自对弈搜索可迁移为通用推理数据生成手段，拓展了AlphaZero/MuZero式自对弈的应用边界。",
+      "llm_tldr": "针对大语言模型推理训练数据稀缺、合成数据质量低与人工标注成本高的问题，本文提出自对弈搜索蒸馏（SPSD）框架。该方法利用在棋类游戏上训练的MuZero类网络进行自对弈，将可执行环境中的搜索过程转化为结构化推理问题，并把搜索记录转写为超人级思维链用于训练LLM。实验表明环境锚定的监督信号能显著提升模型推理能力。该工作展示了棋类自对弈搜索可迁移为通用推理数据生成手段，拓展了AlphaZero/MuZero式自对弈的应用边界。",
+      "llm_tags": [
+        "query:alphazero"
+      ],
+      "matched_query_tag": "query:alphazero",
+      "matched_query_text": "how does AlphaZero use self play reinforcement learning",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": []
+}

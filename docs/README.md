@@ -6,19 +6,21 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-09-27
-- 运行时间：2026-09-27 21:59:17 UTC
+- 最新运行日期：2026-09-29
+- 运行时间：2026-09-29 00:25:11 UTC
 - 运行状态：成功
-- 本次总论文数：0
-- 精读区：0
+- 本次总论文数：1
+- 精读区：1
 - 速读区：0
 
 ### 今日简报（AI）
-> 今日无新推荐，系统未产出可展示论文。
-- 详情：[/202609/27/README](/202609/27/README)
+今日精读 1 篇：《Self-Play Search Distillation for Large Language Model Reasoning》（8.0/10），聚焦大模型推理能力提升。值得关注的是它用自对弈搜索蒸馏来强化推理，思路对训练更强推理模型有参考价值。普通读者可先了解“自对弈＋蒸馏”这一组合的基本逻辑，再跟进后续同类工作。
+- 详情：[/202609/29/README](/202609/29/README)
 
 ### 精读区论文标签
-- 本次无精读推荐。
+1. [Self-Play Search Distillation for Large Language Model Reasoning](/202609/29/2609.30936v1-self-play-search-distillation-for-large-language-model-reasoning)  
+   标签：评分：8.0/10、query:alphazero
+   evidence：MuZero类网络在棋类上的自对弈搜索转化为训练数据
 
 ### 速读区论文标签
 - 本次无速读推荐。

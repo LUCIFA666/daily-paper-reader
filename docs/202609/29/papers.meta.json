@@ -1,0 +1,24 @@
+{
+  "label": "2026-09-29",
+  "date": "2026-09-29",
+  "generated_at": "2026-09-29T00:25:13",
+  "count": 1,
+  "papers": [
+    {
+      "paper_id": "202609/29/2609.30936v1-self-play-search-distillation-for-large-language-model-reasoning",
+      "section": "deep",
+      "title_en": "Self-Play Search Distillation for Large Language Model Reasoning",
+      "authors": "Lorenzo Molfetta, Wai-Chung Kwan, Giacomo Frisoni, Luca Ragazzi, Gianluca Moro, Pavlos Vougiouklis, Jeff Z. Pan, Pasquale Minervini",
+      "date": "2026-09-25",
+      "pdf": "https://arxiv.org/pdf/2609.30936v1",
+      "score": "8.0",
+      "evidence": "MuZero类网络在棋类上的自对弈搜索转化为训练数据",
+      "tldr": "LLM推理提升受限于高质量数据稀缺：合成数据质量低且人工标注昂贵。SPSD利用棋盘游戏上训练的MuZero类网络自对弈搜索，将可执行环境中的搜索记录转化为超人类思维链，用环境grounding监督训练LLM。仅在自对弈记录上训练，却能迁移到未见数学任务；在Qwen3-4B-Base上，六个数学基准均值由24.1升至36.6，留出游戏胜率由15%升至45%。",
+      "tags": "query:alphazero",
+      "abstract_en": "Improving reasoning abilities in Large Language Models (LLMs) requires high-quality data that exposes difficult decisions, competing alternatives, and their consequences. Data scarcity is driven by the low quality of synthetic data and the cost of human labeling. We introduce Self-Play Search Distillation (SPSD), a framework for generating superhuman synthetic data via self-play of MuZero-like networks trained on board games. SPSD uses executable environments to turn search into structured reasoning problems. At each state, the expert identifies a preferred decision, plausible alternatives, plausible opponent replies, and value estimates. By converting the self-play search records into superhuman chains-of-thought, we train LLMs with environment-grounded supervision. Although trained only on self-play search records, SPSD transfers to unseen mathematics. On Qwen3-4B-Base, it raises the mean over six mathematics benchmarks from 24.1 to 36.6 while increasing the held-out-game win rate from 15% to 45%. SPSD offers an annotation-efficient way to create high-quality synthetic data for improving LLM performance in reasoning tasks.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}

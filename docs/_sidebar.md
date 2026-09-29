@@ -1,6 +1,9 @@
 * <a class="dpr-sidebar-root-link" href="#/">首页</a>
 * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="javascript:void(0)" data-dpr-hash="#/tutorial/README">使用教程</a>
 * Daily Papers
+  * 2026-09-29 <!--dpr-date:20260929-->
+    * 精读区
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202609/29/2609.30936v1-self-play-search-distillation-for-large-language-model-reasoning" data-sidebar-item="{&quot;title&quot;: &quot;Self-Play Search Distillation for Large Language Model Reasoning&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2609.30936v1-self-play-search-distillation-for-large-language-model-reasoning&quot;, &quot;score&quot;: &quot;8.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;MuZero类网络在棋类上的自对弈搜索转化为训练数据&quot;}">Self-Play Search Distillation for Large Language Model Reasoning</a>
   * 2026-09-22 <!--dpr-date:20260922-->
     * 精读区
       * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202609/22/2609.22968v1-searching-for-primes-a-neural-alphazero-approach-to-a-factoring-game" data-sidebar-item="{&quot;title&quot;: &quot;Searching for Primes: A Neural AlphaZero Approach to a Factoring Game&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2609.22968v1-searching-for-primes-a-neural-alphazero-approach-to-a-factoring-game&quot;, &quot;score&quot;: &quot;9.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;alphazero&quot;}], &quot;evidence&quot;: &quot;将神经AlphaZero方法应用于经典棋盘游戏之外的新型因数分解博弈&quot;}">Searching for Primes: A Neural AlphaZero Approach to a Factoring Game</a>
